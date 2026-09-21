@@ -1,7 +1,7 @@
 // Public client configuration. Everything here is designed to ship inside the app binary:
 // the Firebase web config and the RevenueCat public SDK key identify the project, they do not grant access.
 // Real secrets (the Gemini key) live only in the website's server environment.
-export const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'https://bowlscore.vercel.app'
+export const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'https://bowlscoreapp.vercel.app'
 
 export const FIREBASE = {
   apiKey: 'AIzaSyAsdAe5xauPZHaQOOOT7e5C9C_RhlV6PIc',

@@ -1,5 +1,5 @@
 // Facts used in more than one place. Copy rule for everything user visible: no hyphens, no dashes.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://bowlscore.vercel.app').replace(/\/$/, '')
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://bowlscoreapp.vercel.app').replace(/\/$/, '')
 export const APP_STORE_ID = '6814359922'
 export const APP_STORE_URL = `https://apps.apple.com/app/id${APP_STORE_ID}`
 export const SUPPORT_EMAIL = 'pbroas127+bowlscore@gmail.com'
