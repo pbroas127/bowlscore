@@ -117,6 +117,13 @@ export default function Paywall() {
         })}
       </View>
 
+      {plans && !plans.length ? (
+        <View style={{ alignItems: 'center', gap: 12, paddingTop: 12 }}>
+          <Text style={[type.body, { color: color.ink2, textAlign: 'center' }]}>Plans could not be loaded from the App Store. Check your connection and try again.</Text>
+          <TextLink label="Try again" tone={color.ink} onPress={() => { setPlans(undefined); loadPlans().then(setPlans).catch(() => setPlans([])) }} />
+        </View>
+      ) : null}
+
       {trial > 0 ? (
         <View style={s.reassure}><Check size={16} weight="bold" color={color.green} /><Text style={[type.label, { color: color.ink2 }]}>No payment due now</Text></View>
       ) : null}
