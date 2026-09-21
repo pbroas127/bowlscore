@@ -83,3 +83,8 @@ for (const r of [a, b, c, asCat, topper, scoreFood(pg, 'cat')])
   for (const f of r.flags) assert.ok(!/[-–—]/.test(f.title + f.detail), `dash in copy: ${f.title} / ${f.detail}`)
 
 console.log('rubric ok')
+
+// "corn protein meal" is the current AAFCO name for corn gluten meal and must be flagged the same way (found on Purina ONE)
+const cornProtein = scoreFood({ ...premiumDryDog, ingredients: ['Chicken', 'Rice', 'Corn protein meal', 'Whole grain corn', 'Chicken byproduct meal'] }, 'dog')
+assert.ok(cornProtein.flags.some((f) => f.title === 'Plant protein boosters'))
+console.log('corn protein ok')

@@ -67,7 +67,7 @@ const ORGAN = rx('\\b(liver|heart|kidney|gizzard|lung|spleen|tripe)\\b')
 const OMEGA_OIL = rx('\\b(salmon oil|fish oil|menhaden oil|herring oil|krill|flaxseed|algae)\\b')
 
 const PLANT_PROTEIN = rx(
-  '\\b(corn gluten|wheat gluten|pea protein|soy protein|potato protein|rice protein|soybean meal|soy flour)\\b',
+  '\\b(corn gluten|corn protein|wheat gluten|pea protein|soy protein|potato protein|rice protein|soybean meal|soy flour)\\b',
 )
 const FILLER = rx(
   '\\b(corn|maize|wheat|soy|brewers rice|rice hulls|cellulose|middlings|mill run|hulls|sorghum)\\b',

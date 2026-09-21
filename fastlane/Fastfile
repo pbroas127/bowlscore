@@ -31,6 +31,10 @@ platform :ios do
       initial_build_number: 0
     ) + 1
 
+    # expo prebuild writes a literal CFBundleVersion of 1 into Info.plist, so the xcargs override below never reaches
+    # it and Apple rejects every upload after the first. Write the real number into the plist.
+    set_info_plist_value(path: "app/ios/BowlScore/Info.plist", key: "CFBundleVersion", value: build_number.to_s)
+
     # expo prebuild generates the project with automatic signing. CI has no Apple login, so switch to the match profile.
     update_code_signing_settings(
       use_automatic_signing: false,
