@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.expo/
+.vercel/
+.next/
+dist/
+app/ios/
+app/android/
+*.ipa
+*.p8
+*.mobileprovision
+fastlane/report.xml
+fastlane/README.md

@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><title>BowlScore preview</title>
+<style>body{margin:0;background:#2a2622;display:flex;gap:24px;justify-content:center;align-items:center;height:100vh}
+iframe{width:393px;height:852px;border:0;border-radius:44px;background:#FFF8EC;box-shadow:0 0 0 10px #111,0 20px 60px #0008;zoom:var(--z,.8)}</style>
+<script>
+const q=new URLSearchParams(location.search);const paths=(q.get('paths')||'/').split(',');
+document.documentElement.style.setProperty('--z',q.get('z')||'.8');
+addEventListener('DOMContentLoaded',()=>paths.forEach(p=>{const f=document.createElement('iframe');f.src=p;document.body.appendChild(f)}))
+</script>
