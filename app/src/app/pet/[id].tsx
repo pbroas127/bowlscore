@@ -3,6 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router'
 import { useState } from 'react'
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native'
 import { ArrowLeft, Check, PencilSimple } from 'phosphor-react-native'
+import { BagCard } from '@/components/BagCard'
 import { FeedingCard, treatAllowance } from '@/components/FitCard'
 import { sectionTitle } from '@/components/FoodReport'
 import { Mascot, mascotFor } from '@/components/Mascot'
@@ -107,7 +108,7 @@ export default function PetPage() {
         <EmptyState compact pose={cat ? 'kitten-peeking' : 'puppy-sniffing'} title={`No main food for ${pet.name} yet`} body="Scan the food that fills the bowl most days, then set it as the main food." action={<PillButton label="Scan a food" onPress={() => router.push('/scan')} />} />
       )}
 
-      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} /></View> : null}
+      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} /><BagCard pet={pet} scan={main} /></View> : null}
 
       <SwitchPlanCard pet={pet} />
 

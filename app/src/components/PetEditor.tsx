@@ -7,6 +7,8 @@ import { breedsFor, findBreed } from '@/lib/breeds'
 import { ageMonths, bornAtFor, stageFor } from '@/lib/fit'
 import { tap } from '@/lib/haptics'
 import { newId, setState, useStore } from '@/lib/store'
+import { scheduleWeighIn, stopBag } from '@/lib/bag'
+import { cancelNotifications } from '@/lib/notify'
 import { cancelPlan } from '@/lib/switchPlan'
 import type { Pet, Species } from '@/lib/types'
 import { color, gutter, radius, type } from '@/theme'
@@ -50,9 +52,12 @@ export function PetEditor({ draft, setDraft, onRemoved }: { draft?: Pet; setDraf
 
   const save = () => {
     if (!draft?.name.trim()) return
-    const pet = { ...draft, name: draft.name.trim(), breed: draft.breed?.trim() || undefined }
+    const before = pets.find((p) => p.id === draft.id)
+    const weighed = draft.weightLb !== before?.weightLb
+    const pet = { ...draft, name: draft.name.trim(), breed: draft.breed?.trim() || undefined, weighedAt: weighed ? Date.now() : draft.weighedAt }
     setState((s) => ({ pets: isNew ? [...s.pets, pet] : s.pets.map((p) => (p.id === pet.id ? pet : p)), activePetId: isNew ? pet.id : s.activePetId }))
     setDraft(undefined)
+    if (weighed || pet.bornAt !== before?.bornAt) scheduleWeighIn(pet) // the monthly nudge follows the latest weight and age
   }
   const remove = () => {
     if (!draft) return
@@ -60,6 +65,8 @@ export function PetEditor({ draft, setDraft, onRemoved }: { draft?: Pet; setDraf
       { text: 'Cancel', style: 'cancel' },
       { text: 'Remove', style: 'destructive', onPress: async () => {
         await cancelPlan(draft) // a removed pet must not keep sending switch plan reminders
+        await stopBag(draft)
+        if (draft.weighInId) await cancelNotifications([draft.weighInId])
         setState((s) => { const left = s.pets.filter((p) => p.id !== draft.id); return { pets: left, scans: s.scans.filter((x) => x.petId !== draft.id), activePetId: s.activePetId === draft.id ? left[0]?.id : s.activePetId } })
         setDraft(undefined)
         onRemoved?.()

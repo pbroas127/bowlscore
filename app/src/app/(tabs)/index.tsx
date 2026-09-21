@@ -1,18 +1,22 @@
 import { router, useFocusEffect } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
-import { useCallback, useState } from 'react'
+import { useCallback, useState, type ReactNode } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { GearSix, SealWarning } from 'phosphor-react-native'
+import { Bone, BowlFood, Drop, GearSix, Package, Scales, SealWarning } from 'phosphor-react-native'
+import { bagLine } from '@/components/BagCard'
+import { portionLine, treatAllowance } from '@/components/FitCard'
 import { Mascot, mascotFor } from '@/components/Mascot'
+import { PetEditor } from '@/components/PetEditor'
 import { ProductCarousel } from '@/components/ProductCard'
 import { ago, ScanRow } from '@/components/ScanRow'
 import { ScoreRing } from '@/components/ScoreRing'
 import { Card, Chip, PillButton, Screen, TextLink } from '@/components/ui'
 import { refreshCatalog, topRated, useCatalog, whyBetter } from '@/lib/catalog'
 import { tap } from '@/lib/haptics'
+import { feeding, weighInDue } from '@/lib/fit'
 import { checkRecalls, dismissRecall, recallDate } from '@/lib/recalls'
 import { activePet, useStore } from '@/lib/store'
-import type { Recall } from '@/lib/types'
+import type { Pet, Recall, Scan } from '@/lib/types'
 import { color, gradeFor, radius, type, type Grade } from '@/theme'
 
 function RecallBanner({ recall }: { recall: Recall }) {
@@ -33,7 +37,29 @@ function RecallBanner({ recall }: { recall: Recall }) {
   )
 }
 
+// Today at a glance: how much to feed, the treat allowance, water, and how long the bag will last.
+function DailyPlan({ pet, scan, onEdit }: { pet: Pet; scan: Scan; onEdit: () => void }) {
+  const plan = scan.label.isTreat ? undefined : feeding(pet, scan.label)
+  const rows: [ReactNode, string][] = []
+  if (plan) {
+    rows.push([<BowlFood key="i" size={18} weight="bold" color={color.ink2} />, portionLine(pet, scan.label) ?? `About ${plan.kcal} calories a day`])
+    rows.push([<Bone key="i" size={18} weight="bold" color={color.ink2} />, `Treats: ${treatAllowance(pet)?.toLowerCase()}`])
+    rows.push([<Drop key="i" size={18} weight="bold" color={color.ink2} />, `Water: about ${plan.waterOz} oz a day`])
+    const bag = bagLine(pet, scan)
+    if (bag) rows.push([<Package key="i" size={18} weight="bold" color={color.ink2} />, bag])
+  }
+  const nudge = !pet.weightLb ? `Add ${pet.name}'s weight to see portions` : weighInDue(pet) ? `Time to weigh ${pet.name} again` : undefined
+  if (!rows.length && !nudge) return null
+  return (
+    <View style={s.plan}>
+      {rows.map(([icon, text]) => <View key={text} style={s.planRow}>{icon}<Text style={[type.label, { flex: 1 }]}>{text}</Text></View>)}
+      {nudge ? <Pressable hitSlop={8} onPress={() => { tap('select'); onEdit() }} style={s.planRow}><Scales size={18} weight="bold" color={color.ink} /><Text style={[type.label, { flex: 1, textDecorationLine: 'underline' }]}>{nudge}</Text></Pressable> : null}
+    </View>
+  )
+}
+
 export default function Home() {
+  const [draft, setDraft] = useState<Pet>()
   const pet = useStore(activePet)
   const allScans = useStore((s) => s.scans)
   const [filter, setFilter] = useState<Grade | 'All'>('All')
@@ -62,13 +88,16 @@ export default function Home() {
 
       {current ? (
         <Pressable onPress={() => router.push(`/result/${current.id}`)} style={({ pressed }) => pressed && { transform: [{ scale: 0.985 }] }}>
-          <Card style={s.current}>
+          <Card style={s.currentCard}>
+            <View style={s.current}>
             <View style={{ flex: 1, gap: 4 }}>
               <Text style={[type.label, { color: color.ink2 }]}>{pet?.name}'s bowl</Text>
               <Text style={type.h2} numberOfLines={2}>{current.label.productName || 'Current food'}</Text>
               <Text style={type.caption}>Scanned {ago(current.createdAt).toLowerCase()}</Text>
             </View>
             <ScoreRing score={current.result.score} size={92} stroke={9} animate={false} />
+            </View>
+            {pet ? <DailyPlan pet={pet} scan={current} onEdit={() => setDraft(pet)} /> : null}
           </Card>
         </Pressable>
       ) : (
@@ -99,6 +128,7 @@ export default function Home() {
           </Card>
         </>
       ) : null}
+      <PetEditor draft={draft} setDraft={setDraft} />
     </Screen>
   )
 }
@@ -107,7 +137,10 @@ const s = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, marginBottom: 20 },
   who: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   avatar: { width: 52, height: 52, borderRadius: 26, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  current: { flexDirection: 'row', alignItems: 'center', gap: 16, padding: 20, borderRadius: 28 },
+  currentCard: { padding: 20, borderRadius: 28, gap: 16 },
+  current: { flexDirection: 'row', alignItems: 'center', gap: 16 },
+  plan: { gap: 10, paddingTop: 16, borderTopWidth: 1, borderTopColor: color.hairline },
+  planRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   empty: { alignItems: 'center', gap: 8, padding: 24, borderRadius: 28 },
   filters: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 12 },
   sectionRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 32, marginBottom: 12 },

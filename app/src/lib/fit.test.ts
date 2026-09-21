@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // Run with: node --experimental-strip-types src/lib/fit.test.ts
 import assert from 'node:assert/strict'
-import { ageMonths, bornAtFor, dailyKcal, feeding, fitFor, fraction, isLargeBreedPuppy, sizeClass, stageFor, suitsPet } from './fit.ts'
+import { ageMonths, bagStatus, bornAtFor, dailyKcal, gramsPerDay, weighInDue, feeding, fitFor, fraction, isLargeBreedPuppy, sizeClass, stageFor, suitsPet } from './fit.ts'
 import type { LabelData, Pet } from './types.ts'
 
 const NOW = Date.UTC(2026, 8, 21)
@@ -54,5 +54,19 @@ assert.equal(feeding(bear, food({ isTreat: true, calories: { kcalPerUnit: 40, un
 assert.equal(feeding(pet({}), food(), NOW), undefined) // no weight, no guide
 assert.equal(dailyKcal(pet({ species: 'cat', weightLb: 10, bornAt: monthsAgo(48) }), NOW), 260) // 10 lb adult cat: about 260 kcal
 assert.deepEqual([fraction(2.25), fraction(0.5), fraction(3), fraction(0)], ['2 1/4', '1/2', '3', '0'])
+
+// Bag tracker: 530 g a day out of a 30 lb (13,608 g) bag lasts 25 days; a week in, 18 are left.
+const kibble = food({ calories: { kcalPerCup: 380, kcalPerKg: 3600 } })
+assert.equal(gramsPerDay(bear, kibble, NOW), 530)
+assert.equal(gramsPerDay(bear, food({ calories: { kcalPerCup: 380 } }), NOW), 525) // 5 cups at about 105 g
+assert.equal(gramsPerDay(bear, food({ isTreat: true, calories: { kcalPerKg: 3000 } }), NOW), undefined)
+assert.deepEqual(bagStatus({ lb: 30, openedAt: NOW - 7 * 86_400_000 }, 530, NOW), { total: 25, left: 18, emptyAt: NOW + 18 * 86_400_000 })
+assert.equal(bagStatus({ lb: 4, openedAt: NOW - 90 * 86_400_000 }, 530, NOW).left, 0)
+
+// Weigh in: puppies monthly, adults never.
+assert.ok(weighInDue(bear, NOW)) // never weighed in
+assert.ok(!weighInDue({ ...bear, weighedAt: NOW - 10 * 86_400_000 }, NOW))
+assert.ok(weighInDue({ ...bear, weighedAt: NOW - 31 * 86_400_000 }, NOW))
+assert.ok(!weighInDue(grown, NOW))
 
 console.log('fit tests passed')

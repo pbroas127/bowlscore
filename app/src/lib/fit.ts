@@ -145,3 +145,21 @@ export function fraction(n: number): string {
   const part = ['', '1/4', '1/2', '3/4'][Math.round((n - whole) * 4)] ?? ''
   return [whole || (part ? '' : '0'), part].filter(Boolean).join(' ')
 }
+
+// ---- bag tracker and weigh in ----
+// ponytail: a cup of kibble weighs about 105 g (95 to 120 across brands). Only used when the label gave calories per cup
+// and not per kg. Ceiling: the days left can be off by a tenth. Upgrade path: ask for the cup weight printed on the bag.
+export const gramsPerDay = (pet: Pet, label: LabelData, now = Date.now()) => {
+  const plan = label.isTreat ? undefined : feeding(pet, label, now)
+  return plan?.grams ?? (plan?.cups ? Math.round(plan.cups * 105) : undefined)
+}
+
+const DAY = 86_400_000
+export function bagStatus(bag: { lb: number; openedAt: number }, grams: number, now = Date.now()) {
+  const total = Math.max(1, Math.floor((bag.lb * 453.6) / grams))
+  const left = Math.max(0, total - Math.floor((now - bag.openedAt) / DAY))
+  return { total, left, emptyAt: bag.openedAt + total * DAY }
+}
+
+// Growing pets change portions fast, so their weight goes stale after a month.
+export const weighInDue = (pet: Pet, now = Date.now()) => !!pet.weightLb && stageFor(pet, now) === 'growth' && now - (pet.weighedAt ?? 0) > 30 * DAY

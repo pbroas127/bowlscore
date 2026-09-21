@@ -41,6 +41,9 @@ export interface Pet {
   bornAt?: number // ms timestamp, estimated from the age they entered
   weightLb?: number
   meals?: number // per day, default 2
+  weighedAt?: number // when the weight was last entered; growing pets get a monthly nudge
+  weighInId?: string // the scheduled weigh in reminder
+  bag?: Bag
   foodType?: string
   concerns: string[]
   allergies: string[]
@@ -48,6 +51,9 @@ export interface Pet {
   treatScanIds: string[]
   switchPlan?: SwitchPlan
 }
+
+// The open bag of the main food. Days left are worked out from the feeding guide, see bagStatus in lib/fit.ts.
+export interface Bag { lb: number; openedAt: number; scanId: string; notificationIds: string[] }
 
 export interface SwitchPlan { productId: string; name: string; startedAt: number; notificationIds: string[] }
 

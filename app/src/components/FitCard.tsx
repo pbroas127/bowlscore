@@ -59,6 +59,18 @@ function Row({ icon, children }: { icon: ReactNode; children: string }) {
   return <View style={s.row}>{icon}<Text style={[type.label, s.flex]}>{children}</Text></View>
 }
 
+// The portion in one line, for the daily plan on Home: "2 meals of 2 1/2 cups". Undefined until the label gave calories.
+export function portionLine(pet: Pet, label: LabelData): string | undefined {
+  const plan = label.isTreat ? undefined : feeding(pet, label)
+  if (!plan) return undefined
+  const meals = `${plan.meals} ${plan.meals === 1 ? 'meal' : 'meals'}`
+  const each = (n: number) => Math.round((n / plan.meals) * 4) / 4
+  if (plan.cups) return each(plan.cups) ? `${meals} of ${count(each(plan.cups), 'cup')}` : `${count(plan.cups, 'cup')} a day`
+  if (plan.grams) return `${meals} of ${num(Math.round(plan.grams / plan.meals))} g`
+  if (plan.units) return each(plan.units) ? `${meals} of ${count(each(plan.units), plan.unit || 'serving')}` : undefined
+  return undefined
+}
+
 export function FeedingCard({ pet, label, onEdit }: { pet: Pet; label: LabelData; onEdit: () => void }) {
   const plan = feeding(pet, label)
   if (!plan) return <Card style={s.ask}><ActionRow last label={`Add ${pet.name}'s weight to see how much to feed`} icon={<Scales size={22} weight="bold" color={color.ink} />} onPress={onEdit} /></Card>
