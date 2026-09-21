@@ -49,7 +49,9 @@ function Screen({ progress, index, count, children }: { progress: MotionValue<nu
   const start = index / count
   const end = (index + 1) / count
   const fade = 0.04
-  const opacity = useTransform(progress, [start - fade, start + fade, end - fade, end + fade], [index === 0 ? 1 : 0, 1, 1, index === count - 1 ? 1 : 0])
+  // Offsets must stay inside 0 to 1: the browser runs this as a scroll timeline and throws on anything outside.
+  const clamp = (n: number) => Math.min(1, Math.max(0, n))
+  const opacity = useTransform(progress, [start - fade, start + fade, end - fade, end + fade].map(clamp), [index === 0 ? 1 : 0, 1, 1, index === count - 1 ? 1 : 0])
   return (
     <m.div className="absolute inset-0 bg-cream" style={{ opacity }}>
       {children}

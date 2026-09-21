@@ -259,8 +259,9 @@ h3 {
     .story-pin {
       display: flex;
     }
+    /* important: the crop also carries the Tailwind flex utility, which otherwise wins over this rule. */
     .story-crop {
-      display: none;
+      display: none !important;
     }
     .story-beat {
       min-height: 100svh;
