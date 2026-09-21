@@ -15,7 +15,7 @@ Updated by Claude on 2026-09-21, afternoon, after the big catalog build.
 1. Sandbox tester: App Store Connect, Users and Access, Sandbox, add a tester (it needs a password, so it has to be you). On the iPhone: Settings, Developer, Sandbox Apple Account. TestFlight purchases are always free.
 2. Amazon Associates: tax info and payment method. You need 3 qualifying sales within 180 days.
 3. App Store Connect, App Privacy: press Publish (answers are already filled in). App Review contact info (your name, phone, email) on the version page.
-4. Google Cloud: set a budget alert on the Gemini project so the $10 cannot surprise you.
+4. Gemini money: on October 1, open AI Studio, Spend, "Set spend cap" and set $5 a month. It could not be set in September because the month already showed $16.41 (a catalog build script drained the prepay; that script is now locked behind a `--paid` flag) and a lower cap would have blocked the key. Keep auto reload OFF: the prepaid balance is the hard limit.
 5. Do NOT submit for App Review until you decide to: Wick's 4.3(a) rejection put an extended review warning on the account. Submission is your click.
 
 ## Still open

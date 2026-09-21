@@ -2732,5 +2732,617 @@
     "sourceUrl": "https://www.tractorsupply.com/tsc/product/milk-bone-original-biscuits-medium-dog-treats-4-lb",
     "image": null,
     "amazonQuery": "Milk-Bone Original Dog Biscuits dog treats"
+  },
+  {
+    "id": "beggin-strips-original-with-bacon-dog",
+    "brand": "Beggin'",
+    "name": "Strips Original with Bacon",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "adult",
+    "priceTier": 1,
+    "label": {
+      "productName": "Strips Original with Bacon",
+      "brand": "Beggin'",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Pork",
+        "Barley",
+        "Rice",
+        "Ground Wheat",
+        "Soybean Meal",
+        "Oat Meal",
+        "Sugar",
+        "Ground Yellow Corn",
+        "Corn Protein Meal",
+        "Wheat Flour",
+        "Glycerin",
+        "Water",
+        "Soy Flour",
+        "Bacon",
+        "Soy Protein Concentrate",
+        "Wheat Gluten",
+        "Salt",
+        "Bacon Fat (Preserved With BHA And Citric Acid)",
+        "Natural Flavor",
+        "Phosphoric Acid",
+        "Sorbic Acid (A Preservative)",
+        "Natural Smoke Flavor",
+        "Calcium Propionate (A Preservative)",
+        "Added Color",
+        "Malted Barley Flour"
+      ],
+      "analysis": {
+        "proteinMin": 15,
+        "fatMin": 3.5,
+        "fiberMax": 3.5,
+        "moistureMax": 27
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.petsmart.com/dog/treats/soft-and-chewy-treats/purina-beggin-strips-all-life-stage-dog-treats---original-with-bacon-flavor-3675.html",
+    "image": null,
+    "amazonQuery": "Beggin' Strips Original with Bacon dog treats"
+  },
+  {
+    "id": "pup-peroni-original-beef-flavor-dog",
+    "brand": "Pup-Peroni",
+    "name": "Original Beef Flavor",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "adult",
+    "priceTier": 1,
+    "label": {
+      "productName": "Original Beef Flavor",
+      "brand": "Pup-Peroni",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Beef",
+        "Soy Grits",
+        "Beef Lung",
+        "Sugar",
+        "Beef Liver",
+        "Vegetable Glycerin",
+        "Salt",
+        "Propylene Glycol",
+        "Potassium Sorbate (Used As A Preservative)",
+        "Added Color",
+        "Natural Smoke Flavor",
+        "Citric Acid (Used As A Preservative)",
+        "Bha (Used As A Preservative)"
+      ],
+      "analysis": {
+        "proteinMin": 24,
+        "fatMin": 8,
+        "fiberMax": 2,
+        "moistureMax": 24
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.pupperoni.com/soft-dog-treats/original-beef",
+    "image": "/products/pup-peroni-original-beef-flavor-dog.webp",
+    "amazonQuery": "Pup-Peroni Original Beef Flavor dog treats"
+  },
+  {
+    "id": "greenies-original-regular-dental-dog-treats-dog",
+    "brand": "Greenies",
+    "name": "Original Regular Dental Dog Treats",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "adult",
+    "priceTier": 2,
+    "label": {
+      "productName": "Original Regular Dental Dog Treats",
+      "brand": "Greenies",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Wheat Flour",
+        "Glycerin",
+        "Wheat Gluten",
+        "Gelatin",
+        "Water",
+        "Powdered Cellulose",
+        "Lecithin",
+        "Natural Poultry Flavor",
+        "Dicalcium Phosphate",
+        "Calcium Carbonate",
+        "Potassium Chloride",
+        "Choline Chloride",
+        "Minerals (Magnesium Amino Acid Chelate, Zinc Amino Acid Chelate, Iron Amino Acid Chelate, Copper Amino Acid Chelate, Manganese Amino Acid Chelate, Sodium Selenite, Potassium Iodide)",
+        "Fruit Juice Color",
+        "Vitamins (Vitamin E Supplement, Vitamin B12 Supplement, D-Calcium Pantothenate [Vitamin B5], Niacin Supplement, Riboflavin Supplement [Vitamin B2], Vitamin A Supplement, Vitamin D3 Supplement, Biotin, Thiamine Mononitrate [Vitamin B1], Pyridoxine Hydrochloride [Vitamin B6], Folic Acid)",
+        "Turmeric Color"
+      ],
+      "analysis": {
+        "proteinMin": 28,
+        "fatMin": 5.5,
+        "fiberMax": 6,
+        "moistureMax": 15
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.petsmart.com/dog/treats/dental-treats-and-chews/greeniesandtrade-adult-regular-dog-dental-treats---natural-oral-health-original-4750.html",
+    "image": null,
+    "amazonQuery": "Greenies Original Regular Dental Dog Treats dog treats"
+  },
+  {
+    "id": "zukes-mini-naturals-chicken-recipe-dog",
+    "brand": "Zuke's",
+    "name": "Mini Naturals Chicken Recipe",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 2,
+    "label": {
+      "productName": "Mini Naturals Chicken Recipe",
+      "brand": "Zuke's",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Chicken",
+        "rice",
+        "oats",
+        "glycerin",
+        "potatoes",
+        "cane sugar",
+        "malted barley flour",
+        "potato protein",
+        "salt",
+        "dried cultured whey",
+        "citric acid",
+        "natural flavor",
+        "cherries",
+        "vinegar",
+        "turmeric spice",
+        "Vitamin E supplement",
+        "zinc proteinate",
+        "mixed tocopherols for freshness"
+      ],
+      "analysis": {
+        "proteinMin": 9,
+        "fatMin": 3,
+        "fiberMax": 2,
+        "moistureMax": 30
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.zukes.com/dog-treats-and-chews/mini-naturals/chicken-recipe",
+    "image": null,
+    "amazonQuery": "Zuke's Mini Naturals Chicken Recipe dog treats"
+  },
+  {
+    "id": "temptations-classic-tasty-chicken-flavor-cat",
+    "brand": "Temptations",
+    "name": "Classic Tasty Chicken Flavor",
+    "species": "cat",
+    "form": "treat",
+    "lifeStage": "adult",
+    "priceTier": 1,
+    "label": {
+      "productName": "Classic Tasty Chicken Flavor",
+      "brand": "Temptations",
+      "foodForm": "dry",
+      "isTreat": true,
+      "ingredients": [
+        "Chicken By-Product Meal",
+        "Ground Corn",
+        "Animal Fat (preserved with Mixed Tocopherols)",
+        "Wheat Flour",
+        "Brewers Rice",
+        "Dried Meat By-Products",
+        "Natural Flavors",
+        "Brewers Dried Yeast",
+        "Potassium Chloride",
+        "Choline Chloride",
+        "Salt",
+        "DL-Methionine",
+        "Taurine",
+        "Calcium Carbonate",
+        "Vitamin E Supplement",
+        "Zinc Sulfate",
+        "Ferrous Sulfate",
+        "Dried Cheese",
+        "Mixed Tocopherols (preservative)",
+        "Copper Sulfate",
+        "Vitamin A Supplement",
+        "Citric Acid (preservative)",
+        "Niacin Supplement",
+        "Vitamin B12 Supplement",
+        "Riboflavin Supplement",
+        "Manganese Sulfate",
+        "Thiamine Mononitrate",
+        "D-Calcium Pantothenate",
+        "Pyridoxine Hydrochloride (Vitamin B6)",
+        "Vitamin D3 Supplement",
+        "Biotin",
+        "Potassium Iodide",
+        "Folic Acid",
+        "Rosemary Extract"
+      ],
+      "analysis": {
+        "proteinMin": 28,
+        "fatMin": 21,
+        "fiberMax": 4.5,
+        "moistureMax": 10
+      },
+      "aafco": "complete"
+    },
+    "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/treats/temptations-classic-adult-cat-treats---soft-and-crunchy-tasty-chicken-36220.html",
+    "image": null,
+    "amazonQuery": "Temptations Classic Tasty Chicken Flavor cat treats"
+  },
+  {
+    "id": "greenies-feline-dental-treats-oven-roasted-chicken-flavor-cat",
+    "brand": "Greenies",
+    "name": "Feline Dental Treats Oven Roasted Chicken Flavor",
+    "species": "cat",
+    "form": "treat",
+    "lifeStage": "adult",
+    "priceTier": 2,
+    "label": {
+      "productName": "Feline Dental Treats Oven Roasted Chicken Flavor",
+      "brand": "Greenies",
+      "foodForm": "dry",
+      "isTreat": true,
+      "ingredients": [
+        "Chicken Meal",
+        "Ground Wheat",
+        "Brewers Rice",
+        "Corn Protein Meal",
+        "Poultry Fat (preserved with Mixed Tocopherols)",
+        "Oat Fiber",
+        "Natural Flavors",
+        "Ground Flaxseed",
+        "Brewers Dried Yeast",
+        "Potassium Chloride",
+        "Salt",
+        "Choline Chloride",
+        "Citric Acid (preservative)",
+        "Fruit Juice Color",
+        "DL-Methionine",
+        "Taurine",
+        "Calcium Carbonate",
+        "Zinc Sulfate",
+        "Vitamin E Supplement",
+        "Turmeric Color",
+        "Mixed Tocopherols (preservative)",
+        "Ferrous Sulfate",
+        "Copper Sulfate",
+        "Vitamin A Supplement",
+        "Niacin Supplement",
+        "Vitamin B12 Supplement",
+        "Riboflavin Supplement (Vitamin B2)",
+        "Manganese Sulfate",
+        "Thiamine Mononitrate (Vitamin B1)",
+        "Calcium Pantothenate (Vitamin B5)",
+        "Pyridoxine Hydrochloride (Vitamin B6)",
+        "Vitamin D3 Supplement",
+        "Biotin",
+        "Potassium Iodide",
+        "Folic Acid",
+        "Rosemary Extract"
+      ],
+      "analysis": {
+        "proteinMin": 27,
+        "fatMin": 12,
+        "fiberMax": 8,
+        "moistureMax": 10
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/treats/greenies-feline-greenies-adult-cat-dental-treats---dental-care-natural-chicken-58852.html",
+    "image": null,
+    "amazonQuery": "Greenies Feline Dental Treats Oven Roasted Chicken Flavor cat treats"
+  },
+  {
+    "id": "inaba-churu-tuna-recipe-cat",
+    "brand": "Inaba",
+    "name": "Churu Tuna Recipe",
+    "species": "cat",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 2,
+    "label": {
+      "productName": "Churu Tuna Recipe",
+      "brand": "Inaba",
+      "foodForm": "wet",
+      "isTreat": true,
+      "ingredients": [
+        "Water",
+        "Tuna",
+        "Tapioca Starch",
+        "Natural Flavors",
+        "Guar Gum",
+        "Natural Tuna Flavor",
+        "Vitamin E Supplement",
+        "Taurine",
+        "Green Tea Extract"
+      ],
+      "analysis": {
+        "proteinMin": 7,
+        "fatMin": 0.2,
+        "fiberMax": 0.3,
+        "moistureMax": 91
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://inabafoods.com/products/tuna-recipe-4pk/",
+    "image": null,
+    "amazonQuery": "Inaba Churu Tuna Recipe cat treats"
+  },
+  {
+    "id": "wellness-soft-puppy-bites-lamb-and-salmon-recipe-dog",
+    "brand": "Wellness",
+    "name": "Soft Puppy Bites Lamb & Salmon Recipe",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "growth",
+    "priceTier": 2,
+    "label": {
+      "productName": "Soft Puppy Bites Lamb & Salmon Recipe",
+      "brand": "Wellness",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Lamb",
+        "Ground Potatoes",
+        "Salmon",
+        "Vegetable Glycerin",
+        "Guar Gum",
+        "Carrots",
+        "Cane Molasses",
+        "Sunflower Lecithin",
+        "Salt",
+        "Natural Smoke Flavor",
+        "Blueberries",
+        "Flaxseed",
+        "Phosphoric Acid",
+        "Sweet Potatoes",
+        "Apples",
+        "Sorbic Acid (a preservative)",
+        "Mixed Tocopherols (added to preserve freshness)",
+        "Rosemary Extract",
+        "Green Tea Extract",
+        "Spearmint Extract"
+      ],
+      "analysis": {
+        "proteinMin": 12,
+        "fatMin": 16,
+        "fiberMax": 2,
+        "moistureMax": 30
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.wellnesspetfood.com/product-catalog/wellness-soft-puppy-bites-lamb-salmon/",
+    "image": "/products/wellness-soft-puppy-bites-lamb-and-salmon-recipe-dog.webp",
+    "amazonQuery": "Wellness Soft Puppy Bites Lamb & Salmon Recipe dog treats"
+  },
+  {
+    "id": "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog",
+    "brand": "Old Mother Hubbard",
+    "name": "Classic P-Nuttier Mini Biscuits",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "adult",
+    "priceTier": 2,
+    "label": {
+      "productName": "Classic P-Nuttier Mini Biscuits",
+      "brand": "Old Mother Hubbard",
+      "foodForm": "dry",
+      "isTreat": true,
+      "ingredients": [
+        "Whole Wheat Flour",
+        "Oatmeal",
+        "Wheat Bran",
+        "Chicken Fat",
+        "Crunchy Peanut Butter",
+        "Apples",
+        "Carrots",
+        "Cane Molasses",
+        "Eggs",
+        "Salt",
+        "Natural Peanut Flavor",
+        "Mixed Tocopherols added to preserve freshness",
+        "Rosemary Extract",
+        "Green Tea Extract",
+        "Spearmint Extract"
+      ],
+      "analysis": {
+        "proteinMin": 12,
+        "fatMin": 7,
+        "fiberMax": 5.5,
+        "moistureMax": 11
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.petsmart.com/dog/treats/biscuits-cookies-and-bakery-treats/old-mother-hubbard-p-nuttier-mini-biscuit-dog-treats---natural-4670.html",
+    "image": null,
+    "amazonQuery": "Old Mother Hubbard Classic P-Nuttier Mini Biscuits dog treats"
+  },
+  {
+    "id": "blue-buffalo-nudges-grillers-steak-dog",
+    "brand": "Blue Buffalo",
+    "name": "Nudges Grillers Steak",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 2,
+    "label": {
+      "productName": "Nudges Grillers Steak",
+      "brand": "Blue Buffalo",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Beef",
+        "Chicken",
+        "Rice",
+        "Vegetable Glycerin",
+        "Sugar",
+        "Dried Cultured Whey",
+        "Natural Flavor",
+        "Lactic Acid",
+        "Salt",
+        "Natural Smoke Flavor",
+        "preserved with Mixed Tocopherols",
+        "Paprika Oleoresin (for color)",
+        "Oil of Rosemary"
+      ],
+      "analysis": {
+        "proteinMin": 13,
+        "fatMin": 13,
+        "fiberMax": 3,
+        "moistureMax": 27
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.petsmart.com/dog/treats/jerky-treats/blue-buffalo-nudges-grillers-all-life-stages-dog-treats---steak-94615.html",
+    "image": null,
+    "amazonQuery": "Blue Buffalo Nudges Grillers Steak dog treats"
+  },
+  {
+    "id": "full-moon-chicken-jerky-dog",
+    "brand": "Full Moon",
+    "name": "Chicken Jerky",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 3,
+    "label": {
+      "productName": "Chicken Jerky",
+      "brand": "Full Moon",
+      "foodForm": "semi_moist",
+      "isTreat": true,
+      "ingredients": [
+        "Chicken",
+        "Organic Cane Sugar",
+        "Vinegar",
+        "Rosemary Extract"
+      ],
+      "analysis": {
+        "proteinMin": 54,
+        "fatMin": 3,
+        "fiberMax": 0.7,
+        "moistureMax": 22
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.fullmoonpet.com/products/chicken-jerky",
+    "image": "/products/full-moon-chicken-jerky-dog.webp",
+    "amazonQuery": "Full Moon Chicken Jerky dog treats"
+  },
+  {
+    "id": "stewart-freeze-dried-beef-liver-dog",
+    "brand": "Stewart",
+    "name": "Freeze Dried Beef Liver",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 3,
+    "label": {
+      "productName": "Freeze Dried Beef Liver",
+      "brand": "Stewart",
+      "foodForm": "freeze_dried",
+      "isTreat": true,
+      "ingredients": [
+        "Beef Liver"
+      ],
+      "analysis": {
+        "proteinMin": 50,
+        "fatMin": 5,
+        "fiberMax": 3,
+        "moistureMax": 7.5
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://stewartpet.com/product/single-ingredient/",
+    "image": null,
+    "amazonQuery": "Stewart Freeze Dried Beef Liver dog treats"
+  },
+  {
+    "id": "purebites-chicken-breast-freeze-dried-dog",
+    "brand": "PureBites",
+    "name": "Chicken Breast Freeze Dried",
+    "species": "dog",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 3,
+    "label": {
+      "productName": "Chicken Breast Freeze Dried",
+      "brand": "PureBites",
+      "foodForm": "freeze_dried",
+      "isTreat": true,
+      "ingredients": [
+        "Chicken Breast"
+      ],
+      "analysis": {
+        "proteinMin": 74,
+        "fatMin": 3,
+        "fiberMax": 1,
+        "moistureMax": 5
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://purebites.com/products/chicken-freeze-dried-dog-treats",
+    "image": "/products/purebites-chicken-breast-freeze-dried-dog.webp",
+    "amazonQuery": "PureBites Chicken Breast Freeze Dried dog treats"
+  },
+  {
+    "id": "purebites-chicken-breast-freeze-dried-cat",
+    "brand": "PureBites",
+    "name": "Chicken Breast Freeze Dried",
+    "species": "cat",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 3,
+    "label": {
+      "productName": "Chicken Breast Freeze Dried",
+      "brand": "PureBites",
+      "foodForm": "freeze_dried",
+      "isTreat": true,
+      "ingredients": [
+        "Chicken Breast"
+      ],
+      "analysis": {
+        "proteinMin": 74,
+        "fatMin": 3,
+        "fiberMax": 1,
+        "moistureMax": 5
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://purebites.com/products/chicken-freeze-dried-cat-treats",
+    "image": "/products/purebites-chicken-breast-freeze-dried-cat.webp",
+    "amazonQuery": "PureBites Chicken Breast Freeze Dried cat treats"
+  },
+  {
+    "id": "vital-essentials-freeze-dried-minnows-cat",
+    "brand": "Vital Essentials",
+    "name": "Freeze Dried Minnows",
+    "species": "cat",
+    "form": "treat",
+    "lifeStage": "all",
+    "priceTier": 3,
+    "label": {
+      "productName": "Freeze Dried Minnows",
+      "brand": "Vital Essentials",
+      "foodForm": "freeze_dried",
+      "isTreat": true,
+      "ingredients": [
+        "Minnow"
+      ],
+      "analysis": {
+        "proteinMin": 60,
+        "fatMin": 5,
+        "fiberMax": 3,
+        "moistureMax": 8
+      },
+      "aafco": "not_found"
+    },
+    "sourceUrl": "https://www.petfood.express/products/vital-essentials-minnows-freeze-dried-raw-cat-treats.html",
+    "image": "/products/vital-essentials-freeze-dried-minnows-cat.webp",
+    "amazonQuery": "Vital Essentials Freeze Dried Minnows cat treats"
   }
 ]

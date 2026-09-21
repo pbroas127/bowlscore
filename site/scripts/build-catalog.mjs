@@ -108,6 +108,14 @@ const SEEDS = [
   ['Temptations', 'Classic Tasty Chicken Flavor', 'cat', 'treat', 'adult', 1],
   ['Greenies', 'Feline Dental Treats Oven Roasted Chicken Flavor', 'cat', 'treat', 'adult', 2],
   ['Inaba', 'Churu Tuna Recipe', 'cat', 'treat', 'all', 2],
+  ['Wellness', 'Soft Puppy Bites Lamb & Salmon Recipe', 'dog', 'treat', 'growth', 2],
+  ['Old Mother Hubbard', 'Classic P-Nuttier Mini Biscuits', 'dog', 'treat', 'adult', 2],
+  ['Blue Buffalo', 'Nudges Grillers Steak', 'dog', 'treat', 'all', 2],
+  ['Full Moon', 'Chicken Jerky', 'dog', 'treat', 'all', 3],
+  ['Stewart', 'Freeze Dried Beef Liver', 'dog', 'treat', 'all', 3],
+  ['PureBites', 'Chicken Breast Freeze Dried', 'dog', 'treat', 'all', 3],
+  ['PureBites', 'Chicken Breast Freeze Dried', 'cat', 'treat', 'all', 3],
+  ['Vital Essentials', 'Freeze Dried Minnows', 'cat', 'treat', 'all', 3],
 ].map(([brand, name, species, form, lifeStage, priceTier]) => ({ brand, name, species, form, lifeStage, priceTier }))
 
 const slug = (s) => s.toLowerCase().replace(/&/g, ' and ').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -137,7 +145,7 @@ export function problems(e) {
   if (!e.label.ingredients[0]?.trim()) p.push('first ingredient empty')
   if (e.form !== 'treat' && !complete) p.push('complete food without a complete and balanced statement')
   if (e.form !== 'treat' && n < 8) p.push(`only ${n} ingredients`)
-  if (e.form === 'treat' && n < 3) p.push(`only ${n} ingredients`)
+  // No minimum for treats: single ingredient treats (freeze dried liver, chicken breast, minnows) are real products.
   if (n > 110) p.push(`${n} ingredients`)
   if (e.label.ingredients.some((i) => depth(i) !== 0)) p.push('unbalanced brackets')
   if (new Set(e.label.ingredients.map((i) => i.toLowerCase())).size < n - 1) p.push('repeated ingredients')

@@ -60,7 +60,7 @@ export interface ScoreResult {
 }
 
 const ANIMALS =
-  'chicken|turkey|duck|goose|quail|beef|bison|buffalo|lamb|mutton|goat|pork|venison|elk|rabbit|kangaroo|boar|salmon|tuna|whitefish|herring|menhaden|mackerel|sardine|anchov|trout|cod|pollock|haddock|flounder|catfish|tilapia|egg'
+  'chicken|turkey|duck|goose|quail|beef|bison|buffalo|lamb|mutton|goat|pork|venison|elk|rabbit|kangaroo|boar|salmon|tuna|whitefish|herring|menhaden|mackerel|sardine|anchov|trout|cod|pollock|haddock|flounder|catfish|tilapia|minnow|smelt|capelin|shrimp|crab|mussel|clam|egg'
 const rx = (s: string) => new RegExp(s, 'i')
 
 const NOT_A_PROTEIN = rx('\\b(fat|oil|flavor|flavour|broth|stock|digest|cartilage|bone broth)\\b')
