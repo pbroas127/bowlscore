@@ -1,20 +1,23 @@
 // App state: one object, persisted to AsyncStorage on every change. Small enough that a library would be overhead.
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useSyncExternalStore } from 'react'
+import { PREVIEW } from './config'
+import { SAMPLE_PET } from './sample'
 import type { Pet, Recall, Scan } from './types'
 
 export interface Quiz {
   step: number
   petType?: 'dog' | 'cat' | 'both'
   name?: string
+  breed?: string
+  bornAt?: number
+  weightLb?: number
   stage?: Pet['stage']
   size?: string
   foodType?: string
   heardFrom?: string
   concerns: string[]
   allergies: string[]
-  confidence?: number
-  goal?: string
 }
 
 export interface AppState {
@@ -35,7 +38,7 @@ export interface AppState {
 const KEY = 'bowlscore.state.v1'
 const initial: AppState = { ready: false, onboarded: false, mockPro: false, coachSeen: false, ratingAsks: 0, quiz: { step: 0, concerns: [], allergies: [] }, pets: [], scans: [], recalls: [], recallsSeen: [] }
 
-// Pets saved by an older build (or restored from an older backup) lack the newer fields.
+// Pets saved by an older build (or restored from an older backup) lack the newer fields. Breed, age, weight and meals are optional everywhere, so only the list needs a default.
 export const withDefaults = (pets: Pet[]): Pet[] => pets.map((p) => ({ ...p, treatScanIds: p.treatScanIds ?? [] }))
 
 let state = initial
@@ -80,13 +83,17 @@ export const activePet = (s: AppState) => s.pets.find((p) => p.id === s.activePe
 export const updatePet = (id: string | undefined, patch: (p: Pet) => Pet) => setState((s) => ({ pets: s.pets.map((p) => (p.id === id ? patch(p) : p)) }))
 export const newId = () => Math.random().toString(36).slice(2) + Date.now().toString(36)
 
-// Turns the quiz answers into the first pet profile.
+// The quiz answers as a pet profile. Onboarding also reads it to show the life stage that the age works out to.
+export function petFromQuiz(q: Quiz): Pet {
+  const species = q.petType === 'cat' ? 'cat' : 'dog'
+  return { id: newId(), name: q.name?.trim() || 'My pet', species, breed: q.breed?.trim() || undefined, bornAt: q.bornAt, weightLb: q.weightLb, stage: q.stage ?? 'adult', size: q.size, foodType: q.foodType, concerns: q.concerns, allergies: q.allergies, treatScanIds: [] }
+}
+
+// "Both" starts with one profile; the Pets tab invites adding the second.
 export function finishQuiz() {
-  const q = state.quiz
-  const base = { stage: q.stage ?? 'adult', size: q.size, foodType: q.foodType, concerns: q.concerns, allergies: q.allergies } as const
-  const name = q.name?.trim() || 'My pet'
-  // "Both" starts with one profile; the Pets tab invites adding the second.
-  const pets: Pet[] = [{ id: newId(), name, species: q.petType === 'cat' ? 'cat' : 'dog', treatScanIds: [], ...base }]
+  const pet = petFromQuiz(state.quiz)
+  // A design preview that skipped breed, age and weight still shows the fit and feeding cards filled in.
+  const pets = [PREVIEW && pet.species === 'dog' && !pet.breed && !pet.bornAt && !pet.weightLb ? { ...pet, ...SAMPLE_PET } : pet]
   setState({ pets, activePetId: pets[0].id })
 }
 

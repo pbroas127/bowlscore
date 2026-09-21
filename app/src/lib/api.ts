@@ -28,16 +28,26 @@ export async function scanFood(input: { species: Species; lifeStage: LifeStage; 
     const pick = Math.random() < 0.5 ? SAMPLE_POOR : SAMPLE_GOOD
     return { id: newId(), source: input.barcode ? 'barcode' : 'label', ...pick }
   }
+  return post(input, 58_000)
+}
+
+// Scores a label that was already read, for when the person corrects food against treat. No photo, no AI call, so it is instant.
+export async function rescoreLabel(input: { species: Species; lifeStage: LifeStage; label: LabelData }): Promise<ScanResponse> {
+  if (PREVIEW) return { id: newId(), source: 'label', label: input.label, result: (input.label.productName === SAMPLE_POOR.label.productName ? SAMPLE_POOR : SAMPLE_GOOD).result }
+  return post(input, 15_000)
+}
+
+async function post(body: object, ms: number): Promise<ScanResponse> {
   let res: Response
   // React Native fetch never times out on its own, so a stuck request would leave the scanner spinning forever.
   const abort = new AbortController()
-  const timer = setTimeout(() => abort.abort(), 58_000)
+  const timer = setTimeout(() => abort.abort(), ms)
   try {
     const token = await idToken()
     res = await fetch(`${API_URL}/api/scan`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-      body: JSON.stringify(input),
+      body: JSON.stringify(body),
       signal: abort.signal,
     })
   } catch {

@@ -4,14 +4,18 @@ import { useEffect, useRef, useState } from 'react'
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft, ArrowsLeftRight, Check, Export, ShoppingCart } from 'phosphor-react-native'
+import { FeedingCard, FitCard } from '@/components/FitCard'
 import { FoodHero, FoodReport, Notice, sectionTitle } from '@/components/FoodReport'
+import { PetEditor } from '@/components/PetEditor'
 import { ProductCarousel } from '@/components/ProductCard'
 import { ShareCard, shareScoreCard } from '@/components/ShareCard'
 import { ActionRow, Card, PillButton, TextLink } from '@/components/ui'
 import { formOf, recommend, useCatalog, whyBetter } from '@/lib/catalog'
+import { stageFor } from '@/lib/fit'
 import { SITE } from '@/lib/links'
 import { checkRecalls } from '@/lib/recalls'
 import { getState, setState, updatePet, useStore } from '@/lib/store'
+import type { Pet } from '@/lib/types'
 import { color, gutter, shadow, type } from '@/theme'
 
 export default function Result() {
@@ -21,6 +25,7 @@ export default function Result() {
   const catalog = useCatalog()
   const [ringDone, setRingDone] = useState(!fresh)
   const card = useRef<View>(null)
+  const [draft, setDraft] = useState<Pet>()
 
   // Ask for a rating only after someone has seen real value: their third scan, and a good one.
   useEffect(() => {
@@ -38,7 +43,7 @@ export default function Result() {
   const isCurrent = pet?.currentScanId === scan.id
   const isTreat = Boolean(pet?.treatScanIds.includes(scan.id))
   const own = catalog?.products.find((p) => p.id === scan.productId)
-  const picks = catalog ? recommend(catalog.products, { species: pet?.species ?? 'dog', stage: pet?.stage, form: formOf(label), allergies: pet?.allergies, currentScore: result.score, excludeId: scan.productId }) : []
+  const picks = catalog ? recommend(catalog.products, { species: pet?.species ?? 'dog', stage: pet && stageFor(pet), form: formOf(label), allergies: pet?.allergies, currentScore: result.score, excludeId: scan.productId, pet }) : []
 
   const share = () => shareScoreCard(card, `${label.productName || `${name}'s food`} scored ${result.score} out of 100 on BowlScore. ${SITE.home}`)
   // A food is the main food or a treat, never both. Tapping the active one again clears it.
@@ -67,7 +72,7 @@ export default function Result() {
         <FoodHero image={scan.image} name={label.productName || 'Scanned food'} subtitle={[label.brand, `Scored for ${name}`].filter(Boolean).join(' · ')} score={result.score} animate={Boolean(fresh)} onDone={() => setRingDone(true)} />
         {scan.source === 'web' ? <Notice tone="info"><Text style={[type.label, { flex: 1 }]}>Scored from the ingredient list published for this product. Recipes change, so check it against your bag or snap the label.</Text></Notice> : null}
 
-        <FoodReport label={label} result={result} species={pet?.species ?? 'dog'} petName={name} allergies={pet?.allergies} show={ringDone} stagger>
+        <FoodReport label={label} result={result} species={pet?.species ?? 'dog'} petName={name} allergies={pet?.allergies} show={ringDone} stagger top={pet ? <><FitCard pet={pet} label={label} onEdit={() => setDraft(pet)} /><FeedingCard pet={pet} label={label} onEdit={() => setDraft(pet)} /></> : null}>
           {picks.length ? (
             <>
               <Text style={sectionTitle}>Better picks for {name}</Text>
@@ -84,6 +89,7 @@ export default function Result() {
       <SafeAreaView edges={['bottom']} style={[s.sticky, shadow]}>
         {label.isTreat ? [treatButton, mainButton] : [mainButton, treatButton]}
       </SafeAreaView>
+      <PetEditor draft={draft} setDraft={setDraft} />
     </SafeAreaView>
   )
 }

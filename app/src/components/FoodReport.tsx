@@ -68,7 +68,7 @@ export function FoodHero({ image, name, subtitle, score, animate, onDone }: { im
   )
 }
 
-export function FoodReport({ label, result, species, petName, allergies, show = true, stagger, children }: { label: LabelData; result: ScoreResult; species: Species; petName: string; allergies?: string[]; show?: boolean; stagger?: boolean; children?: ReactNode }) {
+export function FoodReport({ label, result, species, petName, allergies, show = true, stagger, top, children }: { label: LabelData; result: ScoreResult; species: Species; petName: string; allergies?: string[]; show?: boolean; stagger?: boolean; top?: ReactNode; children?: ReactNode }) {
   const [open, setOpen] = useState<Flag>()
   const watch = watchOuts(result)
   const notes = result.flags.filter((f) => f.severity === 'info')
@@ -85,6 +85,7 @@ export function FoodReport({ label, result, species, petName, allergies, show = 
 
       {show ? (
         <>
+          {top ? <Animated.View entering={enter(0)}>{top}</Animated.View> : null}
           {watch.length ? (
             <Animated.View entering={enter(0)}>
               <Text style={s.section}>Watch outs</Text>

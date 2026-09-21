@@ -5,14 +5,17 @@ import { useState } from 'react'
 import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft, ArrowsLeftRight, CalendarCheck } from 'phosphor-react-native'
+import { FeedingCard, FitCard } from '@/components/FitCard'
 import { FoodHero, FoodReport } from '@/components/FoodReport'
+import { PetEditor } from '@/components/PetEditor'
 import { AffiliateNote, ProductPhoto } from '@/components/ProductCard'
 import { ActionRow, Card, EmptyState, PillButton } from '@/components/ui'
-import { refreshCatalog, useCatalog } from '@/lib/catalog'
+import { claimOf, refreshCatalog, useCatalog } from '@/lib/catalog'
 import { tap } from '@/lib/haptics'
 import { productLinks } from '@/lib/links'
 import { activePet, useStore } from '@/lib/store'
 import { startPlan } from '@/lib/switchPlan'
+import type { Pet } from '@/lib/types'
 import { color, gutter, shadow } from '@/theme'
 
 export default function Product() {
@@ -21,6 +24,7 @@ export default function Product() {
   const pet = useStore(activePet)
   const hasFood = useStore((st) => Boolean(pet?.currentScanId && st.scans.some((x) => x.id === pet.currentScanId)))
   const [starting, setStarting] = useState(false)
+  const [draft, setDraft] = useState<Pet>()
   const back = () => (router.canGoBack() ? router.back() : router.replace('/'))
   const nav = <View style={s.nav}><Pressable hitSlop={12} onPress={back} accessibilityLabel="Back" style={({ pressed }) => pressed && { opacity: 0.5 }}><ArrowLeft size={24} weight="bold" color={color.ink} /></Pressable></View>
 
@@ -54,7 +58,8 @@ export default function Product() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: gutter, paddingBottom: links.chewy ? 270 : 200 }} showsVerticalScrollIndicator={false}>
         {product.image ? <View style={{ marginBottom: 16 }}><ProductPhoto uri={product.image} size="100%" height={220} /></View> : null}
         <FoodHero name={product.name} subtitle={[product.brand, pet?.species === product.species ? `Scored for ${name}` : `Made for ${product.species === 'cat' ? 'cats' : 'dogs'}`].join(' · ')} score={product.result.score} />
-        <FoodReport label={product.label} result={product.result} species={product.species} petName={name} allergies={pet?.species === product.species ? pet.allergies : undefined}>
+        <FoodReport label={product.label} result={product.result} species={product.species} petName={name} allergies={pet?.species === product.species ? pet.allergies : undefined}
+          top={pet?.species === product.species ? <><FitCard pet={pet} label={product.label} claim={claimOf(product)} onEdit={() => setDraft(pet)} /><FeedingCard pet={pet} label={product.label} onEdit={() => setDraft(pet)} /></> : null}>
           {hasFood || canPlan ? (
             <Card style={{ paddingVertical: 0, marginTop: 24 }}>
               {hasFood ? <ActionRow label={`Compare with ${name}'s food`} hint="Side by side" icon={<ArrowsLeftRight size={22} weight="bold" color={color.ink} />} onPress={() => router.push(`/compare?a=${pet?.currentScanId}&b=product:${product.id}`)} last={!canPlan} /> : null}
@@ -69,6 +74,7 @@ export default function Product() {
         {links.chewy ? <PillButton label="Shop on Chewy" variant="quiet" onPress={() => shop(links.chewy!)} /> : null}
         <AffiliateNote center />
       </SafeAreaView>
+      <PetEditor draft={draft} setDraft={setDraft} />
     </SafeAreaView>
   )
 }

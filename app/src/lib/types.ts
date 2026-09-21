@@ -13,6 +13,9 @@ export interface LabelData {
   ingredients: string[]
   analysis?: { proteinMin?: number; fatMin?: number; fiberMax?: number; moistureMax?: number; ashMax?: number; taurineMin?: number }
   aafco: 'complete' | 'supplemental' | 'not_found'
+  lifeStageClaim?: 'all' | 'growth' | 'adult' | 'unknown' // what the AAFCO statement says the food is for
+  largeSizeGrowth?: 'included' | 'excluded' | 'unknown' // the large size dog (70 lb or more as an adult) growth wording
+  calories?: { kcalPerKg?: number; kcalPerCup?: number; kcalPerUnit?: number; unit?: string }
 }
 
 export interface Flag { severity: Severity; title: string; detail: string; ingredient?: string }
@@ -33,7 +36,11 @@ export interface Pet {
   name: string
   species: Species
   stage: LifeStage
-  size?: string
+  size?: string // Small, Medium, Large, Giant from onboarding; weight and breed win when present
+  breed?: string // a name from lib/breeds.ts, or whatever the person typed
+  bornAt?: number // ms timestamp, estimated from the age they entered
+  weightLb?: number
+  meals?: number // per day, default 2
   foodType?: string
   concerns: string[]
   allergies: string[]

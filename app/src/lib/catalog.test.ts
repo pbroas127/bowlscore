@@ -3,7 +3,8 @@
 import assert from 'node:assert/strict'
 import { allergyHits, formOf, recommend, topRated, verdict, whyBetter } from './recommend.ts'
 import { SAMPLE_CATALOG, SAMPLE_GOOD, SAMPLE_POOR } from './sample.ts'
-import type { CatalogProduct, Flag } from './types.ts'
+import { bornAtFor } from './fit.ts'
+import type { CatalogProduct, Flag, Pet } from './types.ts'
 
 const good = (title: string): Flag => ({ severity: 'good', title, detail: '' })
 const make = (id: string, score: number, over: Partial<CatalogProduct> = {}, ingredients = ['Lamb', 'Peas'], flags: Flag[] = []): CatalogProduct => ({
@@ -44,6 +45,16 @@ assert.ok(ids(recommend(catalog, { species: 'dog', stage: 'senior', form: 'dry',
 assert.ok(!ids(recommend(catalog, { species: 'dog', form: 'dry', currentScore: 10, excludeId: 'a90' })).includes('a90'))
 assert.ok(recommend([...catalog, ...catalog, ...catalog], { species: 'dog', form: 'dry' }).length <= 6)
 assert.deepEqual(ids(topRated(catalog, 'dog', ['Chicken'], 3)), ['puppy98', 'treat97', 'wet96'])
+
+// The pet's age and size beat the stage picked in onboarding: a 9 month old Bernese is a large breed puppy.
+const bear: Pet = { id: 'p', name: 'Bear', species: 'dog', stage: 'adult', breed: 'Bernese Mountain Dog', bornAt: bornAtFor(9), weightLb: 72, concerns: [], allergies: [], treatScanIds: [] }
+const noBigPups = make('nobigpups99', 99, { label: { foodForm: 'dry', aafco: 'complete', ingredients: ['Lamb'], lifeStageClaim: 'all', largeSizeGrowth: 'excluded' } })
+const forBear = ids(recommend([...catalog, noBigPups], { species: 'dog', form: 'dry', currentScore: 10, pet: bear }))
+assert.ok(!forBear.includes('adult91') && !forBear.includes('nobigpups99') && forBear.includes('puppy98'))
+assert.ok(ids(recommend([...catalog, noBigPups], { species: 'dog', form: 'dry', currentScore: 10 })).includes('nobigpups99'))
+assert.ok(!ids(topRated(catalog, 'dog', undefined, 20, bear)).includes('adult91'))
+assert.ok(ids(topRated(catalog, 'dog', undefined, 20)).includes('adult91'))
+assert.ok(ids(topRated(catalog, 'dog', undefined, 20, bear)).includes('treat97')) // treats are not made for a life stage
 
 assert.deepEqual(allergyHits(['Chicken', 'Fish', 'Nonsense'], ['Chicken meal', 'Rice']), ['Chicken'])
 assert.equal(formOf({ foodForm: 'semi_moist', aafco: 'complete', ingredients: [] }), undefined)

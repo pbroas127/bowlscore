@@ -1,17 +1,10 @@
-// Pure catalog logic: allergens, swap recommendations and the "why it is better" line.
+// Pure catalog logic: swap recommendations that suit the pet, and the "why it is better" line. Allergen matching lives in allergens.ts.
 // No react-native imports here, so catalog.test.ts runs in plain node.
-import type { CatalogProduct, Flag, FoodForm, LabelData, LifeStage, ScoreResult, Species } from './types'
+import { allergyHits } from './allergens.ts'
+import { suitsPet } from './fit.ts'
+import type { CatalogProduct, Flag, FoodForm, LabelData, LifeStage, Pet, ScoreResult, Species } from './types'
 
-export const ALLERGENS: Record<string, RegExp> = {
-  Chicken: /chicken|poultry/i,
-  Beef: /\bbeef\b/i,
-  Dairy: /milk|cheese|whey|casein|dairy|yogurt/i,
-  Grain: /wheat|corn|rice|barley|\boats?\b|oatmeal|sorghum|\brye\b/i,
-  Fish: /fish|salmon|tuna|herring|menhaden|sardine|anchov|mackerel|cod|pollock|trout/i,
-  Egg: /\begg/i,
-}
-export const allergyHits = (allergies: string[] | undefined, ingredients: string[]) =>
-  (allergies ?? []).filter((a) => ALLERGENS[a] && ingredients.some((i) => ALLERGENS[a].test(i)))
+export { ALLERGENS, allergyHits } from './allergens.ts'
 
 const FORMS: readonly string[] = ['dry', 'wet', 'freeze_dried', 'raw']
 export const formOf = (label: LabelData): FoodForm | undefined => (label.isTreat ? 'treat' : FORMS.includes(label.foodForm) ? (label.foodForm as FoodForm) : undefined)
@@ -27,24 +20,30 @@ const withPhoto = (list: CatalogProduct[]) => {
   return shot.length >= 3 ? shot : list
 }
 
-export interface RecommendFor { species: Species; stage?: LifeStage; form?: FoodForm; allergies?: string[]; currentScore?: number; excludeId?: string }
+// Catalog labels were not read for a life stage statement, so the product's own life stage stands in for it.
+export const claimOf = (p: CatalogProduct): LabelData['lifeStageClaim'] =>
+  p.label.lifeStageClaim && p.label.lifeStageClaim !== 'unknown' ? p.label.lifeStageClaim : p.lifeStage === 'growth' ? 'growth' : p.lifeStage === 'adult' || p.lifeStage === 'senior' ? 'adult' : 'all'
+const suits = (p: CatalogProduct, pet?: Pet) => !pet || suitsPet(pet, p.label, claimOf(p))
 
-export function recommend(catalog: CatalogProduct[], { species, stage, form, allergies, currentScore = 0, excludeId }: RecommendFor): CatalogProduct[] {
+export interface RecommendFor { species: Species; stage?: LifeStage; form?: FoodForm; allergies?: string[]; currentScore?: number; excludeId?: string; pet?: Pet }
+
+export function recommend(catalog: CatalogProduct[], { species, stage, form, allergies, currentScore = 0, excludeId, pet }: RecommendFor): CatalogProduct[] {
   const pool = catalog.filter(
     (p) =>
       p.species === species &&
       p.id !== excludeId &&
       (form ? p.form === form : p.form !== 'treat') && // treats only ever swap for treats
       stageOk(p.lifeStage, stage) &&
-      !allergyHits(allergies, p.label.ingredients).length,
+      !allergyHits(allergies, p.label.ingredients).length &&
+      suits(p, pet),
   )
   const bar = Math.max(75, currentScore + 15)
   const strong = pool.filter((p) => p.result.score >= bar)
   return withPhoto(strong.length ? strong : pool.filter((p) => p.result.score > currentScore)).sort(byScoreThenPrice).slice(0, 6)
 }
 
-export const topRated = (catalog: CatalogProduct[], species: Species, allergies?: string[], max = 8) =>
-  withPhoto(catalog.filter((p) => p.species === species && !allergyHits(allergies, p.label.ingredients).length)).sort(byScoreThenPrice).slice(0, max)
+export const topRated = (catalog: CatalogProduct[], species: Species, allergies?: string[], max = 8, pet?: Pet) =>
+  withPhoto(catalog.filter((p) => p.species === species && !allergyHits(allergies, p.label.ingredients).length && suits(p, pet))).sort(byScoreThenPrice).slice(0, max)
 
 export const watchOuts = (r: ScoreResult) => r.flags.filter((f) => f.severity !== 'good' && f.severity !== 'info')
 const goods = (r: ScoreResult) => r.flags.filter((f) => f.severity === 'good')

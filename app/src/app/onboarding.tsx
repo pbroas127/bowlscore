@@ -2,22 +2,30 @@ import { Image } from 'expo-image'
 import * as Notifications from 'expo-notifications'
 import { router } from 'expo-router'
 import { useEffect, useState, type ReactNode } from 'react'
-import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import Animated, { Easing, FadeIn, FadeInDown, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
 import { ArrowLeft, Bell, Cat, Check, Dog, Heart, MagnifyingGlass, PawPrint, Scan, ShieldCheck, Sparkle } from 'phosphor-react-native'
 import { FlagRow } from '@/components/FlagRow'
 import { Mascot, mascotFor } from '@/components/Mascot'
+import { BreedField, digits, petLine, pounds, stageWord } from '@/components/PetEditor'
 import { ScoreRing } from '@/components/ScoreRing'
 import { Card, Chip, OptionRow, PillButton, ProgressBar, Screen, TextLink } from '@/components/ui'
+import { findBreed } from '@/lib/breeds'
+import { ageMonths, bornAtFor, stageFor } from '@/lib/fit'
 import { tap, tapForGrade } from '@/lib/haptics'
 import { restore } from '@/lib/purchases'
 import { SAMPLE_POOR } from '@/lib/sample'
-import { finishQuiz, setQuiz, setState, useStore, type Quiz } from '@/lib/store'
+import { finishQuiz, getState, petFromQuiz, setQuiz, setState, useStore, type Quiz } from '@/lib/store'
 import { color, radius, type } from '@/theme'
 
 type StepProps = { quiz: Quiz; next: () => void; pet: string }
+type StepFn = (p: StepProps) => ReactNode
 
-const STEPS: ((p: StepProps) => ReactNode)[] = [Welcome, PetType, PetName, Stage, Size, FoodType, HeardFrom, Concerns, Allergies, Fact, Confidence, Goal, Trust, DemoScan, NotifyPrimer, Building, Reveal, Recap]
+const STEPS: StepFn[] = [Welcome, PetType, PetName, Breed, Age, Weight, Stage, Size, FoodType, HeardFrom, Concerns, Allergies, Fact, Trust, DemoScan, NotifyPrimer, Building, Reveal, Recap]
+
+// Never ask what we already know: an age gives the life stage, a known breed gives the size, and cats have no size question.
+const skips = (S: StepFn, q: Quiz) =>
+  (S === Stage && q.bornAt != null) || (S === Size && (q.petType === 'cat' || (findBreed('dog', q.breed)?.name ?? 'Mixed breed') !== 'Mixed breed'))
 
 export default function Onboarding() {
   const quiz = useStore((s) => s.quiz)
@@ -26,8 +34,9 @@ export default function Onboarding() {
 
   const go = (to: number) => setQuiz({ step: to })
   const next = () => {
+    const q = getState().quiz // read fresh: a step saves its answer and calls next in the same tick
     let to = step + 1
-    if (STEPS[to] === Size && quiz.petType === 'cat') to++ // cats skip the size question
+    while (to < STEPS.length && skips(STEPS[to], q)) to++
     if (to >= STEPS.length) {
       finishQuiz()
       setState({ onboarded: true })
@@ -37,19 +46,20 @@ export default function Onboarding() {
   }
   const back = () => {
     let to = step - 1
-    if (STEPS[to] === Size && quiz.petType === 'cat') to--
+    while (to > 0 && skips(STEPS[to], quiz)) to--
     go(Math.max(0, to))
   }
 
   const Step = STEPS[step]
   const chromeless = Step === Welcome || Step === Building
+  const shown = STEPS.filter((S) => !skips(S, quiz)) // the bar counts only the steps this person will see
   return (
     <View style={{ flex: 1, backgroundColor: color.bg }}>
       <Screen edges={['top', 'bottom']} style={{ paddingHorizontal: 0 }}>
         {chromeless ? null : (
           <View style={s.header}>
             <Pressable hitSlop={16} onPress={back} accessibilityLabel="Back"><ArrowLeft size={24} weight="bold" color={color.ink} /></Pressable>
-            <ProgressBar value={step / (STEPS.length - 1)} />
+            <ProgressBar value={shown.indexOf(Step) / (shown.length - 1)} />
             <View style={{ width: 24 }} />
           </View>
         )}
@@ -148,11 +158,65 @@ function PetName({ quiz, next }: StepProps) {
   )
 }
 
+// Breed, age and weight sharpen every answer, but none is worth losing someone over, so each can be skipped.
+function Ask({ title, sub, ready, onDone, onSkip, children }: { title: string; sub: string; ready: boolean; onDone: () => void; onSkip: () => void; children: ReactNode }) {
+  return (
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }} keyboardVerticalOffset={24}>
+      <Q title={title} sub={sub} footer={<><PillButton label="Continue" onPress={onDone} disabled={!ready} /><View style={{ alignItems: 'center' }}><TextLink label="Skip for now" onPress={onSkip} /></View></>}>
+        {children}
+      </Q>
+    </KeyboardAvoidingView>
+  )
+}
+
+function Breed({ quiz, next, pet }: StepProps) {
+  const [breed, setBreed] = useState(quiz.breed ?? '')
+  const done = (b: string) => { setQuiz({ breed: b.trim() || undefined }); next() }
+  return (
+    <Ask title={`What breed is ${pet}?`} sub="Breed tells us how big they will get and what to watch for." ready={Boolean(breed.trim())} onDone={() => done(breed)} onSkip={() => done('')}>
+      <ScrollView keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
+        <BreedField species={quiz.petType === 'cat' ? 'cat' : 'dog'} value={breed} onChange={setBreed} onPick={(b) => setTimeout(() => done(b), 250)} open max={6} style={s.input} autoFocus />
+      </ScrollView>
+    </Ask>
+  )
+}
+
+function Age({ quiz, next, pet }: StepProps) {
+  const had = ageMonths(petFromQuiz(quiz)) ?? 0
+  const [years, setYears] = useState(had >= 12 ? String(Math.floor(had / 12)) : '')
+  const [months, setMonths] = useState(had % 12 ? String(had % 12) : '')
+  const total = Math.min(360, digits(years) * 12 + digits(months))
+  const asPet = petFromQuiz({ ...quiz, bornAt: bornAtFor(total) })
+  const done = (t: number) => { setQuiz({ bornAt: t ? bornAtFor(t) : undefined }); next() }
+  return (
+    <Ask title={`How old is ${pet}?`} sub="A good guess is fine. Age tells us which foods are made for them." ready={total > 0} onDone={() => done(total)} onSkip={() => done(0)}>
+      <View style={{ flexDirection: 'row', gap: 12 }}>
+        <View style={s.unit}><TextInput value={years} onChangeText={setYears} placeholder="0" placeholderTextColor={color.ink3} keyboardType="number-pad" maxLength={2} autoFocus style={s.unitInput} accessibilityLabel="Years" /><Text style={s.unitWord}>years</Text></View>
+        <View style={s.unit}><TextInput value={months} onChangeText={setMonths} placeholder="0" placeholderTextColor={color.ink3} keyboardType="number-pad" maxLength={2} style={s.unitInput} accessibilityLabel="Months" /><Text style={s.unitWord}>months</Text></View>
+      </View>
+      {total ? <Text style={[type.body, { color: color.ink2 }]}>That makes {pet} {stageFor(asPet) === 'adult' ? 'an adult' : `a ${stageWord(asPet).toLowerCase()}`}.</Text> : null}
+    </Ask>
+  )
+}
+
+function Weight({ quiz, next, pet }: StepProps) {
+  const [lb, setLb] = useState(quiz.weightLb ? String(quiz.weightLb) : '')
+  const done = (weightLb?: number) => { setQuiz({ weightLb }); next() }
+  return (
+    <Ask title={`How much does ${pet} weigh?`} sub="In pounds. This sets how much to feed each day." ready={Boolean(pounds(lb))} onDone={() => done(pounds(lb))} onSkip={() => done()}>
+      <View style={{ flexDirection: 'row' }}>
+        <View style={s.unit}><TextInput value={lb} onChangeText={setLb} placeholder="0" placeholderTextColor={color.ink3} keyboardType="decimal-pad" maxLength={5} autoFocus style={s.unitInput} accessibilityLabel="Weight in pounds" /><Text style={s.unitWord}>lb</Text></View>
+      </View>
+    </Ask>
+  )
+}
+
+// Only asked when the age was skipped.
 function Stage({ quiz, next, pet }: StepProps) {
   const young = quiz.petType === 'cat' ? 'Kitten' : 'Puppy'
   const map = { [young]: 'growth', Adult: 'adult', Senior: 'senior' } as Record<string, Quiz['stage']>
   const current = Object.keys(map).find((k) => map[k] === quiz.stage)
-  return <Single title={`How old is ${pet}?`} sub="Growing pets need more protein and fat than adults." options={[{ label: young, hint: 'Under one year' }, { label: 'Adult', hint: 'One to seven years' }, { label: 'Senior', hint: 'Over seven years' }]} value={current} onPick={(l) => setQuiz({ stage: map[l] })} next={next} />
+  return <Single title={`Roughly how old is ${pet}?`} sub="Growing pets need more protein and fat than adults." options={[{ label: young, hint: 'Under one year' }, { label: 'Adult', hint: 'One to seven years' }, { label: 'Senior', hint: 'Over seven years' }]} value={current} onPick={(l) => setQuiz({ stage: map[l] })} next={next} />
 }
 
 function Size({ quiz, next, pet }: StepProps) {
@@ -186,28 +250,6 @@ function Fact({ quiz, next }: StepProps) {
       <Mascot pose={mascotFor(quiz.petType, 'worried')} size={190} style={{ alignSelf: 'center', marginTop: 8 }} />
     </Q>
   )
-}
-
-function Confidence({ quiz, next, pet }: StepProps) {
-  const labels = ['No idea', 'Not very', 'Somewhat', 'Fairly', 'Very sure']
-  const v = quiz.confidence
-  return (
-    <Q title={`How sure are you that ${pet}'s food is good?`} footer={<PillButton label="Continue" onPress={next} disabled={v == null} />}>
-      <Mascot pose={mascotFor(quiz.petType, v != null && v >= 3 ? 'happy' : 'worried')} size={170} style={{ alignSelf: 'center' }} />
-      <View style={s.scale}>
-        {labels.map((l, i) => (
-          <Pressable key={l} onPress={() => { tap('select'); setQuiz({ confidence: i }) }} style={[s.scaleDot, v === i && s.scaleDotOn]} accessibilityLabel={l}>
-            <Text style={[type.title, v === i && { color: color.bg }]}>{i + 1}</Text>
-          </Pressable>
-        ))}
-      </View>
-      <Text style={[type.title, { textAlign: 'center', minHeight: 24 }]}>{v != null ? labels[v] : ' '}</Text>
-    </Q>
-  )
-}
-
-function Goal({ quiz, next, pet }: StepProps) {
-  return <Single title={`What matters most for ${pet}?`} options={['A longer, healthier life', 'Fewer tummy troubles', 'A shinier coat', 'Paying for quality, not marketing'].map((label) => ({ label }))} value={quiz.goal} onPick={(goal) => setQuiz({ goal })} next={next} />
 }
 
 function Trust({ next }: StepProps) {
@@ -333,7 +375,7 @@ function Reveal({ next, pet, quiz }: StepProps) {
       <Card style={{ gap: 16, borderRadius: radius.sheet, padding: 20 }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
           <View style={s.avatar}><Mascot pose={mascotFor(quiz.petType, 'head')} size={56} bob={false} /></View>
-          <View><Text style={type.h2}>{pet}</Text><Text style={type.caption}>{[quiz.petType === 'cat' ? 'Cat' : 'Dog', quiz.stage === 'growth' ? 'Growing' : quiz.stage === 'senior' ? 'Senior' : 'Adult', quiz.foodType].filter(Boolean).join(' · ')}</Text></View>
+          <View style={{ flex: 1 }}><Text style={type.h2}>{pet}</Text><Text style={type.caption}>{[...petLine(petFromQuiz(quiz)), quiz.foodType].filter(Boolean).join(' · ')}</Text></View>
         </View>
         {watch.map((w, i) => (
           <Animated.View key={w} entering={FadeInDown.delay(200 + i * 120).duration(300)} style={{ flexDirection: 'row', gap: 12, alignItems: 'center' }}>
@@ -376,9 +418,9 @@ const s = StyleSheet.create({
   heroGlow: { position: 'absolute', width: 300, height: 300, borderRadius: 150, backgroundColor: color.yellowSoft },
   heroRing: { position: 'absolute', right: 12, top: '12%', backgroundColor: color.surface, borderRadius: 60, padding: 8, borderWidth: 1, borderColor: color.hairline },
   factCard: { backgroundColor: color.yellow, borderRadius: radius.sheet, padding: 24, gap: 14 },
-  scale: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 12 },
-  scaleDot: { width: 56, height: 56, borderRadius: 28, borderWidth: 1.5, borderColor: color.hairline, backgroundColor: color.surface, alignItems: 'center', justifyContent: 'center' },
-  scaleDotOn: { backgroundColor: color.ink, borderColor: color.ink },
+  unit: { flex: 1, flexDirection: 'row', alignItems: 'center', height: 64, borderRadius: radius.card, borderWidth: 1.5, borderColor: color.ink, backgroundColor: color.surface, paddingHorizontal: 20 },
+  unitInput: { ...type.h2, flex: 1, height: 64 },
+  unitWord: { ...type.label, color: color.ink2 },
   iconBubble: { width: 44, height: 44, borderRadius: 22, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center' },
   finder: { flex: 1, borderRadius: radius.sheet, backgroundColor: color.scanChrome, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   finderHint: { position: 'absolute', bottom: 16, color: color.surface },

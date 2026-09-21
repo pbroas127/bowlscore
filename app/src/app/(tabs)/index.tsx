@@ -41,7 +41,7 @@ export default function Home() {
   const current = scans.find((x) => x.id === pet?.currentScanId)
   const shown = scans.filter((x) => filter === 'All' || gradeFor(x.result.score) === filter)
   const catalog = useCatalog()
-  const top = catalog && pet ? topRated(catalog.products, pet.species, pet.allergies) : []
+  const top = catalog && pet ? topRated(catalog.products, pet.species, pet.allergies, 8, pet) : []
   const seen = useStore((s) => s.recallsSeen)
   const recalls = useStore((s) => s.recalls).filter((r) => !seen.includes(r.id))
 

@@ -3,6 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router'
 import { useState } from 'react'
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native'
 import { ArrowLeft, Check, PencilSimple } from 'phosphor-react-native'
+import { FeedingCard, treatAllowance } from '@/components/FitCard'
 import { sectionTitle } from '@/components/FoodReport'
 import { Mascot, mascotFor } from '@/components/Mascot'
 import { ALLERGIES, PetEditor, petLine } from '@/components/PetEditor'
@@ -73,6 +74,7 @@ export default function PetPage() {
   const treats = scans.filter((x) => pet.treatScanIds.includes(x.id))
   const allergic = pet.allergies.filter((a) => ALLERGIES.includes(a))
   const cat = pet.species === 'cat'
+  const allowance = treatAllowance(pet)
 
   return (
     <Screen scroll>
@@ -105,9 +107,14 @@ export default function PetPage() {
         <EmptyState compact pose={cat ? 'kitten-peeking' : 'puppy-sniffing'} title={`No main food for ${pet.name} yet`} body="Scan the food that fills the bowl most days, then set it as the main food." action={<PillButton label="Scan a food" onPress={() => router.push('/scan')} />} />
       )}
 
+      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} /></View> : null}
+
       <SwitchPlanCard pet={pet} />
 
-      <Text style={sectionTitle}>Treats</Text>
+      <View style={s.sectionRow}>
+        <Text style={[type.h2, { flex: 1 }]}>Treats</Text>
+        {allowance ? <Text style={type.caption}>{allowance}</Text> : null}
+      </View>
       {treats.length ? (
         <Card style={s.list}>{treats.map((x, i) => <ScanRow key={x.id} scan={x} last={i === treats.length - 1} />)}</Card>
       ) : (
@@ -132,6 +139,7 @@ const s = StyleSheet.create({
   avatar: { width: 76, height: 76, borderRadius: 38, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   main: { flexDirection: 'row', alignItems: 'center', gap: 16, padding: 20, borderRadius: radius.sheet },
   list: { paddingVertical: 2 },
+  sectionRow: { flexDirection: 'row', alignItems: 'baseline', gap: 12, marginTop: 32, marginBottom: 12 },
   step: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, paddingHorizontal: 10, borderRadius: radius.chip },
   stepOn: { backgroundColor: color.yellowSoft },
   stepDot: { width: 20, height: 20, borderRadius: 10, borderWidth: 1.5, borderColor: color.hairline, backgroundColor: color.surface, alignItems: 'center', justifyContent: 'center' },

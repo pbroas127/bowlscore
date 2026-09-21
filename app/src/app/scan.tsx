@@ -4,18 +4,21 @@ import { ImageManipulator, SaveFormat } from 'expo-image-manipulator'
 import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
 import { useEffect, useRef, useState } from 'react'
-import { ActivityIndicator, Linking, Pressable, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Animated, { Easing, FadeIn, ReduceMotion, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { Images, Lightning, X } from 'phosphor-react-native'
-import { Mascot } from '@/components/Mascot'
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Bone, BowlFood, CaretDown, Check, Images, Lightning, X } from 'phosphor-react-native'
+import { Mascot, mascotFor } from '@/components/Mascot'
 import { PillButton, TextLink } from '@/components/ui'
-import { scanFood, ScanError, type Product } from '@/lib/api'
+import { rescoreLabel, scanFood, ScanError, type Product, type ScanResponse } from '@/lib/api'
+import { stageFor } from '@/lib/fit'
 import { tap, tapForGrade } from '@/lib/haptics'
 import { activePet, newId, saveScan, setState, useStore } from '@/lib/store'
-import { color, radius, type } from '@/theme'
+import { color, radius, shadow, type } from '@/theme'
 
 type Mode = 'barcode' | 'label'
+type Kind = 'food' | 'treat'
+const KINDS = [['food', 'Food', BowlFood], ['treat', 'Treat', Bone]] as const
 type ScanInput = { images?: string[]; barcode?: string; product?: Product }
 
 // ponytail: one label photo per scan. If users report missing nutrition panels, allow a second photo.
@@ -31,8 +34,14 @@ const statusAt = (sec: number, pet: string) =>
 
 export default function ScanScreen() {
   const pet = useStore(activePet)
+  const pets = useStore((st) => st.pets)
+  const insets = useSafeAreaInsets()
   const [permission, requestPermission] = useCameraPermissions()
   const [mode, setMode] = useState<Mode>('label')
+  const [kind, setKind] = useState<Kind>('food')
+  const [picking, setPicking] = useState(false)
+  // The person said food and the label reads as a treat, or the other way round: ask before saving anything.
+  const [ask, setAsk] = useState<{ res: ScanResponse; photoUri?: string; fixing?: boolean; failed?: string }>()
   const [torch, setTorch] = useState(false)
   const [frozen, setFrozen] = useState<string>()
   const [busy, setBusy] = useState(false)
@@ -59,18 +68,40 @@ export default function ScanScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [busy])
 
+  const finish = (res: ScanResponse, photoUri?: string) => {
+    if (!pet) return
+    const id = newId()
+    saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, sourceUrl: res.sourceUrl, label: res.label, result: res.result, photoUri, ...(res.productId ? { productId: res.productId } : {}), ...(res.image ? { image: res.image } : {}) })
+    setState({ coachSeen: true })
+    tapForGrade(res.result.grade)
+    router.replace(`/result/${id}?fresh=1`)
+  }
+
+  // Their answer wins. When it differs from what the server scored, the same label is scored again the other way, which is free and instant.
+  const answer = async (isTreat: boolean) => {
+    if (!ask || !pet) return
+    if (isTreat === Boolean(ask.res.label.isTreat)) return finish(ask.res, ask.photoUri)
+    setAsk({ ...ask, fixing: true, failed: undefined })
+    try {
+      const again = await rescoreLabel({ species: pet.species, lifeStage: stageFor(pet), label: { ...ask.res.label, isTreat } })
+      finish({ ...ask.res, label: again.label, result: again.result }, ask.photoUri)
+    } catch (e) {
+      tap('warning')
+      setAsk({ ...ask, fixing: false, failed: e instanceof ScanError && e.code === 'offline' ? e.message : 'We could not score it that way just now. Try again, or keep our reading.' })
+    }
+  }
+
   const run = async (input: ScanInput, photoUri?: string) => {
     if (!pet) return
     lastInput.current = input
     setBusy(true)
     setError(undefined)
     try {
-      const res = await scanFood({ species: pet.species, lifeStage: pet.stage, product: known.current, ...input })
-      const id = newId()
-      saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, sourceUrl: res.sourceUrl, label: res.label, result: res.result, photoUri, ...(res.productId ? { productId: res.productId } : {}), ...(res.image ? { image: res.image } : {}) })
-      setState({ coachSeen: true })
-      tapForGrade(res.result.grade)
-      router.replace(`/result/${id}?fresh=1`)
+      const res = await scanFood({ species: pet.species, lifeStage: stageFor(pet), product: known.current, ...input })
+      if (Boolean(res.label.isTreat) === (kind === 'treat')) return finish(res, photoUri)
+      tap('light')
+      setAsk({ res, photoUri })
+      setBusy(false)
     } catch (e) {
       const err = e instanceof ScanError ? e : new ScanError('server', 'Something went wrong on our side. Please try again in a moment.')
       tap('warning')
@@ -139,7 +170,21 @@ export default function ScanScreen() {
       <SafeAreaView style={s.overlay}>
         <View style={s.topRow}>
           <Pressable style={s.round} onPress={() => router.back()} accessibilityLabel="Close"><X size={22} weight="bold" color={color.surface} /></Pressable>
-          <View style={s.petChip}><Text style={[type.label, { color: color.surface }]}>For {pet?.name}</Text></View>
+          {/* Who the scan is for and what is being scanned. Locked while a scan is in flight so the answer cannot change under it. */}
+          <View style={[s.topMid, (busy || ask) && { opacity: 0.5 }]} pointerEvents={busy || ask ? 'none' : 'auto'}>
+            <Pressable style={s.petChip} disabled={pets.length < 2} onPress={() => { tap('select'); setPicking((p) => !p) }} accessibilityRole="button" accessibilityLabel={`Scanning for ${pet?.name}`} accessibilityHint={pets.length > 1 ? 'Choose another pet' : undefined}>
+              <Text style={[type.label, { color: color.surface, flexShrink: 1 }]} numberOfLines={1}>For {pet?.name}</Text>
+              {pets.length > 1 ? <CaretDown size={14} weight="bold" color={color.surface} /> : null}
+            </Pressable>
+            <View style={s.segment}>
+              {KINDS.map(([k, word, Icon]) => (
+                <Pressable key={k} onPress={() => { tap('select'); setKind(k) }} style={[s.kindItem, kind === k && s.segOn]} accessibilityRole="button" accessibilityState={{ selected: kind === k }}>
+                  <Icon size={16} weight="fill" color={kind === k ? color.ink : color.surface} />
+                  <Text style={[type.label, { color: kind === k ? color.ink : color.surface }]}>{word}</Text>
+                </Pressable>
+              ))}
+            </View>
+          </View>
           {frozen ? <View style={{ width: 44 }} /> : (
             <Pressable style={[s.round, torch && { backgroundColor: color.yellow }]} onPress={() => setTorch((t) => !t)} accessibilityLabel="Flashlight"><Lightning size={22} weight="fill" color={torch ? color.ink : color.surface} /></Pressable>
           )}
@@ -152,7 +197,18 @@ export default function ScanScreen() {
           {busy ? <Animated.View style={[s.scanLine, lineStyle]} /> : null}
         </View>
 
-        {busy ? (
+        {ask ? (
+          <Animated.View entering={FadeIn} style={[s.sheet, shadow]}>
+            <View style={s.sheetHead}>
+              <View style={s.sheetIcon}>{ask.res.label.isTreat ? <Bone size={22} weight="fill" color={color.ink} /> : <BowlFood size={22} weight="fill" color={color.ink} />}</View>
+              <Text style={[type.h2, { flex: 1 }]}>{ask.res.label.isTreat ? 'This looks like a treat' : 'This looks like a food'}</Text>
+            </View>
+            <Text style={[type.body, { color: color.ink2 }]}>{ask.res.label.isTreat ? 'Treats are scored on ingredients only. Score it as a treat?' : 'Foods are scored on ingredients and nutrition. Score it as a food?'}</Text>
+            {ask.failed ? <Text style={[type.label, { color: color.bad }]}>{ask.failed}</Text> : null}
+            <PillButton label={ask.res.label.isTreat ? 'Yes, it is a treat' : 'Yes, it is a food'} disabled={ask.fixing} onPress={() => answer(Boolean(ask.res.label.isTreat))} />
+            <PillButton label={ask.res.label.isTreat ? 'No, it is a food' : 'No, it is a treat'} variant="quiet" loading={ask.fixing} onPress={() => answer(!ask.res.label.isTreat)} />
+          </Animated.View>
+        ) : busy ? (
           <Animated.View entering={FadeIn} style={s.busy}>
             <View style={s.busyRow}>
               <ActivityIndicator color={color.surface} />
@@ -186,6 +242,23 @@ export default function ScanScreen() {
             {frozen ? <TextLink label="Take a new photo" tone={color.surface} onPress={retake} /> : null}
           </View>
         )}
+
+        {picking ? (
+          <>
+            <Pressable style={StyleSheet.absoluteFill} onPress={() => setPicking(false)} accessibilityLabel="Close the pet list" />
+            <Animated.View entering={FadeIn.duration(140)} style={[s.menu, shadow, { top: insets.top + 50 }]}>
+              <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
+                {pets.map((p, i) => (
+                  <Pressable key={p.id} onPress={() => { tap('select'); setState({ activePetId: p.id }); setPicking(false) }} style={({ pressed }) => [s.menuRow, i > 0 && s.menuDivider, pressed && { opacity: 0.6 }]} accessibilityRole="button" accessibilityState={{ selected: p.id === pet?.id }}>
+                    <View style={s.menuAvatar}><Mascot pose={mascotFor(p.species, 'head')} size={28} bob={false} /></View>
+                    <Text style={[type.title, { flex: 1 }]} numberOfLines={1}>{p.name}</Text>
+                    {p.id === pet?.id ? <Check size={18} weight="bold" color={color.green} /> : null}
+                  </Pressable>
+                ))}
+              </ScrollView>
+            </Animated.View>
+          </>
+        ) : null}
       </SafeAreaView>
     </View>
   )
@@ -195,10 +268,20 @@ const bracket = { position: 'absolute', width: 36, height: 36, borderColor: colo
 const s = StyleSheet.create({
   root: { flex: 1, backgroundColor: color.scanChrome },
   overlay: { flex: 1, justifyContent: 'space-between' },
-  topRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 8 },
+  topRow: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 8 },
+  topMid: { flex: 1, alignItems: 'center', gap: 6, marginHorizontal: 8, paddingTop: 4 },
   round: { width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(20,17,13,0.55)', alignItems: 'center', justifyContent: 'center' },
-  petChip: { height: 36, paddingHorizontal: 16, borderRadius: 18, backgroundColor: 'rgba(20,17,13,0.55)', justifyContent: 'center' },
-  frame: { alignSelf: 'center', width: '78%', aspectRatio: 0.78 },
+  petChip: { height: 36, maxWidth: '100%', paddingHorizontal: 16, borderRadius: 18, backgroundColor: 'rgba(20,17,13,0.55)', flexDirection: 'row', alignItems: 'center', gap: 6 },
+  kindItem: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, paddingVertical: 6, borderRadius: radius.pill },
+  menu: { position: 'absolute', alignSelf: 'center', width: 240, maxHeight: 300, backgroundColor: color.surface, borderRadius: radius.card, paddingHorizontal: 14, overflow: 'hidden' },
+  menuRow: { flexDirection: 'row', alignItems: 'center', gap: 10, minHeight: 52 },
+  menuDivider: { borderTopWidth: 1, borderTopColor: color.hairline },
+  menuAvatar: { width: 34, height: 34, borderRadius: 17, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  sheet: { backgroundColor: color.surface, borderRadius: radius.sheet, padding: 20, gap: 12, marginHorizontal: 12, marginBottom: 8 },
+  sheetHead: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  sheetIcon: { width: 44, height: 44, borderRadius: 22, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center' },
+  // The taller top bar costs a few points on the smallest phones, so the guide frame gives them back.
+  frame: { alignSelf: 'center', width: '78%', aspectRatio: 0.78, flexShrink: 1 },
   frameBarcode: { aspectRatio: 1.7 },
   framePhoto: { flex: 1, width: '90%', aspectRatio: undefined, marginVertical: 16 },
   photo: { position: 'absolute', top: 8, left: 8, right: 8, bottom: 8, borderRadius: 12 },

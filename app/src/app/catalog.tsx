@@ -6,13 +6,23 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft, MagnifyingGlass } from 'phosphor-react-native'
 import { AffiliateNote, ProductRow } from '@/components/ProductCard'
 import { Chip, EmptyState, PillButton } from '@/components/ui'
-import { allergyHits, refreshCatalog, useCatalog } from '@/lib/catalog'
+import { allergyHits, claimOf, refreshCatalog, useCatalog } from '@/lib/catalog'
+import { fitFor } from '@/lib/fit'
 import { activePet, useStore } from '@/lib/store'
-import type { FoodForm } from '@/lib/types'
+import type { CatalogProduct, FoodForm, Pet } from '@/lib/types'
 import { color, gutter, radius, type } from '@/theme'
 
 const FORMS: [string, FoodForm | undefined][] = [['All', undefined], ['Dry', 'dry'], ['Wet', 'wet'], ['Treats', 'treat']]
 const PRICES = [1, 2, 3] as const
+
+// The red line on a row: an allergen first, then the first reason the food does not suit this pet's age or size.
+const unfit = (pet: Pet | undefined, p: CatalogProduct) => {
+  const hits = allergyHits(pet?.allergies, p.label.ingredients)
+  if (hits.length) return `Contains ${hits.join(' and ').toLowerCase()}`
+  const bad = pet && fitFor(pet, p.label, claimOf(p)).lines.find((l) => l.tone === 'bad')
+  if (!bad) return undefined
+  return bad.label === 'Age' ? `Not for ${pet.species === 'cat' ? 'kittens' : 'puppies'}` : bad.label === 'Size' ? 'Not for large breed puppies' : bad.note.split('. ')[0]
+}
 
 export default function CatalogScreen() {
   const pet = useStore(activePet)
@@ -51,10 +61,7 @@ export default function CatalogScreen() {
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={s.listPad}
-        renderItem={({ item, index }) => {
-          const hits = allergyHits(pet?.allergies, item.label.ingredients)
-          return <ProductRow product={item} last={index === shown.length - 1} note={hits.length ? `Contains ${hits.join(' and ').toLowerCase()}` : undefined} />
-        }}
+        renderItem={({ item, index }) => <ProductRow product={item} last={index === shown.length - 1} note={unfit(pet, item)} />}
         ListFooterComponent={shown.length ? <AffiliateNote /> : null}
         ListEmptyComponent={
           catalog
