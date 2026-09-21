@@ -1,33 +1,33 @@
 # BowlScore: status and what is left
 
-Updated by Claude on 2026-09-21, late morning.
+Updated by Claude on 2026-09-21, afternoon, after the big catalog build.
 
 ## Done
-- GitHub signing secrets set (you approved running them through the Dash terminal). Repo is now PUBLIC so Mac builds are free and unlimited: your private repo Mac minutes were exhausted. The full git history was scanned first, no keys were ever committed.
-- Gemini key set in Vercel. Verified live end to end: anonymous sign in, photo of a label, Gemini read all 10 ingredients and the protein number, the rubric scored it.
-- RevenueCat project "BowlScore" (id 4a1843e1): App Store app with your existing in app purchase key and App Store Connect key, products `bowlscore_pro_yearly` and `bowlscore_pro_monthly`, entitlement `pro`, offering `default` with Annual and Monthly packages. The public SDK key is in `app/src/lib/config.ts`. There is a leftover inactive entitlement called `apro` from a typo, ignore it.
-- The monthly product now exists in App Store Connect too (created through RevenueCat).
-- Build fixes found by real builds: removed the push entitlement (the app only uses local reminders), moved the workflow to the macos-26 runner because Expo SDK 57 needs Xcode 26.5 or newer.
+- Pipeline: repo is PUBLIC (free Mac builds), signing secrets set, workflow on the macos-26 runner, build number written into Info.plist so every upload gets a new number.
+- Scanning: Gemini key is on the paid tier (your $10), scans take about 2 seconds. Barcodes go Open Pet Food Facts, then UPCitemdb for the name, then a grounded web lookup, then a label photo.
+- RevenueCat project "BowlScore" (4a1843e1): entitlement `pro`, offering `default`, both products, public key in `app/src/lib/config.ts`. Ignore the inactive `apro` entitlement.
+- App Store Connect: yearly $34.99 with a 3 day free trial, monthly $5.99, TestFlight group "Peter" with automatic distribution. Listing text, subtitle, categories, age rating 4+, review notes, privacy policy URL and all App Privacy answers are saved.
+- Firebase: Anonymous, Email, Apple and Google sign in enabled, iOS app registered, Firestore database created with owner only rules.
+- Affiliates: Amazon Associates approved, tag `bowlscore-20` is on every shop link. Chewy (Impact) is in review; flip `CHEWY_ON` in `app/src/lib/links.ts` when it is approved.
+- Big build: real catalog of 47 scored foods (27 with pack shots), real swaps after every scan, Top rated on Home, catalog list with search, product pages, compare, pantry per pet with treats, 7 day switch plan with reminders, recall alerts from the FDA feed, share card, Google sign in, final icon.
 
-## Needs you (App Store Connect logged itself out, I cannot type your password)
-1. Log back in to App Store Connect in the Chrome tab. Then I can finish, or you can:
-   - Set the monthly price to $5.99 (product `bowlscore_pro_monthly`), add its display name "BowlScore Pro Monthly" and description "Unlimited scans for every dog and cat".
-   - Add the 3 day free trial intro offer on `bowlscore_pro_yearly` (Subscription Prices, plus button, Create Introductory Offer, all countries, no end date, Free, 3 days).
-   - TestFlight tab: create an internal group, add yourself, so you get the install email for each build.
-2. Sandbox tester: Users and Access, Sandbox, add a tester (needs a password, so it has to be you). On the iPhone: Settings, Developer, Sandbox Apple Account. TestFlight purchases are always free.
+## Needs you
+1. Sandbox tester: App Store Connect, Users and Access, Sandbox, add a tester (it needs a password, so it has to be you). On the iPhone: Settings, Developer, Sandbox Apple Account. TestFlight purchases are always free.
+2. Amazon Associates: tax info and payment method. You need 3 qualifying sales within 180 days.
+3. App Store Connect, App Privacy: press Publish (answers are already filled in). App Review contact info (your name, phone, email) on the version page.
+4. Google Cloud: set a budget alert on the Gemini project so the $10 cannot surprise you.
+5. Do NOT submit for App Review until you decide to: Wick's 4.3(a) rejection put an extended review warning on the account. Submission is your click.
 
-## Still open, none of it blocks TestFlight
-- Firestore database for cloud backup: Firebase console, Firestore, Create database, production mode, then paste `docs/firestore.rules`. The app works without it, backup just stays off.
-- Google sign in: pick a support email in Firebase Authentication, enable Google, create an iOS OAuth client, set `GOOGLE_IOS_CLIENT_ID` in `app/src/lib/config.ts` and add the google sign in config plugin. The button stays hidden until then. Also add an Apple app (bundle id com.peterbroas.bowlscore) in Firebase project settings so Sign in with Apple tokens validate.
-- App Store screenshots, and pasting `docs/app-store-listing.md` into the listing.
-- Amazon Associates and Chewy affiliate signups (need your address and tax info). Then swap tagged links into `shopLink` in `app/src/lib/links.ts`.
+## Still open
+- 20 catalog products have no photo yet. The free photo lookup allows about 20 searches a day: run `npm run catalog` inside `site/` tomorrow and commit what it finds. Carousels already prefer products with photos.
+- App Store screenshots (captions are in `docs/app-store-listing.md`).
+- First device run checks: share image is not blank, sticky buttons on small phones, Google sign in round trip, a recall banner, a switch plan reminder at 8am.
 - Legal pages name you as "Peter Broas, United States" with no street address. Read /privacy and /terms once before release.
-- Do NOT submit for App Review yet: Wick's 4.3(a) spam rejection put an extended review warning on the account. TestFlight is safe. Submission should be your decision and your click.
-- Your C: drive was completely full overnight. Keep a few GB free or installs and builds on this PC fail.
 
 ## Where everything is
-- App: `app/` (Expo SDK 57). Preview on this PC: `cd app`, `npx expo start --web --port 8090`, open http://localhost:8090/preview.html
-- Site and API: `site/`, live at https://bowlscoreapp.vercel.app, auto deploys from main.
+- App: `app/` (Expo SDK 57). Preview on this PC: `cd app`, `EXPO_PUBLIC_PREVIEW=1 npx expo start --web --port 8090`, open http://localhost:8090/preview.html
+- Site and API: `site/`, live at https://bowlscoreapp.vercel.app, auto deploys from main. `/api/scan`, `/api/catalog`, `/api/recalls`.
+- Catalog: `site/src/data/catalog.json` (labels only, scores are computed by the rubric on every deploy), photos in `site/public/products`.
 - Scoring: `site/src/lib/rubric.ts`, tests with `npm test` inside `site/`.
 - Build: `.github/workflows/beta.yml` plus `fastlane/`. Start one with `gh workflow run beta.yml --repo pbroas127/bowlscore`.
 - IDs: bundle com.peterbroas.bowlscore, Apple ID 6814359922, Firebase bowlscore-5e75a, Vercel project bowlscore, RevenueCat project 4a1843e1.
