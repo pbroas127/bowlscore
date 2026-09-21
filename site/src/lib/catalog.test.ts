@@ -26,10 +26,24 @@ for (const p of PRODUCTS) {
   assert.ok(Number.isInteger(p.result.score) && p.result.score >= 1 && p.result.score <= 100, `${p.id} scored ${p.result.score}`)
   assert.equal(p.result.complete, p.form !== 'treat', `${p.id} complete flag`)
   if (p.form !== 'treat') assert.notEqual(p.result.components.nutrition, null, `${p.id} has a nutrition score`)
-  assert.match(p.links.amazon, /^https:\/\/www\.amazon\.com\/s\?k=[^&]+&tag=bowlscore-20$/)
+  const search = /^https:\/\/www\.amazon\.com\/s\?k=[^&]+&tag=bowlscore-20$/
+  const dp = (asin: string) => `https://www.amazon.com/dp/${asin}?tag=bowlscore-20`
+  if (p.asin) assert.equal(p.links.amazon, dp(p.asin))
+  else assert.match(p.links.amazon, search)
+  for (const [i, s] of (p.sizes ?? []).entries()) {
+    assert.ok(s.label && s.lb > 0, `${p.id} size ${s.label}`)
+    if (i) assert.ok(s.lb >= p.sizes![i - 1].lb, `${p.id} sizes sorted small to large`)
+    if (s.asin) assert.equal(s.url, dp(s.asin))
+    else assert.match(s.url, search)
+  }
   assert.ok(!('amazonQuery' in p))
   assert.ok(p.image === null || /^https:\/\/.+\/products\/.+\.webp$/.test(p.image))
 }
+
+// ASINs are real Amazon ids, and a line only exists to link siblings.
+for (const e of CATALOG) for (const a of [e.asin, ...(e.sizes ?? []).map((s) => s.asin)]) if (a) assert.match(a, /^[A-Z0-9]{10}$/, `${e.id} asin ${a}`)
+const lines = Map.groupBy(CATALOG.filter((e) => e.line), (e) => e.line!)
+for (const [line, members] of lines) assert.ok(members.length >= 2, `line ${line} has only one member`)
 
 // Matching: strong matches only. A wrong match is worse than none.
 const id = (scan: Parameters<typeof matchCatalog>[0]) => matchCatalog(scan)?.id ?? null

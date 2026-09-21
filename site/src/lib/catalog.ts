@@ -16,19 +16,29 @@ export interface CatalogEntry {
   sourceUrl: string
   image: string | null
   amazonQuery: string
+  sizes?: { label: string; lb: number; asin?: string }[] // small to large; lb is the whole pack for wet food
+  asin?: string // the most common size, the default link
+  line?: string // shared by entries that are flavors or life stages of one product line
 }
 
-export type CatalogProduct = Omit<CatalogEntry, 'amazonQuery'> & { result: ScoreResult; links: { amazon: string } }
+export type CatalogSize = { label: string; lb: number; asin?: string; url: string }
+export type CatalogProduct = Omit<CatalogEntry, 'amazonQuery' | 'sizes'> & { sizes?: CatalogSize[]; result: ScoreResult; links: { amazon: string } }
 
 export const CATALOG = data as CatalogEntry[]
 
 const absolute = (image: string | null) => (image ? SITE_URL + image : null)
 
-export const PRODUCTS: CatalogProduct[] = CATALOG.map(({ amazonQuery, ...entry }) => ({
+const TAG = 'bowlscore-20'
+// A known ASIN opens that exact product page; otherwise an Amazon search, which still carries the tag.
+const amazon = (asin: string | undefined, query: string) =>
+  asin ? `https://www.amazon.com/dp/${asin}?tag=${TAG}` : `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${TAG}`
+
+export const PRODUCTS: CatalogProduct[] = CATALOG.map(({ amazonQuery, sizes, ...entry }) => ({
   ...entry,
+  ...(sizes && { sizes: sizes.map((s) => ({ ...s, url: amazon(s.asin, `${amazonQuery} ${s.label}`) })) }),
   image: absolute(entry.image),
   result: scoreFood(entry.label, entry.species, entry.lifeStage === 'growth' ? 'growth' : 'adult'),
-  links: { amazon: `https://www.amazon.com/s?k=${encodeURIComponent(amazonQuery)}&tag=bowlscore-20` },
+  links: { amazon: amazon(entry.asin, amazonQuery) },
 }))
 
 // Changes whenever the rubric or any catalog byte changes, so the app knows when to refresh its copy.

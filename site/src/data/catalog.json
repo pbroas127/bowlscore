@@ -62,7 +62,46 @@
     },
     "sourceUrl": "https://www.purina.com/dogs/shop/purina-one-chicken-rice-dry-dog-food?page=pg:6/ct:r&bvstate=pg:10/ct:r",
     "image": null,
-    "amazonQuery": "Purina ONE Chicken & Rice Formula dry dog food"
+    "amazonQuery": "Purina ONE Chicken & Rice Formula dry dog food",
+    "sizes": [
+      {
+        "label": "3 lb",
+        "lb": 3
+      },
+      {
+        "label": "4 lb",
+        "lb": 4
+      },
+      {
+        "label": "8 lb",
+        "lb": 8,
+        "asin": "B0000AH3QT"
+      },
+      {
+        "label": "13.5 lb",
+        "lb": 13.5
+      },
+      {
+        "label": "16.5 lb",
+        "lb": 16.5,
+        "asin": "B006JCUGVQ"
+      },
+      {
+        "label": "31.1 lb",
+        "lb": 31.1,
+        "asin": "B008MKI7KU"
+      },
+      {
+        "label": "40 lb",
+        "lb": 40,
+        "asin": "B073PCGRR2"
+      },
+      {
+        "label": "44 lb",
+        "lb": 44
+      }
+    ],
+    "asin": "B006JCUGVQ"
   },
   {
     "id": "purina-pro-plan-complete-essentials-shredded-blend-chicken-and-rice-formula-dog",
@@ -115,7 +154,34 @@
     },
     "sourceUrl": "https://www.chewy.com/ca/purina-pro-plan-complete-essentials/dp/1000006638",
     "image": "/products/purina-pro-plan-complete-essentials-shredded-blend-chicken-and-rice-formula-dog.webp",
-    "amazonQuery": "Purina Pro Plan Complete Essentials Shredded Blend Chicken & Rice Formula dry dog food"
+    "amazonQuery": "Purina Pro Plan Complete Essentials Shredded Blend Chicken & Rice Formula dry dog food",
+    "sizes": [
+      {
+        "label": "5 lb",
+        "lb": 5,
+        "asin": "B0DKY79FVN"
+      },
+      {
+        "label": "15 lb",
+        "lb": 15,
+        "asin": "B0DKY8Y7ZW"
+      },
+      {
+        "label": "18 lb",
+        "lb": 18
+      },
+      {
+        "label": "35 lb",
+        "lb": 35,
+        "asin": "B001QCKS4O"
+      },
+      {
+        "label": "47 lb",
+        "lb": 47
+      }
+    ],
+    "asin": "B001QCKS4O",
+    "line": "purina-pro-plan-complete-essentials-dog"
   },
   {
     "id": "purina-pro-plan-puppy-chicken-and-rice-formula-dog",
@@ -165,7 +231,25 @@
     },
     "sourceUrl": "https://www.purina.com/sites/default/files/product-label-deck-file/2024-12/4458_z445823_pro_plan_puppy_chicken_rice_formula_dog_food_l07.pdf",
     "image": "/products/purina-pro-plan-puppy-chicken-and-rice-formula-dog.webp",
-    "amazonQuery": "Purina Pro Plan Puppy Chicken & Rice Formula dry dog food"
+    "amazonQuery": "Purina Pro Plan Puppy Chicken & Rice Formula dry dog food",
+    "sizes": [
+      {
+        "label": "6 lb",
+        "lb": 6
+      },
+      {
+        "label": "18 lb",
+        "lb": 18,
+        "asin": "B000633JS6"
+      },
+      {
+        "label": "34 lb",
+        "lb": 34,
+        "asin": "B003R0LLA8"
+      }
+    ],
+    "asin": "B000633JS6",
+    "line": "purina-pro-plan-complete-essentials-dog"
   },
   {
     "id": "purina-dog-chow-complete-adult-with-real-chicken-dog",
@@ -216,7 +300,40 @@
     },
     "sourceUrl": "https://www.chewy.com/dog-chow-complete-adult-real-chicken/dp/4309662",
     "image": "/products/purina-dog-chow-complete-adult-with-real-chicken-dog.webp",
-    "amazonQuery": "Purina Dog Chow Complete Adult with Real Chicken dry dog food"
+    "amazonQuery": "Purina Dog Chow Complete Adult with Real Chicken dry dog food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5
+      },
+      {
+        "label": "4.4 lb",
+        "lb": 4.4
+      },
+      {
+        "label": "8.8 lb",
+        "lb": 8.8,
+        "asin": "B002QT1U9S"
+      },
+      {
+        "label": "18.5 lb",
+        "lb": 18.5,
+        "asin": "B00HATAJQO"
+      },
+      {
+        "label": "20 lb",
+        "lb": 20
+      },
+      {
+        "label": "32 lb",
+        "lb": 32
+      },
+      {
+        "label": "44 lb",
+        "lb": 44
+      }
+    ],
+    "asin": "B00HATAJQO"
   },
   {
     "id": "pedigree-complete-nutrition-adult-roasted-chicken-rice-and-vegetable-flavor-dog",
@@ -268,7 +385,50 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/pedigree-complete-nutrition-adult-dry-dog-food---chicken-rice-and-vegetables-5379764.html?redirected=true&bvstate=pg:6/ct:r",
     "image": "/products/pedigree-complete-nutrition-adult-roasted-chicken-rice-and-vegetable-flavor-dog.webp",
-    "amazonQuery": "Pedigree Complete Nutrition Adult Roasted Chicken, Rice & Vegetable Flavor dry dog food"
+    "amazonQuery": "Pedigree Complete Nutrition Adult Roasted Chicken, Rice & Vegetable Flavor dry dog food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5,
+        "asin": "B007ZZDJWY"
+      },
+      {
+        "label": "14 lb",
+        "lb": 14,
+        "asin": "B09RP1NXDC"
+      },
+      {
+        "label": "15 lb",
+        "lb": 15,
+        "asin": "B016ZPBD04"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B09RPCS6ZP"
+      },
+      {
+        "label": "20.4 lb",
+        "lb": 20.4,
+        "asin": "B016ZPBCI2"
+      },
+      {
+        "label": "30 lb",
+        "lb": 30,
+        "asin": "B09RP8X162"
+      },
+      {
+        "label": "36 lb",
+        "lb": 36,
+        "asin": "B005M16UHE"
+      },
+      {
+        "label": "40 lb",
+        "lb": 40,
+        "asin": "B09RPGC2TM"
+      }
+    ],
+    "asin": "B09RP8X162"
   },
   {
     "id": "kibbles-n-bits-original-savory-beef-and-chicken-flavors-dog",
@@ -326,7 +486,53 @@
     },
     "sourceUrl": "https://www.kibblesnbits.com/product/kibbles-n-bits-original-savory-beef-chicken-flavors-dry-dog-food/",
     "image": "/products/kibbles-n-bits-original-savory-beef-and-chicken-flavors-dog.webp",
-    "amazonQuery": "Kibbles 'n Bits Original Savory Beef & Chicken Flavors dry dog food"
+    "amazonQuery": "Kibbles 'n Bits Original Savory Beef & Chicken Flavors dry dog food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5,
+        "asin": "B00H6Y5T7M"
+      },
+      {
+        "label": "4.2 lb",
+        "lb": 4.2,
+        "asin": "B074JN3Y2D"
+      },
+      {
+        "label": "8 lb",
+        "lb": 8,
+        "asin": "B00H3FO0SS"
+      },
+      {
+        "label": "13 lb",
+        "lb": 13
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B06XGGFD7S"
+      },
+      {
+        "label": "17.6 lb",
+        "lb": 17.6,
+        "asin": "B075YB65WP"
+      },
+      {
+        "label": "31 lb",
+        "lb": 31,
+        "asin": "B008X30LQO"
+      },
+      {
+        "label": "45 lb",
+        "lb": 45
+      },
+      {
+        "label": "50 lb",
+        "lb": 50,
+        "asin": "B01JIRKLP4"
+      }
+    ],
+    "asin": "B008X30LQO"
   },
   {
     "id": "iams-proactive-health-adult-minichunks-chicken-and-whole-grains-recipe-dog",
@@ -375,7 +581,44 @@
     },
     "sourceUrl": "https://www.chewy.com/iams-proactive-health-minichunks/dp/131680",
     "image": null,
-    "amazonQuery": "Iams Proactive Health Adult Minichunks Chicken & Whole Grains Recipe dry dog food"
+    "amazonQuery": "Iams Proactive Health Adult Minichunks Chicken & Whole Grains Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "3.3 lb",
+        "lb": 3.3,
+        "asin": "B00BD740M8"
+      },
+      {
+        "label": "5 lb",
+        "lb": 5,
+        "asin": "B0G76XXQX2"
+      },
+      {
+        "label": "7 lb",
+        "lb": 7
+      },
+      {
+        "label": "15 lb",
+        "lb": 15,
+        "asin": "B00BZSR0R2"
+      },
+      {
+        "label": "30 lb",
+        "lb": 30,
+        "asin": "B00BD741WM"
+      },
+      {
+        "label": "38.5 lb",
+        "lb": 38.5,
+        "asin": "B00C3HSM0S"
+      },
+      {
+        "label": "40 lb",
+        "lb": 40,
+        "asin": "B01LCZNJFO"
+      }
+    ],
+    "asin": "B00BD741WM"
   },
   {
     "id": "kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog",
@@ -455,7 +698,19 @@
     },
     "sourceUrl": "https://www.costco.com/p/-/kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog-food-25-lbs/4000399008",
     "image": "/products/kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog.webp",
-    "amazonQuery": "Kirkland Signature Adult Formula Chicken, Rice & Vegetable dry dog food"
+    "amazonQuery": "Kirkland Signature Adult Formula Chicken, Rice & Vegetable dry dog food",
+    "sizes": [
+      {
+        "label": "25 lb",
+        "lb": 25
+      },
+      {
+        "label": "40 lb",
+        "lb": 40,
+        "asin": "B0057GYSEQ"
+      }
+    ],
+    "asin": "B0057GYSEQ"
   },
   {
     "id": "diamond-naturals-chicken-and-rice-formula-all-life-stages-dog",
@@ -539,7 +794,15 @@
     },
     "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/all-life-stages-dog-chicken-rice/",
     "image": null,
-    "amazonQuery": "Diamond Naturals Chicken & Rice Formula All Life Stages dry dog food"
+    "amazonQuery": "Diamond Naturals Chicken & Rice Formula All Life Stages dry dog food",
+    "sizes": [
+      {
+        "label": "40 lb",
+        "lb": 40,
+        "asin": "B000OCQ6DY"
+      }
+    ],
+    "asin": "B000OCQ6DY"
   },
   {
     "id": "rachael-ray-nutrish-real-chicken-and-veggies-recipe-dog",
@@ -593,7 +856,31 @@
     },
     "sourceUrl": "https://www.nutrish.com/product/nutrish-real-chicken-veggies-recipe-dry-dog-food/",
     "image": null,
-    "amazonQuery": "Rachael Ray Nutrish Real Chicken & Veggies Recipe dry dog food"
+    "amazonQuery": "Rachael Ray Nutrish Real Chicken & Veggies Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "6 lb",
+        "lb": 6
+      },
+      {
+        "label": "14 lb",
+        "lb": 14
+      },
+      {
+        "label": "28 lb",
+        "lb": 28
+      },
+      {
+        "label": "40 lb",
+        "lb": 40,
+        "asin": "B00FBT7XAK"
+      },
+      {
+        "label": "50 lb",
+        "lb": 50
+      }
+    ],
+    "asin": "B00FBT7XAK"
   },
   {
     "id": "blue-buffalo-wilderness-adult-chicken-recipe-dog",
@@ -685,7 +972,27 @@
     },
     "sourceUrl": "https://www.chewy.com/blue-buffalo-wilderness-chicken/dp/1684006",
     "image": "/products/blue-buffalo-wilderness-adult-chicken-recipe-dog.webp",
-    "amazonQuery": "Blue Buffalo Wilderness Adult Chicken Recipe dry dog food"
+    "amazonQuery": "Blue Buffalo Wilderness Adult Chicken Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "4.5 lb",
+        "lb": 4.5
+      },
+      {
+        "label": "13 lb",
+        "lb": 13
+      },
+      {
+        "label": "24 lb",
+        "lb": 24,
+        "asin": "B00YFZ7BDA"
+      },
+      {
+        "label": "28 lb",
+        "lb": 28
+      }
+    ],
+    "asin": "B00YFZ7BDA"
   },
   {
     "id": "taste-of-the-wild-high-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog",
@@ -761,7 +1068,25 @@
     },
     "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/high-prairie-with-roasted-bison-roasted-venison/",
     "image": "/products/taste-of-the-wild-high-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog.webp",
-    "amazonQuery": "Taste of the Wild High Prairie Canine Recipe with Roasted Bison & Roasted Venison dry dog food"
+    "amazonQuery": "Taste of the Wild High Prairie Canine Recipe with Roasted Bison & Roasted Venison dry dog food",
+    "sizes": [
+      {
+        "label": "5 lb",
+        "lb": 5,
+        "asin": "B0018CLWS8"
+      },
+      {
+        "label": "14 lb",
+        "lb": 14,
+        "asin": "B07KNF5XFF"
+      },
+      {
+        "label": "28 lb",
+        "lb": 28,
+        "asin": "B07L97GQW5"
+      }
+    ],
+    "asin": "B07L97GQW5"
   },
   {
     "id": "wellness-complete-health-adult-deboned-chicken-and-oatmeal-recipe-dog",
@@ -840,7 +1165,31 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/wellness-complete-health-adult-dry-dog-food---chicken-and-oatmeal-97860.html",
     "image": null,
-    "amazonQuery": "Wellness Complete Health Adult Deboned Chicken & Oatmeal Recipe dry dog food"
+    "amazonQuery": "Wellness Complete Health Adult Deboned Chicken & Oatmeal Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "5 lb",
+        "lb": 5
+      },
+      {
+        "label": "15 lb",
+        "lb": 15
+      },
+      {
+        "label": "26 lb",
+        "lb": 26
+      },
+      {
+        "label": "30 lb",
+        "lb": 30,
+        "asin": "B001BORBHO"
+      },
+      {
+        "label": "38 lb",
+        "lb": 38
+      }
+    ],
+    "asin": "B001BORBHO"
   },
   {
     "id": "merrick-grain-free-real-texas-beef-sweet-potato-recipe-dog",
@@ -893,7 +1242,23 @@
     },
     "sourceUrl": "https://www.chewy.com/merrick-real-texas-beef-sweet-potato/dp/280317",
     "image": "/products/merrick-grain-free-real-texas-beef-sweet-potato-recipe-dog.webp",
-    "amazonQuery": "Merrick Grain Free Real Texas Beef + Sweet Potato Recipe dry dog food"
+    "amazonQuery": "Merrick Grain Free Real Texas Beef + Sweet Potato Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "4 lb",
+        "lb": 4,
+        "asin": "B00C6Z77L2"
+      },
+      {
+        "label": "22 lb",
+        "lb": 22
+      },
+      {
+        "label": "30 lb",
+        "lb": 30
+      }
+    ],
+    "asin": "B00C6Z77L2"
   },
   {
     "id": "nutro-natural-choice-adult-chicken-and-brown-rice-recipe-dog",
@@ -964,7 +1329,27 @@
     },
     "sourceUrl": "https://www.chewy.com/nutro-natural-choice-adult-chicken/dp/1063886",
     "image": null,
-    "amazonQuery": "Nutro Natural Choice Adult Chicken & Brown Rice Recipe dry dog food"
+    "amazonQuery": "Nutro Natural Choice Adult Chicken & Brown Rice Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "5 lb",
+        "lb": 5
+      },
+      {
+        "label": "22 lb",
+        "lb": 22
+      },
+      {
+        "label": "30 lb",
+        "lb": 30,
+        "asin": "B00TZGAB36"
+      },
+      {
+        "label": "36 lb",
+        "lb": 36
+      }
+    ],
+    "asin": "B00TZGAB36"
   },
   {
     "id": "natural-balance-limited-ingredient-lamb-and-brown-rice-recipe-dog",
@@ -1012,7 +1397,25 @@
     },
     "sourceUrl": "https://www.tractorsupply.com/tsc/product/natural-balance-lid-limited-ingredient-diets-lamb-meal-brown-rice-formula-dry-dog-food-28-lb-bag-5904186",
     "image": null,
-    "amazonQuery": "Natural Balance Limited Ingredient Lamb & Brown Rice Recipe dry dog food"
+    "amazonQuery": "Natural Balance Limited Ingredient Lamb & Brown Rice Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "4 lb",
+        "lb": 4,
+        "asin": "B083X2SWS8"
+      },
+      {
+        "label": "12 lb",
+        "lb": 12,
+        "asin": "B083X4B3JF"
+      },
+      {
+        "label": "24 lb",
+        "lb": 24,
+        "asin": "B09ZDP1GZM"
+      }
+    ],
+    "asin": "B09ZDP1GZM"
   },
   {
     "id": "orijen-original-dog",
@@ -1090,7 +1493,25 @@
     },
     "sourceUrl": "https://www.chewy.com/orijen-original-grain-free-dry-dog/dp/1992494",
     "image": "/products/orijen-original-dog.webp",
-    "amazonQuery": "Orijen Original dry dog food"
+    "amazonQuery": "Orijen Original dry dog food",
+    "sizes": [
+      {
+        "label": "4.5 lb",
+        "lb": 4.5,
+        "asin": "B01I3K10ZC"
+      },
+      {
+        "label": "13 lb",
+        "lb": 13,
+        "asin": "B01I3JPXPQ"
+      },
+      {
+        "label": "23.5 lb",
+        "lb": 23.5,
+        "asin": "B01I3JW7PK"
+      }
+    ],
+    "asin": "B01I3JW7PK"
   },
   {
     "id": "open-farm-grass-fed-beef-and-ancient-grains-dog",
@@ -1143,7 +1564,24 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/open-farm-with-grain-adult-dry-dog-food---humanely-raised-and-sustainably-sourced-beef-99555.html",
     "image": "/products/open-farm-grass-fed-beef-and-ancient-grains-dog.webp",
-    "amazonQuery": "Open Farm Grass Fed Beef & Ancient Grains dry dog food"
+    "amazonQuery": "Open Farm Grass Fed Beef & Ancient Grains dry dog food",
+    "sizes": [
+      {
+        "label": "4 lb",
+        "lb": 4,
+        "asin": "B087YKQ6G1"
+      },
+      {
+        "label": "11 lb",
+        "lb": 11,
+        "asin": "B086R9Y9XH"
+      },
+      {
+        "label": "22 lb",
+        "lb": 22
+      }
+    ],
+    "asin": "B086R9Y9XH"
   },
   {
     "id": "instinct-original-grain-free-recipe-with-real-chicken-dog",
@@ -1196,7 +1634,23 @@
     },
     "sourceUrl": "https://www.instinctpetfood.com/products/original-kibble-for-dogs-chicken",
     "image": "/products/instinct-original-grain-free-recipe-with-real-chicken-dog.webp",
-    "amazonQuery": "Instinct Original Grain Free Recipe with Real Chicken dry dog food"
+    "amazonQuery": "Instinct Original Grain Free Recipe with Real Chicken dry dog food",
+    "sizes": [
+      {
+        "label": "4 lb",
+        "lb": 4
+      },
+      {
+        "label": "11 lb",
+        "lb": 11
+      },
+      {
+        "label": "22.5 lb",
+        "lb": 22.5,
+        "asin": "B01F9EU16O"
+      }
+    ],
+    "asin": "B01F9EU16O"
   },
   {
     "id": "ziwi-peak-air-dried-beef-recipe-dog",
@@ -1244,7 +1698,34 @@
     },
     "sourceUrl": "https://us.ziwipets.com/products/air-dried-beef-dog-food",
     "image": "/products/ziwi-peak-air-dried-beef-recipe-dog.webp",
-    "amazonQuery": "Ziwi Peak Air Dried Beef Recipe dry dog food"
+    "amazonQuery": "Ziwi Peak Air Dried Beef Recipe dry dog food",
+    "sizes": [
+      {
+        "label": "3.5 oz",
+        "lb": 0.22,
+        "asin": "B0DSYC7KC7"
+      },
+      {
+        "label": "1 lb",
+        "lb": 1,
+        "asin": "B00LPDI34Q"
+      },
+      {
+        "label": "2.2 lb",
+        "lb": 2.2,
+        "asin": "B00JFAXFEO"
+      },
+      {
+        "label": "5.5 lb",
+        "lb": 5.5
+      },
+      {
+        "label": "8.8 lb",
+        "lb": 8.8,
+        "asin": "B06WP66LHD"
+      }
+    ],
+    "asin": "B00JFAXFEO"
   },
   {
     "id": "pedigree-chopped-ground-dinner-with-chicken-dog",
@@ -1286,7 +1767,24 @@
     },
     "sourceUrl": "https://www.chewy.com/pedigree-chopped-ground-dinner/dp/141633",
     "image": null,
-    "amazonQuery": "Pedigree Chopped Ground Dinner with Chicken wet dog food"
+    "amazonQuery": "Pedigree Chopped Ground Dinner with Chicken wet dog food",
+    "sizes": [
+      {
+        "label": "12 cans, 13.2 oz",
+        "lb": 9.9,
+        "asin": "B014UTY9F8"
+      },
+      {
+        "label": "12 cans, 22 oz",
+        "lb": 16.5,
+        "asin": "B008572KSU"
+      },
+      {
+        "label": "24 cans, 22 oz",
+        "lb": 33
+      }
+    ],
+    "asin": "B014UTY9F8"
   },
   {
     "id": "rachael-ray-nutrish-chicken-paw-pie-dog",
@@ -1336,7 +1834,24 @@
     },
     "sourceUrl": "https://www.nutrish.com/product/nutrish-chicken-paw-pie-wet-dog-food/",
     "image": "/products/rachael-ray-nutrish-chicken-paw-pie-dog.webp",
-    "amazonQuery": "Rachael Ray Nutrish Chicken Paw Pie wet dog food"
+    "amazonQuery": "Rachael Ray Nutrish Chicken Paw Pie wet dog food",
+    "sizes": [
+      {
+        "label": "1 tub, 8 oz",
+        "lb": 0.5,
+        "asin": "B00AQFQ9AO"
+      },
+      {
+        "label": "8 tubs, 8 oz",
+        "lb": 4,
+        "asin": "B006WW84YO"
+      },
+      {
+        "label": "16 tubs, 8 oz",
+        "lb": 8
+      }
+    ],
+    "asin": "B006WW84YO"
   },
   {
     "id": "cesar-classic-loaf-in-sauce-filet-mignon-flavor-dog",
@@ -1392,7 +1907,20 @@
     },
     "sourceUrl": "https://www.chewy.com/cesar-classics-filet-mignon-flavor-in/dp/143322",
     "image": "/products/cesar-classic-loaf-in-sauce-filet-mignon-flavor-dog.webp",
-    "amazonQuery": "Cesar Classic Loaf in Sauce Filet Mignon Flavor wet dog food"
+    "amazonQuery": "Cesar Classic Loaf in Sauce Filet Mignon Flavor wet dog food",
+    "sizes": [
+      {
+        "label": "1 tray, 3.5 oz",
+        "lb": 0.22,
+        "asin": "B002QT8NGG"
+      },
+      {
+        "label": "24 trays, 3.5 oz",
+        "lb": 5.25,
+        "asin": "B0029NM8KQ"
+      }
+    ],
+    "asin": "B0029NM8KQ"
   },
   {
     "id": "purina-pro-plan-complete-essentials-chicken-and-rice-entree-classic-dog",
@@ -1431,7 +1959,19 @@
     },
     "sourceUrl": "https://www.chewy.com/purina-pro-plan-complete-essentials/dp/52506",
     "image": "/products/purina-pro-plan-complete-essentials-chicken-and-rice-entree-classic-dog.webp",
-    "amazonQuery": "Purina Pro Plan Complete Essentials Chicken & Rice Entree Classic wet dog food"
+    "amazonQuery": "Purina Pro Plan Complete Essentials Chicken & Rice Entree Classic wet dog food",
+    "sizes": [
+      {
+        "label": "4 cans, 13 oz",
+        "lb": 3.25
+      },
+      {
+        "label": "12 cans, 13 oz",
+        "lb": 9.75,
+        "asin": "B000HBAJ4Y"
+      }
+    ],
+    "asin": "B000HBAJ4Y"
   },
   {
     "id": "blue-buffalo-homestyle-recipe-chicken-dinner-with-garden-vegetables-dog",
@@ -1493,7 +2033,15 @@
     },
     "sourceUrl": "https://www.chewy.com/blue-buffalo-homestyle-recipe-chicken/dp/31991",
     "image": null,
-    "amazonQuery": "Blue Buffalo Homestyle Recipe Chicken Dinner with Garden Vegetables wet dog food"
+    "amazonQuery": "Blue Buffalo Homestyle Recipe Chicken Dinner with Garden Vegetables wet dog food",
+    "sizes": [
+      {
+        "label": "12 cans, 12.5 oz",
+        "lb": 9.38,
+        "asin": "B00ZDK3MZW"
+      }
+    ],
+    "asin": "B00ZDK3MZW"
   },
   {
     "id": "wellness-complete-health-chicken-and-sweet-potato-pate-dog",
@@ -1552,7 +2100,20 @@
     },
     "sourceUrl": "https://www.chewy.com/wellness-complete-health-chicken/dp/4154982",
     "image": null,
-    "amazonQuery": "Wellness Complete Health Chicken & Sweet Potato Pate wet dog food"
+    "amazonQuery": "Wellness Complete Health Chicken & Sweet Potato Pate wet dog food",
+    "sizes": [
+      {
+        "label": "1 can, 12.5 oz",
+        "lb": 0.78,
+        "asin": "B0002I0GPO"
+      },
+      {
+        "label": "12 cans, 12.5 oz",
+        "lb": 9.38,
+        "asin": "B005GRC5VY"
+      }
+    ],
+    "asin": "B005GRC5VY"
   },
   {
     "id": "merrick-grain-free-cowboy-cookout-dog",
@@ -1605,7 +2166,19 @@
     },
     "sourceUrl": "https://www.chewy.com/merrick-grain-free-wet-dog-food/dp/171600",
     "image": "/products/merrick-grain-free-cowboy-cookout-dog.webp",
-    "amazonQuery": "Merrick Grain Free Cowboy Cookout wet dog food"
+    "amazonQuery": "Merrick Grain Free Cowboy Cookout wet dog food",
+    "sizes": [
+      {
+        "label": "24 cans, 3 oz (small breed)",
+        "lb": 4.5
+      },
+      {
+        "label": "12 cans, 12.7 oz",
+        "lb": 9.53,
+        "asin": "B07BG175CG"
+      }
+    ],
+    "asin": "B07BG175CG"
   },
   {
     "id": "weruva-paw-lickin-chicken-in-gravy-dog",
@@ -1655,7 +2228,15 @@
     },
     "sourceUrl": "https://www.weruva.com/products/paw-lickin-chicken-dog-can",
     "image": "/products/weruva-paw-lickin-chicken-in-gravy-dog.webp",
-    "amazonQuery": "Weruva Paw Lickin Chicken in Gravy wet dog food"
+    "amazonQuery": "Weruva Paw Lickin Chicken in Gravy wet dog food",
+    "sizes": [
+      {
+        "label": "12 cans, 14 oz",
+        "lb": 10.5,
+        "asin": "B001TM2A2Y"
+      }
+    ],
+    "asin": "B001TM2A2Y"
   },
   {
     "id": "meow-mix-original-choice-cat",
@@ -1708,7 +2289,39 @@
     },
     "sourceUrl": "https://www.chewy.com/meow-mix-original-choice-dry-cat-food/dp/127508",
     "image": null,
-    "amazonQuery": "Meow Mix Original Choice dry cat food"
+    "amazonQuery": "Meow Mix Original Choice dry cat food",
+    "sizes": [
+      {
+        "label": "3.15 lb",
+        "lb": 3.15,
+        "asin": "B000RUQPN4"
+      },
+      {
+        "label": "6.3 lb",
+        "lb": 6.3,
+        "asin": "B007JXVR76"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B000R4CJQ2"
+      },
+      {
+        "label": "22 lb",
+        "lb": 22,
+        "asin": "B01LZSZ8JF"
+      },
+      {
+        "label": "24 lb",
+        "lb": 24,
+        "asin": "B00NI6PCFQ"
+      },
+      {
+        "label": "30 lb",
+        "lb": 30
+      }
+    ],
+    "asin": "B000R4CJQ2"
   },
   {
     "id": "friskies-seafood-sensations-cat",
@@ -1761,7 +2374,40 @@
     },
     "sourceUrl": "https://www.chewy.com/friskies-seafood-sensations-dry-cat/dp/166268",
     "image": "/products/friskies-seafood-sensations-cat.webp",
-    "amazonQuery": "Friskies Seafood Sensations dry cat food"
+    "amazonQuery": "Friskies Seafood Sensations dry cat food",
+    "sizes": [
+      {
+        "label": "16.2 oz box",
+        "lb": 1.01,
+        "asin": "B000RYDL2I"
+      },
+      {
+        "label": "3.15 lb",
+        "lb": 3.15,
+        "asin": "B00HAT9ZS2"
+      },
+      {
+        "label": "6.3 lb",
+        "lb": 6.3,
+        "asin": "B00068JXPO"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B00KO8ABHU"
+      },
+      {
+        "label": "22 lb",
+        "lb": 22,
+        "asin": "B00HN089EO"
+      },
+      {
+        "label": "30 lb",
+        "lb": 30,
+        "asin": "B074G4F5W3"
+      }
+    ],
+    "asin": "B00KO8ABHU"
   },
   {
     "id": "purina-cat-chow-complete-cat",
@@ -1811,7 +2457,34 @@
     },
     "sourceUrl": "https://www.chewy.com/cat-chow-complete-chicken-vitamins/dp/200465",
     "image": "/products/purina-cat-chow-complete-cat.webp",
-    "amazonQuery": "Purina Cat Chow Complete dry cat food"
+    "amazonQuery": "Purina Cat Chow Complete dry cat food",
+    "sizes": [
+      {
+        "label": "3.15 lb",
+        "lb": 3.15,
+        "asin": "B0842ZX7K8"
+      },
+      {
+        "label": "3.5 lb",
+        "lb": 3.5
+      },
+      {
+        "label": "6.3 lb",
+        "lb": 6.3
+      },
+      {
+        "label": "15 lb",
+        "lb": 15
+      },
+      {
+        "label": "20 lb",
+        "lb": 20
+      },
+      {
+        "label": "22 lb",
+        "lb": 22
+      }
+    ]
   },
   {
     "id": "9lives-daily-essentials-cat",
@@ -1862,7 +2535,30 @@
     },
     "sourceUrl": "https://www.9lives.com/product/9lives-daily-essentials-dry-cat-food/",
     "image": "/products/9lives-daily-essentials-cat.webp",
-    "amazonQuery": "9Lives Daily Essentials dry cat food"
+    "amazonQuery": "9Lives Daily Essentials dry cat food",
+    "sizes": [
+      {
+        "label": "3.15 lb",
+        "lb": 3.15,
+        "asin": "B00285ZU0A"
+      },
+      {
+        "label": "12 lb",
+        "lb": 12,
+        "asin": "B00MOI2Q94"
+      },
+      {
+        "label": "20 lb",
+        "lb": 20,
+        "asin": "B00J5HO29E"
+      },
+      {
+        "label": "28 lb",
+        "lb": 28,
+        "asin": "B06XZYZ5PK"
+      }
+    ],
+    "asin": "B00MOI2Q94"
   },
   {
     "id": "purina-one-tender-selects-blend-with-real-chicken-cat",
@@ -1933,7 +2629,29 @@
     },
     "sourceUrl": "https://www.purina.com/sites/default/files/product-label-deck-file/2026-04/4155_f415525_pone_tsb_w_real_chicken_dry_cat_food_nt2.pdf",
     "image": null,
-    "amazonQuery": "Purina ONE Tender Selects Blend with Real Chicken dry cat food"
+    "amazonQuery": "Purina ONE Tender Selects Blend with Real Chicken dry cat food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5
+      },
+      {
+        "label": "7 lb",
+        "lb": 7,
+        "asin": "B0000AH3RM"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B0000AH3RN"
+      },
+      {
+        "label": "22 lb",
+        "lb": 22,
+        "asin": "B005LMVGVY"
+      }
+    ],
+    "asin": "B0000AH3RN"
   },
   {
     "id": "iams-proactive-health-indoor-weight-and-hairball-care-cat",
@@ -1989,7 +2707,27 @@
     },
     "sourceUrl": "https://www.chewy.com/iams-proactive-health-indoor-weight/dp/121262",
     "image": "/products/iams-proactive-health-indoor-weight-and-hairball-care-cat.webp",
-    "amazonQuery": "Iams Proactive Health Indoor Weight & Hairball Care dry cat food"
+    "amazonQuery": "Iams Proactive Health Indoor Weight & Hairball Care dry cat food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5,
+        "asin": "B01BMBYKOM"
+      },
+      {
+        "label": "7 lb",
+        "lb": 7,
+        "asin": "B01BKYFR7K"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16
+      },
+      {
+        "label": "22 lb",
+        "lb": 22
+      }
+    ]
   },
   {
     "id": "rachael-ray-nutrish-real-chicken-and-brown-rice-recipe-cat",
@@ -2043,7 +2781,25 @@
     },
     "sourceUrl": "https://www.nutrish.com/product/nutrish-real-chicken-brown-rice-recipe-dry-cat-food/",
     "image": "/products/rachael-ray-nutrish-real-chicken-and-brown-rice-recipe-cat.webp",
-    "amazonQuery": "Rachael Ray Nutrish Real Chicken & Brown Rice Recipe dry cat food"
+    "amazonQuery": "Rachael Ray Nutrish Real Chicken & Brown Rice Recipe dry cat food",
+    "sizes": [
+      {
+        "label": "3 lb",
+        "lb": 3,
+        "asin": "B00I2KPNFC"
+      },
+      {
+        "label": "6 lb",
+        "lb": 6,
+        "asin": "B01HEZAW1A"
+      },
+      {
+        "label": "14 lb",
+        "lb": 14,
+        "asin": "B00I2KPO4C"
+      }
+    ],
+    "asin": "B00I2KPO4C"
   },
   {
     "id": "purina-pro-plan-complete-essentials-chicken-and-rice-formula-cat",
@@ -2093,7 +2849,25 @@
     },
     "sourceUrl": "https://www.chewy.com/purina-pro-plan-chicken-rice-formula/dp/52863",
     "image": null,
-    "amazonQuery": "Purina Pro Plan Complete Essentials Chicken & Rice Formula dry cat food"
+    "amazonQuery": "Purina Pro Plan Complete Essentials Chicken & Rice Formula dry cat food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5
+      },
+      {
+        "label": "7 lb",
+        "lb": 7,
+        "asin": "B004PH3AXS"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B001VIY9B6"
+      }
+    ],
+    "asin": "B001VIY9B6",
+    "line": "purina-pro-plan-complete-essentials-cat"
   },
   {
     "id": "purina-pro-plan-kitten-chicken-and-rice-formula-cat",
@@ -2148,7 +2922,21 @@
     },
     "sourceUrl": "https://www.chewy.com/purina-pro-plan-complete-essentials/dp/1972694",
     "image": null,
-    "amazonQuery": "Purina Pro Plan Kitten Chicken & Rice Formula dry cat food"
+    "amazonQuery": "Purina Pro Plan Kitten Chicken & Rice Formula dry cat food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5,
+        "asin": "B0F56RSJHZ"
+      },
+      {
+        "label": "16 lb",
+        "lb": 16,
+        "asin": "B0F56MHDCF"
+      }
+    ],
+    "asin": "B0F56MHDCF",
+    "line": "purina-pro-plan-complete-essentials-cat"
   },
   {
     "id": "blue-buffalo-wilderness-adult-chicken-recipe-cat",
@@ -2234,7 +3022,42 @@
     },
     "sourceUrl": "https://www.bluebuffalo.com/dry-cat-food/wilderness/chicken/",
     "image": "/products/blue-buffalo-wilderness-adult-chicken-recipe-cat.webp",
-    "amazonQuery": "Blue Buffalo Wilderness Adult Chicken Recipe dry cat food"
+    "amazonQuery": "Blue Buffalo Wilderness Adult Chicken Recipe dry cat food",
+    "sizes": [
+      {
+        "label": "2 lb",
+        "lb": 2
+      },
+      {
+        "label": "4 lb",
+        "lb": 4,
+        "asin": "B0CFC1WSM7"
+      },
+      {
+        "label": "6 lb",
+        "lb": 6,
+        "asin": "B00X04EBJY"
+      },
+      {
+        "label": "9.5 lb",
+        "lb": 9.5
+      },
+      {
+        "label": "11 lb",
+        "lb": 11,
+        "asin": "B00REJU4V0"
+      },
+      {
+        "label": "12 lb",
+        "lb": 12,
+        "asin": "B002UT92EY"
+      },
+      {
+        "label": "15 lb",
+        "lb": 15
+      }
+    ],
+    "asin": "B00X04EBJY"
   },
   {
     "id": "hills-science-diet-adult-indoor-chicken-recipe-cat",
@@ -2289,7 +3112,25 @@
     },
     "sourceUrl": "https://www.chewy.com/hills-science-diet-adult-indoor/dp/34081",
     "image": null,
-    "amazonQuery": "Hill's Science Diet Adult Indoor Chicken Recipe dry cat food"
+    "amazonQuery": "Hill's Science Diet Adult Indoor Chicken Recipe dry cat food",
+    "sizes": [
+      {
+        "label": "3.5 lb",
+        "lb": 3.5,
+        "asin": "B018OI687I"
+      },
+      {
+        "label": "7 lb",
+        "lb": 7,
+        "asin": "B003MA3AW0"
+      },
+      {
+        "label": "15.5 lb",
+        "lb": 15.5,
+        "asin": "B003MA8P02"
+      }
+    ],
+    "asin": "B003MA8P02"
   },
   {
     "id": "nutro-wholesome-essentials-indoor-adult-chicken-and-brown-rice-recipe-cat",
@@ -2357,7 +3198,24 @@
     },
     "sourceUrl": "https://www.nutro.com/products/dry/adult-indoor-formula-chicken-brown-rice-recipe",
     "image": "/products/nutro-wholesome-essentials-indoor-adult-chicken-and-brown-rice-recipe-cat.webp",
-    "amazonQuery": "Nutro Wholesome Essentials Indoor Adult Chicken & Brown Rice Recipe dry cat food"
+    "amazonQuery": "Nutro Wholesome Essentials Indoor Adult Chicken & Brown Rice Recipe dry cat food",
+    "sizes": [
+      {
+        "label": "3 lb",
+        "lb": 3
+      },
+      {
+        "label": "5 lb",
+        "lb": 5,
+        "asin": "B07S57GMZK"
+      },
+      {
+        "label": "14 lb",
+        "lb": 14,
+        "asin": "B00TZI3Q7M"
+      }
+    ],
+    "asin": "B00TZI3Q7M"
   },
   {
     "id": "natural-balance-limited-ingredient-green-pea-and-chicken-recipe-cat",
@@ -2405,7 +3263,28 @@
     },
     "sourceUrl": "https://www.chewy.com/ca/natural-balance-limited-ingredient/dp/1000047359",
     "image": null,
-    "amazonQuery": "Natural Balance Limited Ingredient Green Pea & Chicken Recipe dry cat food"
+    "amazonQuery": "Natural Balance Limited Ingredient Green Pea & Chicken Recipe dry cat food",
+    "sizes": [
+      {
+        "label": "4 lb",
+        "lb": 4
+      },
+      {
+        "label": "5 lb",
+        "lb": 5,
+        "asin": "B0030N5JIM"
+      },
+      {
+        "label": "10 lb",
+        "lb": 10,
+        "asin": "B002IVDAH4"
+      },
+      {
+        "label": "15 lb",
+        "lb": 15
+      }
+    ],
+    "asin": "B002IVDAH4"
   },
   {
     "id": "open-farm-wild-caught-salmon-recipe-cat",
@@ -2474,7 +3353,25 @@
     },
     "sourceUrl": "https://openfarmpet.com/products/wild-caught-salmon-dry-cat-food",
     "image": "/products/open-farm-wild-caught-salmon-recipe-cat.webp",
-    "amazonQuery": "Open Farm Wild Caught Salmon Recipe dry cat food"
+    "amazonQuery": "Open Farm Wild Caught Salmon Recipe dry cat food",
+    "sizes": [
+      {
+        "label": "2 lb",
+        "lb": 2,
+        "asin": "B0BTTTWJV4"
+      },
+      {
+        "label": "4 lb",
+        "lb": 4,
+        "asin": "B08DNJ24CW"
+      },
+      {
+        "label": "8 lb",
+        "lb": 8,
+        "asin": "B077413VLX"
+      }
+    ],
+    "asin": "B08DNJ24CW"
   },
   {
     "id": "instinct-original-grain-free-recipe-with-real-chicken-cat",
@@ -2523,7 +3420,19 @@
     },
     "sourceUrl": "https://www.instinctpetfood.com/products/original-kibble-for-cats-chicken",
     "image": "/products/instinct-original-grain-free-recipe-with-real-chicken-cat.webp",
-    "amazonQuery": "Instinct Original Grain Free Recipe with Real Chicken dry cat food"
+    "amazonQuery": "Instinct Original Grain Free Recipe with Real Chicken dry cat food",
+    "sizes": [
+      {
+        "label": "5 lb",
+        "lb": 5,
+        "asin": "B06XDSDNJJ"
+      },
+      {
+        "label": "11 lb",
+        "lb": 11
+      }
+    ],
+    "asin": "B06XDSDNJJ"
   },
   {
     "id": "stella-and-chewys-chick-chick-chicken-dinner-morsels-freeze-dried-raw-cat",
@@ -2583,7 +3492,26 @@
     },
     "sourceUrl": "https://www.stellaandchewys.com/products/chick-chick-chicken-freeze-dried-raw-dinner-morsels",
     "image": null,
-    "amazonQuery": "Stella & Chewy's Chick Chick Chicken Dinner Morsels Freeze Dried Raw freeze dried cat food"
+    "amazonQuery": "Stella & Chewy's Chick Chick Chicken Dinner Morsels Freeze Dried Raw freeze dried cat food",
+    "sizes": [
+      {
+        "label": "3.5 oz",
+        "lb": 0.22
+      },
+      {
+        "label": "8 oz",
+        "lb": 0.5
+      },
+      {
+        "label": "12 oz",
+        "lb": 0.75,
+        "asin": "B0052OUX60"
+      },
+      {
+        "label": "18 oz",
+        "lb": 1.13
+      }
+    ]
   },
   {
     "id": "fancy-feast-classic-pate-tender-beef-feast-cat",
@@ -2624,7 +3552,24 @@
     },
     "sourceUrl": "https://www.chewy.com/fancy-feast-classic-tender-beef-feast/dp/103912",
     "image": null,
-    "amazonQuery": "Fancy Feast Classic Pate Tender Beef Feast wet cat food"
+    "amazonQuery": "Fancy Feast Classic Pate Tender Beef Feast wet cat food",
+    "sizes": [
+      {
+        "label": "4 cans, 3 oz",
+        "lb": 0.75
+      },
+      {
+        "label": "12 cans, 3 oz",
+        "lb": 2.25,
+        "asin": "B01JS7NWBE"
+      },
+      {
+        "label": "24 cans, 3 oz",
+        "lb": 4.5,
+        "asin": "B0012KB470"
+      }
+    ],
+    "asin": "B0012KB470"
   },
   {
     "id": "blue-buffalo-tastefuls-chicken-entree-pate-cat",
@@ -2687,7 +3632,19 @@
     },
     "sourceUrl": "https://www.bluebuffalo.com/wet-cat-food/tastefuls/chicken-pate/",
     "image": null,
-    "amazonQuery": "Blue Buffalo Tastefuls Chicken Entree Pate wet cat food"
+    "amazonQuery": "Blue Buffalo Tastefuls Chicken Entree Pate wet cat food",
+    "sizes": [
+      {
+        "label": "24 cans, 3 oz",
+        "lb": 4.5
+      },
+      {
+        "label": "24 cans, 5.5 oz",
+        "lb": 8.25,
+        "asin": "B08MLLL157"
+      }
+    ],
+    "asin": "B08MLLL157"
   },
   {
     "id": "milk-bone-original-dog-biscuits-dog",
@@ -2731,7 +3688,27 @@
     },
     "sourceUrl": "https://www.tractorsupply.com/tsc/product/milk-bone-original-biscuits-medium-dog-treats-4-lb",
     "image": null,
-    "amazonQuery": "Milk-Bone Original Dog Biscuits dog treats"
+    "amazonQuery": "Milk-Bone Original Dog Biscuits dog treats",
+    "sizes": [
+      {
+        "label": "24 oz",
+        "lb": 1.5
+      },
+      {
+        "label": "4 lb",
+        "lb": 4
+      },
+      {
+        "label": "10 lb",
+        "lb": 10,
+        "asin": "B000I82DTU"
+      },
+      {
+        "label": "11 lb",
+        "lb": 11
+      }
+    ],
+    "asin": "B000I82DTU"
   },
   {
     "id": "beggin-strips-original-with-bacon-dog",
@@ -2783,7 +3760,33 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/treats/soft-and-chewy-treats/purina-beggin-strips-all-life-stage-dog-treats---original-with-bacon-flavor-3675.html",
     "image": null,
-    "amazonQuery": "Beggin' Strips Original with Bacon dog treats"
+    "amazonQuery": "Beggin' Strips Original with Bacon dog treats",
+    "sizes": [
+      {
+        "label": "3 oz",
+        "lb": 0.19,
+        "asin": "B0009JRUQY"
+      },
+      {
+        "label": "6 oz",
+        "lb": 0.38
+      },
+      {
+        "label": "25 oz",
+        "lb": 1.56
+      },
+      {
+        "label": "40 oz",
+        "lb": 2.5,
+        "asin": "B01ND15N1R"
+      },
+      {
+        "label": "48 oz",
+        "lb": 3,
+        "asin": "B004AWH6ZG"
+      }
+    ],
+    "asin": "B01ND15N1R"
   },
   {
     "id": "pup-peroni-original-beef-flavor-dog",
@@ -2823,7 +3826,49 @@
     },
     "sourceUrl": "https://www.pupperoni.com/soft-dog-treats/original-beef",
     "image": "/products/pup-peroni-original-beef-flavor-dog.webp",
-    "amazonQuery": "Pup-Peroni Original Beef Flavor dog treats"
+    "amazonQuery": "Pup-Peroni Original Beef Flavor dog treats",
+    "sizes": [
+      {
+        "label": "5.6 oz",
+        "lb": 0.35
+      },
+      {
+        "label": "7.8 oz",
+        "lb": 0.49
+      },
+      {
+        "label": "10 oz",
+        "lb": 0.63
+      },
+      {
+        "label": "25 oz",
+        "lb": 1.56
+      },
+      {
+        "label": "35 oz",
+        "lb": 2.19
+      },
+      {
+        "label": "38 oz",
+        "lb": 2.38,
+        "asin": "B071ZB41VC"
+      },
+      {
+        "label": "40 oz",
+        "lb": 2.5,
+        "asin": "B0090NQPFC"
+      },
+      {
+        "label": "46 oz",
+        "lb": 2.88
+      },
+      {
+        "label": "50 oz",
+        "lb": 3.13,
+        "asin": "B01MY41FFT"
+      }
+    ],
+    "asin": "B071ZB41VC"
   },
   {
     "id": "greenies-original-regular-dental-dog-treats-dog",
@@ -2866,7 +3911,40 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/treats/dental-treats-and-chews/greeniesandtrade-adult-regular-dog-dental-treats---natural-oral-health-original-4750.html",
     "image": null,
-    "amazonQuery": "Greenies Original Regular Dental Dog Treats dog treats"
+    "amazonQuery": "Greenies Original Regular Dental Dog Treats dog treats",
+    "sizes": [
+      {
+        "label": "6 oz, 6 count",
+        "lb": 0.38,
+        "asin": "B00DQR4DX4"
+      },
+      {
+        "label": "12 oz, 12 count",
+        "lb": 0.75,
+        "asin": "B000KEVF1O"
+      },
+      {
+        "label": "18 oz, 18 count",
+        "lb": 1.13,
+        "asin": "B000KETAGG"
+      },
+      {
+        "label": "27 oz, 27 count",
+        "lb": 1.69,
+        "asin": "B000KEVF32"
+      },
+      {
+        "label": "36 oz, 36 count",
+        "lb": 2.25,
+        "asin": "B006W6YHHI"
+      },
+      {
+        "label": "72 oz, 72 count",
+        "lb": 4.5,
+        "asin": "B06XZZZ9MY"
+      }
+    ],
+    "asin": "B006W6YHHI"
   },
   {
     "id": "zukes-mini-naturals-chicken-recipe-dog",
@@ -2911,7 +3989,20 @@
     },
     "sourceUrl": "https://www.zukes.com/dog-treats-and-chews/mini-naturals/chicken-recipe",
     "image": null,
-    "amazonQuery": "Zuke's Mini Naturals Chicken Recipe dog treats"
+    "amazonQuery": "Zuke's Mini Naturals Chicken Recipe dog treats",
+    "sizes": [
+      {
+        "label": "6 oz",
+        "lb": 0.38,
+        "asin": "B0007A0AQM"
+      },
+      {
+        "label": "16 oz",
+        "lb": 1,
+        "asin": "B000H0ZJHW"
+      }
+    ],
+    "asin": "B0007A0AQM"
   },
   {
     "id": "temptations-classic-tasty-chicken-flavor-cat",
@@ -2972,7 +4063,43 @@
     },
     "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/treats/temptations-classic-adult-cat-treats---soft-and-crunchy-tasty-chicken-36220.html",
     "image": null,
-    "amazonQuery": "Temptations Classic Tasty Chicken Flavor cat treats"
+    "amazonQuery": "Temptations Classic Tasty Chicken Flavor cat treats",
+    "sizes": [
+      {
+        "label": "1 oz",
+        "lb": 0.06,
+        "asin": "B00IOOOXKM"
+      },
+      {
+        "label": "3 oz",
+        "lb": 0.19,
+        "asin": "B006LRL8IO"
+      },
+      {
+        "label": "6.3 oz",
+        "lb": 0.39
+      },
+      {
+        "label": "12 oz",
+        "lb": 0.75
+      },
+      {
+        "label": "16 oz",
+        "lb": 1,
+        "asin": "B00IOTB7PG"
+      },
+      {
+        "label": "30 oz",
+        "lb": 1.88,
+        "asin": "B01LNB6SA0"
+      },
+      {
+        "label": "48 oz",
+        "lb": 3,
+        "asin": "B09DQ753C4"
+      }
+    ],
+    "asin": "B00IOTB7PG"
   },
   {
     "id": "greenies-feline-dental-treats-oven-roasted-chicken-flavor-cat",
@@ -3035,7 +4162,34 @@
     },
     "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/treats/greenies-feline-greenies-adult-cat-dental-treats---dental-care-natural-chicken-58852.html",
     "image": null,
-    "amazonQuery": "Greenies Feline Dental Treats Oven Roasted Chicken Flavor cat treats"
+    "amazonQuery": "Greenies Feline Dental Treats Oven Roasted Chicken Flavor cat treats",
+    "sizes": [
+      {
+        "label": "2.1 oz",
+        "lb": 0.13,
+        "asin": "B0828W6NXJ"
+      },
+      {
+        "label": "2.5 oz",
+        "lb": 0.16,
+        "asin": "B008PNN7B8"
+      },
+      {
+        "label": "4.6 oz",
+        "lb": 0.29
+      },
+      {
+        "label": "9.75 oz",
+        "lb": 0.61,
+        "asin": "B0828WNJXC"
+      },
+      {
+        "label": "21 oz",
+        "lb": 1.31,
+        "asin": "B071FH2NLX"
+      }
+    ],
+    "asin": "B0828WNJXC"
   },
   {
     "id": "inaba-churu-tuna-recipe-cat",
@@ -3071,7 +4225,29 @@
     },
     "sourceUrl": "https://inabafoods.com/products/tuna-recipe-4pk/",
     "image": null,
-    "amazonQuery": "Inaba Churu Tuna Recipe cat treats"
+    "amazonQuery": "Inaba Churu Tuna Recipe cat treats",
+    "sizes": [
+      {
+        "label": "4 tubes, 2 oz",
+        "lb": 0.13,
+        "asin": "B0778DNNGH"
+      },
+      {
+        "label": "12 tubes, 6 oz",
+        "lb": 0.38,
+        "asin": "B07R3TPF5P"
+      },
+      {
+        "label": "20 tubes, 10 oz",
+        "lb": 0.63
+      },
+      {
+        "label": "48 tubes, 24 oz",
+        "lb": 1.5,
+        "asin": "B07QZTS122"
+      }
+    ],
+    "asin": "B0778DNNGH"
   },
   {
     "id": "wellness-soft-puppy-bites-lamb-and-salmon-recipe-dog",
@@ -3118,7 +4294,20 @@
     },
     "sourceUrl": "https://www.wellnesspetfood.com/product-catalog/wellness-soft-puppy-bites-lamb-salmon/",
     "image": "/products/wellness-soft-puppy-bites-lamb-and-salmon-recipe-dog.webp",
-    "amazonQuery": "Wellness Soft Puppy Bites Lamb & Salmon Recipe dog treats"
+    "amazonQuery": "Wellness Soft Puppy Bites Lamb & Salmon Recipe dog treats",
+    "sizes": [
+      {
+        "label": "3 oz",
+        "lb": 0.19,
+        "asin": "B001HBBQKY"
+      },
+      {
+        "label": "8 oz",
+        "lb": 0.5,
+        "asin": "B08MV5Y4BM"
+      }
+    ],
+    "asin": "B001HBBQKY"
   },
   {
     "id": "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog",
@@ -3160,7 +4349,20 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/treats/biscuits-cookies-and-bakery-treats/old-mother-hubbard-p-nuttier-mini-biscuit-dog-treats---natural-4670.html",
     "image": null,
-    "amazonQuery": "Old Mother Hubbard Classic P-Nuttier Mini Biscuits dog treats"
+    "amazonQuery": "Old Mother Hubbard Classic P-Nuttier Mini Biscuits dog treats",
+    "sizes": [
+      {
+        "label": "20 oz",
+        "lb": 1.25,
+        "asin": "B012NZ2V0Q"
+      },
+      {
+        "label": "6 lb",
+        "lb": 6,
+        "asin": "B07D9X5JG3"
+      }
+    ],
+    "asin": "B012NZ2V0Q"
   },
   {
     "id": "blue-buffalo-nudges-grillers-steak-dog",
@@ -3200,7 +4402,32 @@
     },
     "sourceUrl": "https://www.petsmart.com/dog/treats/jerky-treats/blue-buffalo-nudges-grillers-all-life-stages-dog-treats---steak-94615.html",
     "image": null,
-    "amazonQuery": "Blue Buffalo Nudges Grillers Steak dog treats"
+    "amazonQuery": "Blue Buffalo Nudges Grillers Steak dog treats",
+    "sizes": [
+      {
+        "label": "5 oz",
+        "lb": 0.31
+      },
+      {
+        "label": "10 oz",
+        "lb": 0.63,
+        "asin": "B0GRL282Z6"
+      },
+      {
+        "label": "16 oz",
+        "lb": 1,
+        "asin": "B0BCX4939V"
+      },
+      {
+        "label": "36 oz",
+        "lb": 2.25
+      },
+      {
+        "label": "48 oz",
+        "lb": 3
+      }
+    ],
+    "asin": "B0BCX4939V"
   },
   {
     "id": "full-moon-chicken-jerky-dog",
@@ -3231,7 +4458,41 @@
     },
     "sourceUrl": "https://www.fullmoonpet.com/products/chicken-jerky",
     "image": "/products/full-moon-chicken-jerky-dog.webp",
-    "amazonQuery": "Full Moon Chicken Jerky dog treats"
+    "amazonQuery": "Full Moon Chicken Jerky dog treats",
+    "sizes": [
+      {
+        "label": "10 oz",
+        "lb": 0.63
+      },
+      {
+        "label": "12 oz",
+        "lb": 0.75,
+        "asin": "B01EX0H7BM"
+      },
+      {
+        "label": "12.5 oz",
+        "lb": 0.78,
+        "asin": "B00IP2YARY"
+      },
+      {
+        "label": "16 oz",
+        "lb": 1
+      },
+      {
+        "label": "24 oz",
+        "lb": 1.5
+      },
+      {
+        "label": "26 oz",
+        "lb": 1.63,
+        "asin": "B0857ZHLJ9"
+      },
+      {
+        "label": "48 oz",
+        "lb": 3
+      }
+    ],
+    "asin": "B0857ZHLJ9"
   },
   {
     "id": "stewart-freeze-dried-beef-liver-dog",
@@ -3259,7 +4520,35 @@
     },
     "sourceUrl": "https://stewartpet.com/product/single-ingredient/",
     "image": null,
-    "amazonQuery": "Stewart Freeze Dried Beef Liver dog treats"
+    "amazonQuery": "Stewart Freeze Dried Beef Liver dog treats",
+    "sizes": [
+      {
+        "label": "2 oz",
+        "lb": 0.13,
+        "asin": "B00HMMA48M"
+      },
+      {
+        "label": "4 oz",
+        "lb": 0.25,
+        "asin": "B0002DGRRA"
+      },
+      {
+        "label": "12 oz",
+        "lb": 0.75,
+        "asin": "B00SX4V7NE"
+      },
+      {
+        "label": "14 oz",
+        "lb": 0.88,
+        "asin": "B000255OIG"
+      },
+      {
+        "label": "21 oz",
+        "lb": 1.31,
+        "asin": "B0765C1R3F"
+      }
+    ],
+    "asin": "B00SX4V7NE"
   },
   {
     "id": "purebites-chicken-breast-freeze-dried-dog",
@@ -3287,7 +4576,35 @@
     },
     "sourceUrl": "https://purebites.com/products/chicken-freeze-dried-dog-treats",
     "image": "/products/purebites-chicken-breast-freeze-dried-dog.webp",
-    "amazonQuery": "PureBites Chicken Breast Freeze Dried dog treats"
+    "amazonQuery": "PureBites Chicken Breast Freeze Dried dog treats",
+    "sizes": [
+      {
+        "label": "1.4 oz",
+        "lb": 0.09
+      },
+      {
+        "label": "3 oz",
+        "lb": 0.19
+      },
+      {
+        "label": "6.2 oz",
+        "lb": 0.39
+      },
+      {
+        "label": "8.6 oz",
+        "lb": 0.54
+      },
+      {
+        "label": "11.6 oz",
+        "lb": 0.73,
+        "asin": "B000Z3MBRM"
+      },
+      {
+        "label": "28 oz",
+        "lb": 1.75
+      }
+    ],
+    "asin": "B000Z3MBRM"
   },
   {
     "id": "purebites-chicken-breast-freeze-dried-cat",
@@ -3315,7 +4632,30 @@
     },
     "sourceUrl": "https://purebites.com/products/chicken-freeze-dried-cat-treats",
     "image": "/products/purebites-chicken-breast-freeze-dried-cat.webp",
-    "amazonQuery": "PureBites Chicken Breast Freeze Dried cat treats"
+    "amazonQuery": "PureBites Chicken Breast Freeze Dried cat treats",
+    "sizes": [
+      {
+        "label": "1.09 oz",
+        "lb": 0.07,
+        "asin": "B007MECZUA"
+      },
+      {
+        "label": "1.12 oz",
+        "lb": 0.07,
+        "asin": "B00YXP6E1M"
+      },
+      {
+        "label": "2.3 oz",
+        "lb": 0.14,
+        "asin": "B071P7M2HG"
+      },
+      {
+        "label": "5.5 oz",
+        "lb": 0.34,
+        "asin": "B0B8GBTNGG"
+      }
+    ],
+    "asin": "B071P7M2HG"
   },
   {
     "id": "vital-essentials-freeze-dried-minnows-cat",
@@ -3343,6 +4683,19 @@
     },
     "sourceUrl": "https://www.petfood.express/products/vital-essentials-minnows-freeze-dried-raw-cat-treats.html",
     "image": "/products/vital-essentials-freeze-dried-minnows-cat.webp",
-    "amazonQuery": "Vital Essentials Freeze Dried Minnows cat treats"
+    "amazonQuery": "Vital Essentials Freeze Dried Minnows cat treats",
+    "sizes": [
+      {
+        "label": "0.5 oz",
+        "lb": 0.03,
+        "asin": "B0BWBK16NH"
+      },
+      {
+        "label": "1 oz",
+        "lb": 0.06,
+        "asin": "B0CLYMSQZQ"
+      }
+    ],
+    "asin": "B0BWBK16NH"
   }
 ]
