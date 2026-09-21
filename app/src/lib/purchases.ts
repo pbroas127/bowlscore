@@ -5,7 +5,7 @@ import { useSyncExternalStore } from 'react'
 import type { PurchasesPackage } from 'react-native-purchases'
 import { getState, setState } from './store'
 
-const KEY = process.env.EXPO_PUBLIC_RC_IOS_KEY
+import { RC_IOS_KEY as KEY } from './config'
 export const ENTITLEMENT = 'pro'
 export const mock = Platform.OS === 'web' || !KEY
 

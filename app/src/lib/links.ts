@@ -1,4 +1,4 @@
-const BASE = process.env.EXPO_PUBLIC_API_URL ?? 'https://bowlscore.vercel.app'
+import { API_URL as BASE } from './config'
 export const SITE = {
   home: BASE,
   terms: `${BASE}/terms`,

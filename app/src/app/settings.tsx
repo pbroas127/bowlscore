@@ -11,6 +11,7 @@ import { deleteAccount, useUser } from '@/lib/auth'
 import { SITE, SUPPORT_EMAIL } from '@/lib/links'
 import { restore } from '@/lib/purchases'
 import { resetState } from '@/lib/store'
+import { deleteBackup } from '@/lib/sync'
 import { color, type } from '@/theme'
 
 function Row({ label, value, onPress, danger, last }: { label: string; value?: string; onPress: () => void; danger?: boolean; last?: boolean }) {
@@ -39,7 +40,7 @@ export default function Settings() {
     Alert.alert('Delete all my data?', 'This removes your pets, your scan history and your account from this device and our servers. Your subscription is managed by Apple and must be cancelled separately.', [
       { text: 'Cancel', style: 'cancel' },
       { text: 'Delete everything', style: 'destructive', onPress: async () => {
-        try { await deleteAccount() } catch { return Alert.alert('Please sign in again', 'For your security, sign in again and then retry.') }
+        try { if (user) await deleteBackup(user.uid); await deleteAccount() } catch { return Alert.alert('Please sign in again', 'For your security, sign in again and then retry.') }
         await resetState()
         router.replace('/')
       } },

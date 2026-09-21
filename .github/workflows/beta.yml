@@ -35,9 +35,6 @@ jobs:
       - name: Generate the native iOS project
         working-directory: app
         run: npx expo prebuild --platform ios --clean
-        env:
-          EXPO_PUBLIC_API_URL: ${{ vars.EXPO_PUBLIC_API_URL }}
-          EXPO_PUBLIC_RC_IOS_KEY: ${{ vars.EXPO_PUBLIC_RC_IOS_KEY }}
       - run: which fastlane || brew install fastlane
       - run: fastlane beta
         env:
@@ -46,5 +43,3 @@ jobs:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           MATCH_FORCE: ${{ inputs.regenerate_profiles && '1' || '0' }}
-          EXPO_PUBLIC_API_URL: ${{ vars.EXPO_PUBLIC_API_URL }}
-          EXPO_PUBLIC_RC_IOS_KEY: ${{ vars.EXPO_PUBLIC_RC_IOS_KEY }}

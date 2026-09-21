@@ -3,7 +3,7 @@ import { SAMPLE_GOOD, SAMPLE_POOR } from './sample'
 import { idToken } from './auth'
 import type { LabelData, LifeStage, ScoreResult, Species } from './types'
 
-const API = process.env.EXPO_PUBLIC_API_URL // for example https://bowlscore.vercel.app
+import { API_URL, PREVIEW } from './config'
 
 export class ScanError extends Error {
   constructor(public code: 'unreadable' | 'barcode_not_found' | 'rate_limited' | 'offline' | 'server', message: string) { super(message) }
@@ -20,7 +20,7 @@ const MESSAGES = {
 } as const
 
 export async function scanFood(input: { species: Species; lifeStage: LifeStage; images?: string[]; barcode?: string }): Promise<ScanResponse> {
-  if (!API) {
+  if (PREVIEW) {
     // Preview mode: no backend configured. Alternate the two canned results so every state can be seen.
     await new Promise((r) => setTimeout(r, 2600))
     const pick = Math.random() < 0.5 ? SAMPLE_POOR : SAMPLE_GOOD
@@ -29,7 +29,7 @@ export async function scanFood(input: { species: Species; lifeStage: LifeStage; 
   let res: Response
   try {
     const token = await idToken()
-    res = await fetch(`${API}/api/scan`, {
+    res = await fetch(`${API_URL}/api/scan`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
       body: JSON.stringify(input),

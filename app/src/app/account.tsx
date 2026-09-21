@@ -5,7 +5,7 @@ import { Alert, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, Tex
 import { EnvelopeSimple, GoogleLogo, X } from 'phosphor-react-native'
 import { Mascot } from '@/components/Mascot'
 import { PillButton, Screen, TextLink } from '@/components/ui'
-import { authEnabled, authMessage, resetPassword, signInWithApple, signInWithEmail, signInWithGoogle, signOut, useUser } from '@/lib/auth'
+import { authEnabled, googleEnabled, authMessage, resetPassword, signInWithApple, signInWithEmail, signInWithGoogle, signOut, useUser } from '@/lib/auth'
 import { color, radius, type } from '@/theme'
 
 export default function Account() {
@@ -44,7 +44,7 @@ export default function Account() {
               {Platform.OS === 'ios' ? (
                 <AppleAuthentication.AppleAuthenticationButton buttonType={AppleAuthentication.AppleAuthenticationButtonType.CONTINUE} buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK} cornerRadius={28} style={{ height: 56 }} onPress={() => attempt(signInWithApple)} />
               ) : null}
-              <PillButton label="Continue with Google" variant="quiet" icon={<GoogleLogo size={20} weight="bold" color={color.ink} />} loading={busy} onPress={() => attempt(signInWithGoogle)} />
+              {googleEnabled ? <PillButton label="Continue with Google" variant="quiet" icon={<GoogleLogo size={20} weight="bold" color={color.ink} />} loading={busy} onPress={() => attempt(signInWithGoogle)} /> : null}
               <PillButton label="Continue with email" variant="quiet" icon={<EnvelopeSimple size={20} weight="bold" color={color.ink} />} onPress={() => setMode('create')} />
             </>
           ) : (

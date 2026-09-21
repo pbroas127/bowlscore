@@ -36,6 +36,7 @@ let state = initial
 const listeners = new Set<() => void>()
 
 export const getState = () => state
+export const subscribe = (l: () => void) => { listeners.add(l); return () => { listeners.delete(l) } }
 
 export function setState(patch: Partial<AppState> | ((s: AppState) => Partial<AppState>)) {
   state = { ...state, ...(typeof patch === 'function' ? patch(state) : patch) }

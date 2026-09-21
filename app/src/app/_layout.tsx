@@ -9,6 +9,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { startAuth, useUser } from '@/lib/auth'
 import { identify, startPurchases } from '@/lib/purchases'
 import { loadState, useStore } from '@/lib/store'
+import { startSync } from '@/lib/sync'
 import { color } from '@/theme'
 
 SplashScreen.preventAutoHideAsync().catch(() => {})
@@ -24,7 +25,10 @@ export default function RootLayout() {
   }, [])
 
   // RevenueCat follows the Firebase user id, so a subscription survives reinstalling and signing back in.
-  useEffect(() => { if (user) identify(user.uid) }, [user])
+  useEffect(() => {
+    if (user) identify(user.uid)
+    startSync(user)
+  }, [user])
 
   useEffect(() => { if (fontsLoaded && ready) SplashScreen.hideAsync().catch(() => {}) }, [fontsLoaded, ready])
   if (!fontsLoaded || !ready) return null

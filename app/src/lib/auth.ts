@@ -7,14 +7,11 @@ import { getApps, initializeApp } from 'firebase/app'
 import * as FirebaseAuth from 'firebase/auth'
 import { Platform } from 'react-native'
 import { useSyncExternalStore } from 'react'
+import { FIREBASE, GOOGLE_IOS_CLIENT_ID, PREVIEW } from './config'
 
-const config = {
-  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
-  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
-}
-export const authEnabled = Boolean(config.apiKey && config.projectId)
+const config = FIREBASE
+export const authEnabled = !PREVIEW
+export const googleEnabled = Platform.OS === 'web' || Boolean(GOOGLE_IOS_CLIENT_ID)
 
 let auth: FirebaseAuth.Auth | undefined
 let user: FirebaseAuth.User | null = null
@@ -68,7 +65,7 @@ export async function signInWithGoogle() {
     return (await FirebaseAuth.signInWithPopup(auth, new FirebaseAuth.GoogleAuthProvider())).user
   }
   const { GoogleSignin } = await import('@react-native-google-signin/google-signin')
-  GoogleSignin.configure({ iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID, webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID })
+  GoogleSignin.configure({ iosClientId: GOOGLE_IOS_CLIENT_ID })
   const res = await GoogleSignin.signIn()
   const token = res.data?.idToken
   if (!token) throw new Error('Google sign in was cancelled.')
