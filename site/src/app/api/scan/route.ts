@@ -1,6 +1,7 @@
 // POST /api/scan. Reads a pet food label (photos through Gemini, or a barcode through Open Pet
 // Food Facts) and scores it with the deterministic rubric. The model only transcribes; rubric.ts decides.
 import { createRemoteJWKSet, jwtVerify } from 'jose'
+import { unstable_cache } from 'next/cache'
 import { scanMatch } from '@/lib/catalog'
 import { labelFromOpff } from '@/lib/openpetfoodfacts'
 import { scoreFood, type LabelData, type LifeStage, type Species } from '@/lib/rubric'
@@ -63,7 +64,10 @@ Rules:
 4. isTreat: true when the package is a treat, chew, snack or topper rather than a meal.
 5. foodForm: dry for kibble, wet for cans, pouches and trays, semi_moist for soft chewy pieces, freeze_dried, raw, or unknown.
 6. speciesOnLabel: dog or cat when the package says so, otherwise unknown.
-7. readable: false when the ingredient list is missing, cut off, or too blurry to transcribe with confidence. When false, return an empty ingredients list.`
+7. lifeStageClaim: from the nutritional adequacy (AAFCO) statement. "all" for all life stages, "growth" for growth, puppies or kittens (also growth and reproduction), "adult" for adult maintenance, otherwise "unknown".
+8. largeSizeGrowth: "included" when the statement says including growth of large size dogs (70 lb or more as an adult), "excluded" when it says except for growth of large size dogs, otherwise "unknown".
+9. calories: from the calorie content line (ME, metabolizable energy), as printed. kcalPerKg is kcal per kg. kcalPerCup is kcal per cup. kcalPerUnit is kcal per can, pouch, tray, treat, piece or stick, with that word in caloriesUnit. Omit what is not printed.
+10. readable: false when the ingredient list is missing, cut off, or too blurry to transcribe with confidence. When false, return an empty ingredients list.`
 
 const RESPONSE_SCHEMA = {
   type: 'OBJECT',
@@ -81,11 +85,14 @@ const RESPONSE_SCHEMA = {
       properties: Object.fromEntries(['proteinMin', 'fatMin', 'fiberMax', 'moistureMax', 'ashMax', 'taurineMin'].map((k) => [k, { type: 'NUMBER', nullable: true }])),
     },
     aafco: { type: 'STRING', enum: ['complete', 'supplemental', 'not_found'] },
+    lifeStageClaim: { type: 'STRING', enum: ['all', 'growth', 'adult', 'unknown'] },
+    largeSizeGrowth: { type: 'STRING', enum: ['included', 'excluded', 'unknown'] },
+    calories: { type: 'OBJECT', nullable: true, properties: { kcalPerKg: { type: 'NUMBER', nullable: true }, kcalPerCup: { type: 'NUMBER', nullable: true }, kcalPerUnit: { type: 'NUMBER', nullable: true }, caloriesUnit: { type: 'STRING', nullable: true } } },
   },
   required: ['readable', 'speciesOnLabel', 'foodForm', 'isTreat', 'ingredients', 'aafco'],
 }
 
-type Extracted = LabelData & { readable: boolean; speciesOnLabel: 'dog' | 'cat' | 'unknown' }
+type Extracted = Omit<LabelData, 'calories'> & { readable: boolean; speciesOnLabel: 'dog' | 'cat' | 'unknown'; calories?: { kcalPerKg?: number; kcalPerCup?: number; kcalPerUnit?: number; caloriesUnit?: string; unit?: string } | null }
 
 // Measured 2026-09-21: with default "thinking" a phone sized photo takes over 70 s, with minimal thinking about 3 s
 // when the service is healthy. The free tier also stalls or returns 503 on roughly one call in three, so a single
@@ -176,10 +183,19 @@ async function webLabel(product: Product, apiKey: string): Promise<{ label: Labe
   }
 }
 
+// The grounded lookup is the one expensive call in this route (a search fee of a few cents), and popular foods get
+// scanned again and again. Remember each barcode's answer for 90 days in the Vercel data cache, so a product is paid
+// for once. A miss throws so that only real answers are remembered.
+const cachedWebLabel = (barcode: string, product: Product, apiKey: string) =>
+  unstable_cache(async () => { const hit = await webLabel(product, apiKey); if (!hit) throw new Error('miss'); return hit }, ['web-label-v1', barcode], { revalidate: 90 * 86_400 })().catch(() => null)
+
 // The schema allows nulls, the rubric wants undefined, and nothing from the model is trusted blindly.
 function toLabel(x: Extracted): LabelData {
   const pct = (v: unknown) => (typeof v === 'number' && v >= 0 && v <= 100 ? v : undefined)
   const a = x.analysis ?? {}
+  const kcal = (v: unknown, max: number) => (typeof v === 'number' && v > 0 && v <= max ? Math.round(v) : undefined)
+  const c = x.calories ?? {}
+  const calories = { kcalPerKg: kcal(c.kcalPerKg, 9000), kcalPerCup: kcal(c.kcalPerCup, 1000), kcalPerUnit: kcal(c.kcalPerUnit, 3000), unit: typeof (c.caloriesUnit ?? c.unit) === 'string' ? String(c.caloriesUnit ?? c.unit).toLowerCase().replace(/[^a-z ]/g, '').trim().slice(0, 16) || undefined : undefined }
   return {
     productName: x.productName || undefined,
     brand: x.brand || undefined,
@@ -188,6 +204,9 @@ function toLabel(x: Extracted): LabelData {
     ingredients: (Array.isArray(x.ingredients) ? x.ingredients : []).filter((i) => typeof i === 'string' && i.trim()).slice(0, 120),
     analysis: { proteinMin: pct(a.proteinMin), fatMin: pct(a.fatMin), fiberMax: pct(a.fiberMax), moistureMax: pct(a.moistureMax), ashMax: pct(a.ashMax), taurineMin: pct(a.taurineMin) },
     aafco: ['complete', 'supplemental'].includes(x.aafco) ? x.aafco : 'not_found',
+    lifeStageClaim: (['all', 'growth', 'adult'] as const).find((v) => v === x.lifeStageClaim) ?? 'unknown',
+    largeSizeGrowth: (['included', 'excluded'] as const).find((v) => v === x.largeSizeGrowth) ?? 'unknown',
+    calories: calories.kcalPerKg || calories.kcalPerCup || calories.kcalPerUnit ? calories : undefined,
   }
 }
 
@@ -199,7 +218,7 @@ export async function POST(req: Request) {
   const uid = await firebaseUid(req)
   if (uid === null) return json({ error: 'unauthorized' }, 401)
 
-  let body: { species?: Species; lifeStage?: LifeStage; images?: unknown; barcode?: unknown; product?: { name?: unknown; brand?: unknown } }
+  let body: { species?: Species; lifeStage?: LifeStage; images?: unknown; barcode?: unknown; product?: { name?: unknown; brand?: unknown }; label?: unknown }
   try {
     body = await req.json()
   } catch {
@@ -214,6 +233,13 @@ export async function POST(req: Request) {
   if (images != null) {
     const ok = Array.isArray(images) && images.length >= 1 && images.length <= MAX_IMAGES && images.every((i) => typeof i === 'string' && i.length > 0 && i.length <= MAX_IMAGE_CHARS && /^[A-Za-z0-9+/]+={0,2}$/.test(i))
     if (!ok) return json({ error: 'invalid_images', message: `Send 1 to ${MAX_IMAGES} base64 JPEG strings without a data prefix, 4 MB each at most.` }, 400)
+  }
+  // Rescore: the app sends back a label it already has, to score it for another pet or after the person corrects
+  // "this is a treat". No AI call, so it is free and instant. The label is cleaned exactly like a fresh read.
+  if (barcode == null && images == null && body.label && typeof body.label === 'object') {
+    const label = toLabel({ ...(body.label as Extracted), readable: true })
+    if (label.ingredients.length < 3) return json({ error: 'invalid_label' }, 400)
+    return json({ id: crypto.randomUUID(), source: 'label', label, result: scoreFood(label, species, lifeStage), speciesOnLabel: 'unknown', ...known(label, 'unknown', species) })
   }
   if (barcode == null && images == null) return json({ error: 'missing_input', message: 'Send images or a barcode.' }, 400)
 
@@ -233,7 +259,7 @@ export async function POST(req: Request) {
     // UPC, then try the published ingredient list. Whatever happens, the app learns WHAT was scanned.
     const found = await identify(barcode)
     const key = process.env.GEMINI_API_KEY
-    const web = found && key ? await webLabel(found, key) : null
+    const web = found && key ? await cachedWebLabel(barcode, found, key) : null
     if (web) return json({ id: crypto.randomUUID(), source: 'web', sourceUrl: web.sourceUrl, label: web.label, result: scoreFood(web.label, species, lifeStage), speciesOnLabel: web.species, ...known(web.label, web.species, species) })
     // The app can send the label photos along with the barcode, so a miss is never a dead end.
     if (images == null) return json({ error: 'barcode_not_found', product: found }, 404)

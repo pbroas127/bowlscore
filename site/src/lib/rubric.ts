@@ -34,6 +34,11 @@ export interface LabelData {
     taurineMin?: number
   }
   aafco: AafcoStatement
+  // Read off the label for the app's "fit for this pet" card and feeding guide. None of these change the score:
+  // the same label always gets the same score, whoever scans it.
+  lifeStageClaim?: 'all' | 'growth' | 'adult' | 'unknown' // what the AAFCO statement says the food is for
+  largeSizeGrowth?: 'included' | 'excluded' | 'unknown' // "including / except for growth of large size dogs (70 lb or more as an adult)"
+  calories?: { kcalPerKg?: number; kcalPerCup?: number; kcalPerUnit?: number; unit?: string } // unit: can, treat, pouch, piece...
 }
 
 export interface Flag {
