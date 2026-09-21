@@ -238,7 +238,7 @@ export async function POST(req: Request) {
   // "this is a treat". No AI call, so it is free and instant. The label is cleaned exactly like a fresh read.
   if (barcode == null && images == null && body.label && typeof body.label === 'object') {
     const label = toLabel({ ...(body.label as Extracted), readable: true })
-    if (label.ingredients.length < 3) return json({ error: 'invalid_label' }, 400)
+    if (!label.ingredients.length) return json({ error: 'invalid_label' }, 400) // single ingredient treats are real
     return json({ id: crypto.randomUUID(), source: 'label', label, result: scoreFood(label, species, lifeStage), speciesOnLabel: 'unknown', ...known(label, 'unknown', species) })
   }
   if (barcode == null && images == null) return json({ error: 'missing_input', message: 'Send images or a barcode.' }, 400)
