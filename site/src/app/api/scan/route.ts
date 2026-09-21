@@ -1,6 +1,7 @@
 // POST /api/scan. Reads a pet food label (photos through Gemini, or a barcode through Open Pet
 // Food Facts) and scores it with the deterministic rubric. The model only transcribes; rubric.ts decides.
 import { createRemoteJWKSet, jwtVerify } from 'jose'
+import { scanMatch } from '@/lib/catalog'
 import { labelFromOpff } from '@/lib/openpetfoodfacts'
 import { scoreFood, type LabelData, type LifeStage, type Species } from '@/lib/rubric'
 
@@ -184,6 +185,10 @@ function toLabel(x: Extracted): LabelData {
   }
 }
 
+// When the scanned product is one of ours, the app gets its catalog id and pack shot: { productId, image }. Otherwise nothing.
+// The species printed on the package wins over the pet the user picked, a cat owner can scan a dog food.
+const known = (label: LabelData, onLabel: string, asked: Species) => scanMatch(label, onLabel === 'dog' || onLabel === 'cat' ? onLabel : asked)
+
 export async function POST(req: Request) {
   const uid = await firebaseUid(req)
   if (uid === null) return json({ error: 'unauthorized' }, 401)
@@ -216,14 +221,14 @@ export async function POST(req: Request) {
     }).catch(() => null)
     const product = res?.ok ? (await res.json().catch(() => null))?.product : null
     const mapped = product ? labelFromOpff(product) : null
-    if (mapped) return json({ id: crypto.randomUUID(), source: 'barcode', label: mapped.label, result: scoreFood(mapped.label, species, lifeStage), speciesOnLabel: mapped.speciesOnLabel })
+    if (mapped) return json({ id: crypto.randomUUID(), source: 'barcode', label: mapped.label, result: scoreFood(mapped.label, species, lifeStage), speciesOnLabel: mapped.speciesOnLabel, ...known(mapped.label, mapped.speciesOnLabel, species) })
 
     // Open Pet Food Facts is thin in the US (about 1,000 products, checked 2026-09-21), so name the product from its
     // UPC, then try the published ingredient list. Whatever happens, the app learns WHAT was scanned.
     const found = await identify(barcode)
     const key = process.env.GEMINI_API_KEY
     const web = found && key ? await webLabel(found, key) : null
-    if (web) return json({ id: crypto.randomUUID(), source: 'web', sourceUrl: web.sourceUrl, label: web.label, result: scoreFood(web.label, species, lifeStage), speciesOnLabel: web.species })
+    if (web) return json({ id: crypto.randomUUID(), source: 'web', sourceUrl: web.sourceUrl, label: web.label, result: scoreFood(web.label, species, lifeStage), speciesOnLabel: web.species, ...known(web.label, web.species, species) })
     // The app can send the label photos along with the barcode, so a miss is never a dead end.
     if (images == null) return json({ error: 'barcode_not_found', product: found }, 404)
     hint = found ?? hint
@@ -245,5 +250,5 @@ export async function POST(req: Request) {
   if (!extracted.readable || label.ingredients.length < 3) return json({ error: 'unreadable', message: 'That photo was too blurry to read. Try again with more light.' }, 422)
 
   const speciesOnLabel = ['dog', 'cat'].includes(extracted.speciesOnLabel) ? extracted.speciesOnLabel : 'unknown'
-  return json({ id: crypto.randomUUID(), source: 'label', label, result: scoreFood(label, species, lifeStage), speciesOnLabel })
+  return json({ id: crypto.randomUUID(), source: 'label', label, result: scoreFood(label, species, lifeStage), speciesOnLabel, ...known(label, speciesOnLabel, species) })
 }

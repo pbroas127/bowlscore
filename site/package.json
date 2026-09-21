@@ -8,8 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types src/lib/rubric.test.ts && node --experimental-strip-types src/lib/openpetfoodfacts.test.ts",
-    "check:dashes": "node --experimental-strip-types scripts/check-dashes.mjs"
+    "test": "node --experimental-strip-types src/lib/rubric.test.ts && node --experimental-strip-types src/lib/openpetfoodfacts.test.ts && node --experimental-strip-types src/lib/catalog.test.ts && node --experimental-strip-types src/lib/recalls.test.ts",
+    "check:dashes": "node --experimental-strip-types scripts/check-dashes.mjs",
+    "catalog": "node --env-file=../.env scripts/build-catalog.mjs && node scripts/fetch-product-images.mjs"
   },
   "dependencies": {
     "jose": "^6.2.12",

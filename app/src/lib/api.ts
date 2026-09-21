@@ -10,7 +10,7 @@ export class ScanError extends Error {
 }
 
 export interface Product { name: string; brand?: string }
-export interface ScanResponse { id: string; source: 'label' | 'barcode' | 'web'; sourceUrl?: string; label: LabelData; result: ScoreResult; speciesOnLabel?: Species | 'unknown' }
+export interface ScanResponse { id: string; source: 'label' | 'barcode' | 'web'; sourceUrl?: string; label: LabelData; result: ScoreResult; speciesOnLabel?: Species | 'unknown'; productId?: string; image?: string }
 
 const MESSAGES = {
   unreadable: 'That photo was too blurry to read. Try again with more light.',

@@ -34,10 +34,14 @@ Every point comes from the label. Brands cannot pay for a score, and the same la
 
 WHAT YOU GET
 • Unlimited scans for dogs and cats
+• Real, higher scoring foods suggested after every scan
+• Side by side compare for any two foods
+• A pantry for each pet, treats included
+• A 7 day switch plan with daily reminders
+• Recall alerts for the foods you feed
 • Flags for artificial colors, synthetic preservatives, unnamed meats and more
 • Nutrition shown on a dry matter basis
 • Allergy alerts matched to each pet
-• What to look for in a better food
 • Every scan saved to your history
 
 SUBSCRIPTION

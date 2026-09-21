@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { AppStoreBadge } from '@/components/AppStoreBadge'
 import { Demo } from '@/components/Demo'
@@ -8,6 +9,7 @@ import { ScoreRing } from '@/components/ScoreRing'
 import { PicksScreen, ResultScreen, ScanScreen } from '@/components/Screens'
 import { SpeciesToggle } from '@/components/SpeciesToggle'
 import { Story } from '@/components/Story'
+import { PRODUCTS, type CatalogProduct } from '@/lib/catalog'
 import { scoreFood } from '@/lib/rubric'
 import { SAMPLES } from '@/lib/samples'
 import { AMAZON_SENTENCE, APP_STORE_URL, FAQ, GRADE_COLOR, NOT_VET_LONG, PRICE_MONTHLY, PRICE_YEARLY, RED_FLAGS, SITE_URL, SUPPORT_EMAIL, type Evidence } from '@/lib/site'
@@ -18,6 +20,18 @@ const kibbleDog = scoreFood(kibble.label, 'dog')
 const kibbleCat = scoreFood(kibble.label, 'cat')
 const grainFreeDog = scoreFood(grainFree.label, 'dog')
 const freshDog = scoreFood(fresh.label, 'dog')
+
+// Top rated right now: the three best dog foods and the three best cat foods in the catalog, one per brand, straight
+// from the rubric. Only complete foods with a pack shot. The order is the score, nothing else.
+const topRated = (['dog', 'cat'] as const).flatMap((species) => {
+  const seen = new Set<string>()
+  return PRODUCTS.filter((p) => p.species === species && p.image && p.result.complete)
+    .sort((a, b) => b.result.score - a.result.score)
+    .filter((p) => !seen.has(p.brand) && seen.add(p.brand))
+    .slice(0, 3)
+})
+// Copy rule: product names are data and keep their spelling in the catalog, but this page prints them without dashes.
+const noDash = (s: string) => s.replace(/\s*[\x2d‐‑‒–—―]\s*/g, ' ')
 
 const TAG_STYLE: Record<Evidence, string> = {
   Avoid: 'bg-bad/15 border-bad',
@@ -240,6 +254,17 @@ export default function Home() {
             </svg>
             <SwapCard name={fresh.name} line="Turkey and turkey liver first. Nothing artificial." result={freshDog} big />
           </div>
+          {topRated.length > 0 && (
+            <div className="mt-16">
+              <h3 className="font-display text-[28px] leading-tight font-bold tracking-tight">Top rated right now</h3>
+              <p className="mt-2 max-w-[60ch] text-ink2">Real foods, scored by the same public rubric as every scan. Three for dogs, three for cats.</p>
+              <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+                {topRated.map((p) => (
+                  <TopRatedCard key={p.id} product={p} />
+                ))}
+              </ul>
+            </div>
+          )}
           <p className="mt-8 max-w-[70ch] text-[15px] text-ink2">
             {AMAZON_SENTENCE} We may earn a commission if you buy through these links. Commissions never change a score or the order of alternatives.{' '}
             <Link href="/affiliate-disclosure" className="link">
@@ -356,6 +381,25 @@ function SpeciesPanel({ mascot, heading, rules, score, scoreLine }: { mascot: Re
         </div>
       </div>
     </div>
+  )
+}
+
+function TopRatedCard({ product: p }: { product: CatalogProduct }) {
+  return (
+    <li className="flex flex-col rounded-card bg-surface p-4 shadow-warm ring-1 ring-hairline">
+      <div className="relative aspect-square">
+        <Image src={new URL(p.image!).pathname} alt={noDash(`${p.brand} ${p.name}`)} fill sizes="(min-width: 1024px) 160px, (min-width: 768px) 30vw, 45vw" className="object-contain" />
+        <ScoreRing score={p.result.score} grade={p.result.grade} size={52} live={false} className="absolute -top-1 -right-1 rounded-full bg-surface" />
+      </div>
+      <p className="mt-4 text-[13px] font-semibold tracking-wide text-ink2 uppercase">{noDash(p.brand)}</p>
+      <p className="mt-1 font-display text-[17px] leading-snug font-bold">{noDash(p.name)}</p>
+      <p className="mt-1 mb-4 text-[14px] text-ink2">
+        {p.species === 'dog' ? 'Dog' : 'Cat'}, {p.form === 'freeze_dried' ? 'freeze dried' : p.form}
+      </p>
+      <a href={p.links.amazon} target="_blank" rel="sponsored nofollow noopener" className="link mt-auto text-[15px] font-semibold">
+        Shop on Amazon
+      </a>
+    </li>
   )
 }
 

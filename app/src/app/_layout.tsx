@@ -7,7 +7,10 @@ import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { startAuth, useUser } from '@/lib/auth'
+import { refreshCatalog } from '@/lib/catalog'
+import { startNotifications } from '@/lib/notify'
 import { identify, startPurchases } from '@/lib/purchases'
+import { checkRecalls } from '@/lib/recalls'
 import { loadState, useStore } from '@/lib/store'
 import { startSync } from '@/lib/sync'
 import { color } from '@/theme'
@@ -20,8 +23,10 @@ export default function RootLayout() {
   const user = useUser()
 
   useEffect(() => {
-    loadState().then(() => startPurchases())
+    loadState().then(() => { startPurchases(); checkRecalls() })
     startAuth()
+    startNotifications()
+    refreshCatalog()
   }, [])
 
   // RevenueCat follows the Firebase user id, so a subscription survives reinstalling and signing back in.
@@ -41,6 +46,10 @@ export default function RootLayout() {
         <Stack.Screen name="paywall" options={{ animation: 'slide_from_bottom', gestureEnabled: false }} />
         <Stack.Screen name="scan" options={{ animation: 'slide_from_bottom', contentStyle: { backgroundColor: color.scanChrome } }} />
         <Stack.Screen name="result/[id]" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="product/[id]" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="pet/[id]" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="catalog" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="compare" options={{ animation: 'slide_from_bottom' }} />
         <Stack.Screen name="account" options={{ presentation: 'modal' }} />
       </Stack>
     </GestureHandlerRootView>

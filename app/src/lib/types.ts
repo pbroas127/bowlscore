@@ -38,7 +38,11 @@ export interface Pet {
   concerns: string[]
   allergies: string[]
   currentScanId?: string
+  treatScanIds: string[]
+  switchPlan?: SwitchPlan
 }
+
+export interface SwitchPlan { productId: string; name: string; startedAt: number; notificationIds: string[] }
 
 export interface Scan {
   id: string
@@ -49,4 +53,26 @@ export interface Scan {
   label: LabelData
   result: ScoreResult
   photoUri?: string
+  productId?: string // set when the scan matched a catalog product
+  image?: string // that product's photo
 }
+
+export type FoodForm = 'dry' | 'wet' | 'freeze_dried' | 'raw' | 'treat'
+
+export interface CatalogProduct {
+  id: string
+  brand: string
+  name: string
+  species: Species
+  form: FoodForm
+  lifeStage: 'all' | LifeStage
+  priceTier: 1 | 2 | 3
+  image: string | null
+  label: LabelData
+  result: ScoreResult
+  sourceUrl?: string
+  links: { amazon: string; chewy?: string }
+}
+
+export interface Catalog { version: string; products: CatalogProduct[] }
+export interface Recall { id: string; date: string; brand: string; product: string; reason: string; url: string }

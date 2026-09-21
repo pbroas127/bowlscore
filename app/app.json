@@ -43,7 +43,13 @@
           "photosPermission": "BowlScore lets you pick a photo of a pet food label to score."
         }
       ],
-      "expo-notifications"
+      "expo-notifications",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.3163562272-5f67qmkl8f87dm0jij1tgjokbosf80i2"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

@@ -5,7 +5,7 @@
 import { getApps } from 'firebase/app'
 import { deleteDoc, doc, getDoc, getFirestore, setDoc } from 'firebase/firestore'
 import type { User } from 'firebase/auth'
-import { getState, setState, subscribe } from './store'
+import { getState, setState, subscribe, withDefaults } from './store'
 
 const ref = (uid: string) => doc(getFirestore(getApps()[0]), 'users', uid)
 let stop: (() => void) | undefined
@@ -13,7 +13,8 @@ let timer: ReturnType<typeof setTimeout> | undefined
 
 const snapshot = () => {
   const { pets, scans, activePetId } = getState()
-  return { pets, activePetId: activePetId ?? null, scans: scans.slice(0, 100).map(({ photoUri: _photoUri, ...s }) => s), updatedAt: Date.now() }
+  // The JSON round trip drops undefined fields, which Firestore refuses to store.
+  return JSON.parse(JSON.stringify({ pets, activePetId: activePetId ?? null, scans: scans.slice(0, 100).map(({ photoUri: _photoUri, ...s }) => s), updatedAt: Date.now() }))
 }
 
 export async function startSync(user: User | null) {
@@ -23,7 +24,7 @@ export async function startSync(user: User | null) {
   try {
     const remote = (await getDoc(ref(user.uid))).data()
     // A fresh install signing back in adopts the backup; otherwise this device's data wins and is pushed up.
-    if (remote?.pets?.length && !getState().scans.length) setState({ pets: remote.pets, scans: remote.scans ?? [], activePetId: remote.activePetId ?? remote.pets[0]?.id, onboarded: true })
+    if (remote?.pets?.length && !getState().scans.length) setState({ pets: withDefaults(remote.pets), scans: remote.scans ?? [], activePetId: remote.activePetId ?? remote.pets[0]?.id, onboarded: true })
     else await setDoc(ref(user.uid), snapshot())
   } catch {}
   stop = subscribe(() => {

@@ -67,7 +67,7 @@ export default function ScanScreen() {
     try {
       const res = await scanFood({ species: pet.species, lifeStage: pet.stage, product: known.current, ...input })
       const id = newId()
-      saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, sourceUrl: res.sourceUrl, label: res.label, result: res.result, photoUri })
+      saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, sourceUrl: res.sourceUrl, label: res.label, result: res.result, photoUri, ...(res.productId ? { productId: res.productId } : {}), ...(res.image ? { image: res.image } : {}) })
       setState({ coachSeen: true })
       tapForGrade(res.result.grade)
       router.replace(`/result/${id}?fresh=1`)

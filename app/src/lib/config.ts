@@ -15,8 +15,9 @@ export const FIREBASE = {
 // RevenueCat public iOS SDK key (starts with appl_). Empty means purchases run in mock mode.
 export const RC_IOS_KEY = process.env.EXPO_PUBLIC_RC_IOS_KEY ?? 'appl_oNKwcrrMDbJBjmHGvDOshJgMKGW'
 
-// Google sign in needs an iOS OAuth client. Until it is set the Google button stays hidden.
-export const GOOGLE_IOS_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID ?? ''
+// iOS OAuth client that Firebase created for the bundle id. Its reversed form is the iosUrlScheme in app.json.
+export const GOOGLE_IOS_CLIENT_ID =
+  process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID ?? '3163562272-5f67qmkl8f87dm0jij1tgjokbosf80i2.apps.googleusercontent.com'
 
 // Set EXPO_PUBLIC_PREVIEW=1 to run with canned scan results and no network (design previews, screenshots).
 export const PREVIEW = process.env.EXPO_PUBLIC_PREVIEW === '1'

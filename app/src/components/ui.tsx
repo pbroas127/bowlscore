@@ -2,7 +2,8 @@ import { useEffect, type ReactNode } from 'react'
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native'
 import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Check } from 'phosphor-react-native'
+import { CaretRight, Check } from 'phosphor-react-native'
+import { Mascot, type Pose } from '@/components/Mascot'
 import { color, gutter, radius, spring, type } from '@/theme'
 import { tap } from '@/lib/haptics'
 
@@ -10,7 +11,7 @@ export function Screen({ children, scroll, footer, style, edges = ['top', 'botto
   const Body = scroll ? ScrollView : View
   return (
     <SafeAreaView style={s.screen} edges={edges}>
-      <Body style={s.flex} {...(scroll ? { contentContainerStyle: [s.pad, { paddingBottom: 32 }, style], showsVerticalScrollIndicator: false } : { style: [s.flex, s.pad, style] })}>
+      <Body style={s.flex} {...(scroll ? { contentContainerStyle: [s.pad, { paddingBottom: 32 }, style], showsVerticalScrollIndicator: false, keyboardShouldPersistTaps: 'handled' as const } : { style: [s.flex, s.pad, style] })}>
         {children}
       </Body>
       {footer ? <View style={s.footer}>{footer}</View> : null}
@@ -80,6 +81,36 @@ export function Card({ children, style }: { children: ReactNode; style?: StylePr
   return <View style={[s.card, style]}>{children}</View>
 }
 
+// A full width row that goes somewhere: icon, label, caret.
+export function ActionRow({ label, hint, icon, onPress, last }: { label: string; hint?: string; icon?: ReactNode; onPress: () => void; last?: boolean }) {
+  return (
+    <Pressable accessibilityRole="button" onPress={() => { tap('select'); onPress() }} style={({ pressed }) => [s.action, !last && s.actionDivider, pressed && { opacity: 0.6 }]}>
+      {icon}
+      <View style={s.flex}>
+        <Text style={type.title}>{label}</Text>
+        {hint ? <Text style={type.caption}>{hint}</Text> : null}
+      </View>
+      <CaretRight size={18} weight="bold" color={color.ink3} />
+    </Pressable>
+  )
+}
+
+// Empty means a mascot, one line and at most one button. `compact` sits inside a section of a longer page.
+export function EmptyState({ pose, title, body, action, compact }: { pose: Pose; title: string; body?: string; action?: ReactNode; compact?: boolean }) {
+  return (
+    <Card style={compact ? { gap: 12 } : s.empty}>
+      <View style={compact ? s.emptyRow : s.emptyStack}>
+        <Mascot pose={pose} size={compact ? 72 : 150} bob={!compact} />
+        <View style={compact ? s.flex : s.emptyStack}>
+          <Text style={[compact ? type.title : type.h2, !compact && { textAlign: 'center' }]}>{title}</Text>
+          {body ? <Text style={[compact ? type.caption : type.body, { color: color.ink2 }, !compact && { textAlign: 'center' }]}>{body}</Text> : null}
+        </View>
+      </View>
+      {action ? <View style={{ alignSelf: 'stretch' }}>{action}</View> : null}
+    </Card>
+  )
+}
+
 export function TextLink({ label, onPress, tone = color.ink2 }: { label: string; onPress: () => void; tone?: string }) {
   return (
     <Pressable hitSlop={12} onPress={onPress}>
@@ -104,5 +135,10 @@ const s = StyleSheet.create({
   chipOn: { backgroundColor: color.ink, borderColor: color.ink },
   track: { height: 4, borderRadius: 2, backgroundColor: color.hairline, overflow: 'hidden', flex: 1 },
   trackFill: { height: 4, borderRadius: 2, backgroundColor: color.green },
+  action: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 60, paddingVertical: 10 },
+  actionDivider: { borderBottomWidth: 1, borderBottomColor: color.hairline },
+  empty: { alignItems: 'center', gap: 12, padding: 24, borderRadius: radius.sheet },
+  emptyRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  emptyStack: { alignItems: 'center', gap: 8 },
   card: { backgroundColor: color.surface, borderRadius: radius.card, borderWidth: 1, borderColor: color.hairline, padding: 16 },
 })

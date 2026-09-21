@@ -9,6 +9,7 @@ import { Mascot } from '@/components/Mascot'
 import { Card, Screen } from '@/components/ui'
 import { deleteAccount, useUser } from '@/lib/auth'
 import { SITE, SUPPORT_EMAIL } from '@/lib/links'
+import { askToNotify } from '@/lib/notify'
 import { restore } from '@/lib/purchases'
 import { resetState } from '@/lib/store'
 import { deleteBackup } from '@/lib/sync'
@@ -36,6 +37,11 @@ export default function Settings() {
     const ok = await restore().catch(() => false)
     Alert.alert(ok ? 'Subscription restored' : 'Nothing to restore', ok ? 'You are all set.' : 'We could not find an active subscription for this Apple ID.')
   }
+  const onRecalls = () =>
+    Alert.alert('Recall alerts', 'BowlScore checks the brands of every main food and treat you have saved against new recall notices, about twice a day. A match shows at the top of Home. Turn on notifications to also hear about it right away.', [
+      { text: 'Close', style: 'cancel' },
+      { text: 'Turn on notifications', onPress: async () => { if (!(await askToNotify())) Linking.openSettings() } },
+    ])
   const onDelete = () =>
     Alert.alert('Delete all my data?', 'This removes your pets, your scan history and your account from this device and our servers. Your subscription is managed by Apple and must be cancelled separately.', [
       { text: 'Cancel', style: 'cancel' },
@@ -60,6 +66,9 @@ export default function Settings() {
       <Group title="Subscription">
         <Row label="Manage subscription" onPress={() => Linking.openURL('https://apps.apple.com/account/subscriptions')} />
         <Row label="Restore purchases" onPress={onRestore} last />
+      </Group>
+      <Group title="Notifications">
+        <Row label="Recall alerts" value="Always on in the app" onPress={onRecalls} last />
       </Group>
       <Group title="Trust">
         <Row label="How we score" onPress={web(SITE.methodology)} />
