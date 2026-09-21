@@ -13,3 +13,4 @@ app/android/
 *.mobileprovision
 fastlane/report.xml
 fastlane/README.md
+.tmp/

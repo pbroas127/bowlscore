@@ -86,21 +86,40 @@ const RESPONSE_SCHEMA = {
 
 type Extracted = LabelData & { readable: boolean; speciesOnLabel: 'dog' | 'cat' | 'unknown' }
 
+// Measured 2026-09-21: with default "thinking" a phone sized photo takes over 70 s, with minimal thinking about 3 s
+// when the service is healthy. The free tier also stalls or returns 503 on roughly one call in three, so a single
+// long wait is the wrong shape: make short attempts and move to the next model instead of hanging.
+// ponytail: fixed attempt list. If the key moves to a paid tier (priority serving) one attempt is usually enough.
+const ATTEMPTS: [model: string, timeoutMs: number][] = [
+  [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 13_000],
+  ['gemini-3.5-flash-lite', 15_000],
+  [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 18_000],
+]
+
 async function readLabel(images: string[], apiKey: string): Promise<Extracted> {
-  const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite'
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-    signal: AbortSignal.timeout(50_000),
-    body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: PROMPT }, ...images.map((data) => ({ inlineData: { mimeType: 'image/jpeg', data } }))] }],
-      generationConfig: { temperature: 0, responseMimeType: 'application/json', responseSchema: RESPONSE_SCHEMA },
-    }),
+  const body = JSON.stringify({
+    contents: [{ role: 'user', parts: [{ text: PROMPT }, ...images.map((data) => ({ inlineData: { mimeType: 'image/jpeg', data } }))] }],
+    generationConfig: { temperature: 0, maxOutputTokens: 4000, responseMimeType: 'application/json', responseSchema: RESPONSE_SCHEMA, thinkingConfig: { thinkingLevel: 'minimal' } },
   })
-  if (!res.ok) throw new Error(`gemini ${res.status}: ${(await res.text()).slice(0, 300)}`)
-  const data = await res.json()
-  const text = data.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('')
-  return JSON.parse(text)
+  let last: unknown
+  for (const [model, timeoutMs] of ATTEMPTS) {
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+        signal: AbortSignal.timeout(timeoutMs),
+        body,
+      })
+      if (!res.ok) throw new Error(`gemini ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`)
+      const data = await res.json()
+      const text = data.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('')
+      return JSON.parse(text)
+    } catch (e) {
+      last = e
+      console.warn('label read attempt failed:', (e as Error).message)
+    }
+  }
+  throw last
 }
 
 // The schema allows nulls, the rubric wants undefined, and nothing from the model is trusted blindly.
