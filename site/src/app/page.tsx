@@ -389,7 +389,10 @@ function TopRatedCard({ product: p }: { product: CatalogProduct }) {
     <li className="flex flex-col rounded-card bg-surface p-4 shadow-warm ring-1 ring-hairline">
       <div className="relative aspect-square">
         <Image src={new URL(p.image!).pathname} alt={noDash(`${p.brand} ${p.name}`)} fill sizes="(min-width: 1024px) 160px, (min-width: 768px) 30vw, 45vw" className="object-contain" />
-        <ScoreRing score={p.result.score} grade={p.result.grade} size={52} live={false} className="absolute -top-1 -right-1 rounded-full bg-surface" />
+        {/* ScoreRing sets position relative on its root, so the corner placement lives on a wrapper. */}
+        <div className="absolute -top-1 -right-1 rounded-full bg-surface">
+          <ScoreRing score={p.result.score} grade={p.result.grade} size={52} live={false} />
+        </div>
       </div>
       <p className="mt-4 text-[13px] font-semibold tracking-wide text-ink2 uppercase">{noDash(p.brand)}</p>
       <p className="mt-1 font-display text-[17px] leading-snug font-bold">{noDash(p.name)}</p>
