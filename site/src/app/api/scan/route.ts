@@ -113,7 +113,9 @@ async function readLabel(images: string[], apiKey: string): Promise<Extracted> {
       })
       if (!res.ok) {
         last = new Error(`gemini ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`)
-        if ([400, 401, 403].includes(res.status)) break // our request or key is wrong, retrying cannot help
+        // Our request, key or billing is wrong (402 is "prepaid credits depleted"): retrying cannot help, and on
+        // 2026-09-21 retrying a 402 for the whole budget made the app look frozen for 50 s. Only 429 is worth a retry.
+        if (res.status >= 400 && res.status < 500 && res.status !== 429) break
         throw last
       }
       const data = await res.json()
@@ -160,7 +162,11 @@ async function webLabel(product: Product, apiKey: string): Promise<{ label: Labe
       body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt }] }], tools: [{ google_search: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'minimal' } } }),
     })
     if (!res.ok) return null
-    const text: string = (await res.json()).candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('') ?? ''
+    const candidate = (await res.json()).candidates?.[0]
+    // Measured while building the catalog (2026-09-21): this model sometimes skips the search and answers from memory,
+    // and then the list changes from run to run. No retrieved page means no answer; the app asks for a label photo.
+    if (!candidate?.groundingMetadata?.groundingChunks?.length) return null
+    const text: string = candidate.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('') ?? ''
     const x = JSON.parse(text.replace(/^[^{]*/, '').replace(/[^}]*$/, ''))
     if (!x?.found || !Array.isArray(x.ingredients) || x.ingredients.length < 5) return null
     const label = toLabel({ ...x, productName: product.name, brand: product.brand, analysis: x, aafco: x.completeAndBalanced ? 'complete' : 'not_found', readable: true, speciesOnLabel: x.species })

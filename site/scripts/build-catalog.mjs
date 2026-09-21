@@ -12,7 +12,10 @@
 // for the JSON prompt and three different ingredient lists on three runs, so it was answering from memory.
 // gemini-3.5-flash with url_context really opens the page (urlContextMetadata proves it), so an entry is only
 // accepted when a page was retrieved and the reported sourceUrl is one of the retrieved pages.
-// Cost: about 40k tokens per product, roughly one to two cents. Resumable: ids already in the file are skipped.
+// COST WARNING: the first full run (47 products, 2026-09-21) cost about $16, not the one to two cents per product first
+// estimated: default thinking on gemini-3.5-flash bills its reasoning as output tokens, on top of whole web pages as
+// input and the search fee. Thinking is now minimal, and a network run needs the explicit --paid flag.
+// Prefer --add with hand transcribed labels, which is free. Resumable: ids already in the file are skipped.
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -168,11 +171,12 @@ async function resolve(uri) {
 const hostPath = (u) => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, '') } catch { return '' } }
 
 async function lookup(seed) {
+  if (!process.argv.includes('--paid')) throw new Error('network lookups cost real money, pass --paid to allow them')
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
     signal: AbortSignal.timeout(150_000),
-    body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt(seed) }] }], tools: [{ google_search: {} }, { url_context: {} }], generationConfig: { temperature: 0 } }),
+    body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt(seed) }] }], tools: [{ google_search: {} }, { url_context: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'minimal' } } }),
   })
   if (!res.ok) throw new Error(`gemini ${res.status}: ${(await res.text()).slice(0, 200)}`)
   const c = (await res.json()).candidates?.[0]
