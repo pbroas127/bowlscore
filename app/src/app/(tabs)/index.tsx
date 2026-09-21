@@ -6,14 +6,15 @@ import { Bone, BowlFood, Drop, GearSix, Package, Scales, SealWarning } from 'pho
 import { bagLine } from '@/components/BagCard'
 import { portionLine, treatAllowance } from '@/components/FitCard'
 import { Mascot, mascotFor } from '@/components/Mascot'
+import { PetHead } from '@/components/PetHead'
 import { PetEditor } from '@/components/PetEditor'
-import { ProductCarousel } from '@/components/ProductCard'
+import { AffiliateNote, ProductCarousel } from '@/components/ProductCard'
 import { ago, ScanRow } from '@/components/ScanRow'
 import { ScoreRing } from '@/components/ScoreRing'
 import { Card, Chip, PillButton, Screen, TextLink } from '@/components/ui'
 import { refreshCatalog, topRated, useCatalog, whyBetter } from '@/lib/catalog'
 import { tap } from '@/lib/haptics'
-import { feeding, weighInDue } from '@/lib/fit'
+import { feeding, hasCalories, weighInDue } from '@/lib/fit'
 import { checkRecalls, dismissRecall, recallDate } from '@/lib/recalls'
 import { activePet, useStore } from '@/lib/store'
 import type { Pet, Recall, Scan } from '@/lib/types'
@@ -48,12 +49,18 @@ function DailyPlan({ pet, scan, onEdit }: { pet: Pet; scan: Scan; onEdit: () => 
     const bag = bagLine(pet, scan)
     if (bag) rows.push([<Package key="i" size={18} weight="bold" color={color.ink2} />, bag])
   }
-  const nudge = !pet.weightLb ? `Add ${pet.name}'s weight to see portions` : weighInDue(pet) ? `Time to weigh ${pet.name} again` : undefined
+  // One next step at most, so the card stays calm. Weight fixes happen right here; the rest live on the pet page.
+  const toPet = () => router.push(`/pet/${pet.id}`)
+  const [nudge, onNudge] = !pet.weightLb ? [`Add ${pet.name}'s weight to see portions`, onEdit]
+    : weighInDue(pet) ? [`Time to weigh ${pet.name} again`, onEdit]
+    : plan && !hasCalories(scan.label) ? ['Add the calories for cups per meal', toPet]
+    : plan && !pet.bag ? ['Track this bag', toPet]
+    : [undefined, onEdit]
   if (!rows.length && !nudge) return null
   return (
     <View style={s.plan}>
       {rows.map(([icon, text]) => <View key={text} style={s.planRow}>{icon}<Text style={[type.label, { flex: 1 }]}>{text}</Text></View>)}
-      {nudge ? <Pressable hitSlop={8} onPress={() => { tap('select'); onEdit() }} style={s.planRow}><Scales size={18} weight="bold" color={color.ink} /><Text style={[type.label, { flex: 1, textDecorationLine: 'underline' }]}>{nudge}</Text></Pressable> : null}
+      {nudge ? <Pressable hitSlop={8} onPress={() => { tap('select'); onNudge() }} style={s.planRow}><Scales size={18} weight="bold" color={color.ink} /><Text style={[type.label, { flex: 1, textDecorationLine: 'underline' }]}>{nudge}</Text></Pressable> : null}
     </View>
   )
 }
@@ -78,7 +85,7 @@ export default function Home() {
     <Screen scroll edges={['top']}>
       <View style={s.header}>
         <Pressable style={s.who} onPress={() => router.push('/(tabs)/pets')}>
-          <View style={s.avatar}><Mascot pose={mascotFor(pet?.species, 'head')} size={44} bob={false} /></View>
+          <View style={s.avatar}>{pet ? <PetHead pet={pet} size={44} /> : <Mascot pose="puppy-head" size={44} bob={false} />}</View>
           <View><Text style={type.caption}>Feeding</Text><Text style={type.h2}>{pet?.name ?? 'Your pet'}</Text></View>
         </Pressable>
         <Pressable hitSlop={12} onPress={() => router.push('/settings')} accessibilityLabel="Settings"><GearSix size={26} weight="bold" color={color.ink} /></Pressable>
@@ -128,6 +135,7 @@ export default function Home() {
           </Card>
         </>
       ) : null}
+      {top.length ? <AffiliateNote /> : null}
       <PetEditor draft={draft} setDraft={setDraft} />
     </Screen>
   )

@@ -10,6 +10,8 @@ const MONTH = 30.44 * 86_400_000
 export const ageMonths = (pet: Pet, now = Date.now()) => (pet.bornAt ? Math.max(0, Math.floor((now - pet.bornAt) / MONTH)) : undefined)
 // The birthday behind an age typed in as months. A hair over, so the age reads back exactly as entered.
 export const bornAtFor = (months: number, now = Date.now()) => Math.round(now - (months + 0.01) * MONTH)
+// The server sends `calories: {}` when the panel was not seen, so presence alone says nothing.
+export const hasCalories = (label: LabelData) => Boolean(label.calories && (label.calories.kcalPerCup || label.calories.kcalPerKg || label.calories.kcalPerUnit))
 export const ageText = (months: number) => (months < 24 ? `${months} ${months === 1 ? 'month' : 'months'}` : `${Math.floor(months / 12)} years`)
 
 const classOf = (lb: number): SizeClass => (lb < 20 ? 'Small' : lb < 50 ? 'Medium' : lb < 90 ? 'Large' : 'Giant')
@@ -163,3 +165,12 @@ export function bagStatus(bag: { lb: number; openedAt: number }, grams: number, 
 
 // Growing pets change portions fast, so their weight goes stale after a month.
 export const weighInDue = (pet: Pet, now = Date.now()) => !!pet.weightLb && stageFor(pet, now) === 'growth' && now - (pet.weighedAt ?? 0) > 30 * DAY
+
+// The bag size to suggest: the one that lasts closest to six weeks (fresh enough, few reorders). Wet packs and treats
+// are counted the same way, by weight. Without a daily amount, the middle size.
+export function bestSize<T extends { lb: number }>(sizes: T[], gramsDay?: number): T | undefined {
+  if (!sizes.length) return undefined
+  if (!gramsDay) return sizes[Math.floor((sizes.length - 1) / 2)]
+  const days = (s: T) => (s.lb * 453.6) / gramsDay
+  return sizes.reduce((a, b) => (Math.abs(days(b) - 42) < Math.abs(days(a) - 42) ? b : a))
+}

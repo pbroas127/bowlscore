@@ -7,7 +7,9 @@ import { AffiliateNote } from '@/components/ProductCard'
 import { ActionRow, Card, Chip, PillButton, ProgressBar, TextLink } from '@/components/ui'
 import { startBag, stopBag } from '@/lib/bag'
 import { bagStatus, gramsPerDay } from '@/lib/fit'
-import { shopLink } from '@/lib/links'
+import { suggestedSize } from '@/components/Variants'
+import { useCatalog } from '@/lib/catalog'
+import { shopLink, tagged } from '@/lib/links'
 import type { Pet, Scan } from '@/lib/types'
 import { color, radius, type } from '@/theme'
 
@@ -19,11 +21,29 @@ export const bagLine = (pet: Pet, scan?: Scan) => {
   return grams && pet.bag ? `About ${days(bagStatus(pet.bag, grams).left)} of food left` : undefined
 }
 
-export function BagCard({ pet, scan }: { pet: Pet; scan: Scan }) {
+export function BagCard({ pet, scan, onEditPet, onEditFood }: { pet: Pet; scan: Scan; onEditPet: () => void; onEditFood: () => void }) {
   const [picking, setPicking] = useState(false)
   const [custom, setCustom] = useState('')
   const grams = gramsPerDay(pet, scan.label)
-  if (!grams) return null // no weight or no calories on the label yet: the feeding card above already asks for them
+  const product = useCatalog()?.products.find((p) => p.id === scan.productId)
+  // The exact listing when the food is in our catalog (in the size that suits the pet), else an Amazon search.
+  const reorder = product ? tagged(suggestedSize(product, pet)?.url ?? product.links.amazon) : shopLink(`${scan.label.brand ?? ''} ${scan.label.productName ?? ''}`.trim(), pet.species)
+  // Never hide the tracker: say what it still needs, with the fix one tap away.
+  if (!grams) {
+    const need = !pet.weightLb ? { what: `${pet.name}'s weight`, fix: onEditPet } : { what: 'the calories from the bag', fix: onEditFood }
+    return (
+      <Card style={s.card}>
+        <View style={s.needRow}>
+          <Package size={22} weight="bold" color={color.ink} />
+          <View style={{ flex: 1 }}>
+            <Text style={type.title}>Track this bag</Text>
+            <Text style={type.caption}>Needs {need.what}</Text>
+          </View>
+          <TextLink label="Add" tone={color.ink} onPress={need.fix} />
+        </View>
+      </Card>
+    )
+  }
 
   const bag = pet.bag?.scanId === scan.id ? pet.bag : undefined
   const start = (lb: number) => { setPicking(false); setCustom(''); startBag(pet, scan, lb) }
@@ -39,7 +59,7 @@ export function BagCard({ pet, scan }: { pet: Pet; scan: Scan }) {
           <Text style={[type.body, { color: color.ink2 }]}>{`${bag.lb} lb bag, opened ${opened ? `${days(opened)} ago` : 'today'}`}</Text>
         </View>
         <ProgressBar value={left / total} />
-        {left <= 7 ? <PillButton label="Reorder on Amazon" onPress={() => WebBrowser.openBrowserAsync(shopLink(`${scan.label.brand ?? ''} ${scan.label.productName ?? ''}`.trim(), pet.species)).catch(() => {})} /> : null}
+        {left <= 7 ? <PillButton label="Reorder on Amazon" onPress={() => WebBrowser.openBrowserAsync(reorder).catch(() => {})} /> : null}
         <View style={s.links}>
           <TextLink label="Opened a new bag" onPress={() => setPicking(true)} />
           <TextLink label="Stop tracking" onPress={() => stopBag(pet)} />
@@ -69,6 +89,7 @@ const s = StyleSheet.create({
   card: { gap: 14, marginBottom: 12 },
   ask: { paddingVertical: 0, marginBottom: 12 },
   links: { flexDirection: 'row', gap: 20 },
+  needRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   customRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   input: { ...type.body, width: 110, borderWidth: 1, borderColor: color.hairline, borderRadius: radius.chip, paddingHorizontal: 12, paddingVertical: 10, backgroundColor: color.surface, color: color.ink },

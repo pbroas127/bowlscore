@@ -72,6 +72,7 @@ export default function Settings() {
       </Group>
       <Group title="Trust">
         <Row label="How we score" onPress={web(SITE.methodology)} />
+        <Row label="Affiliate disclosure" onPress={web(SITE.affiliate)} />
         <Row label="Not veterinary advice" onPress={() => Alert.alert('Not veterinary advice', 'BowlScore rates what is printed on the label. It cannot examine your pet. For medical questions and prescription diets, always ask your veterinarian.')} last />
       </Group>
       <Group title="Support">

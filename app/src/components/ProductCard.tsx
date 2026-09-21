@@ -5,8 +5,19 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { BowlFood, CaretRight, CurrencyCircleDollar } from 'phosphor-react-native'
 import { ScoreRing } from '@/components/ScoreRing'
 import { tap } from '@/lib/haptics'
+import { proteinOf } from '@/lib/recommend'
+import { activePet, useStore } from '@/lib/store'
 import type { CatalogProduct } from '@/lib/types'
 import { color, gutter, radius, type } from '@/theme'
+
+// Same protein as the pet eats now, or a new one. Nothing when either side is unknown.
+export function ProteinTag({ product }: { product: CatalogProduct }) {
+  const mine = useStore((st) => activePet(st)?.protein)
+  const theirs = proteinOf(product.label.ingredients)
+  if (!mine || !theirs) return null
+  const same = mine === theirs
+  return <View style={[s.tag, { backgroundColor: same ? color.greenSoft : color.hairline }]}><Text style={[type.caption, { fontSize: 12, lineHeight: 16, color: color.ink }]}>{same ? 'Same protein' : 'New protein'}</Text></View>
+}
 
 // Product photo on a cream tile. The tile is the placeholder: it shows while the photo loads and when there is none.
 // Pack shots come on white, so the tile turns white once the photo is in.
@@ -37,6 +48,7 @@ export function ProductCard({ product, why }: { product: CatalogProduct; why: st
       <Text style={type.caption} numberOfLines={1}>{product.brand}</Text>
       <Text style={type.title} numberOfLines={2}>{product.name}</Text>
       <Text style={[type.caption, { color: color.green }]} numberOfLines={2}>{why}</Text>
+      <ProteinTag product={product} />
       <View style={s.foot}>
         <PriceTier tier={product.priceTier} />
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 2 }}><Text style={type.label}>Shop</Text><CaretRight size={14} weight="bold" color={color.ink} /></View>
@@ -52,7 +64,6 @@ export function ProductCarousel({ products, why }: { products: CatalogProduct[];
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -gutter }} contentContainerStyle={{ paddingHorizontal: gutter, gap: 12 }}>
         {products.map((p) => <ProductCard key={p.id} product={p} why={why(p)} />)}
       </ScrollView>
-      <AffiliateNote />
     </>
   )
 }
@@ -64,24 +75,26 @@ export function ProductRow({ product, note, last, onPress }: { product: CatalogP
       <View style={{ flex: 1, gap: 1 }}>
         <Text style={type.caption} numberOfLines={1}>{product.brand}</Text>
         <Text style={type.title} numberOfLines={2}>{product.name}</Text>
-        {note ? <Text style={[type.caption, { color: color.bad }]} numberOfLines={1}>{note}</Text> : <PriceTier tier={product.priceTier} />}
+        {note ? <Text style={[type.caption, { color: color.bad }]} numberOfLines={1}>{note}</Text> : <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}><PriceTier tier={product.priceTier} /><ProteinTag product={product} /></View>}
       </View>
       <ScoreRing score={product.result.score} size={48} stroke={5} animate={false} />
     </Pressable>
   )
 }
 
-// Required wording, shown directly under every list of shop links.
+// Amazon requires this exact sentence to be visible; the FTC wants it near the shop buttons. Once per screen, as fine print.
 export function AffiliateNote({ center }: { center?: boolean }) {
-  return <Text style={[type.caption, { marginTop: 8 }, center && { textAlign: 'center' }]}>As an Amazon Associate I earn from qualifying purchases. A purchase never changes a score.</Text>
+  return <Text style={[s.fine, center && { textAlign: 'center' }]}>As an Amazon Associate I earn from qualifying purchases.</Text>
 }
 
 const s = StyleSheet.create({
+  fine: { fontSize: 11, lineHeight: 15, color: color.ink3, marginTop: 16 },
   photo: { borderRadius: radius.chip, borderWidth: 1, borderColor: color.hairline, backgroundColor: color.bg, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   photoFill: { position: 'absolute', top: 4, left: 4, right: 4, bottom: 4 },
   card: { width: 200, backgroundColor: color.surface, borderRadius: radius.card, borderWidth: 1, borderColor: color.hairline, padding: 12, gap: 4 },
   ring: { position: 'absolute', top: 18, right: 18, backgroundColor: color.surface, borderRadius: radius.pill, padding: 2 },
   foot: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: 8 },
+  tag: { alignSelf: 'flex-start', height: 22, paddingHorizontal: 8, borderRadius: radius.pill, justifyContent: 'center', marginTop: 2 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12 },
   divider: { borderBottomWidth: 1, borderBottomColor: color.hairline },
 })

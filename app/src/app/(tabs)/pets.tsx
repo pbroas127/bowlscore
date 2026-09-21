@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { PencilSimple, Plus } from 'phosphor-react-native'
 import { Mascot, mascotFor } from '@/components/Mascot'
+import { PetHead } from '@/components/PetHead'
 import { ALLERGIES, blankPet, PetEditor, petLine } from '@/components/PetEditor'
 import { ScoreRing } from '@/components/ScoreRing'
 import { Card, Screen } from '@/components/ui'
@@ -29,7 +30,7 @@ export default function Pets() {
             // Opening a pet also makes it the one being scanned for, so the pantry and the scanner never disagree.
             <Pressable key={p.id} onPress={() => { tap('select'); setState({ activePetId: p.id }); router.push(`/pet/${p.id}`) }} style={({ pressed }) => pressed && { transform: [{ scale: 0.985 }] }}>
               <Card style={[s.pet, on && s.petOn]}>
-                <View style={s.avatar}><Mascot pose={mascotFor(p.species, 'head')} size={54} bob={false} /></View>
+                <View style={s.avatar}><PetHead pet={p} size={54} /></View>
                 <View style={{ flex: 1, gap: 2 }}>
                   <Text style={type.h2}>{p.name}</Text>
                   <Text style={type.caption}>{[...petLine(p), on ? 'Scanning for now' : null].filter(Boolean).join(' · ')}</Text>

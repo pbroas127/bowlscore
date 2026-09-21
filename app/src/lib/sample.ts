@@ -4,7 +4,8 @@ import { bornAtFor } from './fit.ts'
 import type { Catalog, CatalogProduct, Flag, LabelData, ScoreResult } from './types'
 
 // The preview pet when onboarding skipped breed, age and weight: a large breed puppy, the case where fit matters most.
-export const SAMPLE_PET = { breed: 'Bernese Mountain Dog', bornAt: bornAtFor(9), weightLb: 72 }
+// On chicken, so the preview catalog shows both the same protein and the new protein tags.
+export const SAMPLE_PET = { breed: 'Bernese Mountain Dog', bornAt: bornAtFor(9), weightLb: 72, protein: 'Chicken' }
 
 export const SAMPLE_POOR: { label: LabelData; result: ScoreResult } = {
   label: {
@@ -76,7 +77,9 @@ const naturalPreservatives: Flag = { severity: 'good', title: 'Natural preservat
 export const SAMPLE_CATALOG: Catalog = {
   version: 'preview',
   products: [
-    { ...fixture('sample-dog-dry', SAMPLE_GOOD.label.brand!, SAMPLE_GOOD.label.productName!, 'dog', 'dry', 2, 93, [], [], [0, 0, 0]), label: SAMPLE_GOOD.label, result: SAMPLE_GOOD.result },
+    // Two versions of one line with bag sizes, so the preview shows the Version and Size pickers.
+    { ...fixture('sample-dog-dry', SAMPLE_GOOD.label.brand!, SAMPLE_GOOD.label.productName!, 'dog', 'dry', 2, 93, [], [], [0, 0, 0]), label: SAMPLE_GOOD.label, result: SAMPLE_GOOD.result, line: 'sample-premium-dog', sizes: [4, 15, 30, 40].map((lb) => ({ label: `${lb} lb`, lb, url: `https://www.amazon.com/s?k=sample+${lb}+lb&tag=bowlscore-20` })) },
+    { ...fixture('sample-dog-puppy', SAMPLE_GOOD.label.brand!, 'Puppy Lamb and Brown Rice', 'dog', 'dry', 2, 91, ['Deboned lamb', 'Lamb meal', 'Brown rice', 'Oatmeal', 'Salmon oil'], [meatFirst('Deboned lamb'), naturalPreservatives], [30, 18, 38], { kcalPerKg: 3700, kcalPerCup: 400 }), lifeStage: 'growth', line: 'sample-premium-dog', sizes: [4, 15, 30, 40].map((lb) => ({ label: `${lb} lb`, lb, url: `https://www.amazon.com/s?k=sample+${lb}+lb&tag=bowlscore-20` })) },
     fixture('sample-dog-wet', 'Sample pantry', 'Turkey and Pumpkin Stew', 'dog', 'wet', 3, 88, ['Turkey', 'Turkey broth', 'Turkey liver', 'Pumpkin', 'Carrots', 'Flaxseed'], [meatFirst('Turkey'), { severity: 'good', title: 'High protein', detail: 'About 42% protein once water is removed.' }], [42, 24, 18], { kcalPerKg: 1150, kcalPerUnit: 410, unit: 'can' }),
     fixture('sample-dog-treat', 'Sample bakery', 'Single Ingredient Beef Liver Bites', 'dog', 'treat', 1, 84, ['Beef liver'], [meatFirst('Beef liver'), { severity: 'info', title: 'This is a treat', detail: 'Scored on ingredients only. Treats should stay under ten percent of daily calories.' }], [62, 12, 8], { kcalPerKg: 4100, kcalPerUnit: 9, unit: 'treat' }),
     fixture('sample-cat-dry', 'Sample feline', 'Salmon and Turkey Recipe', 'cat', 'dry', 2, 86, ['Deboned salmon', 'Turkey meal', 'Peas', 'Chicken fat (preserved with mixed tocopherols)', 'Taurine'], [meatFirst('Deboned salmon'), naturalPreservatives, { severity: 'good', title: 'Taurine included', detail: 'Cats cannot make enough taurine on their own, and this food adds it.' }], [40, 18, 27], { kcalPerKg: 3900, kcalPerCup: 430 }),

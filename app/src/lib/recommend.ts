@@ -25,6 +25,35 @@ export const claimOf = (p: CatalogProduct): LabelData['lifeStageClaim'] =>
   p.label.lifeStageClaim && p.label.lifeStageClaim !== 'unknown' ? p.label.lifeStageClaim : p.lifeStage === 'growth' ? 'growth' : p.lifeStage === 'adult' || p.lifeStage === 'senior' ? 'adult' : 'all'
 const suits = (p: CatalogProduct, pet?: Pet) => !pet || suitsPet(pet, p.label, claimOf(p))
 
+// The main meat of a food: the first ingredient that names an animal. Fats, oils, broths and flavors do not count,
+// and neither do animals we cannot place (bison, "meat meal"), so the answer is undefined more often than wrong.
+export const PROTEINS: readonly string[] = ['Lamb', 'Chicken', 'Beef', 'Turkey', 'Fish', 'Duck', 'Pork', 'Venison', 'Rabbit']
+const ANIMALS: [string, RegExp][] = [
+  ['Chicken', /chicken/i], ['Turkey', /turkey/i], ['Duck', /\bduck/i], ['Lamb', /\blamb\b/i], ['Beef', /\bbeef\b/i], ['Pork', /\bpork\b/i], ['Venison', /venison|\bdeer\b|\belk\b/i], ['Rabbit', /rabbit/i],
+  ['Fish', /\bfish|whitefish|salmon|tuna|herring|\bcod\b|trout|menhaden|sardine|anchov|mackerel|pollock|haddock/i],
+]
+const NOT_MEAT = /\b(fat|oil|broth|stock|flavou?r|digest|gravy)\b/i
+export function proteinOf(ingredients: string[]): string | undefined {
+  for (const ing of ingredients) {
+    if (NOT_MEAT.test(ing)) continue
+    const hit = ANIMALS.find(([, re]) => re.test(ing))
+    if (hit) return hit[0]
+  }
+  return undefined
+}
+
+// A food with the pet's own protein moves up past foods within 5 points of it, and never past a clearly better one.
+function proteinFirst(list: CatalogProduct[], protein?: string) {
+  if (!protein) return list
+  const out: CatalogProduct[] = []
+  for (const p of list) {
+    let i = out.length
+    if (proteinOf(p.label.ingredients) === protein) while (i > 0 && proteinOf(out[i - 1].label.ingredients) !== protein && out[i - 1].result.score - p.result.score <= 5) i--
+    out.splice(i, 0, p)
+  }
+  return out
+}
+
 export interface RecommendFor { species: Species; stage?: LifeStage; form?: FoodForm; allergies?: string[]; currentScore?: number; excludeId?: string; pet?: Pet }
 
 export function recommend(catalog: CatalogProduct[], { species, stage, form, allergies, currentScore = 0, excludeId, pet }: RecommendFor): CatalogProduct[] {
@@ -39,7 +68,7 @@ export function recommend(catalog: CatalogProduct[], { species, stage, form, all
   )
   const bar = Math.max(75, currentScore + 15)
   const strong = pool.filter((p) => p.result.score >= bar)
-  return withPhoto(strong.length ? strong : pool.filter((p) => p.result.score > currentScore)).sort(byScoreThenPrice).slice(0, 6)
+  return proteinFirst(withPhoto(strong.length ? strong : pool.filter((p) => p.result.score > currentScore)).sort(byScoreThenPrice).slice(0, 6), pet?.protein)
 }
 
 export const topRated = (catalog: CatalogProduct[], species: Species, allergies?: string[], max = 8, pet?: Pet) =>

@@ -4,9 +4,11 @@ import { useState } from 'react'
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native'
 import { ArrowLeft, Check, PencilSimple } from 'phosphor-react-native'
 import { BagCard } from '@/components/BagCard'
+import { FoodEditor } from '@/components/FoodEditor'
 import { FeedingCard, treatAllowance } from '@/components/FitCard'
 import { sectionTitle } from '@/components/FoodReport'
 import { Mascot, mascotFor } from '@/components/Mascot'
+import { PetHead } from '@/components/PetHead'
 import { ALLERGIES, PetEditor, petLine } from '@/components/PetEditor'
 import { openProduct } from '@/components/ProductCard'
 import { ago, ScanRow } from '@/components/ScanRow'
@@ -14,7 +16,7 @@ import { ScoreRing } from '@/components/ScoreRing'
 import { Card, EmptyState, PillButton, ProgressBar, Screen, TextLink } from '@/components/ui'
 import { useStore } from '@/lib/store'
 import { cancelPlan, PLAN_DAYS, planDay, stepIndex, SWITCH_STEPS } from '@/lib/switchPlan'
-import type { Pet } from '@/lib/types'
+import type { LabelData, Pet } from '@/lib/types'
 import { color, radius, type } from '@/theme'
 
 function SwitchPlanCard({ pet }: { pet: Pet }) {
@@ -67,6 +69,7 @@ export default function PetPage() {
   const pet = useStore((st) => st.pets.find((p) => p.id === id))
   const allScans = useStore((st) => st.scans)
   const [draft, setDraft] = useState<Pet>()
+  const [food, setFood] = useState<LabelData>()
 
   if (!pet) return <Screen><View style={s.nav}><TextLink label="Back" onPress={() => router.back()} /></View></Screen>
 
@@ -84,7 +87,7 @@ export default function PetPage() {
         <Pressable hitSlop={12} onPress={() => setDraft(pet)} accessibilityLabel={`Edit ${pet.name}`} style={({ pressed }) => pressed && { opacity: 0.5 }}><PencilSimple size={24} weight="bold" color={color.ink} /></Pressable>
       </View>
       <View style={s.header}>
-        <View style={s.avatar}><Mascot pose={mascotFor(pet.species, 'head')} size={66} bob={false} /></View>
+        <View style={s.avatar}><PetHead pet={pet} size={66} /></View>
         <View style={{ flex: 1 }}>
           <Text style={type.h1} numberOfLines={1}>{pet.name}</Text>
           <Text style={type.caption}>{petLine(pet).filter(Boolean).join(' · ')}</Text>
@@ -108,7 +111,7 @@ export default function PetPage() {
         <EmptyState compact pose={cat ? 'kitten-peeking' : 'puppy-sniffing'} title={`No main food for ${pet.name} yet`} body="Scan the food that fills the bowl most days, then set it as the main food." action={<PillButton label="Scan a food" onPress={() => router.push('/scan')} />} />
       )}
 
-      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} /><BagCard pet={pet} scan={main} /></View> : null}
+      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} /><BagCard pet={pet} scan={main} onEditPet={() => setDraft(pet)} onEditFood={() => setFood(main.label)} /></View> : null}
 
       <SwitchPlanCard pet={pet} />
 
@@ -130,6 +133,7 @@ export default function PetPage() {
       )}
 
       <PetEditor draft={draft} setDraft={setDraft} onRemoved={() => router.back()} />
+      {main ? <FoodEditor scan={main} pet={pet} draft={food} setDraft={setFood} /> : null}
     </Screen>
   )
 }

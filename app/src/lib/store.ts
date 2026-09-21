@@ -2,6 +2,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useSyncExternalStore } from 'react'
 import { PREVIEW } from './config'
+import { PROTEINS } from './recommend'
 import { SAMPLE_PET } from './sample'
 import type { Pet, Recall, Scan } from './types'
 
@@ -15,6 +16,7 @@ export interface Quiz {
   stage?: Pet['stage']
   size?: string
   foodType?: string
+  protein?: string
   heardFrom?: string
   concerns: string[]
   allergies: string[]
@@ -25,6 +27,7 @@ export interface AppState {
   onboarded: boolean
   mockPro: boolean // only used when purchases run in mock mode (web preview or no RevenueCat key)
   coachSeen: boolean
+  guideSeen: boolean // the "what to scan" diagram on the scanner
   ratingAsks: number
   quiz: Quiz
   pets: Pet[]
@@ -36,7 +39,7 @@ export interface AppState {
 }
 
 const KEY = 'bowlscore.state.v1'
-const initial: AppState = { ready: false, onboarded: false, mockPro: false, coachSeen: false, ratingAsks: 0, quiz: { step: 0, concerns: [], allergies: [] }, pets: [], scans: [], recalls: [], recallsSeen: [] }
+const initial: AppState = { ready: false, onboarded: false, mockPro: false, coachSeen: false, guideSeen: false, ratingAsks: 0, quiz: { step: 0, concerns: [], allergies: [] }, pets: [], scans: [], recalls: [], recallsSeen: [] }
 
 // Pets saved by an older build (or restored from an older backup) lack the newer fields. Breed, age, weight and meals are optional everywhere, so only the list needs a default.
 export const withDefaults = (pets: Pet[]): Pet[] => pets.map((p) => ({ ...p, treatScanIds: p.treatScanIds ?? [] }))
@@ -86,7 +89,7 @@ export const newId = () => Math.random().toString(36).slice(2) + Date.now().toSt
 // The quiz answers as a pet profile. Onboarding also reads it to show the life stage that the age works out to.
 export function petFromQuiz(q: Quiz): Pet {
   const species = q.petType === 'cat' ? 'cat' : 'dog'
-  return { id: newId(), name: q.name?.trim() || 'My pet', species, breed: q.breed?.trim() || undefined, bornAt: q.bornAt, weightLb: q.weightLb, stage: q.stage ?? 'adult', size: q.size, foodType: q.foodType, concerns: q.concerns, allergies: q.allergies, treatScanIds: [] }
+  return { id: newId(), name: q.name?.trim() || 'My pet', species, breed: q.breed?.trim() || undefined, bornAt: q.bornAt, weightLb: q.weightLb, stage: q.stage ?? 'adult', size: q.size, foodType: q.foodType, protein: q.protein && PROTEINS.includes(q.protein) ? q.protein : undefined, concerns: q.concerns, allergies: q.allergies, treatScanIds: [] }
 }
 
 // "Both" starts with one profile; the Pets tab invites adding the second.
@@ -100,3 +103,4 @@ export function finishQuiz() {
 export function saveScan(scan: Scan) {
   setState((s) => ({ scans: [scan, ...s.scans].slice(0, 200) }))
 }
+export const updateScan = (id: string, patch: (x: Scan) => Scan) => setState((s) => ({ scans: s.scans.map((x) => (x.id === id ? patch(x) : x)) }))

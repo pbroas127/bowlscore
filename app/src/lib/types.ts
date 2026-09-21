@@ -38,6 +38,7 @@ export interface Pet {
   stage: LifeStage
   size?: string // Small, Medium, Large, Giant from onboarding; weight and breed win when present
   breed?: string // a name from lib/breeds.ts, or whatever the person typed
+  look?: string // a head from components/PetHead.tsx picked by hand; unset means the breed decides
   bornAt?: number // ms timestamp, estimated from the age they entered
   weightLb?: number
   meals?: number // per day, default 2
@@ -45,6 +46,7 @@ export interface Pet {
   weighInId?: string // the scheduled weigh in reminder
   bag?: Bag
   foodType?: string
+  protein?: string // the main meat in the current food, one of PROTEINS in lib/recommend.ts
   concerns: string[]
   allergies: string[]
   currentScanId?: string
@@ -85,7 +87,11 @@ export interface CatalogProduct {
   result: ScoreResult
   sourceUrl?: string
   links: { amazon: string; chewy?: string }
+  sizes?: BagSize[] // what it sells in, small to large, each with its own shop link
+  line?: string // shared by the flavors and life stage versions of one product line
 }
+
+export interface BagSize { label: string; lb: number; url: string }
 
 export interface Catalog { version: string; products: CatalogProduct[] }
 export interface Recall { id: string; date: string; brand: string; product: string; reason: string; url: string }

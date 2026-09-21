@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // Run with: node --experimental-strip-types src/lib/fit.test.ts
 import assert from 'node:assert/strict'
-import { ageMonths, bagStatus, bornAtFor, dailyKcal, gramsPerDay, weighInDue, feeding, fitFor, fraction, isLargeBreedPuppy, sizeClass, stageFor, suitsPet } from './fit.ts'
+import { ageMonths, bagStatus, bestSize, bornAtFor, dailyKcal, gramsPerDay, weighInDue, feeding, fitFor, fraction, isLargeBreedPuppy, sizeClass, stageFor, suitsPet } from './fit.ts'
 import type { LabelData, Pet } from './types.ts'
 
 const NOW = Date.UTC(2026, 8, 21)
@@ -68,5 +68,12 @@ assert.ok(weighInDue(bear, NOW)) // never weighed in
 assert.ok(!weighInDue({ ...bear, weighedAt: NOW - 10 * 86_400_000 }, NOW))
 assert.ok(weighInDue({ ...bear, weighedAt: NOW - 31 * 86_400_000 }, NOW))
 assert.ok(!weighInDue(grown, NOW))
+
+// Bag size: 530 g a day, a 30 lb bag lasts 26 days and a 40 lb bag 34, so the 40 lb is closest to six weeks.
+const bags = [{ lb: 4 }, { lb: 15 }, { lb: 30 }, { lb: 40 }]
+assert.equal(bestSize(bags, 530)!.lb, 40)
+assert.equal(bestSize(bags, 150)!.lb, 15) // a small dog
+assert.equal(bestSize(bags)!.lb, 15) // no daily amount: the middle
+assert.equal(bestSize([], 500), undefined)
 
 console.log('fit tests passed')

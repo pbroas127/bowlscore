@@ -7,13 +7,13 @@ import Animated, { Easing, FadeIn, FadeInDown, useAnimatedStyle, useSharedValue,
 import { ArrowLeft, Bell, Cat, Check, Dog, Heart, MagnifyingGlass, PawPrint, Scan, ShieldCheck, Sparkle } from 'phosphor-react-native'
 import { FlagRow } from '@/components/FlagRow'
 import { Mascot, mascotFor } from '@/components/Mascot'
-import { BreedField, digits, petLine, pounds, stageWord } from '@/components/PetEditor'
+import { BirthdayField, BreedField, petLine, pounds } from '@/components/PetEditor'
 import { ScoreRing } from '@/components/ScoreRing'
 import { Card, Chip, OptionRow, PillButton, ProgressBar, Screen, TextLink } from '@/components/ui'
 import { findBreed } from '@/lib/breeds'
-import { ageMonths, bornAtFor, stageFor } from '@/lib/fit'
 import { tap, tapForGrade } from '@/lib/haptics'
 import { restore } from '@/lib/purchases'
+import { PROTEINS } from '@/lib/recommend'
 import { SAMPLE_POOR } from '@/lib/sample'
 import { finishQuiz, getState, petFromQuiz, setQuiz, setState, useStore, type Quiz } from '@/lib/store'
 import { color, radius, type } from '@/theme'
@@ -21,7 +21,7 @@ import { color, radius, type } from '@/theme'
 type StepProps = { quiz: Quiz; next: () => void; pet: string }
 type StepFn = (p: StepProps) => ReactNode
 
-const STEPS: StepFn[] = [Welcome, PetType, PetName, Breed, Age, Weight, Stage, Size, FoodType, HeardFrom, Concerns, Allergies, Fact, Trust, DemoScan, NotifyPrimer, Building, Reveal, Recap]
+const STEPS: StepFn[] = [Welcome, PetType, PetName, Breed, Age, Weight, Protein, Stage, Size, FoodType, HeardFrom, Concerns, Allergies, Fact, Trust, DemoScan, NotifyPrimer, Building, Reveal, Recap]
 
 // Never ask what we already know: an age gives the life stage, a known breed gives the size, and cats have no size question.
 const skips = (S: StepFn, q: Quiz) =>
@@ -182,20 +182,24 @@ function Breed({ quiz, next, pet }: StepProps) {
 }
 
 function Age({ quiz, next, pet }: StepProps) {
-  const had = ageMonths(petFromQuiz(quiz)) ?? 0
-  const [years, setYears] = useState(had >= 12 ? String(Math.floor(had / 12)) : '')
-  const [months, setMonths] = useState(had % 12 ? String(had % 12) : '')
-  const total = Math.min(360, digits(years) * 12 + digits(months))
-  const asPet = petFromQuiz({ ...quiz, bornAt: bornAtFor(total) })
-  const done = (t: number) => { setQuiz({ bornAt: t ? bornAtFor(t) : undefined }); next() }
+  const [bornAt, setBornAt] = useState(quiz.bornAt)
+  const done = (t?: number) => { setQuiz({ bornAt: t }); next() }
   return (
-    <Ask title={`How old is ${pet}?`} sub="A good guess is fine. Age tells us which foods are made for them." ready={total > 0} onDone={() => done(total)} onSkip={() => done(0)}>
-      <View style={{ flexDirection: 'row', gap: 12 }}>
-        <View style={s.unit}><TextInput value={years} onChangeText={setYears} placeholder="0" placeholderTextColor={color.ink3} keyboardType="number-pad" maxLength={2} autoFocus style={s.unitInput} accessibilityLabel="Years" /><Text style={s.unitWord}>years</Text></View>
-        <View style={s.unit}><TextInput value={months} onChangeText={setMonths} placeholder="0" placeholderTextColor={color.ink3} keyboardType="number-pad" maxLength={2} style={s.unitInput} accessibilityLabel="Months" /><Text style={s.unitWord}>months</Text></View>
-      </View>
-      {total ? <Text style={[type.body, { color: color.ink2 }]}>That makes {pet} {stageFor(asPet) === 'adult' ? 'an adult' : `a ${stageWord(asPet).toLowerCase()}`}.</Text> : null}
+    <Ask title={`When was ${pet} born?`} sub="A good guess is fine. Age tells us which foods are made for them." ready={bornAt != null} onDone={() => done(bornAt)} onSkip={() => done(undefined)}>
+      <ScrollView keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+        <BirthdayField pet={petFromQuiz({ ...quiz, bornAt })} onChange={setBornAt} big />
+      </ScrollView>
     </Ask>
+  )
+}
+
+// What the current food is made of, so the catalog can say which foods keep the same protein.
+function Protein({ quiz, next, pet }: StepProps) {
+  const pick = (protein: string) => { setQuiz({ protein }); setTimeout(next, 250) }
+  return (
+    <Q title={`What protein does ${pet} eat now?`} sub="The main meat in the food they get today." footer={<View style={{ alignItems: 'center' }}><TextLink label="Skip for now" onPress={() => { setQuiz({ protein: undefined }); next() }} /></View>}>
+      <View style={s.chips}>{[...PROTEINS, 'Other', 'Not sure'].map((p) => <Chip key={p} label={p} selected={quiz.protein === p} onPress={() => pick(p)} />)}</View>
+    </Q>
   )
 }
 

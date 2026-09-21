@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft, MagnifyingGlass } from 'phosphor-react-native'
 import { AffiliateNote, ProductRow } from '@/components/ProductCard'
 import { Chip, EmptyState, PillButton } from '@/components/ui'
-import { allergyHits, claimOf, refreshCatalog, useCatalog } from '@/lib/catalog'
+import { allergyHits, claimOf, proteinOf, refreshCatalog, useCatalog } from '@/lib/catalog'
 import { fitFor } from '@/lib/fit'
 import { activePet, useStore } from '@/lib/store'
 import type { CatalogProduct, FoodForm, Pet } from '@/lib/types'
@@ -30,12 +30,13 @@ export default function CatalogScreen() {
   const [q, setQ] = useState('')
   const [form, setForm] = useState<FoodForm>()
   const [price, setPrice] = useState<1 | 2 | 3>()
+  const [same, setSame] = useState(false)
   const species = pet?.species ?? 'dog'
   const needle = q.trim().toLowerCase()
   const shown = (catalog?.products ?? [])
-    .filter((p) => p.species === species && (!form || p.form === form) && (!price || p.priceTier === price) && (!needle || `${p.brand} ${p.name}`.toLowerCase().includes(needle)))
+    .filter((p) => p.species === species && (!form || p.form === form) && (!price || p.priceTier === price) && (!same || !pet?.protein || proteinOf(p.label.ingredients) === pet.protein) && (!needle || `${p.brand} ${p.name}`.toLowerCase().includes(needle)))
     .sort((a, b) => b.result.score - a.result.score)
-  const clear = () => { setQ(''); setForm(undefined); setPrice(undefined) }
+  const clear = () => { setQ(''); setForm(undefined); setPrice(undefined); setSame(false) }
 
   return (
     <SafeAreaView style={s.root} edges={['top']}>
@@ -53,6 +54,7 @@ export default function CatalogScreen() {
           {FORMS.map(([label, f]) => <Chip key={label} label={label} selected={form === f} onPress={() => setForm(f)} />)}
           <View style={s.rule} />
           {PRICES.map((n) => <Chip key={n} label={'$'.repeat(n)} selected={price === n} onPress={() => setPrice(price === n ? undefined : n)} />)}
+          {pet?.protein ? <><View style={s.rule} /><Chip label="Same protein" selected={same} onPress={() => setSame((v) => !v)} /></> : null}
         </ScrollView>
       </View>
       <FlatList

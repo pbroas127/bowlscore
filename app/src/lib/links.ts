@@ -5,6 +5,7 @@ export const SITE = {
   privacy: `${BASE}/privacy`,
   support: `${BASE}/support`,
   methodology: `${BASE}/methodology`,
+  affiliate: `${BASE}/affiliate-disclosure`,
 }
 export const SUPPORT_EMAIL = 'pbroas127+bowlscore@gmail.com'
 
@@ -12,7 +13,7 @@ export const SUPPORT_EMAIL = 'pbroas127+bowlscore@gmail.com'
 // lands and every built Chewy link in the app switches on from this one place.
 const AMAZON_TAG = 'bowlscore-20'
 const CHEWY_ON = false
-const tagged = (url: string) => (!/amazon\./i.test(url) || /[?&]tag=/.test(url) ? url : `${url}${url.includes('?') ? '&' : '?'}tag=${AMAZON_TAG}`)
+export const tagged = (url: string) => (!/amazon\./i.test(url) || /[?&]tag=/.test(url) ? url : `${url}${url.includes('?') ? '&' : '?'}tag=${AMAZON_TAG}`)
 export const amazonSearch = (query: string) => `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}`
 export const chewySearch = (query: string) => (CHEWY_ON ? `https://www.chewy.com/s?query=${encodeURIComponent(query)}` : undefined)
 export const shopLink = (query: string, species: 'dog' | 'cat') => amazonSearch(`${species} ${query}`)
