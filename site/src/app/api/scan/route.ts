@@ -127,6 +127,46 @@ async function readLabel(images: string[], apiKey: string): Promise<Extracted> {
   throw last
 }
 
+interface Product { name: string; brand?: string }
+
+// ponytail: UPCitemdb's keyless trial endpoint, 100 lookups a day per IP. Ceiling: shared Vercel IPs will hit that
+// once there are real users. Upgrade path: their paid plan, or a barcode to product cache of our own.
+async function identify(barcode: string): Promise<Product | null> {
+  try {
+    const res = await fetch(`https://api.upcitemdb.com/prod/trial/lookup?upc=${barcode}`, { signal: AbortSignal.timeout(6_000) })
+    const item = res.ok ? (await res.json())?.items?.[0] : null
+    if (!item?.title) return null
+    // "Purina ONE ... with Chicken & Rice - 16.5lbs" names the bag size; the recipe is the same across sizes.
+    const name = String(item.title).replace(/\s*[-,]\s*[\d.]+\s*(lbs?|oz|kg|g|ct|count|pack)\b.*$/i, '').trim()
+    return { name: name.slice(0, 120), brand: item.brand ? String(item.brand).slice(0, 60) : undefined }
+  } catch {
+    return null
+  }
+}
+
+// Looks up the ingredient list the manufacturer or a major retailer publishes for a named product, using Gemini with
+// Google Search grounding. Needs a paid Gemini tier: the free tier answers 429 to grounded calls, and then this simply
+// returns null and the app asks for a label photo instead. One attempt only, a photo is always available as plan B.
+async function webLabel(product: Product, apiKey: string): Promise<{ label: LabelData; species: 'dog' | 'cat' | 'unknown'; sourceUrl?: string } | null> {
+  const prompt = `Find the official ingredient list and guaranteed analysis for this exact pet food product: "${product.name}"${product.brand ? ` by ${product.brand}` : ''}. Use the manufacturer's website or a major retailer such as Chewy or Petco. Reply with ONLY a JSON object and no markdown: {"found": boolean, "ingredients": string[] (label order, keep parentheses inside each ingredient), "proteinMin": number, "fatMin": number, "fiberMax": number, "moistureMax": number, "species": "dog" or "cat", "foodForm": "dry" or "wet", "completeAndBalanced": boolean, "isTreat": boolean, "sourceUrl": string}. If you cannot find this exact product and recipe, reply {"found": false}. Never guess or fill in ingredients from memory.`
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODELS[0]}:generateContent`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+      signal: AbortSignal.timeout(25_000),
+      body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt }] }], tools: [{ google_search: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'minimal' } } }),
+    })
+    if (!res.ok) return null
+    const text: string = (await res.json()).candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('') ?? ''
+    const x = JSON.parse(text.replace(/^[^{]*/, '').replace(/[^}]*$/, ''))
+    if (!x?.found || !Array.isArray(x.ingredients) || x.ingredients.length < 5) return null
+    const label = toLabel({ ...x, productName: product.name, brand: product.brand, analysis: x, aafco: x.completeAndBalanced ? 'complete' : 'not_found', readable: true, speciesOnLabel: x.species })
+    return { label, species: x.species === 'dog' || x.species === 'cat' ? x.species : 'unknown', sourceUrl: typeof x.sourceUrl === 'string' ? x.sourceUrl.slice(0, 300) : undefined }
+  } catch {
+    return null
+  }
+}
+
 // The schema allows nulls, the rubric wants undefined, and nothing from the model is trusted blindly.
 function toLabel(x: Extracted): LabelData {
   const pct = (v: unknown) => (typeof v === 'number' && v >= 0 && v <= 100 ? v : undefined)
@@ -146,13 +186,15 @@ export async function POST(req: Request) {
   const uid = await firebaseUid(req)
   if (uid === null) return json({ error: 'unauthorized' }, 401)
 
-  let body: { species?: Species; lifeStage?: LifeStage; images?: unknown; barcode?: unknown }
+  let body: { species?: Species; lifeStage?: LifeStage; images?: unknown; barcode?: unknown; product?: { name?: unknown; brand?: unknown } }
   try {
     body = await req.json()
   } catch {
     return json({ error: 'invalid_json' }, 400)
   }
   const { species, lifeStage = 'adult', images, barcode } = body ?? {}
+  const short = (v: unknown) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, 120) : undefined)
+  let hint: Product | null = short(body?.product?.name) ? { name: short(body.product!.name)!, brand: short(body.product!.brand) } : null
   if (species !== 'dog' && species !== 'cat') return json({ error: 'invalid_species' }, 400)
   if (!['growth', 'adult', 'senior'].includes(lifeStage)) return json({ error: 'invalid_life_stage' }, 400)
   if (barcode != null && (typeof barcode !== 'string' || !/^\d{6,14}$/.test(barcode))) return json({ error: 'invalid_barcode' }, 400)
@@ -173,8 +215,16 @@ export async function POST(req: Request) {
     const product = res?.ok ? (await res.json().catch(() => null))?.product : null
     const mapped = product ? labelFromOpff(product) : null
     if (mapped) return json({ id: crypto.randomUUID(), source: 'barcode', label: mapped.label, result: scoreFood(mapped.label, species, lifeStage), speciesOnLabel: mapped.speciesOnLabel })
+
+    // Open Pet Food Facts is thin in the US (about 1,000 products, checked 2026-09-21), so name the product from its
+    // UPC, then try the published ingredient list. Whatever happens, the app learns WHAT was scanned.
+    const found = await identify(barcode)
+    const key = process.env.GEMINI_API_KEY
+    const web = found && key ? await webLabel(found, key) : null
+    if (web) return json({ id: crypto.randomUUID(), source: 'web', sourceUrl: web.sourceUrl, label: web.label, result: scoreFood(web.label, species, lifeStage), speciesOnLabel: web.species })
     // The app can send the label photos along with the barcode, so a miss is never a dead end.
-    if (images == null) return json({ error: 'barcode_not_found' }, 404)
+    if (images == null) return json({ error: 'barcode_not_found', product: found }, 404)
+    hint = found ?? hint
   }
 
   const apiKey = process.env.GEMINI_API_KEY
@@ -188,6 +238,8 @@ export async function POST(req: Request) {
     return json({ error: 'vision_failed', message: 'We could not read that label right now. Try again in a moment.' }, 502)
   }
   const label = toLabel(extracted)
+  // A close up of the ingredients panel rarely shows the product name. A barcode scanned just before does.
+  if (hint) { label.productName ??= hint.name; label.brand ??= hint.brand }
   if (!extracted.readable || label.ingredients.length < 3) return json({ error: 'unreadable', message: 'That photo was too blurry to read. Try again with more light.' }, 422)
 
   const speciesOnLabel = ['dog', 'cat'].includes(extracted.speciesOnLabel) ? extracted.speciesOnLabel : 'unknown'

@@ -44,7 +44,8 @@ export interface Scan {
   id: string
   petId: string
   createdAt: number
-  source: 'label' | 'barcode' | 'sample'
+  source: 'label' | 'barcode' | 'web' | 'sample'
+  sourceUrl?: string
   label: LabelData
   result: ScoreResult
   photoUri?: string

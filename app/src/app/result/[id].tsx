@@ -90,6 +90,12 @@ export default function Result() {
           <ScoreRing score={result.score} animate={Boolean(fresh)} onDone={() => setRingDone(true)} />
         </View>
 
+        {scan.source === 'web' ? (
+          <View style={[s.alert, { backgroundColor: color.yellowSoft }]}>
+            <Info size={22} weight="fill" color={color.ink} />
+            <Text style={[type.label, { flex: 1 }]}>Scored from the ingredient list published for this product. Recipes change, so check it against your bag or snap the label.</Text>
+          </View>
+        ) : null}
         {hits.length ? (
           <View style={s.alert}>
             <Warning size={22} weight="fill" color={color.bad} />

@@ -10,13 +10,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { Images, Lightning, X } from 'phosphor-react-native'
 import { Mascot } from '@/components/Mascot'
 import { PillButton, TextLink } from '@/components/ui'
-import { scanFood, ScanError } from '@/lib/api'
+import { scanFood, ScanError, type Product } from '@/lib/api'
 import { tap, tapForGrade } from '@/lib/haptics'
 import { activePet, newId, saveScan, setState, useStore } from '@/lib/store'
 import { color, radius, type } from '@/theme'
 
 type Mode = 'barcode' | 'label'
-type ScanInput = { images?: string[]; barcode?: string }
+type ScanInput = { images?: string[]; barcode?: string; product?: Product }
 
 // ponytail: one label photo per scan. If users report missing nutrition panels, allow a second photo.
 async function toBase64(uri: string) {
@@ -41,6 +41,7 @@ export default function ScanScreen() {
   const camera = useRef<CameraView>(null)
   const lock = useRef(false)
   const lastInput = useRef<ScanInput>(undefined)
+  const known = useRef<Product>(undefined) // named by a barcode scan, attached to the label photo that follows
 
   // The sweep is functional progress feedback, not decoration, so it keeps running with Reduce Motion on.
   // It moves by transform against the measured frame height, which is reliable on every platform.
@@ -64,9 +65,9 @@ export default function ScanScreen() {
     setBusy(true)
     setError(undefined)
     try {
-      const res = await scanFood({ species: pet.species, lifeStage: pet.stage, ...input })
+      const res = await scanFood({ species: pet.species, lifeStage: pet.stage, product: known.current, ...input })
       const id = newId()
-      saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, label: res.label, result: res.result, photoUri })
+      saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, sourceUrl: res.sourceUrl, label: res.label, result: res.result, photoUri })
       setState({ coachSeen: true })
       tapForGrade(res.result.grade)
       router.replace(`/result/${id}?fresh=1`)
@@ -74,7 +75,7 @@ export default function ScanScreen() {
       const err = e instanceof ScanError ? e : new ScanError('server', 'Something went wrong on our side. Please try again in a moment.')
       tap('warning')
       setError(err)
-      if (err.code === 'barcode_not_found') setMode('label') // never a dead end: fall back to a label photo
+      if (err.code === 'barcode_not_found') { known.current = err.product; setMode('label') } // never a dead end: fall back to a label photo
       setBusy(false)
       lock.current = false
     }
