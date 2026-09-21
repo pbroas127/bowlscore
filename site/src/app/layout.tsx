@@ -29,6 +29,11 @@ export const viewport: Viewport = { themeColor: '#FFF8EC' }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${bricolage.variable} ${figtree.variable}`}>
+      <head>
+        {/* Impact (Chewy affiliate program) site ownership check. It reads a nonstandard `value` attribute, which the
+            Next metadata API cannot produce, hence the hand written tag. */}
+        <meta name="impact-site-verification" {...({ value: '5aa5e8ae-f106-4948-afc7-24733b5b8516' } as object)} />
+      </head>
       <body>
         {/* Without JavaScript the score rings show their final value instead of an empty ring. */}
         <noscript>
