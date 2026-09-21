@@ -305,8 +305,15 @@ export function scoreFood(label: LabelData, species: Species, stage: LifeStage =
   if (add.cap) score = Math.min(score, add.cap.limit)
   score = Math.round(clamp(score, 1, 100))
 
+  // Three dyes should read as one "Artificial color" row listing all three, not three identical rows.
+  const merged: Flag[] = []
+  for (const f of flags) {
+    const same = merged.find((m) => m.title === f.title)
+    if (!same) merged.push({ ...f })
+    else if (f.ingredient && !same.ingredient?.includes(f.ingredient)) same.ingredient = same.ingredient ? `${same.ingredient}, ${f.ingredient}` : f.ingredient
+  }
   const order: Severity[] = ['critical', 'warning', 'caution', 'info', 'good']
-  flags.sort((x, y) => order.indexOf(x.severity) - order.indexOf(y.severity))
+  merged.sort((x, y) => order.indexOf(x.severity) - order.indexOf(y.severity))
 
   return {
     rubricVersion: RUBRIC_VERSION,
@@ -315,7 +322,7 @@ export function scoreFood(label: LabelData, species: Species, stage: LifeStage =
     complete,
     components: { ingredients: ing, nutrition: nut.pts == null ? null : Math.round(nut.pts), additives: add.pts },
     dryMatter: nut.dm,
-    flags,
+    flags: merged,
     cap: add.cap,
   }
 }
