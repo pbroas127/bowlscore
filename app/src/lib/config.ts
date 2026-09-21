@@ -13,7 +13,7 @@ export const FIREBASE = {
 }
 
 // RevenueCat public iOS SDK key (starts with appl_). Empty means purchases run in mock mode.
-export const RC_IOS_KEY = process.env.EXPO_PUBLIC_RC_IOS_KEY ?? ''
+export const RC_IOS_KEY = process.env.EXPO_PUBLIC_RC_IOS_KEY ?? 'appl_oNKwcrrMDbJBjmHGvDOshJgMKGW'
 
 // Google sign in needs an iOS OAuth client. Until it is set the Google button stays hidden.
 export const GOOGLE_IOS_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID ?? ''
