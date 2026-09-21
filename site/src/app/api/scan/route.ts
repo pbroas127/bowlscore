@@ -89,34 +89,39 @@ type Extracted = LabelData & { readable: boolean; speciesOnLabel: 'dog' | 'cat' 
 // Measured 2026-09-21: with default "thinking" a phone sized photo takes over 70 s, with minimal thinking about 3 s
 // when the service is healthy. The free tier also stalls or returns 503 on roughly one call in three, so a single
 // long wait is the wrong shape: make short attempts and move to the next model instead of hanging.
-// ponytail: fixed attempt list. If the key moves to a paid tier (priority serving) one attempt is usually enough.
-const ATTEMPTS: [model: string, timeoutMs: number][] = [
-  [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 13_000],
-  ['gemini-3.5-flash-lite', 15_000],
-  [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 18_000],
-]
+// ponytail: alternate two models inside a fixed time budget. On a paid tier (priority serving) the first attempt is usually enough.
+const MODELS = [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 'gemini-3.5-flash-lite']
+const BUDGET_MS = 50_000 // the route is capped at 60 s
+const ATTEMPT_MS = 13_000
 
 async function readLabel(images: string[], apiKey: string): Promise<Extracted> {
   const body = JSON.stringify({
     contents: [{ role: 'user', parts: [{ text: PROMPT }, ...images.map((data) => ({ inlineData: { mimeType: 'image/jpeg', data } }))] }],
     generationConfig: { temperature: 0, maxOutputTokens: 4000, responseMimeType: 'application/json', responseSchema: RESPONSE_SCHEMA, thinkingConfig: { thinkingLevel: 'minimal' } },
   })
+  const deadline = Date.now() + BUDGET_MS
   let last: unknown
-  for (const [model, timeoutMs] of ATTEMPTS) {
+  for (let i = 0; Date.now() < deadline - 3_000; i++) {
+    const model = MODELS[i % MODELS.length]
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-        signal: AbortSignal.timeout(timeoutMs),
+        signal: AbortSignal.timeout(Math.min(ATTEMPT_MS, deadline - Date.now())),
         body,
       })
-      if (!res.ok) throw new Error(`gemini ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`)
+      if (!res.ok) {
+        last = new Error(`gemini ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`)
+        if ([400, 401, 403].includes(res.status)) break // our request or key is wrong, retrying cannot help
+        throw last
+      }
       const data = await res.json()
       const text = data.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('')
       return JSON.parse(text)
     } catch (e) {
       last = e
       console.warn('label read attempt failed:', (e as Error).message)
+      await new Promise((r) => setTimeout(r, 700)) // a refused request returns instantly, so pause before the next model
     }
   }
   throw last
