@@ -10,6 +10,7 @@ Updated by Claude on 2026-09-21, afternoon, after the big catalog build.
 - Firebase: Anonymous, Email, Apple and Google sign in enabled, iOS app registered, Firestore database created with owner only rules.
 - Affiliates: Amazon Associates approved, tag `bowlscore-20` is on every shop link. Chewy (Impact) is in review; flip `CHEWY_ON` in `app/src/lib/links.ts` when it is approved.
 - Big build: real catalog of 47 scored foods (27 with pack shots), real swaps after every scan, Top rated on Home, catalog list with search, product pages, compare, pantry per pet with treats, 7 day switch plan with reminders, recall alerts from the FDA feed, share card, Google sign in, final icon.
+- Pet fit round: breed, age and weight on every pet (life stage comes from age and breed size), a "Fit for {pet}" card and a feeding guide on every report and product page, scanner pet dropdown and Food or Treat switch with a confirmation when the label disagrees, 16 treats in the catalog (62 products), daily plan on Home, bag tracker with a reorder reminder five days before the bag runs out, monthly weigh in nudge for growing pets. Barcode web lookups are remembered for 90 days so each product is only paid for once.
 
 ## Needs you
 1. Sandbox tester: App Store Connect, Users and Access, Sandbox, add a tester (it needs a password, so it has to be you). On the iPhone: Settings, Developer, Sandbox Apple Account. TestFlight purchases are always free.
