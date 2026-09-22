@@ -24,7 +24,27 @@
   "blue-buffalo-wilderness-adult-chicken-recipe-dog": true,
   "wellness-complete-health-adult-deboned-chicken-and-oatmeal-recipe-dog": true,
   "open-farm-grass-fed-beef-and-ancient-grains-dog": true,
-  "pedigree-chopped-ground-dinner-with-chicken-dog": true
+  "pedigree-chopped-ground-dinner-with-chicken-dog": true,
+  "diamond-naturals-chicken-and-rice-formula-all-life-stages-dog": true,
+  "natural-balance-limited-ingredient-lamb-and-brown-rice-recipe-dog": true,
+  "wellness-complete-health-chicken-and-sweet-potato-pate-dog": true,
+  "merrick-grain-free-cowboy-cookout-dog": true,
+  "meow-mix-original-choice-cat": true,
+  "friskies-seafood-sensations-cat": true,
+  "9lives-daily-essentials-cat": true,
+  "purina-one-tender-selects-blend-with-real-chicken-cat": true,
+  "rachael-ray-nutrish-real-chicken-and-brown-rice-recipe-cat": true,
+  "purina-pro-plan-complete-essentials-chicken-and-rice-formula-cat": true,
+  "blue-buffalo-wilderness-adult-chicken-recipe-cat": true,
+  "hills-science-diet-adult-indoor-chicken-recipe-cat": true,
+  "natural-balance-limited-ingredient-green-pea-and-chicken-recipe-cat": true,
+  "royal-canin-indoor-adult-cat": true,
+  "open-farm-wild-caught-salmon-recipe-cat": true,
+  "instinct-original-grain-free-recipe-with-real-chicken-cat": true,
+  "fancy-feast-classic-pate-tender-beef-feast-cat": true,
+  "blue-buffalo-tastefuls-chicken-entree-pate-cat": true,
+  "milk-bone-original-dog-biscuits-dog": true,
+  "beggin-strips-original-with-bacon-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -169,6 +189,96 @@
    {
     "lb": 22,
     "upc": "683547125803"
+   }
+  ],
+  "diamond-naturals-chicken-and-rice-formula-all-life-stages-dog": [
+   {
+    "lb": 40,
+    "upc": "741986082016"
+   }
+  ],
+  "friskies-seafood-sensations-cat": [
+   {
+    "lb": 6.3,
+    "upc": "050000018741"
+   }
+  ],
+  "9lives-daily-essentials-cat": [
+   {
+    "lb": 20,
+    "upc": "079100520381"
+   },
+   {
+    "lb": 28,
+    "upc": "079100520398"
+   },
+   {
+    "lb": 12,
+    "upc": "079100521951"
+   }
+  ],
+  "rachael-ray-nutrish-real-chicken-and-brown-rice-recipe-cat": [
+   {
+    "lb": 3,
+    "upc": "071190006967"
+   },
+   {
+    "lb": 14,
+    "upc": "071190006981"
+   },
+   {
+    "lb": 6,
+    "upc": "071190016973"
+   }
+  ],
+  "purina-pro-plan-complete-essentials-chicken-and-rice-formula-cat": [
+   {
+    "lb": 16,
+    "upc": "038100131546"
+   }
+  ],
+  "blue-buffalo-wilderness-adult-chicken-recipe-cat": [
+   {
+    "lb": 6,
+    "upc": "840243104901"
+   }
+  ],
+  "hills-science-diet-adult-indoor-chicken-recipe-cat": [
+   {
+    "lb": 15.5,
+    "upc": "689826678725"
+   }
+  ],
+  "royal-canin-indoor-adult-cat": [
+   {
+    "lb": 3,
+    "upc": "030111430403"
+   },
+   {
+    "lb": 7,
+    "upc": "030111628084"
+   },
+   {
+    "lb": 15,
+    "upc": "030111628169"
+   },
+   {
+    "lb": 15,
+    "upc": "301116281698"
+   },
+   {
+    "lb": 3,
+    "upc": "781163778035"
+   }
+  ],
+  "instinct-original-grain-free-recipe-with-real-chicken-cat": [
+   {
+    "lb": 5,
+    "upc": "769949658559"
+   },
+   {
+    "lb": 11,
+    "upc": "769949658566"
    }
   ]
  }

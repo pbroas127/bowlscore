@@ -874,7 +874,8 @@
       {
         "label": "40 lb",
         "lb": 40,
-        "asin": "B000OCQ6DY"
+        "asin": "B000OCQ6DY",
+        "upc": "741986082016"
       }
     ],
     "asin": "B000OCQ6DY",
@@ -2869,7 +2870,8 @@
       {
         "label": "6.3 lb",
         "lb": 6.3,
-        "asin": "B00068JXPO"
+        "asin": "B00068JXPO",
+        "upc": "050000018741"
       },
       {
         "label": "16 lb",
@@ -3044,17 +3046,20 @@
       {
         "label": "12 lb",
         "lb": 12,
-        "asin": "B00MOI2Q94"
+        "asin": "B00MOI2Q94",
+        "upc": "079100521951"
       },
       {
         "label": "20 lb",
         "lb": 20,
-        "asin": "B00J5HO29E"
+        "asin": "B00J5HO29E",
+        "upc": "079100520381"
       },
       {
         "label": "28 lb",
         "lb": 28,
-        "asin": "B06XZYZ5PK"
+        "asin": "B06XZYZ5PK",
+        "upc": "079100520398"
       }
     ],
     "asin": "B00MOI2Q94",
@@ -3292,17 +3297,20 @@
       {
         "label": "3 lb",
         "lb": 3,
-        "asin": "B00I2KPNFC"
+        "asin": "B00I2KPNFC",
+        "upc": "071190006967"
       },
       {
         "label": "6 lb",
         "lb": 6,
-        "asin": "B01HEZAW1A"
+        "asin": "B01HEZAW1A",
+        "upc": "071190016973"
       },
       {
         "label": "14 lb",
         "lb": 14,
-        "asin": "B00I2KPO4C"
+        "asin": "B00I2KPO4C",
+        "upc": "071190006981"
       }
     ],
     "asin": "B00I2KPO4C",
@@ -3376,7 +3384,8 @@
       {
         "label": "16 lb",
         "lb": 16,
-        "asin": "B001VIY9B6"
+        "asin": "B001VIY9B6",
+        "upc": "038100131546"
       }
     ],
     "asin": "B001VIY9B6",
@@ -3551,7 +3560,8 @@
       {
         "label": "6 lb",
         "lb": 6,
-        "asin": "B00X04EBJY"
+        "asin": "B00X04EBJY",
+        "upc": "840243104901"
       },
       {
         "label": "9.5 lb",
@@ -3650,7 +3660,8 @@
       {
         "label": "15.5 lb",
         "lb": 15.5,
-        "asin": "B003MA8P02"
+        "asin": "B003MA8P02",
+        "upc": "689826678725"
       }
     ],
     "asin": "B003MA8P02",
@@ -3887,15 +3898,18 @@
     "sizes": [
       {
         "label": "3 lb",
-        "lb": 3
+        "lb": 3,
+        "upc": "030111430403"
       },
       {
         "label": "7 lb",
-        "lb": 7
+        "lb": 7,
+        "upc": "030111628084"
       },
       {
         "label": "15 lb",
-        "lb": 15
+        "lb": 15,
+        "upc": "030111628169"
       }
     ]
   },
@@ -4144,11 +4158,13 @@
       {
         "label": "5 lb",
         "lb": 5,
-        "asin": "B06XDSDNJJ"
+        "asin": "B06XDSDNJJ",
+        "upc": "769949658559"
       },
       {
         "label": "11 lb",
-        "lb": 11
+        "lb": 11,
+        "upc": "769949658566"
       }
     ],
     "asin": "B06XDSDNJJ",

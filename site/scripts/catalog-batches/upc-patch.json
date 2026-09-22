@@ -242,6 +242,17 @@
   ]
  },
  {
+  "id": "diamond-naturals-chicken-and-rice-formula-all-life-stages-dog",
+  "sizes": [
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B000OCQ6DY",
+    "upc": "741986082016"
+   }
+  ]
+ },
+ {
   "id": "rachael-ray-nutrish-real-chicken-and-veggies-recipe-dog",
   "sizes": [
    {
@@ -437,6 +448,208 @@
    {
     "label": "16 tubs, 8 oz",
     "lb": 8
+   }
+  ]
+ },
+ {
+  "id": "friskies-seafood-sensations-cat",
+  "sizes": [
+   {
+    "label": "16.2 oz box",
+    "lb": 1.01,
+    "asin": "B000RYDL2I"
+   },
+   {
+    "label": "3.15 lb",
+    "lb": 3.15,
+    "asin": "B00HAT9ZS2"
+   },
+   {
+    "label": "6.3 lb",
+    "lb": 6.3,
+    "asin": "B00068JXPO",
+    "upc": "050000018741"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B00KO8ABHU"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22,
+    "asin": "B00HN089EO"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B074G4F5W3"
+   }
+  ]
+ },
+ {
+  "id": "9lives-daily-essentials-cat",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15,
+    "asin": "B00285ZU0A"
+   },
+   {
+    "label": "12 lb",
+    "lb": 12,
+    "asin": "B00MOI2Q94",
+    "upc": "079100521951"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20,
+    "asin": "B00J5HO29E",
+    "upc": "079100520381"
+   },
+   {
+    "label": "28 lb",
+    "lb": 28,
+    "asin": "B06XZYZ5PK",
+    "upc": "079100520398"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-real-chicken-and-brown-rice-recipe-cat",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "asin": "B00I2KPNFC",
+    "upc": "071190006967"
+   },
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B01HEZAW1A",
+    "upc": "071190016973"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B00I2KPO4C",
+    "upc": "071190006981"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-complete-essentials-chicken-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "asin": "B004PH3AXS"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B001VIY9B6",
+    "upc": "038100131546"
+   }
+  ]
+ },
+ {
+  "id": "blue-buffalo-wilderness-adult-chicken-recipe-cat",
+  "sizes": [
+   {
+    "label": "2 lb",
+    "lb": 2
+   },
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0CFC1WSM7"
+   },
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B00X04EBJY",
+    "upc": "840243104901"
+   },
+   {
+    "label": "9.5 lb",
+    "lb": 9.5
+   },
+   {
+    "label": "11 lb",
+    "lb": 11,
+    "asin": "B00REJU4V0"
+   },
+   {
+    "label": "12 lb",
+    "lb": 12,
+    "asin": "B002UT92EY"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   }
+  ]
+ },
+ {
+  "id": "hills-science-diet-adult-indoor-chicken-recipe-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B018OI687I"
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "asin": "B003MA3AW0"
+   },
+   {
+    "label": "15.5 lb",
+    "lb": 15.5,
+    "asin": "B003MA8P02",
+    "upc": "689826678725"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-indoor-adult-cat",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "upc": "030111430403"
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "upc": "030111628084"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "upc": "030111628169"
+   }
+  ]
+ },
+ {
+  "id": "instinct-original-grain-free-recipe-with-real-chicken-cat",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B06XDSDNJJ",
+    "upc": "769949658559"
+   },
+   {
+    "label": "11 lb",
+    "lb": 11,
+    "upc": "769949658566"
    }
   ]
  }
