@@ -1,6 +1,13 @@
 # BowlScore: status and what is left
 
-Updated by Claude on 2026-09-21, afternoon, after the big catalog build.
+Updated by Claude on 2026-09-22, about 2 AM.
+
+## Tonight
+- **Submitted to App Review in Chrome as you** (not via the API): version 1.0 with build 9, both subscriptions and the BowlScore Pro group. Status: Waiting for Review. **Expedited review requested** and Apple confirmed it.
+- Email: support@bowlscore.app forwards to your Gmail through Forward Email (DNS only, free, no account). MX and TXT records are on Vercel DNS. It receives only; reply from Gmail. If you ever want to reply as support@, set up "Send mail as" in Gmail with Forward Email's paid SMTP, or keep replying from Gmail.
+- Site now lives at https://www.bowlscore.app (bowlscore.app redirects to www). The API stays on bowlscoreapp.vercel.app.
+- Build 9: Help and FAQ screen, Contact us and Send feedback (mail to support@bowlscore.app), subscription status row in Settings (plan and renew or end date), expired subscriptions send you back to the paywall (checked on launch and every time the app comes back to the front), Restore on the paywall, in Settings and on onboarding, paywall closes by itself once a subscription is confirmed.
+- App Store Connect: 7 screenshots (captioned slides in `docs/store/slides`, made by `docs/store/compose_slides.py`), description updated, support and marketing URLs on bowlscore.app, review notes covering sandbox purchase, expired state, restore, deletion and affiliate links, contact Peter Broas +1 469 219 9688 support@bowlscore.app, no demo account needed, content rights Yes, not a medical device, price Free in all 175 countries, App Privacy published, subscription review screenshots and notes, group display name "BowlScore Pro".
 
 ## Done
 - Pipeline: repo is PUBLIC (free Mac builds), signing secrets set, workflow on the macos-26 runner, build number written into Info.plist so every upload gets a new number.
@@ -15,13 +22,11 @@ Updated by Claude on 2026-09-21, afternoon, after the big catalog build.
 ## Needs you
 1. Sandbox tester: App Store Connect, Users and Access, Sandbox, add a tester (it needs a password, so it has to be you). On the iPhone: Settings, Developer, Sandbox Apple Account. TestFlight purchases are always free.
 2. Amazon Associates: tax info and payment method. You need 3 qualifying sales within 180 days.
-3. App Store Connect, App Privacy: press Publish (answers are already filled in). App Review contact info (your name, phone, email) on the version page.
 4. Gemini money: on October 1, open AI Studio, Spend, "Set spend cap" and set $5 a month. It could not be set in September because the month already showed $16.41 (a catalog build script drained the prepay; that script is now locked behind a `--paid` flag) and a lower cap would have blocked the key. Keep auto reload OFF: the prepaid balance is the hard limit.
-5. Do NOT submit for App Review until you decide to: Wick's 4.3(a) rejection put an extended review warning on the account. Submission is your click.
+5. Watch your email for the review result. If Apple rejects, the fix goes in a new build and resubmission returns to the expedited queue automatically.
 
 ## Still open
 - 20 catalog products have no photo yet. The free photo lookup allows about 20 searches a day: run `npm run catalog` inside `site/` tomorrow and commit what it finds. Carousels already prefer products with photos.
-- App Store screenshots (captions are in `docs/app-store-listing.md`).
 - First device run checks: share image is not blank, sticky buttons on small phones, Google sign in round trip, a recall banner, a switch plan reminder at 8am.
 - Legal pages name you as "Peter Broas, United States" with no street address. Read /privacy and /terms once before release.
 
