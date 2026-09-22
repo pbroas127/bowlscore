@@ -68,7 +68,7 @@ for (const e of todo) {
     const out = execFileSync('curl', ['-s', '--max-time', '20', `https://api.upcitemdb.com/prod/trial/search?s=${q}&type=product&match_mode=0`], { encoding: 'utf8' })
     const res = JSON.parse(out)
     if (res.code === 'TOO_FAST') { await new Promise((r) => setTimeout(r, 12_000)); used--; continue }
-    if (res.code && res.code !== 'OK') { console.log(`stop: ${res.code} ${res.message ?? ''}`); break }
+    if (res.code && res.code !== 'OK' && res.code !== 'NOT_FOUND') { console.log(`stop: ${res.code} ${res.message ?? ''}`); break } // NOT_FOUND is just no results
     items = res.items ?? []
   } catch { console.log(`skip ${e.id}: request failed`); continue }
   progress.searched[e.id] = true
