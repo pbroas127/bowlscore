@@ -1,3 +1,4 @@
+import { Brand } from '@/components/Brand'
 import { router, useFocusEffect } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
 import { useCallback, useState } from 'react'
@@ -83,12 +84,15 @@ export default function Home() {
 
   return (
     <Screen scroll edges={['top']}>
+      <View style={s.brandRow}>
+        <Brand />
+        <Pressable hitSlop={12} onPress={() => router.push('/settings')} accessibilityLabel="Settings"><GearSix size={26} weight="bold" color={color.ink} /></Pressable>
+      </View>
       <View style={s.header}>
         <Pressable style={s.who} onPress={() => router.push('/(tabs)/pets')}>
           <View style={s.avatar}>{pet ? <PetHead pet={pet} size={44} /> : <Mascot pose="puppy-head" size={44} bob={false} />}</View>
           <View><Text style={type.caption}>Feeding</Text><Text style={type.h2}>{pet?.name ?? 'Your pet'}</Text></View>
         </Pressable>
-        <Pressable hitSlop={12} onPress={() => router.push('/settings')} accessibilityLabel="Settings"><GearSix size={26} weight="bold" color={color.ink} /></Pressable>
       </View>
 
       {recalls.map((r) => <RecallBanner key={r.id} recall={r} />)}
@@ -147,7 +151,8 @@ export default function Home() {
 }
 
 const s = StyleSheet.create({
-  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, marginBottom: 20 },
+  brandRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, marginBottom: 16 },
+  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 },
   who: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   avatar: { width: 52, height: 52, borderRadius: 26, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   currentCard: { padding: 20, borderRadius: 28, gap: 16 },

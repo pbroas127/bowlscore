@@ -1,3 +1,4 @@
+import { Brand } from '@/components/Brand'
 import { router, useLocalSearchParams } from 'expo-router'
 import * as StoreReview from 'expo-store-review'
 import { useEffect, useRef, useState } from 'react'
@@ -72,6 +73,7 @@ export default function Result() {
 
       <View style={s.nav}>
         <Pressable hitSlop={12} onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))} accessibilityLabel="Back"><ArrowLeft size={24} weight="bold" color={color.ink} /></Pressable>
+        <Brand size={24} />
         <Pressable hitSlop={12} onPress={share} accessibilityLabel="Share"><Export size={24} weight="bold" color={color.ink} /></Pressable>
       </View>
       <ScrollView contentContainerStyle={{ paddingHorizontal: gutter, paddingBottom: 210 }} showsVerticalScrollIndicator={false}>
