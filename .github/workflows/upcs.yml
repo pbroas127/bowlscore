@@ -1,0 +1,34 @@
+# Once a day: find bag barcodes for more catalog foods (the free UPCitemdb trial allows about 100 searches a day),
+# merge them, check the catalog and push. The push redeploys the site, so barcode scans pick them up the same day.
+# Stops doing anything once every food has been searched.
+name: upcs
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upcs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: node scripts/fetch-upcs.mjs --selftest
+      - run: node scripts/fetch-upcs.mjs 90
+      - run: node scripts/build-catalog.mjs --patch scripts/catalog-batches/upc-patch.json
+      - run: node scripts/build-catalog.mjs --check
+      - run: npm test
+      - name: Commit when something changed
+        run: |
+          git config user.name "bowlscore-bot"
+          git config user.email "support@bowlscore.app"
+          git add src/data/catalog.json scripts/catalog-batches/upc-progress.json scripts/catalog-batches/upc-patch.json
+          git diff --cached --quiet || (git commit -m "Catalog barcodes: daily batch" && git push)
