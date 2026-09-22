@@ -145,8 +145,8 @@ export function feeding(pet: Pet, label: LabelData, now = Date.now()): Feeding |
 // 2.25 reads as "2 1/4", the way a measuring cup is marked.
 export function fraction(n: number): string {
   const whole = Math.floor(n)
-  const part = ['', '1/4', '1/2', '3/4'][Math.round((n - whole) * 4)] ?? ''
-  return [whole || (part ? '' : '0'), part].filter(Boolean).join(' ')
+  const part = ['', '¼', '½', '¾'][Math.round((n - whole) * 4)] ?? '' // real fraction glyphs, as printed on a measuring cup
+  return `${whole || (part ? '' : '0')}${part}`
 }
 
 // ---- bag tracker and weigh in ----

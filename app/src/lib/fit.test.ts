@@ -53,7 +53,7 @@ assert.deepEqual({ cups: plan.cups, grams: plan.grams, meals: plan.meals, waterO
 assert.equal(feeding(bear, food({ isTreat: true, calories: { kcalPerUnit: 40, unit: 'treat' } }), NOW)!.treatsPerDay, 4)
 assert.equal(feeding(pet({}), food(), NOW), undefined) // no weight, no guide
 assert.equal(dailyKcal(pet({ species: 'cat', weightLb: 10, bornAt: monthsAgo(48) }), NOW), 260) // 10 lb adult cat: about 260 kcal
-assert.deepEqual([fraction(2.25), fraction(0.5), fraction(3), fraction(0)], ['2 1/4', '1/2', '3', '0'])
+assert.deepEqual([fraction(2.25), fraction(0.5), fraction(3), fraction(0)], ['2¼', '½', '3', '0'])
 
 // Bag tracker: 530 g a day out of a 30 lb (13,608 g) bag lasts 25 days; a week in, 18 are left.
 const kibble = food({ calories: { kcalPerCup: 380, kcalPerKg: 3600 } })

@@ -15,5 +15,18 @@ service cloud.firestore {
         && (!('link' in request.resource.data) || (request.resource.data.link is string && request.resource.data.link.size() <= 500));
       allow read: if request.auth != null && request.auth.token.email == 'pbroas127@gmail.com' && request.auth.token.email_verified == true;
     }
+    // Labels read from photos, filed under the barcode of a bag the catalog does not know. Anyone may look one up.
+    // Create only: the first reading stays, so nobody can overwrite or delete a label someone else relies on.
+    match /barcodes/{code} {
+      allow get: if true;
+      allow create: if request.auth != null
+        && code.matches('^[0-9]{5,14}$')
+        && request.resource.data.keys().hasOnly(['label', 'species', 'at'])
+        && request.resource.data.species in ['dog', 'cat', 'unknown']
+        && request.resource.data.at == request.time
+        && request.resource.data.label is map
+        && request.resource.data.label.ingredients is list
+        && request.resource.data.label.ingredients.size() <= 120;
+    }
   }
 }

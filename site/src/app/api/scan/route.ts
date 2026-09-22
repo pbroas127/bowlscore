@@ -2,7 +2,7 @@
 // Food Facts) and scores it with the deterministic rubric. The model only transcribes; rubric.ts decides.
 import { createRemoteJWKSet, jwtVerify } from 'jose'
 import { unstable_cache } from 'next/cache'
-import { scanMatch } from '@/lib/catalog'
+import { byBarcode, catalogImage, scanMatch } from '@/lib/catalog'
 import { labelFromOpff } from '@/lib/openpetfoodfacts'
 import { scoreFood, type LabelData, type LifeStage, type Species } from '@/lib/rubric'
 
@@ -247,6 +247,10 @@ export async function POST(req: Request) {
   if (overLimit(who)) return json({ error: 'rate_limited', message: 'Daily scan limit reached. Try again tomorrow.' }, 429)
 
   if (typeof barcode === 'string') {
+    // Our own catalog first: every bag size carries its printed UPC, so a match returns the full label with no lookup.
+    const own = byBarcode(barcode)
+    if (own) return json({ id: crypto.randomUUID(), source: 'barcode', label: own.label, result: scoreFood(own.label, species, lifeStage), speciesOnLabel: own.species, productId: own.id, image: catalogImage(own.image) })
+
     const res = await fetch(`https://world.openpetfoodfacts.org/api/v2/product/${barcode}.json`, {
       headers: { 'User-Agent': 'BowlScore/1.0 (support@bowlscore.app)' },
       signal: AbortSignal.timeout(10_000),

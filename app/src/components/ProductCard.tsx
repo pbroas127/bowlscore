@@ -5,6 +5,7 @@ import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View  } fro
 import { BowlFood, CaretRight, CurrencyCircleDollar } from 'phosphor-react-native'
 import { ScoreRing } from '@/components/ScoreRing'
 import { tap } from '@/lib/haptics'
+import { usePro } from '@/lib/purchases'
 import { proteinOf } from '@/lib/recommend'
 import { activePet, useStore } from '@/lib/store'
 import type { CatalogProduct } from '@/lib/types'
@@ -13,8 +14,9 @@ import { color, gutter, radius, type } from '@/theme'
 // Same protein as the pet eats now, or a new one. Nothing when either side is unknown.
 export function ProteinTag({ product }: { product: CatalogProduct }) {
   const mine = useStore((st) => activePet(st)?.protein)
+  const pro = usePro() // free mode says nothing about a pet
   const theirs = proteinOf(product.label.ingredients)
-  if (!mine || !theirs) return null
+  if (!pro || !mine || !theirs) return null
   const same = mine === theirs
   return <View style={[s.tag, { backgroundColor: same ? color.greenSoft : color.hairline }]}><Text style={[type.caption, { fontSize: 12, lineHeight: 16, color: color.ink }]}>{same ? 'Same protein' : 'New protein'}</Text></View>
 }

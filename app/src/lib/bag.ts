@@ -14,14 +14,14 @@ export async function stopBag(pet: Pet) {
 
 // Reminds five days before the bag runs out, which is about how long a delivery takes.
 // `openedAt` can be in the past: a bag bought last week is tracked from last week.
-export async function startBag(pet: Pet, scan: Scan, lb: number, openedAt = Date.now()) {
+export async function startBag(pet: Pet, scan: Scan, lb: number, openedAt = Date.now(), reorderUrl?: string) {
   const link = pet.bag?.scanId === scan.id ? pet.bag.link : undefined // a new bag of the same food keeps its reorder link
   await stopBag(pet)
   const grams = gramsPerDay(pet, scan.label)
   const ids: (string | undefined)[] = []
   if (grams && (await askToNotify())) {
     const when = at(bagStatus({ lb, openedAt }, grams).emptyAt - 5 * 86_400_000, 9)
-    if (when.getTime() > Date.now()) ids.push(await notify(`${pet.name}'s food is running low`, `About 5 days of ${scan.label.productName || 'food'} left. Open BowlScore to reorder.`, when))
+    if (when.getTime() > Date.now()) ids.push(await notify(`${pet.name}'s food runs out in about 5 days`, `Reorder ${scan.label.productName || 'the same bag'} in one tap.`, when, reorderUrl))
   }
   updatePet(pet.id, (p) => ({ ...p, bag: { lb, openedAt, scanId: scan.id, notificationIds: ids.filter((id) => id != null), link } }))
 }

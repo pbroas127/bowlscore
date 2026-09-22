@@ -15,6 +15,7 @@ import { rescoreLabel, scanFood, ScanError, type Product, type ScanResponse } fr
 import { hasCalories, stageFor } from '@/lib/fit'
 import { tap, tapForGrade } from '@/lib/haptics'
 import { activePet, newId, saveScan, setState, updateScan, useStore } from '@/lib/store'
+import { learnBarcode } from '@/lib/suggest'
 import type { LabelData } from '@/lib/types'
 import { color, font, radius, shadow, type } from '@/theme'
 
@@ -95,6 +96,7 @@ export default function ScanScreen() {
   const lock = useRef(false)
   const lastInput = useRef<ScanInput>(undefined)
   const known = useRef<Product>(undefined) // named by a barcode scan, attached to the label photo that follows
+  const missed = useRef<string>(undefined) // that barcode, so the label read next can be saved under it for everyone
   const shown = adding ? undefined : photos[photos.length - 1] // the photo in the frame; the camera is live when there is none
 
   // The sweep is functional progress feedback, not decoration, so it keeps running with Reduce Motion on.
@@ -116,6 +118,8 @@ export default function ScanScreen() {
   const finish = (res: ScanResponse, photoUri?: string) => {
     if (!pet) return
     const id = newId()
+    if (missed.current && res.source === 'label') learnBarcode(missed.current, res.label, res.speciesOnLabel ?? pet.species)
+    missed.current = undefined
     saveScan({ id, petId: pet.id, createdAt: Date.now(), source: res.source, sourceUrl: res.sourceUrl, label: res.label, result: res.result, photoUri, ...(res.productId ? { productId: res.productId } : {}), ...(res.image ? { image: res.image } : {}) })
     setState({ coachSeen: true })
     tapForGrade(res.result.grade)
@@ -164,7 +168,7 @@ export default function ScanScreen() {
       tap('warning')
       // A close up of the calorie line has no ingredients, which the server reads as an unreadable label.
       setError(target && err.code === 'unreadable' ? new ScanError('unreadable', 'We could not read that. Get the ingredients in the photo too.') : err)
-      if (err.code === 'barcode_not_found') { known.current = err.product; setMode('label') } // never a dead end: fall back to a label photo
+      if (err.code === 'barcode_not_found') { known.current = err.product; missed.current = input.barcode; setMode('label') } // never a dead end: fall back to a label photo
       setBusy(false)
       lock.current = false
     }

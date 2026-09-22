@@ -1,9 +1,9 @@
 import * as Notifications from 'expo-notifications'
-import { router } from 'expo-router'
+import { router, useLocalSearchParams } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
 import { useEffect, useState } from 'react'
 import { Alert, Platform, Pressable, StyleSheet, Text, View } from 'react-native'
-import { Bell, Check, LockOpen, Star } from 'phosphor-react-native'
+import { Bell, Check, LockOpen, Star, X } from 'phosphor-react-native'
 import { Mascot } from '@/components/Mascot'
 import { PillButton, Screen, TextLink } from '@/components/ui'
 import { tap } from '@/lib/haptics'
@@ -13,6 +13,7 @@ import { SITE } from '@/lib/links'
 import { color, radius, type } from '@/theme'
 
 export default function Paywall() {
+  const { from } = useLocalSearchParams<{ from?: string }>() // 'free' when opened from free mode, which it returns to
   const pet = useStore((s) => activePet(s)?.name) ?? 'your pet'
   const [plans, setPlans] = useState<Plan[]>()
   const [picked, setPicked] = useState<Plan['id']>('yearly')
@@ -68,6 +69,10 @@ export default function Paywall() {
           </View>
         </>
       }>
+      {/* A quiet way out to free mode: the scored catalog and its shop links, nothing personal. */}
+      <Pressable hitSlop={14} onPress={() => (from === 'free' ? router.back() : router.replace('/catalog'))} style={s.close} accessibilityRole="button" accessibilityLabel="Close, browse foods for free">
+        <X size={18} weight="bold" color={color.ink3} />
+      </Pressable>
       <View style={s.top}>
         <View style={{ flex: 1, gap: 6 }}>
           <Text style={type.h1}>{showTimeline ? `Start ${pet}'s ${yearly?.trialDays} day free trial` : `Unlock BowlScore for ${pet}`}</Text>
@@ -144,7 +149,8 @@ function scheduleTrialReminder(trialDays: number, pet: string) {
 }
 
 const s = StyleSheet.create({
-  top: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingTop: 12, marginBottom: 16 },
+  close: { alignSelf: 'flex-end', padding: 4, marginTop: 4, opacity: 0.8 },
+  top: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingTop: 0, marginBottom: 16 },
   timeline: { marginBottom: 20 },
   node: { flexDirection: 'row', gap: 14 },
   nodeIcon: { width: 36, height: 36, borderRadius: 18, backgroundColor: color.yellow, alignItems: 'center', justifyContent: 'center' },

@@ -4,6 +4,7 @@ import { idToken } from './auth'
 import type { LabelData, LifeStage, ScoreResult, Species } from './types'
 
 import { API_URL, PREVIEW } from './config'
+import { knownBarcode } from './suggest'
 
 export class ScanError extends Error {
   constructor(public code: 'unreadable' | 'barcode_not_found' | 'rate_limited' | 'offline' | 'timeout' | 'server', message: string, public product?: Product) { super(message) }
@@ -27,6 +28,11 @@ export async function scanFood(input: { species: Species; lifeStage: LifeStage; 
     await new Promise((r) => setTimeout(r, 2600))
     const pick = Math.random() < 0.5 ? SAMPLE_POOR : SAMPLE_GOOD
     return { id: newId(), source: input.barcode ? 'barcode' : 'label', ...pick }
+  }
+  // A barcode someone already photographed the label for: score that reading, which is free and instant.
+  if (input.barcode && !input.images) {
+    const label = await knownBarcode(input.barcode)
+    if (label) return { ...(await post({ species: input.species, lifeStage: input.lifeStage, label }, 15_000)), source: 'barcode' }
   }
   return post(input, 58_000)
 }

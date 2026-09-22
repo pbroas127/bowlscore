@@ -3,7 +3,7 @@
 import { Image } from 'expo-image'
 import { useState, type ReactNode } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { CaretDown, CheckCircle, Drop, Info, Lightbulb, PawPrint, Warning, XCircle } from 'phosphor-react-native'
+import { CaretDown, CheckCircle, Drop, Info, Lightbulb, Moon, PawPrint, Sun, SunHorizon, Warning, XCircle } from 'phosphor-react-native'
 import { severityColor } from '@/components/FlagRow'
 import { PetHead } from '@/components/PetHead'
 import { ActionRow, Card, PillButton, TextLink } from '@/components/ui'
@@ -104,29 +104,41 @@ export function FitCard({ pet, label, claim, onEdit }: { pet: Pet; label: LabelD
 export function portion(plan: Feeding): { each?: string; total?: string } {
   const per = (n: number) => Math.round((n / plan.meals) * 4) / 4 // a quarter cup is the smallest honest measure
   const unit = plan.unit || 'serving'
-  // The day's total is what actually goes in the bowls, so the numbers always add up (2 bowls of 2 1/2 is 5, not 4 3/4).
+  // The day's total is what actually goes in the bowls, so the numbers always add up (2 bowls of 2½ is 5, not 4¾).
   const day = (n: number) => (per(n) ? per(n) * plan.meals : n)
-  if (plan.cups) return { each: per(plan.cups) ? count(per(plan.cups), 'cup') : 'Under 1/4 cup', total: `${count(day(plan.cups), 'cup')} a day` }
+  if (plan.cups) return { each: per(plan.cups) ? count(per(plan.cups), 'cup') : 'Under ¼ cup', total: `${count(day(plan.cups), 'cup')} a day` }
   if (plan.grams) return { each: `${num(Math.round(plan.grams / plan.meals))} g`, total: `${num(Math.round(plan.grams / plan.meals) * plan.meals)} g a day` }
-  if (plan.units) return { each: per(plan.units) ? count(per(plan.units), unit) : `Under 1/4 ${unit}`, total: `${count(day(plan.units), unit)} a day` }
+  if (plan.units) return { each: per(plan.units) ? count(per(plan.units), unit) : `Under ¼ ${unit}`, total: `${count(day(plan.units), unit)} a day` }
   return {}
 }
 
 const MEALS: Record<number, string[]> = { 1: ['Daily'], 2: ['Morning', 'Evening'], 3: ['Morning', 'Midday', 'Evening'], 4: ['Morning', 'Midday', 'Afternoon', 'Evening'] }
 
-// One bowl per meal, the portion above it and sun or moon under it. "?" when the portion is not known yet.
+// Time of day as a plain line icon under each bowl; the word stays in the accessibility label.
+const WHEN_ICON = { Morning: Sun, Midday: SunHorizon, Afternoon: SunHorizon, Evening: Moon, Daily: Sun } as const
+// "2½ cups" splits into the amount and its unit so the badge can set them in two weights.
+const splitAmount = (each: string) => { const m = /^((?:Under )?[\d,¼½¾]+)\s+(.+)$/.exec(each); return m ? [m[1], m[2]] : [each, ''] }
+
+// One bowl per meal, a dark amount badge centered above it and a time of day icon under it. "?" until the portion is known.
 export function Bowls({ meals, each, cat, can, mini }: { meals: number; each?: string; cat?: boolean; can?: boolean; mini?: boolean }) {
   const words = MEALS[meals] ?? Array.from({ length: meals }, (_, i) => (i === meals - 1 ? 'Evening' : i ? 'Midday' : 'Morning'))
-  const size = (mini ? 40 : 64) * (meals > 3 ? 0.75 : 1)
+  const size = (mini ? 44 : 60) * (meals > 3 ? 0.8 : 1)
+  const [amount, unit] = each ? splitAmount(each) : ['?', '']
   return (
     <View style={s.bowls}>
-      {words.map((w, i) => (
-        <View key={i} style={s.bowl} accessible accessibilityLabel={`${w}: ${each ?? 'amount not known yet'}`}>
-          <Text style={[mini ? type.label : type.title, s.bold, !each && { color: color.ink3 }]} numberOfLines={1} adjustsFontSizeToFit>{each ?? '?'}</Text>
-          <Art name={can ? 'can' : cat ? 'catBowl' : 'bowl'} size={size} faded={!each} />
-          <View style={s.when}><Art name={i === words.length - 1 && words.length > 1 ? 'moon' : 'sun'} size={12} /><Text style={s.tiny}>{w}</Text></View>
-        </View>
-      ))}
+      {words.map((w, i) => {
+        const When = WHEN_ICON[w as keyof typeof WHEN_ICON] ?? Sun
+        return (
+          <View key={i} style={s.bowl} accessible accessibilityLabel={`${w}: ${each ?? 'amount not known yet'}`}>
+            <View style={[s.amount, !each && s.amountEmpty]}>
+              <Text style={[s.amountNum, mini && { fontSize: 13 }, !each && { color: color.ink3 }]} numberOfLines={1}>{amount}</Text>
+              {unit ? <Text style={s.amountUnit} numberOfLines={1}>{unit}</Text> : null}
+            </View>
+            <Art name={can ? 'can' : cat ? 'catBowl' : 'bowl'} size={size} faded={!each} />
+            <When size={mini ? 17 : 19} weight="regular" color={color.ink2} />
+          </View>
+        )
+      })}
     </View>
   )
 }
@@ -212,8 +224,11 @@ const s = StyleSheet.create({
   tip: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: color.yellowSoft },
   feedHead: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   bowls: { flexDirection: 'row', justifyContent: 'space-around', gap: 4 },
-  bowl: { flex: 1, alignItems: 'center', gap: 2 },
-  when: { flexDirection: 'row', alignItems: 'center', gap: 3 },
+  bowl: { flex: 1, alignItems: 'center', gap: 6 },
+  amount: { flexDirection: 'row', alignItems: 'baseline', gap: 3, backgroundColor: color.ink, borderRadius: radius.pill, paddingHorizontal: 11, paddingVertical: 4, maxWidth: '100%' },
+  amountEmpty: { backgroundColor: color.hairline },
+  amountNum: { fontFamily: font.textBold, fontSize: 14, lineHeight: 18, color: color.surface, fontVariant: ['tabular-nums'] },
+  amountUnit: { fontFamily: font.text, fontSize: 11, lineHeight: 14, color: color.surface, opacity: 0.75, flexShrink: 1 },
   treat: { flexDirection: 'row', alignItems: 'center', gap: 16 },
   fine: { ...type.caption, fontSize: 11, lineHeight: 14, color: color.ink3 },
 })

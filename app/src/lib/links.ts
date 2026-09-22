@@ -1,3 +1,4 @@
+import { Linking } from 'react-native'
 import { AMAZON_TAG } from './ownLink'
 
 export { ownLink } from './ownLink'
@@ -26,3 +27,8 @@ export const productLinks = (p: { brand: string; name: string; species: 'dog' | 
   amazon: p.links.amazon ? tagged(p.links.amazon) : shopLink(`${p.brand} ${p.name}`, p.species),
   chewy: p.links.chewy ?? chewySearch(`${p.brand} ${p.name}`),
 })
+
+// Shop and reorder links leave BowlScore on purpose. On iPhone an amazon.com link opens the Amazon app when it is
+// installed (a universal link, already signed in, and Amazon credits app purchases to the tag), otherwise Safari.
+// Never an in-app browser: the Associates mobile policy bars rendering Amazon pages inside the app.
+export const openShop = (url: string) => Linking.openURL(url).catch(() => {})

@@ -16,14 +16,14 @@ export interface CatalogEntry {
   sourceUrl: string
   image: string | null
   amazonQuery: string
-  sizes?: { label: string; lb: number; asin?: string }[] // small to large; lb is the whole pack for wet food
+  sizes?: { label: string; lb: number; asin?: string; upc?: string }[] // small to large; lb is the whole pack for wet food; upc as printed
   flavor?: string // within a line: "Chicken & Rice", "Lamb & Rice"
   formula?: string // within a line: "Adult", "Puppy", "Large Breed Puppy", "Senior", ...
   asin?: string // the most common size, the default link
   line?: string // shared by entries that are flavors or life stages of one product line
 }
 
-export type CatalogSize = { label: string; lb: number; asin?: string; url: string }
+export type CatalogSize = { label: string; lb: number; asin?: string; upc?: string; url: string }
 export type CatalogProduct = Omit<CatalogEntry, 'amazonQuery' | 'sizes'> & { sizes?: CatalogSize[]; result: ScoreResult; links: { amazon: string } }
 
 export const CATALOG = data as CatalogEntry[]
@@ -105,6 +105,18 @@ export function matchCatalog(scan: { brand?: string; name?: string; species?: Sp
   }
   return tie ? null : (best?.entry ?? null)
 }
+
+// ---- barcodes ----
+// A bag's barcode is a UPC-A (12 digits) or the same number as an EAN-13 with a leading 0, so compare without leading zeros.
+const digits = (code: string) => code.replace(/\D/g, '').replace(/^0+/, '')
+const BY_UPC = new Map<string, CatalogEntry>()
+for (const e of CATALOG) for (const size of e.sizes ?? []) if (size.upc) BY_UPC.set(digits(size.upc), e)
+
+// The catalog entry printed with this barcode, the instant and free answer to a barcode scan.
+export function byBarcode(code: string): CatalogEntry | null {
+  return BY_UPC.get(digits(code)) ?? null
+}
+export const catalogImage = absolute
 
 // What the scan route adds to its response. Empty when nothing matches with confidence.
 export function scanMatch(label: LabelData, species: Species | 'unknown'): { productId?: string; image?: string | null } {

@@ -1,10 +1,9 @@
 // A catalog product: the same report as a scan result, with shop buttons in place of the pantry actions.
 import { router, useLocalSearchParams } from 'expo-router'
-import * as WebBrowser from 'expo-web-browser'
 import { useState } from 'react'
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ArrowLeft, ArrowsLeftRight, CalendarCheck } from 'phosphor-react-native'
+import { ArrowLeft, ArrowsLeftRight, CalendarCheck, LockSimple } from 'phosphor-react-native'
 import { FeedingCard, FitCard } from '@/components/FitCard'
 import { FoodHero, FoodReport } from '@/components/FoodReport'
 import { PetEditor } from '@/components/PetEditor'
@@ -13,7 +12,8 @@ import { AffiliateNote, ProductPhoto, ProteinTag } from '@/components/ProductCar
 import { ActionRow, Card, EmptyState, PillButton } from '@/components/ui'
 import { claimOf, proteinOf, refreshCatalog, useCatalog } from '@/lib/catalog'
 import { tap } from '@/lib/haptics'
-import { productLinks, tagged } from '@/lib/links'
+import { openShop, productLinks, tagged } from '@/lib/links'
+import { usePro } from '@/lib/purchases'
 import { activePet, useStore } from '@/lib/store'
 import { startPlan } from '@/lib/switchPlan'
 import type { BagSize, Pet } from '@/lib/types'
@@ -23,7 +23,10 @@ export default function Product() {
   const { id } = useLocalSearchParams<{ id: string }>()
   const all = useCatalog()?.products
   const product = all?.find((p) => p.id === id)
-  const pet = useStore(activePet)
+  // Free mode (the paywall's close button): the report and the shop buttons, nothing personal.
+  const pro = usePro()
+  const stored = useStore(activePet)
+  const pet = pro ? stored : undefined
   const hasFood = useStore((st) => Boolean(pet?.currentScanId && st.scans.some((x) => x.id === pet.currentScanId)))
   const [starting, setStarting] = useState(false)
   const [draft, setDraft] = useState<Pet>()
@@ -44,7 +47,7 @@ export default function Product() {
   // The chosen size, else the one that suits this pet. Shop goes straight to that exact bag when we know its listing.
   const size = (picked && product.sizes?.some((b) => b.label === picked.label) ? picked : undefined) ?? suggestedSize(product, pet)
   const amazon = size?.url ? tagged(size.url) : links.amazon
-  const shop = (url: string) => WebBrowser.openBrowserAsync(url).catch(() => {})
+  const shop = (url: string) => { tap('select'); openShop(url) }
   const plan = async () => {
     if (!pet) return
     setStarting(true)
@@ -68,14 +71,15 @@ export default function Product() {
         <FoodHero name={product.name} subtitle={[product.brand, pet?.species === product.species ? `Scored for ${name}` : `Made for ${product.species === 'cat' ? 'cats' : 'dogs'}`].join(' · ')} score={product.result.score} />
         <Variants product={product} all={all ?? []} pet={pet} size={size} onSize={setPicked} />
         <FoodReport label={product.label} result={product.result} species={product.species} petName={name} allergies={pet?.species === product.species ? pet.allergies : undefined}
-          top={pet?.species === product.species ? <><FitCard pet={pet} label={product.label} claim={claimOf(product)} onEdit={() => setDraft(pet)} /><FeedingCard pet={pet} label={product.label} onEdit={() => setDraft(pet)} /></> : null}>
-          {hasFood || canPlan ? (
+          top={!pro ? <Card style={{ paddingVertical: 0, marginBottom: 12 }}><ActionRow last label={`See if it fits ${stored?.name ?? "your pet"}`} hint="Fit, feeding and bag tracking" icon={<LockSimple size={22} weight="bold" color={color.ink} />} onPress={() => router.push('/paywall?from=free')} /></Card>
+            : pet?.species === product.species ? <><FitCard pet={pet} label={product.label} claim={claimOf(product)} onEdit={() => setDraft(pet)} /><FeedingCard pet={pet} label={product.label} onEdit={() => setDraft(pet)} /></> : null}>
+          {pro && (hasFood || canPlan) ? (
             <Card style={{ paddingVertical: 0, marginTop: 24 }}>
               {hasFood ? <ActionRow label={`Compare with ${name}'s food`} icon={<ArrowsLeftRight size={22} weight="bold" color={color.ink} />} onPress={() => router.push(`/compare?a=${pet?.currentScanId}&b=product:${product.id}`)} last={!canPlan} /> : null}
               {canPlan ? <ActionRow label="Start a switch plan" hint={starting ? 'Setting up the reminders' : 'Over 7 days, with reminders'} icon={<CalendarCheck size={22} weight="bold" color={color.ink} />} onPress={() => { if (!starting) askPlan() }} last /> : null}
             </Card>
           ) : null}
-          {newProtein ? <Text style={[type.caption, { marginTop: 8 }]}>New protein. Switch over 7 days to go easy on the stomach.</Text> : null}
+          {pro && newProtein ? <Text style={[type.caption, { marginTop: 8 }]}>New protein. Switch over 7 days to go easy on the stomach.</Text> : null}
         </FoodReport>
       </ScrollView>
 
