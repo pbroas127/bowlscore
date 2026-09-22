@@ -2,6 +2,11 @@
 //   node --env-file=../.env scripts/build-catalog.mjs            fetch every seed that is not in the catalog yet
 //   node scripts/build-catalog.mjs --check                       no network, sanity check the existing file
 //   node scripts/build-catalog.mjs --add scripts/catalog-manual.json
+//   node scripts/build-catalog.mjs --dry scripts/catalog-batches/x.json    validate a batch, write nothing (safe in parallel)
+//   node scripts/build-catalog.mjs --patch scripts/patch.json              merge fields into existing entries by id
+//        A batch item may carry its own seed (brand, name, species, form, lifeStage, priceTier) instead of being in
+//        SEEDS, plus optional calories { kcalPerKg, kcalPerCup, kcalPerUnit, unit }, lifeStageClaim, largeSizeGrowth,
+//        line, flavor, formula, sizes, asin.
 //        no network either. Adds hand transcribed labels (from a manufacturer page or label PDF that the model could
 //        not open, or when the API is unavailable) through exactly the same cleaning and checks. Each item:
 //        { id, sourceUrl, ingredientsText (the list as printed, comma separated), proteinMin, fatMin, fiberMax,
@@ -159,6 +164,15 @@ export function problems(e) {
     if (wet ? a.proteinMin > 25 : a.proteinMin < 15) p.push(`protein ${a.proteinMin} implausible for ${e.form}`)
   }
   if (a.fiberMax != null && a.fiberMax > 15) p.push(`fiber ${a.fiberMax}`)
+  // Calories out of any real range mean a typo or the wrong unit (kcal per lb read as per kg, per bag read as per cup).
+  const c = e.label.calories
+  if (c) {
+    const dryish = e.form === 'dry' || e.form === 'freeze_dried'
+    if (c.kcalPerKg != null && !(dryish ? c.kcalPerKg >= 2500 && c.kcalPerKg <= 5800 : e.form === 'treat' ? c.kcalPerKg >= 500 && c.kcalPerKg <= 6000 : c.kcalPerKg >= 400 && c.kcalPerKg <= 2500)) p.push(`kcal per kg ${c.kcalPerKg} for ${e.form}`)
+    if (c.kcalPerCup != null && !(c.kcalPerCup >= 150 && c.kcalPerCup <= 700)) p.push(`kcal per cup ${c.kcalPerCup}`)
+    if (c.kcalPerUnit != null && !c.unit) p.push('kcal per unit without a unit')
+  }
+  if ((e.flavor || e.formula) && !e.line) p.push('flavor or formula without a line')
   if (!/^https:\/\//.test(e.sourceUrl ?? '')) p.push('no source url')
   return p
 }
@@ -205,6 +219,26 @@ async function lookup(seed) {
   return toEntry(seed, x, sourceUrl)
 }
 
+// Optional fields a hand transcription can carry. Label ones sit on the label (the app reads them from there); the rest
+// on the entry. Anything malformed is dropped rather than published.
+const kcal = (v, max) => (typeof v === 'number' && v > 0 && v <= max ? Math.round(v) : undefined)
+function labelExtras(x) {
+  const c = x.calories ?? {}
+  const calories = { kcalPerKg: kcal(c.kcalPerKg, 9000), kcalPerCup: kcal(c.kcalPerCup, 1000), kcalPerUnit: kcal(c.kcalPerUnit, 3000), unit: typeof c.unit === 'string' ? c.unit.toLowerCase().trim().slice(0, 16) : undefined }
+  const out = {}
+  if (calories.kcalPerKg || calories.kcalPerCup || calories.kcalPerUnit) out.calories = Object.fromEntries(Object.entries(calories).filter(([, v]) => v !== undefined))
+  if (['all', 'growth', 'adult'].includes(x.lifeStageClaim)) out.lifeStageClaim = x.lifeStageClaim
+  if (['included', 'excluded'].includes(x.largeSizeGrowth)) out.largeSizeGrowth = x.largeSizeGrowth
+  return out
+}
+function extras(x) {
+  const out = {}
+  for (const k of ['line', 'flavor', 'formula']) if (typeof x[k] === 'string' && x[k].trim()) out[k] = x[k].trim().slice(0, 60)
+  if (typeof x.asin === 'string' && /^[A-Z0-9]{10}$/.test(x.asin)) out.asin = x.asin
+  if (Array.isArray(x.sizes)) out.sizes = x.sizes.filter((z) => z && typeof z.label === 'string' && z.lb > 0).map((z) => ({ label: z.label, lb: z.lb, ...(/^[A-Z0-9]{10}$/.test(z.asin ?? '') && { asin: z.asin }) })).sort((a, b) => a.lb - b.lb)
+  return out
+}
+
 // x is the JSON shape the prompt asks for, from the model or from a hand transcription (--add).
 function toEntry(seed, x, sourceUrl) {
   const pct = (v) => (typeof v === 'number' && v >= 0 && v <= 100 ? v : undefined)
@@ -227,7 +261,9 @@ function toEntry(seed, x, sourceUrl) {
     sourceUrl: sourceUrl.replace(/[?#].*$/, ''),
     image: null, // scripts/fetch-product-images.mjs fills this in
     amazonQuery: amazonQuery(seed),
+    ...extras(x),
   }
+  if (x.calories || x.lifeStageClaim || x.largeSizeGrowth) Object.assign(entry.label, labelExtras(x))
   console.log(`   ${entry.id} page says: ${x.nameOnPage}${seed.form !== 'treat' && !x.completeAndBalanced ? ' (no adequacy statement on the page)' : ''}`)
   const bad = problems(entry)
   if (bad.length) throw new Error('rejected: ' + bad.join('; '))
@@ -254,16 +290,45 @@ function splitList(text) {
   return out
 }
 
-if (process.argv.includes('--add')) {
-  const file = process.argv[process.argv.indexOf('--add') + 1]
+const SEED_KEYS = ['brand', 'name', 'species', 'form', 'lifeStage', 'priceTier']
+// A batch item names its seed by id (in SEEDS) or carries the seed fields itself, so parallel batches never edit SEEDS.
+function seedFor(m) {
+  const listed = SEEDS.find((s) => idOf(s) === m.id)
+  if (listed) return listed
+  if (!SEED_KEYS.every((k) => m[k] != null)) throw new Error(`${m.id ?? m.name}: not in SEEDS and missing seed fields`)
+  const seed = Object.fromEntries(SEED_KEYS.map((k) => [k, m[k]]))
+  if (!['dog', 'cat'].includes(seed.species) || !['dry', 'wet', 'freeze_dried', 'raw', 'treat'].includes(seed.form) || !['all', 'growth', 'adult', 'senior'].includes(seed.lifeStage) || ![1, 2, 3].includes(seed.priceTier)) throw new Error(`${idOf(seed)}: bad seed fields`)
+  return seed
+}
+const fromManual = (m) => { const seed = seedFor(m); return toEntry(seed, { ...m, nameOnPage: 'hand transcribed', ingredients: splitList(m.ingredientsText) }, m.sourceUrl) }
+
+if (process.argv.includes('--add') || process.argv.includes('--dry')) {
+  const dry = process.argv.includes('--dry')
+  const file = process.argv[process.argv.indexOf(dry ? '--dry' : '--add') + 1]
+  let failed = 0
+  const seen = new Set(read().map((e) => e.id))
   for (const m of JSON.parse(fs.readFileSync(file, 'utf8'))) {
-    const seed = SEEDS.find((s) => idOf(s) === m.id)
-    if (!seed) throw new Error(`${m.id} is not a seed`)
-    if (read().some((e) => e.id === m.id)) continue
-    const entry = toEntry(seed, { ...m, nameOnPage: 'hand transcribed', ingredients: splitList(m.ingredientsText) }, m.sourceUrl)
-    write([...read(), entry])
-    console.log(`ok   ${entry.id} (${entry.label.ingredients.length} ingredients)`)
+    try {
+      const entry = fromManual(m)
+      if (seen.has(entry.id)) { console.log(`skip ${entry.id} (already in the catalog)`); continue }
+      seen.add(entry.id)
+      if (!dry) write([...read(), entry])
+      console.log(`${dry ? 'good' : 'ok  '} ${entry.id} (${entry.label.ingredients.length} ingredients${entry.label.calories ? ', calories' : ''}${entry.line ? `, line ${entry.line}` : ''})`)
+    } catch (e) { failed++; console.log(`FAIL ${m.id ?? m.name}: ${e.message}`) }
   }
+  if (failed) process.exit(1)
+} else if (process.argv.includes('--patch')) {
+  // Merge fields into existing entries: calories and the label claims onto the label, the rest onto the entry.
+  const list = read()
+  for (const m of JSON.parse(fs.readFileSync(process.argv[process.argv.indexOf('--patch') + 1], 'utf8'))) {
+    const e = list.find((x) => x.id === m.id)
+    if (!e) { console.log(`FAIL ${m.id}: not in the catalog`); continue }
+    Object.assign(e.label, labelExtras(m))
+    Object.assign(e, extras(m))
+    if (typeof m.sourceUrl === 'string' && !e.sourceUrl) e.sourceUrl = m.sourceUrl
+  }
+  write(list)
+  console.log(`patched ${list.length} entries`)
 } else if (process.argv.includes('--check')) {
   let failed = 0
   for (const e of read()) for (const p of problems(e)) { failed++; console.log(`${e.id}: ${p}`) }

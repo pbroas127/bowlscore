@@ -76,6 +76,11 @@ export default function Privacy() {
         When you scan a label, the photo is sent over an encrypted connection to our server, which passes it to the Google Gemini API so the text can be extracted. Our server keeps the photo in memory only for the length of that request. We do not save it to disk or to a database. We keep only the extracted text and the score. Google processes the photo as our service provider under the Gemini API terms. Please photograph only the package, and keep people and personal documents out of the frame.
       </p>
 
+      <h2>How scans help the catalog</h2>
+      <p>
+        When you scan a food or treat that is not in our catalog yet, or save a reorder link for one, the app sends us the product details: the name, brand, ingredients, guaranteed analysis and calories as printed on the package, and the link. Nothing about you or your pet is attached, and no photo is sent. We review these by hand and may add the product to the public catalog so everyone can see its score.
+      </p>
+
       <h2>Who receives data</h2>
       <p>We share data only with the service providers that make the app work. Each one is bound by its own terms to protect the data and to use it only to provide its service.</p>
       <ul>

@@ -5,5 +5,15 @@ service cloud.firestore {
     match /users/{uid} {
       allow read, write: if request.auth != null && request.auth.uid == uid;
     }
+    // Catalog suggestions: any signed in app user (anonymous included) can add one, in this shape only.
+    // Nobody can change or delete one, and only the owner's verified Google account can read them.
+    match /suggestions/{id} {
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['kind', 'source', 'species', 'label', 'link', 'productName', 'brand', 'at'])
+        && request.resource.data.kind in ['scan', 'link']
+        && request.resource.data.at == request.time
+        && (!('link' in request.resource.data) || (request.resource.data.link is string && request.resource.data.link.size() <= 500));
+      allow read: if request.auth != null && request.auth.token.email == 'pbroas127@gmail.com' && request.auth.token.email_verified == true;
+    }
   }
 }

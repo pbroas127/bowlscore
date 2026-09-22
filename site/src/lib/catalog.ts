@@ -17,6 +17,8 @@ export interface CatalogEntry {
   image: string | null
   amazonQuery: string
   sizes?: { label: string; lb: number; asin?: string }[] // small to large; lb is the whole pack for wet food
+  flavor?: string // within a line: "Chicken & Rice", "Lamb & Rice"
+  formula?: string // within a line: "Adult", "Puppy", "Large Breed Puppy", "Senior", ...
   asin?: string // the most common size, the default link
   line?: string // shared by entries that are flavors or life stages of one product line
 }
