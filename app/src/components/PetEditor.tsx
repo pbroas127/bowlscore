@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Alert, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, type StyleProp, type TextStyle } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { CalendarBlank, X } from 'phosphor-react-native'
-import { headKeyFor, headSource, lookOptions, petHeadKey } from '@/components/PetHead'
+import { headKeyFor, headKeysFor, headSource, lookOptions, petHeadKey } from '@/components/PetHead'
 import { Chip, PillButton, TextLink } from '@/components/ui'
 import { breedsFor, findBreed } from '@/lib/breeds'
 import { ageMonths, ageText, stageFor } from '@/lib/fit'
@@ -16,7 +16,7 @@ import { scheduleWeighIn, stopBag } from '@/lib/bag'
 import { cancelNotifications } from '@/lib/notify'
 import { cancelPlan } from '@/lib/switchPlan'
 import type { Pet, Species } from '@/lib/types'
-import { color, gutter, radius, type } from '@/theme'
+import { color, font, gutter, radius, type } from '@/theme'
 
 export const ALLERGIES = ['Chicken', 'Beef', 'Dairy', 'Grain', 'Fish', 'Egg']
 export const STAGES = [['growth', 'Growing'], ['adult', 'Adult'], ['senior', 'Senior']] as const
@@ -89,8 +89,41 @@ export function BirthdayField({ pet, onChange, big }: { pet: Pet; onChange: (bor
   )
 }
 
+// Every head for the species, for a pet the short Look row does not match. The breed's own head clears `look`.
+function LookSheet({ pet, visible, onPick, onClose }: { pet: Pet; visible: boolean; onPick: (look?: string) => void; onClose: () => void }) {
+  const breedKey = headKeyFor(pet.species, pet.breed)
+  const current = petHeadKey(pet)
+  return (
+    <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: color.bg }}>
+        <View style={s.sheetNav}>
+          <Text style={type.h2}>Pick a look</Text>
+          <Pressable hitSlop={12} onPress={onClose} accessibilityLabel="Close"><X size={24} weight="bold" color={color.ink} /></Pressable>
+        </View>
+        <ScrollView contentContainerStyle={{ padding: gutter, gap: 16 }}>
+          <Pressable onPress={() => { tap('select'); onPick(undefined) }} style={[s.breedPic, !pet.look && s.lookOn]} accessibilityRole="button" accessibilityState={{ selected: !pet.look }}>
+            <Image source={headSource(pet.species, breedKey)} style={{ width: 44, height: 44 }} contentFit="contain" />
+            <Text style={[type.title, { flex: 1 }]}>Use breed picture</Text>
+          </Pressable>
+          <View style={s.grid}>
+            {headKeysFor(pet.species).map((key) => {
+              const on = current === key
+              return (
+                <Pressable key={key} onPress={() => { tap('select'); onPick(key === breedKey ? undefined : key) }} style={[s.look, on && s.lookOn]} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={key.replace(/-/g, ' ')}>
+                  <Image source={headSource(pet.species, key)} style={{ width: 52, height: 52 }} contentFit="contain" />
+                </Pressable>
+              )
+            })}
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Modal>
+  )
+}
+
 export function PetEditor({ draft, setDraft, onRemoved }: { draft?: Pet; setDraft: (p?: Pet) => void; onRemoved?: () => void }) {
   const pets = useStore((s) => s.pets)
+  const [allLooks, setAllLooks] = useState(false)
   const isNew = draft && !pets.some((p) => p.id === draft.id)
   const months = draft && ageMonths(draft)
 
@@ -143,7 +176,8 @@ export function PetEditor({ draft, setDraft, onRemoved }: { draft?: Pet; setDraf
               <View style={{ gap: 8 }}>
                 <Text style={type.label}>Look</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10 }}>
-                  {lookOptions(draft.species, draft.breed).map((key) => {
+                  {/* A look picked from See all joins the row, so the choice stays visible. */}
+                  {[...new Set([...lookOptions(draft.species, draft.breed).slice(0, 1), petHeadKey(draft), ...lookOptions(draft.species, draft.breed)])].map((key) => {
                     const on = petHeadKey(draft) === key
                     return (
                       <Pressable key={key} onPress={() => { tap('select'); setDraft({ ...draft, look: key === headKeyFor(draft.species, draft.breed) ? undefined : key }) }} style={[s.look, on && s.lookOn]} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={key.replace(/-/g, ' ')}>
@@ -151,7 +185,11 @@ export function PetEditor({ draft, setDraft, onRemoved }: { draft?: Pet; setDraf
                       </Pressable>
                     )
                   })}
+                  <Pressable onPress={() => { tap('select'); setAllLooks(true) }} style={s.look} accessibilityRole="button" accessibilityLabel="See all looks">
+                    <Text style={[type.caption, { color: color.ink, fontFamily: font.textBold, textAlign: 'center' }]}>See all</Text>
+                  </Pressable>
                 </ScrollView>
+                <LookSheet pet={draft} visible={allLooks} onClose={() => setAllLooks(false)} onPick={(look) => { setDraft({ ...draft, look }); setAllLooks(false) }} />
               </View>
               <View style={{ gap: 8 }}>
                 <Text style={type.label}>Birthday</Text>
@@ -194,6 +232,8 @@ export function PetEditor({ draft, setDraft, onRemoved }: { draft?: Pet; setDraf
 const s = StyleSheet.create({
   look: { width: 64, height: 64, borderRadius: 32, alignItems: 'center', justifyContent: 'center', backgroundColor: color.surface, borderWidth: 2, borderColor: color.hairline },
   lookOn: { borderColor: color.ink, backgroundColor: color.yellowSoft },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12, justifyContent: 'center' },
+  breedPic: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 64, paddingHorizontal: 16, borderRadius: radius.card, borderWidth: 2, borderColor: color.hairline, backgroundColor: color.surface },
   sheetNav: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: gutter, paddingTop: 16 },
   input: { ...type.title, height: 56, borderRadius: radius.chip, borderWidth: 1.5, borderColor: color.hairline, backgroundColor: color.surface, paddingHorizontal: 16 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },

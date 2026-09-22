@@ -1,0 +1,19 @@
+[
+{"id":"pedigree-complete-nutrition-adult-roasted-chicken-rice-and-vegetable-flavor-dog","calories":{"kcalPerKg":3305,"kcalPerCup":324},"lifeStageClaim":"adult","line":"pedigree-dog","flavor":"Chicken, Rice & Vegetable","formula":"Adult"},
+{"id":"kibbles-n-bits-original-savory-beef-and-chicken-flavors-dog","calories":{"kcalPerKg":3145,"kcalPerCup":375},"lifeStageClaim":"adult","line":"kibbles-n-bits-dog","flavor":"Beef & Chicken","formula":"Adult"},
+{"id":"iams-proactive-health-adult-minichunks-chicken-and-whole-grains-recipe-dog","calories":{"kcalPerCup":393},"lifeStageClaim":"adult","line":"iams-proactive-health-dog","flavor":"Chicken & Whole Grains","formula":"Adult"},
+{"id":"kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog","calories":{"kcalPerKg":3754,"kcalPerCup":393},"lifeStageClaim":"adult","line":"kirkland-signature-dog","flavor":"Chicken, Rice & Vegetable","formula":"Adult"},
+{"id":"diamond-naturals-chicken-and-rice-formula-all-life-stages-dog","calories":{"kcalPerKg":3708,"kcalPerCup":421},"lifeStageClaim":"all","largeSizeGrowth":"included","line":"diamond-naturals-dog","flavor":"Chicken & Rice","formula":"All Life Stages"},
+{"id":"rachael-ray-nutrish-real-chicken-and-veggies-recipe-dog","calories":{"kcalPerKg":3575,"kcalPerCup":340},"lifeStageClaim":"adult","line":"rachael-ray-nutrish-dog","flavor":"Chicken & Veggies","formula":"Adult"},
+{"id":"taste-of-the-wild-high-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog","calories":{"kcalPerKg":3719,"kcalPerCup":422},"lifeStageClaim":"adult","line":"taste-of-the-wild-dog","flavor":"Bison & Venison","formula":"Adult"},
+{"id":"wellness-complete-health-adult-deboned-chicken-and-oatmeal-recipe-dog","calories":{"kcalPerCup":427},"line":"wellness-complete-health-dog","flavor":"Chicken & Oatmeal","formula":"Adult"},
+{"id":"merrick-grain-free-real-texas-beef-sweet-potato-recipe-dog","calories":{"kcalPerKg":3676,"kcalPerCup":455},"line":"merrick-grain-free-dog","flavor":"Beef & Sweet Potato","formula":"Adult"},
+{"id":"rachael-ray-nutrish-chicken-paw-pie-dog","calories":{"kcalPerKg":1000,"kcalPerUnit":226,"unit":"tray"},"lifeStageClaim":"all","largeSizeGrowth":"included","line":"rachael-ray-nutrish-wet-dog","flavor":"Chicken Paw Pie","formula":"All Life Stages"},
+{"id":"merrick-grain-free-cowboy-cookout-dog","calories":{"kcalPerKg":844,"kcalPerUnit":303,"unit":"can"},"line":"merrick-grain-free-wet-dog","flavor":"Cowboy Cookout","formula":"Adult"},
+{"id":"meow-mix-original-choice-cat","calories":{"kcalPerKg":3496,"kcalPerCup":308},"lifeStageClaim":"all","line":"meow-mix-cat","flavor":"Original Choice","formula":"All Life Stages"},
+{"id":"9lives-daily-essentials-cat","calories":{"kcalPerKg":3400,"kcalPerCup":310},"lifeStageClaim":"adult","line":"9lives-cat","flavor":"Chicken, Beef & Salmon","formula":"Adult"},
+{"id":"rachael-ray-nutrish-real-chicken-and-brown-rice-recipe-cat","calories":{"kcalPerKg":3893},"line":"rachael-ray-nutrish-cat","flavor":"Chicken & Brown Rice","formula":"Adult"},
+{"id":"nutro-wholesome-essentials-indoor-adult-chicken-and-brown-rice-recipe-cat","calories":{"kcalPerKg":3586,"kcalPerCup":369},"line":"nutro-cat","flavor":"Chicken & Brown Rice","formula":"Indoor"},
+{"id":"greenies-original-regular-dental-dog-treats-dog","calories":{"kcalPerKg":2996,"kcalPerUnit":86,"unit":"treat"},"line":"greenies-dog","flavor":"Original","formula":"Regular"},
+{"id":"greenies-feline-dental-treats-oven-roasted-chicken-flavor-cat","calories":{"kcalPerKg":3616,"kcalPerUnit":1.4,"unit":"treat"},"line":"greenies-feline-cat","flavor":"Oven Roasted Chicken","formula":"Adult"}
+]

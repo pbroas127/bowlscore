@@ -1,0 +1,2391 @@
+[
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Complete Essentials Shredded Blend Beef & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-complete-essentials-shredded-blend-beef-and-rice-dry-dog-food-formula-3020.html",
+  "ingredientsText": "Beef, Rice, Whole Grain Wheat, Poultry By-Product Meal, Whole Grain Corn, Soybean Meal, Beef Fat Preserved With Mixed-Tocopherols, Corn Protein Meal, Fish Meal, Natural Flavor, Dried Beet Pulp, Dried Egg Product, Glycerin, Mono And Dicalcium Phosphate, Wheat Bran, Soybean Oil, Salt, Calcium Carbonate, Potassium Chloride, MINERALS [Zinc Proteinate, Manganese Proteinate, Ferrous Sulfate, Copper Proteinate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Choline Chloride, Dried Bacillus Coagulans Fermentation Product, L-Ascorbyl-2-Polyphosphate (Vitamin C), L-Lysine Monohydrochloride, Garlic Oil.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3859,
+   "kcalPerCup": 382
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Beef & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "35 lb",
+    "lb": 35
+   },
+   {
+    "label": "47 lb",
+    "lb": 47
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Complete Essentials Shredded Blend Lamb & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-complete-essentials-shredded-blend-lamb-and-rice-formula-dry-dog-food-with-probiotics-84334.html",
+  "ingredientsText": "Lamb, Rice, Whole Grain Wheat, Poultry By-Product Meal, Whole Grain Corn, Soybean Meal, Corn Protein Meal, Beef Fat Preserved With Mixed-Tocopherols, Natural Flavor, Dried Beet Pulp, Mono And Dicalcium Phosphate, Dried Egg Product, Glycerin, Soybean Oil, Fish Meal, Wheat Bran, Salt, Calcium Carbonate, Potassium Chloride, MINERALS [Zinc Proteinate, Manganese Proteinate, Ferrous Sulfate, Copper Proteinate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Choline Chloride, L-Lysine Monohydrochloride, Dried Bacillus Coagulans Fermentation Product, L-Ascorbyl-2-Polyphosphate (Vitamin C), Garlic Oil.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3933,
+   "kcalPerCup": 390
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Lamb & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "35 lb",
+    "lb": 35
+   },
+   {
+    "label": "47 lb",
+    "lb": 47
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Complete Essentials Shredded Blend Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-complete-essentials-shredded-blend-salmon-and-rice-dry-dog-food-formula-21038.html",
+  "ingredientsText": "Salmon, Rice, Whole Grain Wheat, Poultry By-Product Meal, Whole Grain Corn, Soybean Meal, Beef Fat Preserved With Mixed-Tocopherols, Corn Protein Meal, Fish Meal, Natural Flavor, Dried Beet Pulp, Dried Egg Product, Glycerin, Mono And Dicalcium Phosphate, Wheat Bran, Calcium Carbonate, Soybean Oil, Salt, Potassium Chloride, Minerals [Zinc Proteinate, Ferrous Sulfate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B3), Vitamin A Supplement, Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Choline Chloride, Dried Bacillus Coagulans Fermentation Product, L-Ascorbyl-2-Polyphosphate (Vitamin C), L-Lysine Monohydrochloride, Garlic Oil.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3856,
+   "kcalPerCup": 389
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "33 lb",
+    "lb": 33
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Complete Essentials Shredded Blend Turkey & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-complete-essentials-shredded-blend-turkey-and-rice-dry-dog-food-formula-62757.html",
+  "ingredientsText": "Turkey, Rice, Whole Grain Wheat, Poultry By-Product Meal, Soybean Meal, Beef Fat Preserved With Mixed-Tocopherols, Corn Gluten Meal, Whole Grain Corn, Dried Egg Product, Fish Meal, Natural Flavor, Glycerin, Wheat Bran, Calcium Carbonate, Salt, Mono And Dicalcium Phosphate, Soybean Oil, Potassium Chloride, MINERALS [Zinc Proteinate, Manganese Proteinate, Ferrous Sulfate, Copper Proteinate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Choline Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), Dried Bacillus Coagulans Fermentation Product, L-Lysine Monohydrochloride, Garlic Oil.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4017,
+   "kcalPerCup": 427
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Turkey & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "33 lb",
+    "lb": 33
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Large Breed Adult Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-high-protein-digestive-health-large-breed-dry-dog-food-chicken-and-rice-formula-3028.html",
+  "ingredientsText": "Chicken, Rice, Corn Protein Meal, Whole Grain Wheat, Poultry By-Product Meal, Whole Grain Corn, Barley, Beef Fat Preserved With Mixed-Tocopherols, Corn Germ Meal, Fish Meal, Dried Egg Product, Natural Flavor, Fish Oil, Wheat Bran, Calcium Carbonate, Soybean Oil, Salt, Mono And Dicalcium Phosphate, Potassium Chloride, Potassium Citrate, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Taurine, Glucosamine Hydrochloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), Garlic Oil.",
+  "proteinMin": 26,
+  "fatMin": 12,
+  "fiberMax": 4.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3823,
+   "kcalPerCup": 407
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   },
+   {
+    "label": "47 lb",
+    "lb": 47
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Large Breed Puppy Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-large-breed-dry-puppy-food-chicken-and-rice-formula-3025.html",
+  "ingredientsText": "Chicken, Rice, Corn Gluten Meal, Whole Grain Corn, Poultry By-Product Meal, Whole Grain Wheat, Beef Fat Preserved With Mixed-Tocopherols, Pea Fiber, Dried Egg Product, Fish Meal, Natural Flavor, Fish Oil, Soybean Oil, Mono And Dicalcium Phosphate, Salt, Calcium Carbonate, Potassium Chloride, Potassium Citrate, Choline Chloride, L-Lysine Monohydrochloride, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], Garlic Oil.",
+  "proteinMin": 28,
+  "fatMin": 13,
+  "fiberMax": 4.75,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3934,
+   "kcalPerCup": 419
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Large Breed Puppy",
+  "sizes": [
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   },
+   {
+    "label": "47 lb",
+    "lb": 47
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Puppy Lamb & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-high-protein-dry-puppy-food-dha-lamb-and-rice-formula-3027.html",
+  "ingredientsText": "Lamb, rice, poultry by-product meal, corn protein meal, whole grain corn, beef fat preserved with mixed-tocopherols, corn germ meal, oat meal, dried egg product, natural flavor, fish meal, dried beet pulp, fish oil, mono and dicalcium phosphate, calcium carbonate, potassium chloride, soybean oil, salt, L-Lysine monohydrochloride, choline chloride, MINERALS [zinc sulfate, ferrous sulfate, manganese sulfate, copper sulfate, calcium iodate, sodium selenite], VITAMINS [Vitamin E supplement, niacin (Vitamin B-3), Vitamin A supplement, calcium pantothenate (Vitamin B-5), thiamine mononitrate (Vitamin B-1), Vitamin B-12 supplement, riboflavin supplement (Vitamin B-2), pyridoxine hydrochloride (Vitamin B-6), folic acid (Vitamin B-9), menadione sodium bisulfite complex (Vitamin K), Vitamin D-3 supplement, biotin (Vitamin B-7)], dried Bacillus coagulans fermentation product, garlic oil.",
+  "proteinMin": 28,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4003,
+   "kcalPerCup": 447
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Lamb & Rice",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Puppy Shredded Blend Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-high-protein-dry-puppy-food-shredded-blend-chicken-and-rice-formula-3000.html",
+  "ingredientsText": "Chicken, Rice, Poultry By-Product Meal, Corn Protein Meal, Beef Fat Preserved With Mixed-Tocopherols, Soybean Meal, Whole Grain Wheat, Whole Grain Corn, Corn Germ Meal, Dried Egg Product, Natural Flavor, Dried Yeast, Glycerin, Fish Meal, Fish Oil, Calcium Carbonate, Mono And Dicalcium Phosphate, Soybean Oil, Salt, Potassium Chloride, MINERALS [Zinc Proteinate, Ferrous Sulfate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Choline Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Dried Bacillus Coagulans Fermentation Product, Garlic Oil.",
+  "proteinMin": 28,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4167,
+   "kcalPerCup": 406
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Shredded Chicken & Rice",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Senior Adult 7+ Shredded Blend Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-senior-dry-dog-food-with-probiotics-for-dogs-shredded-blend-chicken-and-rice-formula-3024.html",
+  "ingredientsText": "Chicken, Rice, Poultry By-Product Meal, Soybean Meal, Corn Protein Meal, Whole Grain Corn, Whole Grain Wheat, Beef Fat Preserved With Mixed-Tocopherols, Corn Germ Meal, Barley, Dried Egg Product, Fish Meal, Natural Flavor, Glycerin, Fish Oil, Wheat Bran, Calcium Carbonate, Soybean Oil, Salt, Mono And Dicalcium Phosphate, Potassium Chloride, MINERALS [Zinc Proteinate, Ferrous Sulfate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Choline Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), L-Lysine Monohydrochloride, Dried Bacillus Coagulans Fermentation Product, Dl-Methionine, Garlic Oil.",
+  "proteinMin": 29,
+  "fatMin": 14,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3672,
+   "kcalPerCup": 366
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Senior",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Small Breed Adult Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-small-breed-dry-dog-food-chicken-and-rice-formula-with-guaranteed-live-probiotics-3029.html",
+  "ingredientsText": "Chicken, Rice, Corn Protein Meal, Poultry By-Product Meal, Whole Grain Corn, Beef Fat Preserved With Mixed-Tocopherols, Corn Germ Meal, Fish Meal, Dried Egg Product, Natural Flavor, Wheat Bran, Mono And Dicalcium Phosphate, Potassium Chloride, L-Lysine Monohydrochloride, Salt, Calcium Carbonate, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1),Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Ascorbyl-2-Polyphosphate (Vitamin C), Dried Bacillus Coagulans Fermentation Product, Soybean Oil, Garlic Oil.",
+  "proteinMin": 29,
+  "fatMin": 17,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4053,
+   "kcalPerCup": 452
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Weight Management Shredded Blend Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-weight-management-dry-dog-food-shredded-blend-chicken-and-rice-formula-3019.html",
+  "ingredientsText": "Chicken, Rice, Whole Grain Corn, Poultry By-Product Meal, Corn Germ Meal, Soybean Meal, Whole Grain Wheat, Corn Protein Meal, Wheat Flour, Beef Fat Preserved With Mixed-Tocopherols, Fish Meal, Natural Flavor, Glycerin, Calcium Carbonate, Wheat Bran, Soybean Oil, Salt, Mono And Dicalcium Phosphate, Potassium Chloride, MINERALS [Zinc Proteinate, Ferrous Sulfate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Choline Chloride, Dl-Methionine, L-Lysine Monohydrochloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), Dried Bacillus Coagulans Fermentation Product, Garlic Oil.",
+  "proteinMin": 27,
+  "fatMin": 9,
+  "fiberMax": 5.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3578,
+   "kcalPerCup": 330
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Healthy Weight",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Large Breed Weight Management Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-large-breed-weight-management-dry-dog-food-chicken-and-rice-formula-3032.html",
+  "ingredientsText": "Chicken, Rice, Whole Grain Wheat, Poultry By-Product Meal, Corn Protein Meal, Oat Meal, Barley, Pea Fiber, Fish Meal, Dried Egg Product, Beef Fat Preserved With Mixed-Tocopherols, Natural Flavor, Wheat Bran, Fish Oil, Salt, Calcium Carbonate, Mono And Dicalcium Phosphate, Potassium Chloride, Potassium Citrate, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, L-Lysine Monohydrochloride, Taurine, Dried Bacillus Coagulans Fermentation Product, L-Ascorbyl-2-Polyphosphate (Vitamin C), Garlic Oil.",
+  "proteinMin": 27,
+  "fatMin": 9.5,
+  "fiberMax": 5.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3610,
+   "kcalPerCup": 384
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Large Breed Weight Management"
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-dry-dog-food-adult-salmon-and-rice-formula-digestive-health-36648.html",
+  "ingredientsText": "Salmon, Rice, Barley, Canola Meal, Oat Meal, Fish Meal, Salmon Meal, Beef Fat Preserved With Mixed-Tocopherols, Dried Yeast, Natural Flavor, Sunflower Oil, Fish Oil, Dried Chicory Root, Calcium Carbonate, Salt, Potassium Chloride, L-Lysine Monohydrochloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride, Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Taurine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Dl-Methionine, Choline Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3903,
+   "kcalPerCup": 449
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Lamb & Oat Meal Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-sensitive-stomach-dry-dog-food-lamb-and-oat-meal-formula-36650.html",
+  "ingredientsText": "Lamb, Oat Meal, Barley, Fish Meal, Canola Meal, Rice, Beef Fat Preserved With Mixed-Tocopherols, Dried Egg Product, Pea Protein, Dried Yeast, Natural Flavor, Fish Oil, Sunflower Oil, Dried Chicory Root, Calcium Carbonate, Salt, L-Lysine Monohydrochloride, Potassium Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3926,
+   "kcalPerCup": 528
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Lamb & Oat Meal",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   },
+   {
+    "label": "24 lb",
+    "lb": 24
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Turkey & Oat Meal Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-dry-dog-food-turkey-and-oat-meal-62756.html",
+  "ingredientsText": "Turkey, Oat Meal, Barley, Fish Meal, Canola Meal, Rice, Beef Fat Preserved With Mixed-Tocopherols, Dried Egg Product, Pea Protein, Dried Yeast, Natural Flavor, Fish Oil, Chicory Root Inulin, Salt, Calcium Carbonate, L-Lysine Monohydrochloride, Sunflower Oil, Potassium Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], DL-Methionine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Mono And Dicalcium Phosphate, Choline Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), Dried Bacillus Coagulans Fermentation Product.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3997,
+   "kcalPerCup": 439
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Turkey & Oat Meal",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   },
+   {
+    "label": "24 lb",
+    "lb": 24
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Large Breed Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-dry-dog-food-large-breed-salmon-and-rice-formula-57927.html",
+  "ingredientsText": "Salmon, Rice, Barley, Oat Meal, Fish Meal, Canola Meal, Salmon Meal, Beef Fat Preserved With Mixed-Tocopherols, Dried Yeast, Natural Flavor, Sunflower Oil, Dried Chicory Root, Salt, Fish Oil, Calcium Carbonate, Potassium Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride, Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], L-Lysine Monohydrochloride, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, Dl-Methionine, Potassium Citrate, Glucosamine Hydrochloride, L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 26,
+  "fatMin": 12,
+  "fiberMax": 4.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3567,
+   "kcalPerCup": 404
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "24 lb",
+    "lb": 24
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Small Breed Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-dry-dog-food-small-breed-adult-salmon-and-rice-formula-44356.html",
+  "ingredientsText": "Salmon, Rice, Barley, Canola Meal, Fish Meal, Dried Yeast, Beef Fat Preserved WithMixed-Tocopherols, Oat Meal, Salmon Meal, Pea Protein, Natural Flavor, Sunflower Oil, Fish Oil, Dried Chicory Root, Calcium Carbonate, L-Lysine Monohydrochloride, Salt, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride, Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Potassium Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 28,
+  "fatMin": 17,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3807,
+   "kcalPerCup": 465
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Puppy Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-dry-dog-food-puppy-salmon-and-rice-formula-57925.html",
+  "ingredientsText": "Salmon, Rice, Barley, Fish Meal, Canola Meal, Beef Fat Preserved With Mixed-Tocopherols, Dried Yeast, Oat Meal, Pea Protein, Salmon Meal, Natural Flavor, Fish Oil, Sunflower Oil, Dried Chicory Root, Salt, L-Lysine Monohydrochloride, Calcium Carbonate, Potassium Chloride, Dl-Methionine, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, Mono And Dicalcium Phosphate, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride, Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 28,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3976,
+   "kcalPerCup": 479
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "24 lb",
+    "lb": 24
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Large Breed Puppy Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-large-breed-dry-puppy-food-salmon-and-rice-formula-62759.html",
+  "ingredientsText": "Salmon, Rice, Barley, Fish Meal, Canola Meal, Oat Meal, Beef Fat Preserved With Mixed-Tocopherols, Dried Yeast, Pea Protein, Salmon Meal, Pea Fiber, Natural Flavor, Sunflower Oil, Fish Oil, Dried Chicory Root, Salt, Mono And Dicalcium Phosphate, Calcium Carbonate, Potassium Citrate, L-Lysine Monohydrochloride, Potassium Chloride, Dl-Methionine, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride, Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 28,
+  "fatMin": 13,
+  "fiberMax": 4.75,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3753,
+   "kcalPerCup": 418
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Large Breed Puppy"
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Senior Adult 7+ Salmon & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sensitive-skin-and-stomach-dry-dog-food-senior-adult-7-salmon-and-rice-formula-70862.html",
+  "ingredientsText": "Salmon, Rice, Barley, Canola Meal, Fish Meal, Oat Meal, Pea Protein, Beef Fat Preserved With Mixed-Tocopherols, Salmon Meal, Dried Yeast, Natural Flavor, Sunflower Oil, Dried Chicory Root, Calcium Carbonate, Fish Oil, L-Lysine Monohydrochloride, Salt, Potassium Chloride, Minerals [Zinc Proteinate, Manganese Proteinate, Ferrous Sulfate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Dl-Methionine, Choline Chloride, Glucosamine Hydrochloride, L-Ascorbyl-2-Polyphosphate (Vitamin C).",
+  "proteinMin": 29,
+  "fatMin": 14,
+  "fiberMax": 3.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3910,
+   "kcalPerCup": 429
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Senior",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "24 lb",
+    "lb": 24
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sport Performance 30/20 Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-sport-performance-3020-chicken-and-rice-formula-high-protein-dry-dog-food-3014.html",
+  "ingredientsText": "Chicken, Corn Protein Meal, Rice, Beef Fat Preserved With Mixed-Tocopherols, Poultry By-Product Meal, Whole Grain Corn, Corn Germ Meal, Dried Egg Product, Fish Meal, Natural Flavor, Fish Oil, Mono And Dicalcium Phosphate, Calcium Carbonate, Potassium Chloride, Salt, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], Choline Chloride, L-Lysine Monohydrochloride, Magnesium Sulfate, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Ascorbyl-2-Polyphosphate (Vitamin C), Garlic Oil.",
+  "proteinMin": 30,
+  "fatMin": 20,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4390,
+   "kcalPerCup": 484
+  },
+  "line": "purina-pro-plan-sport-dog",
+  "flavor": "Chicken & Rice 30/20",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "37.5 lb",
+    "lb": 37.5
+   },
+   {
+    "label": "50 lb",
+    "lb": 50
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sport Active 27/17 Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-pro-plan-active-high-protein-dry-dog-food-sport-2717-chicken-and-rice-formula-36888.html",
+  "ingredientsText": "Chicken, Rice, Whole Grain Wheat, Poultry By-Product Meal, Corn Protein Meal, Beef Fat Preserved With Mixed-Tocopherols, Whole Grain Corn, Corn Germ Meal, Fish Meal, Dried Egg Product, Natural Flavor, Fish Oil, Mono And Dicalcium Phosphate, Potassium Chloride, Salt, Calcium Carbonate, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Lysine Monohydrochloride, DL-Methionine, Dried Bacillus Coagulans Fermentation Product, L-Ascorbyl-2-Polyphosphate (Vitamin C), Garlic Oil.",
+  "proteinMin": 27,
+  "fatMin": 17,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4245,
+   "kcalPerCup": 475
+  },
+  "line": "purina-pro-plan-sport-dog",
+  "flavor": "Chicken & Rice 27/17",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Complete Essentials Beef & Rice Entree Classic",
+  "species": "dog",
+  "form": "wet",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/canned-food/purina-pro-plan-complete-essentials-adult-wet-dog-food---classic-pate-beef-and-rice-13-oz-2945.html",
+  "ingredientsText": "Beef, Water, Liver, Meat By-Products, Chicken, Rice, Fish, MINERALS [Potassium Chloride, Zinc Sulfate, Ferrous Sulfate, Copper Sulfate, Manganese Sulfate, Potassium Iodide, Sodium Selenite], Guar Gum, Salt, Carrageenan, VITAMINS [Vitamin E Supplement, Niacin, Thiamine Mononitrate, Calcium Pantothenate, Pyridoxine Hydrochloride, Vitamin B-12 Supplement, Riboflavin Supplement, Vitamin A Supplement, Folic Acid, Vitamin D-3 Supplement, Biotin], Choline Chloride.",
+  "proteinMin": 9,
+  "fatMin": 6,
+  "fiberMax": 1.5,
+  "moistureMax": 78,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 1161,
+   "kcalPerUnit": 427,
+   "unit": "can"
+  },
+  "line": "purina-pro-plan-complete-essentials-wet-dog",
+  "flavor": "Beef & Rice",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Salmon & Rice Entree Classic",
+  "species": "dog",
+  "form": "wet",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/dog/food/canned-food/purina-pro-plan-sensitive-skin-and-stomach-adult-wet-dog-food---classic-pate-salmon-and-rice-13-oz-78535.html",
+  "ingredientsText": "Water, Fish, Liver, Salmon, Rice, Potato Protein, Oat Meal, Corn Oil, Minerals [Potassium Chloride, Magnesium Sulfate, Zinc Sulfate, Ferrous Sulfate, Copper Sulfate, Manganese Sulfate, Potassium Iodide, Sodium Selenite], Inulin, Carrageenan, Locust Bean Gum, Tricalcium Phosphate, Xanthan Gum, Guar Gum, Choline Chloride, Vitamins [Vitamin E Supplement, Thiamine Mononitrate (Vitamin B-1), Niacin (Vitamin B-3), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Biotin (Vitamin B-7), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement].",
+  "proteinMin": 6.5,
+  "fatMin": 4.5,
+  "fiberMax": 1.5,
+  "moistureMax": 78,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 1006,
+   "kcalPerUnit": 370,
+   "unit": "can"
+  },
+  "line": "purina-pro-plan-sensitive-skin-and-stomach-wet-dog",
+  "flavor": "Salmon & Rice",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Complete Essentials Salmon & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-pro-plan-complete-essentials-adult-dry-cat-food---salmon-and-rice-with-probiotics-74384.html",
+  "ingredientsText": "Salmon, Rice, Corn Protein Meal, Poultry By-Product Meal, Wheat Flour, Dried Egg Product, Beef Fat Preserved With Mixed Tocopherols, Soy Protein Concentrate, Fish Meal, Natural Flavor, Dried Chicory Root, Phosphoric Acid, Potassium Chloride, Calcium Carbonate, Salt, Caramel Color, Choline Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Taurine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Lysine Monohydrochloride, Dried Bacillus Coagulans Fermentation Product.",
+  "proteinMin": 36,
+  "fatMin": 16,
+  "fiberMax": 2,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4225,
+   "kcalPerCup": 561
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Salmon & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Sensitive Skin & Stomach Lamb & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-pro-plan-sensitive-skin-and-stomach-adult-dry-cat-food---lamb-and-rice-with-probiotics-1201.html",
+  "ingredientsText": "Lamb, Rice, Corn Protein Meal, Chicken Meal, Soybean Meal, Beef Fat Preserved With Mixed Tocopherols, Soy Protein Isolate, Barley, Oat Meal, Fish Meal, Dried Egg Product, Liver Flavor, Soybean Oil, Dried Chicory Root, Phosphoric Acid, Calcium Carbonate, Potassium Chloride, Salt, Sodium Bisulfate, Choline Chloride, Minerals [Zinc Proteinate, Ferrous Sulfate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], Taurine, L-Lysine Monohydrochloride.",
+  "proteinMin": 36,
+  "fatMin": 18,
+  "fiberMax": 2.5,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4351,
+   "kcalPerCup": 578
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Lamb & Rice",
+  "formula": "Sensitive Skin & Stomach",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Weight Management Chicken & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-pro-plan-weight-management-adult-dry-cat-food---chicken-and-rice-with-probiotics-1202.html",
+  "ingredientsText": "Chicken, Rice, Corn Gluten Meal, Poultry By-product Meal, Soy Protein Concentrate, Wheat Flour, Beef Fat Preserved With Mixed-tocopherols, Fish Meal, Soy Protein Isolate, Soybean Meal, Natural Flavor, Dried Yeast, Chicory Root Inulin, Phosphoric Acid, Salt, L-lysine Monohydrochloride, Potassium Chloride, Calcium Carbonate, Choline Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Dried Bacillus Coagulans Fermentation Product.",
+  "proteinMin": 43,
+  "fatMin": 9,
+  "fiberMax": 5,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3919,
+   "kcalPerCup": 437
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Chicken & Rice",
+  "formula": "Healthy Weight",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Indoor Salmon & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-pro-plan-focus-indoor-adult-dry-cat-food---with-vitamins-high-fiber-salmon-and-rice-1190.html",
+  "ingredientsText": "Salmon, Rice, Corn Gluten Meal, Chicken Meal, Wheat Flour, Beef Fat Preserved With Mixed-tocopherols, Powdered Cellulose, Natural Flavor, Fish Meal, Dried Egg Product, Soy Protein Isolate, Soybean Hulls, Chicory Root Inulin, Potassium Chloride, Phosphoric Acid, L-lysine Monohydrochloride, Salt, Calcium Carbonate, Choline Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Dried Bacillus Coagulans Fermentation Product.",
+  "proteinMin": 36,
+  "fatMin": 10,
+  "fiberMax": 5.5,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4093,
+   "kcalPerCup": 508
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Salmon & Rice",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Indoor Hairball Turkey & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-pro-plan-focus-indoor-hairball-adult-dry-cat-food---high-fiber-turkey-and-rice-66273.html",
+  "ingredientsText": "Turkey, Rice, Corn Gluten Meal, Chicken Meal, Wheat Flour, Beef Fat Preserved With Mixed-tocopherols, Soy Protein Isolate, Powdered Cellulose, Dried Egg Product, Fish Meal, Soybean Hulls, Natural Flavor, Chicory Root Inulin, Potassium Chloride, L-lysine Monohydrochloride, Salt, Phosphoric Acid, Calcium Carbonate, Choline Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Dried Bacillus Coagulans Fermentation Product.",
+  "proteinMin": 36,
+  "fatMin": 10,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4102,
+   "kcalPerCup": 480
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Turkey & Rice",
+  "formula": "Hairball Control",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina Pro Plan",
+  "name": "Urinary Tract Health Chicken & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-pro-plan-focus-adult-dry-cat-food---urinary-tract-health-chicken-and-rice-1195.html",
+  "ingredientsText": "Corn Gluten Meal, Chicken, Wheat Flour, Rice, Whole Grain Corn, Beef Fat Preserved With Mixed-tocopherols, Dried Egg Product, Sodium Caseinate, Phosphoric Acid, Calcium Carbonate, Potassium Chloride, Liver Flavor, L-lysine Monohydrochloride, Salt, Choline Chloride, Mono And Dicalcium Phosphate, Dried Whey, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Citric Acid.",
+  "proteinMin": 31,
+  "fatMin": 14,
+  "fiberMax": 2,
+  "moistureMax": 10,
+  "ashMax": 6.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4365,
+   "kcalPerCup": 487
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Chicken & Rice",
+  "formula": "Urinary Tract Health",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "SmartBlend Lamb & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-smartblend-natural-dry-dog-food---lamb-and-rice-3502.html",
+  "ingredientsText": "Lamb, Rice Flour, Whole Grain Corn, Whole Grain Wheat, Chicken By-Product Meal, Corn Protein Meal, Soybean Meal, Beef Fat Preserved With Mixed-Tocopherols, Glycerin, Natural Flavor, Calcium Carbonate, Mono And Dicalcium Phosphate, Dried Chicory Root, Salt, Soybean Oil, Potassium Chloride, Vegetable Juice (Color), Dried Carrots, Dried Peas, DL-Methionine, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, L-Lysine Monohydrochloride.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3862,
+   "kcalPerCup": 369
+  },
+  "line": "purina-one-smartblend-dog",
+  "flavor": "Lamb & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "SmartBlend Small Bites Beef & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-smartblend-small-bites-dry-dog-food---natural-beef-and-rice-84290.html",
+  "ingredientsText": "Beef, Rice Flour, Corn Protein Meal, Whole Grain Corn, Chicken By-Product Meal, Beef Fat Preserved With Mixed-Tocopherols, Soybean Meal, Oat Meal, Whole Grain Wheat, Natural Flavor, Glycerin, Calcium Carbonate, Mono And Dicalcium Phosphate, Dried Chicory Root, Salt, Potassium Chloride, Soybean Oil, Vegetable Juice (Color), Dried Peas, Dried Carrots, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, DL-Methionine, L-Lysine Monohydrochloride.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4107,
+   "kcalPerCup": 393
+  },
+  "line": "purina-one-smartblend-dog",
+  "flavor": "Beef & Rice",
+  "formula": "Small Bites Adult",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Large Breed Adult Chicken Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-plus-large-breed-dry-dog-food---natural-chicken-56854.html",
+  "ingredientsText": "Chicken, Rice Flour, Chicken By-Product Meal, Corn Protein Meal, Whole Grain Wheat, Soybean Meal, Whole Grain Corn, Beef Fat Preserved With Mixed-Tocopherols, Soybean Hulls, Oat Meal, Natural Flavor, Glycerin, Mono And Dicalcium Phosphate, Salt, Calcium Carbonate, Potassium Citrate, Dried Peas, Dried Carrots, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Vegetable Juice (Color), MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Choline Chloride, Potassium Chloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), L-Lysine Monohydrochloride.",
+  "proteinMin": 26,
+  "fatMin": 12,
+  "fiberMax": 4.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3898,
+   "kcalPerCup": 359
+  },
+  "line": "purina-one-plus-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "31.1 lb",
+    "lb": 31.1
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Large Breed Puppy Chicken Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-plus-large-breed-puppy-dry-dog-food---natural-chicken-3508.html",
+  "ingredientsText": "Chicken, Rice Flour, Soybean Meal, Corn Protein Meal, Chicken By-Product Meal, Whole Grain Wheat, Whole Grain Corn, Beef Fat Preserved With Mixed-Tocopherols, Pea Fiber, Natural Flavor, Glycerin, Dried Egg Product, Fish Oil, Mono And Dicalcium Phosphate, Salt, Calcium Carbonate, Dried Carrots, Dried Peas, Vegetable Juice (Color), Potassium Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Potassium Citrate, Choline Chloride, L-Lysine Monohydrochloride.",
+  "proteinMin": 28,
+  "fatMin": 13,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3694,
+   "kcalPerCup": 353
+  },
+  "line": "purina-one-plus-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Puppy",
+  "sizes": [
+   {
+    "label": "16.5 lb",
+    "lb": 16.5
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Healthy Puppy Chicken Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-plus-healthy-puppy-dry-dog-food---natural-chicken-3505.html",
+  "ingredientsText": "Chicken, Rice, Corn Protein Meal, Chicken By-Product Meal, Whole Grain Corn, Soybean Meal, Oat Meal, Beef Fat Preserved With Mixed Tocopherols, Glycerin, Natural Flavor, Mono And Dicalcium Phosphate, Fish Oil, Salt, Calcium Carbonate, Potassium Chloride, Dried Carrots, Dried Peas, Choline Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Malted Barley Extract, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Lysine Monohydrochloride.",
+  "proteinMin": 28,
+  "fatMin": 17,
+  "fiberMax": 11,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 374
+  },
+  "line": "purina-one-plus-dog",
+  "flavor": "Chicken",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Healthy Weight Turkey Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-plus-healthy-weight-dry-dog-food---high-protein-turkey-3501.html",
+  "ingredientsText": "Turkey, Rice Flour, Soybean Meal, Corn Gluten Meal, Chicken By-product Meal, Oat Meal, Whole Grain Wheat, Corn Germ Meal, Whole Grain Corn, Soybean Germ Meal, Beef Fat Preserved With Mixed-tocopherols, Glycerin, Natural Flavor, Calcium Carbonate, Salt, Mono And Dicalcium Phosphate, Dried Carrots, Dried Peas, Vegetable Juice (Color), Potassium Chloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Minerals (Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite), Choline Chloride, L-lysine Monohydrochloride.",
+  "proteinMin": 27,
+  "fatMin": 8,
+  "fiberMax": 5.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3400,
+   "kcalPerCup": 325
+  },
+  "line": "purina-one-plus-dog",
+  "flavor": "Turkey",
+  "formula": "Healthy Weight",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Vibrant Maturity Adult 7+ Chicken Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-plus-vibrant-maturity-senior-dry-dog-food---natural-chicken-3504.html",
+  "ingredientsText": "Chicken, Rice Flour, Corn Protein Meal, Chicken By-Product Meal, Soybean Meal, Whole Grain Corn, Corn Germ Meal, Oat Meal, Vegetable Oil (Source Of Medium-Chain Triglycerides), Whole Grain Wheat, Fish Meal, Pea Fiber, Natural Flavor, Glycerin, Beef Fat Preserved With Mixed-Tocopherols, Calcium Carbonate, Salt, Dried Egg Product, Mono And Dicalcium Phosphate, Dried Peas, Dried Carrots, Potassium Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7)], Vegetable Juice (Color), Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Lysine Monohydrochloride, L-Ascorbyl-2-Polyphosphate (Vitamin C), Garlic Oil.",
+  "proteinMin": 28,
+  "fatMin": 13,
+  "fiberMax": 4.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3674,
+   "kcalPerCup": 351
+  },
+  "line": "purina-one-plus-dog",
+  "flavor": "Chicken",
+  "formula": "Senior",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Small Breed Lamb Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-one-plus-small-breed-dry-dog-food---natural-lamb-55461.html",
+  "ingredientsText": "Lamb, Chicken Meal, Rice, Corn Protein Meal, Whole Grain Corn, Soybean Meal, Whole Grain Wheat, Beef Fat Preserved With Mixed-Tocopherols, Oat Meal, Glycerin, Natural Flavor, Calcium Carbonate, Soybean Oil, Salt, Mono And Dicalcium Phosphate, Potassium Chloride, Vegetable Juice (Color), Dried Carrots, Dried Peas, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), CalciumPantothenate (Vitamin B-5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Choline Chloride, Taurine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Lysine Monohydrochloride.",
+  "proteinMin": 28,
+  "fatMin": 17,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4370,
+   "kcalPerCup": 425
+  },
+  "line": "purina-one-plus-dog",
+  "flavor": "Lamb",
+  "formula": "Small Breed Adult"
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "Tender Selects Blend with Real Salmon",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-tender-selects-blend-with-real-salmon-natural-dry-cat-food-2504.html",
+  "ingredientsText": "Salmon, Rice, Chicken By-Product Meal, Corn Protein Meal, Beef Fat Preserved With MixedTocopherols, Soybean Meal, Whole Grain Corn, Wheat Flour, Soy Protein Isolate, Soy Protein Concentrate, Natural Flavor, Dried Chicory Root, Glycerin, Chicken, Phosphoric Acid, Calcium Carbonate, Potassium Chloride, L-Lysine Monohydrochloride, Salt, Choline Chloride, Dried Carrots, Dried Peas, Sodium Bisulfate, Malted Barley Extract, Taurine, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Cysteine, Dl-Methionine.",
+  "proteinMin": 34,
+  "fatMin": 15,
+  "fiberMax": 10,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4053,
+   "kcalPerCup": 402
+  },
+  "line": "purina-one-cat",
+  "flavor": "Salmon",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Indoor Advantage with Real Turkey",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-indoor-advantage-adult-natural-low-fat-weight-control-real-turkey-dry-cat-food-2506.html",
+  "ingredientsText": "Turkey, Chicken By-Product Meal, Rice, Corn Protein Meal, Soybean Meal, Whole Grain Corn, Soy Protein Isolate, Powdered Cellulose, Dried Yeast, Soybean Hulls, Beef Fat Preserved With Mixed-Tocopherols, Canola Meal, Natural Flavor, Phosphoric Acid, Calcium Carbonate, Salt, Glycerin, Dried Carrots, Dried Spinach, Choline Chloride, Vegetable Juice (Color), Taurine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Potassium Chloride, L-Lysine Monohydrochloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Vitamin E Supplement.",
+  "proteinMin": 37,
+  "fatMin": 9,
+  "fiberMax": 5.2,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3756,
+   "kcalPerCup": 372
+  },
+  "line": "purina-one-cat",
+  "flavor": "Turkey",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Indoor Advantage Senior 7+",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-indoor-advantage-senior-7-high-protein-natural-dry-cat-food-2507.html",
+  "ingredientsText": "Chicken, Chicken By-product Meal, Rice, Corn Gluten Meal, Soybean Meal, Beef Fat Preserved With Mixed-tocopherols, Whole Grain Corn, Powdered Cellulose, Soybean Hulls, Natural Flavor, Soy Protein Concentrate, Phosphoric Acid, Calcium Carbonate, Caramel Color, Salt, Choline Chloride, Dried Carrots, Dried Peas, Vitamin E Supplement, L-lysine Monohydrochloride, Potassium Chloride, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)].",
+  "proteinMin": 36,
+  "fatMin": 13,
+  "fiberMax": 4.95,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3953,
+   "kcalPerCup": 413
+  },
+  "line": "purina-one-cat",
+  "flavor": "Chicken",
+  "formula": "Senior"
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Hairball Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-hairball-formula-natural-adult-dry-cat-food-2509.html",
+  "ingredientsText": "Chicken, Corn Protein Meal, Chicken By-Product Meal, Rice Flour, Soybean Meal, Beef Fat Preserved With Mixed Tocopherols, Whole Grain Corn, Natural Flavor, Powdered Cellulose, Wheat Flour, Soybean Hulls, Chicken Meal, Phosphoric Acid, Calcium Carbonate, Salt, Glycerin, Choline Chloride, Dried Carrots, Dried Peas, Potassium Chloride, Malted Barley Extract, Taurine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)].",
+  "proteinMin": 34,
+  "fatMin": 14,
+  "fiberMax": 14.5,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 439
+  },
+  "line": "purina-one-cat",
+  "flavor": "Chicken",
+  "formula": "Hairball Control",
+  "sizes": [
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Healthy Kitten Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-healthy-kitten-muscle-vision-and-brain-development-natural-dry-cat-food-2503.html",
+  "ingredientsText": "Chicken, Chicken By-Product Meal, Corn Protein Meal, Rice, Soybean Meal, Beef Fat Preserved With Mixed Tocopherols, Chicken Meal, Whole Grain Corn, Soy Protein Concentrate, Natural Flavor, Soy Protein Isolate, Phosphoric Acid, Fish Oil, Calcium Carbonate, Glycerin, Choline Chloride, Salt, Dried Carrots, Dried Peas, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Malted Barley Extract, Taurine, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid, Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], L-Lysine Monohydrochloride, Potassium Chloride, Dl-Methionine.",
+  "proteinMin": 40,
+  "fatMin": 18,
+  "fiberMax": 10,
+  "moistureMax": 12,
+  "taurineMin": 0.18,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 518
+  },
+  "line": "purina-one-cat",
+  "flavor": "Chicken",
+  "formula": "Kitten",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Ideal Weight Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-ideal-weight-natural-high-protein-adult-dry-cat-food-2501.html",
+  "ingredientsText": "Chicken, Chicken By-Product Meal, Corn Protein Meal, Soy Flour, Rice Flour, Whole Grain Corn, Soy Protein Isolate, Soybean Hulls, Dried Yeast, Cellulose, Beef Fat Preserved With Mixed-Tocopherols, Natural Flavor, Phosphoric Acid, Salt, L-Lysine Monohydrochloride, Calcium Carbonate, Glycerin, Dried Carrots, Dried Peas, Choline Chloride, Vegetable Juice (Color), Taurine, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], Potassium Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-Carnitine.",
+  "proteinMin": 41,
+  "fatMin": 8.5,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3686,
+   "kcalPerCup": 385
+  },
+  "line": "purina-one-cat",
+  "flavor": "Chicken",
+  "formula": "Healthy Weight",
+  "sizes": [
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Sensitive Skin & Stomach Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-sensitive-skin-and-stomach-adult-natural-digestive-dry-cat-food-2505.html",
+  "ingredientsText": "Turkey, Chicken By-Product Meal, Rice, Corn Protein Meal, Soybean Meal, Oat Meal, Whole Grain Corn, Beef Fat Preserved With Mixed Tocopherols, Dried Egg Product, Natural Flavor, Soybean Oil, Phosphoric Acid, Calcium Carbonate, Dried Chicory Root, Glycerin, Salt, Dried Carrots, Dried Peas, Choline Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], Potassium Chloride, Malted Barley Extract, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Taurine, L-Lysine Monohydrochloride.",
+  "proteinMin": 34,
+  "fatMin": 14,
+  "fiberMax": 11,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 447
+  },
+  "line": "purina-one-cat",
+  "flavor": "Turkey",
+  "formula": "Sensitive Skin & Stomach",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina ONE",
+  "name": "+Plus Urinary Tract Health Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-one-plus-urinary-tract-health-formula-high-protein-adult-dry-cat-food-2500.html",
+  "ingredientsText": "Corn Protein Meal, Ground Yellow Corn, Chicken, Brewers Rice, Wheat Flour, Animal Fat Preserved With Mixed-Tocopherols, Dried Egg Product, Calcium Carbonate, Sodium Caseinate, Phosphoric Acid, Animal Digest, Potassium Chloride, Dried Whey, L-Lysine Monohydrochloride, Defluorinated Phosphate, Choline Chloride, Salt, Taurine, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], Citric Acid.",
+  "proteinMin": 31,
+  "fatMin": 12.5,
+  "fiberMax": 2,
+  "moistureMax": 10,
+  "ashMax": 6.2,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3756,
+   "kcalPerCup": 425
+  },
+  "line": "purina-one-cat",
+  "flavor": "Chicken",
+  "formula": "Urinary Tract Health",
+  "sizes": [
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Purina Dog Chow",
+  "name": "Complete Adult with Real Beef",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-dog-chow-complete-adult-dry-dog-food---beef-75945.html",
+  "ingredientsText": "Whole Grain Corn, Chicken By-Product Meal, Corn Gluten Meal, Beef Fat Preserved With Mixed-Tocopherols, Meat And Bone Meal, Soybean Meal, Ground Rice, Egg And Chicken Flavor, Natural Flavor, Calcium Carbonate, Salt, Potassium Chloride, Mono And Dicalcium Phosphate, L-Lysine Monohydrochloride, Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement,â¯Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], Yellow 6, L-Tryptophan, Yellow 5, Red 40, Blue 2.",
+  "proteinMin": 21,
+  "fatMin": 10,
+  "fiberMax": 4.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3470,
+   "kcalPerCup": 405
+  },
+  "line": "purina-dog-chow-dog",
+  "flavor": "Beef",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Purina Dog Chow",
+  "name": "High Protein with Real Beef",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-dog-chow-high-protein-beef-dog-food-88566.html",
+  "ingredientsText": "Whole Grain Corn, Poultry By-Product Meal, Corn Protein Meal, Animal Fat Preserved With Mixed-Tocopherols, Meat And Bone Meal, Soybean Meal, Beef, Natural Flavor, Egg And Chicken Flavor, Salt, Potassium Chloride, Fish Oil, Dried Peas, Calcium Carbonate, Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Carrots, L-Lysine Monohydrochloride, Red 40, Yellow 5",
+  "proteinMin": 27,
+  "fatMin": 14,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3668,
+   "kcalPerCup": 436
+  },
+  "line": "purina-dog-chow-dog",
+  "flavor": "Beef",
+  "formula": "High Protein Adult",
+  "sizes": [
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "44 lb",
+    "lb": 44
+   }
+  ]
+ },
+ {
+  "brand": "Purina Dog Chow",
+  "name": "Tender & Crunchy with Real Lamb & Turkey",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-dog-chow-tender-and-crunchy-adult-dog-food---lam-and-turkey-96918.html",
+  "ingredientsText": "Whole Grain Corn, Whole Grain Wheat, Meat And Bone Meal, Corn Protein Meal, Soybean Meal, Animal Fat Preserved With Mixed-Tocopherols, Lamb, Egg And Chicken Flavor, Glycerin, Ground Rice, Poultry And Pork Digest, Turkey By-Product Meal, Salt, Potassium Chloride, L-Lysine Monohydrochloride, Choline Chloride, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], Red 40, Yellow 5, Blue 2, Garlic Oil.",
+  "proteinMin": 21,
+  "fatMin": 10,
+  "fiberMax": 4,
+  "moistureMax": 14,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3491,
+   "kcalPerCup": 364
+  },
+  "line": "purina-dog-chow-dog",
+  "flavor": "Lamb & Turkey",
+  "formula": "Tender & Crunchy Adult"
+ },
+ {
+  "brand": "Purina Puppy Chow",
+  "name": "Complete with Real Chicken",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-puppy-chow-complete-puppy-dog-dry-food---chicken-high-protein-real-meat-75947.html",
+  "ingredientsText": "Whole Grain Corn, Chicken By-product Meal, Corn Gluten Meal, Beef Fat Preserved With Mixed-tocopherols, Soybean Meal, Barley, Egg And Chicken Flavor, Ground Rice, Chicken, Poultry And Pork Digest, Mono And Dicalcium Phosphate, Calcium Carbonate, Fish Oil, Salt, Potassium Chloride, Soybean Oil, Choline Chloride, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], L-lysine Monohydrochloride, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], Yellow 6, L-ascorbyl-2-polyphosphate (Vitamin C), Yellow 5, Dl-methionine, Red 40, Blue 2, Garlic Oil.",
+  "proteinMin": 27.5,
+  "fatMin": 12,
+  "fiberMax": 5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3597,
+   "kcalPerCup": 414
+  },
+  "line": "purina-puppy-chow-dog",
+  "flavor": "Chicken",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Purina Puppy Chow",
+  "name": "Large Breed with Real Chicken",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-puppy-chow-large-breed-formula-dog-dry-food---chicken-79334.html",
+  "ingredientsText": "Whole Grain Corn, Chicken By-product Meal, Corn Gluten Meal, Ground Rice, Soybean Meal, Animal Fat Preserved With Mixed-tocopherols, Egg And Chicken Flavor, Chicken, Natural Liver Flavor, Soybean Hulls, Mono And Dicalcium Phosphate, Fish Oil, Calcium Carbonate, Salt, Potassium Chloride, Choline Chloride, MINERALSâ¯[Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Vitamin B-12 Supplement, Riboflavin Supplement (Vitamin B-2), Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement, Biotin (Vitamin B-7)], L-ascorbyl-2-polyphosphate (Vitamin C), Yellow 6, Yellow 5, Dl-methionine, L-lysine Monohydrochloride, Red 40, Blue 2, Garlic Oil.",
+  "proteinMin": 27.5,
+  "fatMin": 10,
+  "fiberMax": 5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3489,
+   "kcalPerCup": 408
+  },
+  "line": "purina-puppy-chow-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Puppy"
+ },
+ {
+  "brand": "Purina Puppy Chow",
+  "name": "Tender & Crunchy with Real Beef",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-puppy-chow-tender-and-crunchy-puppy-dry-dog-food---beef-75948.html",
+  "ingredientsText": "Whole Grain Corn, Corn Gluten Meal, Poultry By-product Meal, Whole Grain Wheat, Beef Fat Preserved With Mixed-tocopherols, Soybean Meal, Ground Rice, Meat And Bone Meal, Beef, Glycerin, Egg And Chicken Flavor, Poultry And Pork Digest, Fish Oil, Salt, Mono And Dicalcium Phosphate, Potassium Chloride, Calcium Carbonate, Soybean Oil, Choline Chloride, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], L-lysine Monohydrochloride, L-ascorbyl-2-polyphosphate (Vitamin C), Dl Methionine, Red 40, Yellow 5, Blue 2, Garlic Oil.",
+  "proteinMin": 27.5,
+  "fatMin": 12,
+  "fiberMax": 4,
+  "moistureMax": 14,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3754,
+   "kcalPerCup": 387
+  },
+  "line": "purina-puppy-chow-dog",
+  "flavor": "Beef",
+  "formula": "Tender & Crunchy Puppy"
+ },
+ {
+  "brand": "Beneful",
+  "name": "Originals with Real Beef",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-beneful-originals-adult-dog-dry-food---beef-with-vitamins-potato-free-3464.html",
+  "ingredientsText": "Beef, Whole Grain Corn, Barley, Rice, Whole Grain Wheat, Soybean Meal, Corn Gluten Meal, Chicken By-product Meal, Beef Fat Preserved With Mixed-tocopherols, Oat Meal, Egg And Chicken Flavor, Natural Flavor, Calcium Carbonate, Salt, Mono And Dicalcium Phosphate, Glycerin, Potassium Chloride, Dried Spinach, Dried Peas, Dried Carrots, Annatto Color, Vegetable Juice (Color), MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], Choline Chloride, Carmine, L-lysine Monohydrochloride.",
+  "proteinMin": 23,
+  "fatMin": 12,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3592,
+   "kcalPerCup": 362
+  },
+  "line": "beneful-dog",
+  "flavor": "Beef",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Beneful",
+  "name": "Originals with Real Salmon",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-beneful-originals-adult-dog-dry-food---natural-salmon-79333.html",
+  "ingredientsText": "Salmon, Whole Grain Corn, Whole Grain Wheat, Soybean Meal, Barley, Chicken By-product Meal, Oat Meal, Rice, Beef Fat Preserved With Mixed-tocopherols, Corn Gluten Meal, Egg And Chicken Flavor, Natural Flavor, Soybean Oil, Calcium Carbonate, Mono And Dicalcium Phosphate, Salt, Glycerin, Dried Sweet Potatoes, Dried Green Beans, Dried Carrots, Potassium Chloride, Annatto Color, Vegetable Juice (Color), MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], Choline Chloride, Carmine, L-lysine Monohydrochloride.",
+  "proteinMin": 23,
+  "fatMin": 13,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3658,
+   "kcalPerCup": 395
+  },
+  "line": "beneful-dog",
+  "flavor": "Salmon",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Beneful",
+  "name": "Healthy Weight with Real Chicken",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-beneful-healthy-weight-adult-dog-dry-food---chicken-with-vitamins-no-artificial-flavors-57413.html",
+  "ingredientsText": "Chicken, Whole Grain Corn, Chicken By-product Meal, Barley, Whole Grain Wheat, Soybean Meal, Soybean Hulls, Rice, Corn Gluten Meal, Egg And Chicken Flavor, Oat Meal, Beef Fat Preserved With Mixed-tocopherols, Natural Flavor, Calcium Carbonate, Salt, Mono And Dicalcium Phosphate, Glycerin, Potassium Chloride, Dried Apples, Dried Carrots, Dried Green Beans, Annatto Color, Vegetable Juice (Color), Choline Chloride, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Carmine, L-lysine Monohydrochloride.",
+  "proteinMin": 25,
+  "fatMin": 8,
+  "fiberMax": 7.5,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3230,
+   "kcalPerCup": 331
+  },
+  "line": "beneful-dog",
+  "flavor": "Chicken",
+  "formula": "Healthy Weight"
+ },
+ {
+  "brand": "Beneful",
+  "name": "Healthy Puppy with Real Chicken",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/purina-beneful-healthy-puppy-puppy-dog-dry-food---chicken-with-vitamins-no-artificial-flavors-3461.html",
+  "ingredientsText": "Chicken, Chicken By-Product Meal, Whole Grain Corn, Soybean Meal, Corn Gluten Meal, Barley, Rice, Whole Grain Wheat, Beef Fat Preserved With Mixed-Tocopherols, Oat Meal, Egg And Chicken Flavor, Calcium Carbonate, Fish Oil, Natural Flavor, Mono And Dicalcium Phosphate, Salt, Dried Peas, Dried Carrots, Potassium Chloride, Choline Chloride, Iron Oxide (Color), VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Thiamine Mononitrate (Vitamin B-1), Vitamin D-3 Supplement, Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Folic Acid (Vitamin B-9), Biotin (Vitamin B-7)], MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], DL-Methionine, L-Lysine Monohydrochloride.",
+  "proteinMin": 28,
+  "fatMin": 14,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3688,
+   "kcalPerCup": 392
+  },
+  "line": "beneful-dog",
+  "flavor": "Chicken",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Purina Cat Chow",
+  "name": "Indoor Hairball & Healthy Weight",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-cat-chow-indoor-adult-cat-dry-food---chicken-hairball-and-healthy-weight-56041.html",
+  "ingredientsText": "Chicken By-Product Meal, Whole Grain Corn, Soy Flour, Whole Grain Wheat, Corn Protein Meal, Rice, Animal Fat Preserved With Mixed-Tocopherols, Chicken, Liver Flavor, Powdered Cellulose, Soybean Hulls, Calcium Carbonate, Phosphoric Acid, Salt, Natural Flavor, Choline Chloride, Parsley Flakes, Potassium Chloride, Taurine, Vitamin E Supplement, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid, Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Lascorbyl-2-Polyphosphate (Vitamin C), Red 40, Blue 2, Yellow 5.",
+  "proteinMin": 30,
+  "fatMin": 9.5,
+  "fiberMax": 4.7,
+  "moistureMax": 12,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3382,
+   "kcalPerCup": 359
+  },
+  "line": "purina-cat-chow-cat",
+  "flavor": "Chicken",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Purina Cat Chow",
+  "name": "Naturals Original with Real Chicken",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-cat-chow-naturals-all-life-stages-cat-dry-food---chicken-natural-no-artificial-flavors-471.html",
+  "ingredientsText": "Chicken, Corn Protein Meal, Chicken By-Product Meal, Rice, Soybean Meal, Ground Yellow Corn, Ground Whole Wheat, Animal Fat Preserved With Mixed-Tocopherols, Salmon, Natural Flavor, Phosphoric Acid, Salt, Calcium Carbonate, Dried Spinach, Choline Chloride, MINERALS (Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite), Taurine, VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Riboflavin Supplement (Vitamin B-2), Vitamin A Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Vitamin B-12 Supplement, Folic Acid (Vitamin B-9), Biotin (Vitamin B-7), Vitamin D-3 Supplement, Menadione Sodium Bisulfite Complex (Vitamin K)], Potassium Chloride.",
+  "proteinMin": 34,
+  "fatMin": 13,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3740,
+   "kcalPerCup": 398
+  },
+  "line": "purina-cat-chow-cat",
+  "flavor": "Chicken",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "6.3 lb",
+    "lb": 6.3
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Purina Cat Chow",
+  "name": "Senior",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-cat-chow--senior-cat-dry-food---chicken-no-artificial-colors-no-artificial-flavors-63583.html",
+  "ingredientsText": "Poultry By-Product Meal, Soy Flour, Corn Protein Meal, Rice, Oat Meal, Whole Grain Wheat, Animal Fat Preserved With Mixed-Tocopherols, Chicken, Liver Flavor, Soybean Hulls, Dried Chicory Root, Phosphoric Acid, Calcium Carbonate, Salt, Natural Flavor, Choline Chloride, Potassium Chloride, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], L-Lysine Monohydrochloride.",
+  "proteinMin": 34,
+  "fatMin": 12,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3586,
+   "kcalPerCup": 393
+  },
+  "line": "purina-cat-chow-cat",
+  "flavor": "Chicken",
+  "formula": "Senior"
+ },
+ {
+  "brand": "Purina Cat Chow",
+  "name": "Complete Salmon",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/-purina-cat-chow-complete-dry-cat-food-high-protein-salmon-formula-315lb-75321.html",
+  "ingredientsText": "Chicken By-Product Meal, Ground Yellow Corn, Corn Protein Meal, Whole Grain Wheat, Rice, Soybean Meal, Animal Fat Preserved With Mixed-Tocopherols, Salmon, Liver Flavor, Fish Meal, Calcium Carbonate, Phosphoric Acid, Salt, Choline Chloride, Potassium Chloride, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Red 40, Yellow 5, Blue 2.",
+  "proteinMin": 32,
+  "fatMin": 12,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3737,
+   "kcalPerCup": 410
+  },
+  "line": "purina-cat-chow-cat",
+  "flavor": "Salmon",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   }
+  ]
+ },
+ {
+  "brand": "Purina Kitten Chow",
+  "name": "Healthy Development with Real Chicken",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-kitten-chow-kitten-cat-dry-food---chicken-healthy-development-2309.html",
+  "ingredientsText": "Chicken By-Product Meal, Corn Protein Meal, Rice, Soy Flour, Animal Fat Preserved With Mixed-Tocopherols, Ground Whole Wheat, Chicken, Fish Meal, Liver Flavor, Dried Yeast, Phosphoric Acid, Calcium Carbonate, Salt, Choline Chloride, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Taurine, Potassium Chloride.",
+  "proteinMin": 40,
+  "fatMin": 13.5,
+  "fiberMax": 2.5,
+  "moistureMax": 12,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3705,
+   "kcalPerCup": 414
+  },
+  "line": "purina-cat-chow-cat",
+  "flavor": "Chicken",
+  "formula": "Kitten",
+  "sizes": [
+   {
+    "label": "6.3 lb",
+    "lb": 6.3
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Friskies",
+  "name": "Surfin' & Turfin' Favorites",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-friskies-surfin-and-turfin-favorites-muscle-and-immune-support-crunchy-dry-cat-food-629.html",
+  "ingredientsText": "Ground Yellow Corn, Chicken By-Product Meal, Soybean Meal, Corn Gluten Meal, Beef Fat Preserved With Mixed-Tocopherols, Meat And Bone Meal, Liver Flavor, Ocean Fish Meal, Calcium Carbonate, Phosphoric Acid, Salmon Meal, Salt, Choline Chloride, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Potassium Chloride, Taurine, Dl-Methionine, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Natural Filet Mignon Flavor, Red 40, Yellow 5, Blue 2.",
+  "proteinMin": 30,
+  "fatMin": 11,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3573,
+   "kcalPerCup": 392
+  },
+  "line": "friskies-dry-cat",
+  "flavor": "Surfin' & Turfin'",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Friskies",
+  "name": "Tender & Crunchy Combo",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-friskies-tender-and-crunchy-combo-dry-cat-food-2310.html",
+  "ingredientsText": "Ground Yellow Corn, Corn Gluten Meal, Chicken By-product Meal, Ground Wheat, Soybean Meal, Beef Tallow Preserved With Mixed-tocopherols, Meat And Bone Meal, Glycerin, Animal Liver Flavor, Chicken, Phosphoric Acid, Calcium Carbonate, Natural Flavor, Salt, Turkey By-product Meal, Potassium Chloride, Choline Chloride, Dried Carrots, Dried Green Beans, Taurine, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], Yellow 6, Dl-methionine, L-lysine Monohydrochloride, Red 40, Yellow 5, L-tryptophan, Blue 2.",
+  "proteinMin": 30,
+  "fatMin": 11,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3607,
+   "kcalPerCup": 389
+  },
+  "line": "friskies-dry-cat",
+  "flavor": "Tender & Crunchy",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Friskies",
+  "name": "Gravy Swirlers",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/dry-food/purina-friskies-gravy-swirlers-chicken-and-salmon-flavor-dry-cat-food-44339.html",
+  "ingredientsText": "Ground Yellow Corn, Corn Gluten Meal, Chicken By-product Meal, Soybean Meal, Beef Tallow Preserved With Mixed-tocopherols, Wheat Flour, Meat And Bone Meal, Animal Liver Flavor, Fish Meal, Calcium Carbonate, Phosphoric Acid, Salmon Meal, Natural And Artificial Flavors, Salt, Dried Chicken Flavored Gravy, Choline Chloride, Potassium Chloride, Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Taurine, Vitamins [Vitamin E Supplement, Niacin (Vitamin B-3), Vitamin A Supplement, Calcium Pantothenate (Vitamin B-5), Thiamine Mononitrate (Vitamin B-1), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Pyridoxine Hydrochloride (Vitamin B-6), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement, Biotin (Vitamin B-7), Menadione Sodium Bisulfite Complex (Vitamin K)], L-tryptophan, Dl-methionine, Red 40, Yellow 5, Blue 2.",
+  "proteinMin": 30,
+  "fatMin": 12,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3609,
+   "kcalPerCup": 384
+  },
+  "line": "friskies-dry-cat",
+  "flavor": "Chicken & Salmon Gravy Swirlers",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Friskies",
+  "name": "Meaty Bits Chicken Dinner in Gravy",
+  "species": "cat",
+  "form": "wet",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/wet-food/friskies-meaty-bits-adult-wet-cat-food---chicken-dinner-in-gravy-135-oz-95893.html",
+  "ingredientsText": "Water, Chicken, Liver, Wheat Gluten, Meat By-Products, Turkey, Soy Flour, Corn Starch Modified, Artificial And Natural Flavors, Tricalcium Phosphate, Minerals [Potassium Chloride, Zinc Sulfate,Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide], Taurine, Choline Chloride, Salt, VITAMINS [Thiamine Mononitrate (Vitamin B-1), Vitamin E Supplement, Niacin (Vitamin B-3), Calcium Pantothenate (Vitamin B-5), Pyridoxine Hydrochloride (Vitamin B-6), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Biotin (Vitamin B-7), Vitamin A Supplement, Folic Acid (Vitamin B-9), Menadione Sodium Bisulfite Complex (Vitamin K), Vitamin D-3 Supplement].",
+  "proteinMin": 10,
+  "fatMin": 2.5,
+  "fiberMax": 1,
+  "moistureMax": 79,
+  "ashMax": 2.5,
+  "taurineMin": 0.05,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 976,
+   "kcalPerUnit": 373,
+   "unit": "can"
+  },
+  "line": "friskies-meaty-bits-cat",
+  "flavor": "Chicken Dinner",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Fancy Feast",
+  "name": "Classic Pate Chicken Feast",
+  "species": "cat",
+  "form": "wet",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/wet-food/fancy-feast-wet-cat-food---chicken-feast-classic-pate-12-ct-36-oz-80323.html",
+  "ingredientsText": "Chicken, Chicken Broth, Meat By-products, Liver, Fish, Artificial And Natural Flavors, Tricalcium Phosphate, Guar Gum, Minerals [Potassium Chloride, Magnesium Proteinate, Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide], Choline Chloride, Taurine, Vitamins [Thiamine Mononitrate (Vitamin B-1), Vitamin E Supplement, Niacin (Vitamin B-3), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Biotin (Vitamin B-7), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement], Salt.",
+  "proteinMin": 10,
+  "fatMin": 5,
+  "fiberMax": 1.5,
+  "moistureMax": 78,
+  "ashMax": 3.25,
+  "taurineMin": 0.05,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 1080,
+   "kcalPerUnit": 91,
+   "unit": "can"
+  },
+  "line": "fancy-feast-classic-pate-cat",
+  "flavor": "Chicken",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Fancy Feast",
+  "name": "Grilled Chicken Feast in Gravy",
+  "species": "cat",
+  "form": "wet",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/wet-food/fancy-feast-wet-cat-food---grilled-chicken-12-ct-36-oz-80324.html",
+  "ingredientsText": "Chicken Broth, Chicken, Wheat Gluten, Meat By-Products, Liver, Fish, Corn Starch-Modified, Soy Flour, Glycine, Salt, Tricalcium Phosphate, Natural Flavor, Minerals [Potassium Chloride, Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide], Taurine, Choline Chloride, Vitamins [Thiamine Mononitrate (Vitamin B-1), Vitamin E Supplement, Niacin (Vitamin B-3), Calcium Pantothenate (Vitamin B-5), Vitamin A Supplement, Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Riboflavin Supplement (Vitamin B-2), Vitamin B-12 Supplement, Biotin (Vitamin B-7), Folic Acid (Vitamin B-9), Vitamin D-3 Supplement].",
+  "proteinMin": 11,
+  "fatMin": 2,
+  "fiberMax": 1.5,
+  "moistureMax": 80,
+  "ashMax": 2.7,
+  "taurineMin": 0.05,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 863,
+   "kcalPerUnit": 73,
+   "unit": "can"
+  },
+  "line": "fancy-feast-grilled-cat",
+  "flavor": "Chicken",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Beggin'",
+  "name": "Strips Ribeye Flavor",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/treats/soft-and-chewy-treats/purina-beggin-strips-all-life-stage-dog-treats---ribeye-flavored-97746.html",
+  "ingredientsText": "Pork, barley, ground wheat, rice, soybean meal, oat meal, sugar, ground yellow corn, corn protein meal, wheat flour, glycerin, water, soy flour, bacon, soy protein concentrate, wheat gluten, salt, beef fat preserved with mixed-tocopherols, natural flavor, phosphoric acid, sorbic acid (a preservative), natural ribeye flavor, natural smoke flavor, calcium propionate (a preservative), carmine, malted barley flour.",
+  "proteinMin": 15,
+  "fatMin": 3.5,
+  "fiberMax": 3.5,
+  "moistureMax": 27,
+  "calories": {
+   "kcalPerKg": 2898,
+   "kcalPerUnit": 33.6,
+   "unit": "piece"
+  },
+  "line": "beggin-strips-dog",
+  "flavor": "Ribeye",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "6 oz",
+    "lb": 0.38
+   },
+   {
+    "label": "25 oz",
+    "lb": 1.56
+   }
+  ]
+ },
+ {
+  "brand": "Beggin'",
+  "name": "Strips Fun Size Original with Bacon",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/treats/soft-and-chewy-treats/purina-beggin-strips-fun-size-small-breed-adult-dog-treats---original-with-bacon-flavor-3678.html",
+  "ingredientsText": "Pork, Barley, Rice, Ground Wheat, Soybean Meal, Oat Meal, Sugar, Ground Yellow Corn, Corn Protein Meal, Wheat Flour, Glycerin, Water, Soy Flour, Bacon, Soy Protein Concentrate, Wheat Gluten, Salt, Bacon Fat (Preserved With BHA And Citric Acid), Natural Flavor, Phosphoric Acid, Sorbic Acid (A Preservative), Natural Smoke Flavor, Calcium Propionate (A Preservative), Added Color, Malted Barley Flour.",
+  "proteinMin": 15,
+  "fatMin": 3.5,
+  "fiberMax": 3.5,
+  "moistureMax": 27,
+  "calories": {
+   "kcalPerKg": 2905,
+   "kcalPerUnit": 7,
+   "unit": "piece"
+  },
+  "line": "beggin-strips-dog",
+  "flavor": "Bacon",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "6 oz",
+    "lb": 0.38
+   },
+   {
+    "label": "25 oz",
+    "lb": 1.56
+   }
+  ]
+ },
+ {
+  "brand": "Beggin'",
+  "name": "Flavor Stix Peanut Butter & Bacon",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/treats/soft-and-chewy-treats/purina-beggin-flavor-stix-all-life-stages-dog-treats---peanut-butter-and-bacon-84352.html",
+  "ingredientsText": "Pork, Barley, Rice, Ground Wheat, Soybean Meal, Oat Meal, Glycerin, Sugar, Ground Yellow Corn, Corn Protein Meal, Water, Wheat Flour, Soy Flour, Bacon, Soy Protein Concentrate, Wheat Gluten, Salt, Bacon Fat (Preserved With Bha And Citric Acid), Natural Flavor, Phosphoric Acid, Sorbic Acid (a Preservative), Natural Peanut Flavor, Calcium Propionate (a Preservative), Added Color, Malted Barley Flour, Bha (a Preservative).",
+  "proteinMin": 15,
+  "fatMin": 3.5,
+  "fiberMax": 3.5,
+  "moistureMax": 27,
+  "calories": {
+   "kcalPerKg": 2965,
+   "kcalPerUnit": 43,
+   "unit": "piece"
+  },
+  "line": "beggin-flavor-stix-dog",
+  "flavor": "Peanut Butter & Bacon",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Busy Bone",
+  "name": "Original Large",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/treats/bones-bully-sticks-and-chews/purina-busy-bone-original-large-dog-long-lasting-chew-treats-84188.html",
+  "ingredientsText": "Rice, Glycerin, Wheat Flour, Water, Brewers Dried Yeast, Chicken By-Product Meal, Hydrogenated Corn Syrup, Sugar, Corn Germ Meal, Beef Tallow Naturally Preserved With Mixed-Tocopherols, Pork, Partially Hydrogenated Vegetable Oil, Wheat Gluten, Phosphoric Acid, Sorbic Acid (A Preservative), Salt, Gelatin, Calcium Propionate (A Preservative), Natural And Artificial Smoke Flavors, Iron Oxide Color, Bha (A Preservative), Bht (A Preservative), Calcium Carbonate, Citric Acid.",
+  "proteinMin": 6,
+  "fatMin": 2,
+  "fiberMax": 1.5,
+  "moistureMax": 16,
+  "calories": {
+   "kcalPerKg": 3198,
+   "kcalPerUnit": 336,
+   "unit": "piece"
+  },
+  "line": "busy-bone-dog",
+  "flavor": "Original",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "7 oz",
+    "lb": 0.44
+   },
+   {
+    "label": "35 oz",
+    "lb": 2.19
+   }
+  ]
+ },
+ {
+  "brand": "Busy Bone",
+  "name": "Peanut Butter Flavor Large",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/treats/bones-bully-sticks-and-chews/purina-busy-bone-large-dog-long-lasting-chew-peanut-butter-flavor-64588.html",
+  "ingredientsText": "Rice, Glycerin, Water, Wheat Flour, Dried Yeast, Wheat Gluten, Hydrogenated Corn Syrup, Sugar, Corn Germ Meal, Gelatin, Animal Fat Preserved With Mixed-Tocopherols, Pork, Sodium Caseinate, Hydrogenated Vegetable Oil, Phosphoric Acid, Salt, Natural Peanut Flavor, Sorbic Acid (A Preservative), Calcium Propionate (A Preservative), BHA (A Preservative), BHT (A Preservative), Calcium Carbonate, Citric Acid.",
+  "proteinMin": 6,
+  "fatMin": 2,
+  "fiberMax": 1.5,
+  "moistureMax": 16,
+  "calories": {
+   "kcalPerKg": 3293,
+   "kcalPerUnit": 346,
+   "unit": "piece"
+  },
+  "line": "busy-bone-dog",
+  "flavor": "Peanut Butter",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "7 oz",
+    "lb": 0.44
+   },
+   {
+    "label": "35 oz",
+    "lb": 2.19
+   }
+  ]
+ },
+ {
+  "brand": "Busy Bone",
+  "name": "Twist'd with Beggin' Bacon Large",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/treats/bones-bully-sticks-and-chews/purina-busy-twistd-with-beggin-large-dog-chew-treats---bacon-76093.html",
+  "ingredientsText": "Rice, Glycerin, Wheat Flour, Water, Hydrogenated Corn Syrup, Dried Yeast, Wheat Gluten, Sugar, Gelatin, Bacon, Corn Germ Meal, Sodium Caseinate, Animal Fat Preserved With Mixed-Tocopherols, Phosphoric Acid, Salt, Sorbic Acid (A Preservative), Calcium Propionate (A Preservative), Natural Smoke Flavor, Red 40, BHA (A Preservative), Soybean Oil, Blue 1, Yellow 5, Yellow 6, BHT (A Preservative), Calcium Carbonate, Citric Acid.",
+  "proteinMin": 7,
+  "fatMin": 2,
+  "fiberMax": 2,
+  "moistureMax": 16,
+  "calories": {
+   "kcalPerKg": 3198,
+   "kcalPerUnit": 160,
+   "unit": "piece"
+  },
+  "line": "busy-bone-dog",
+  "flavor": "Bacon",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "7 oz",
+    "lb": 0.44
+   },
+   {
+    "label": "36 oz",
+    "lb": 2.25
+   }
+  ]
+ },
+ {
+  "brand": "Friskies",
+  "name": "Party Mix Chicken Lovers Crunch",
+  "species": "cat",
+  "form": "treat",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/treats/purina-friskies-party-mix-all-life-stages-cat-treats---chicken-lovers-crunch-with-vitamins-34786.html",
+  "ingredientsText": "Chicken, Chicken Meal, Brewers Rice, Chicken By-Product Meal, Animal Fat Preserved With Mixed-Tocopherols, Corn Protein Meal, Pea Starch, Barley, Liver Flavor, Natural And Artificial Flavors, Cassava Root Flour, Brewers Dried Yeast, Phosphoric Acid, Calcium Carbonate, Potassium Chloride, Choline Chloride, Salt, VITAMINS [Vitamin E Supplement, Niacin, Vitamin A Supplement, Calcium Pantothenate, Thiamine Mononitrate, Riboflavin Supplement, Vitamin B-12 Supplement, Pyridoxine Hydrochloride, Folic Acid, Vitamin D-3 Supplement, Biotin, Menadione Sodium Bisulfite Complex], Taurine, L-Ascorbyl-2-Polyphosphate, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], Yellow 5, Citric Acid, Yellow 6, Red 40, Blue 2, Bha (A Preservative), Bht (A Preservative).",
+  "proteinMin": 29,
+  "fatMin": 15,
+  "fiberMax": 4,
+  "moistureMax": 8,
+  "calories": {
+   "kcalPerKg": 4098,
+   "kcalPerUnit": 1.3,
+   "unit": "piece"
+  },
+  "line": "friskies-party-mix-cat",
+  "flavor": "Chicken Lovers",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Friskies",
+  "name": "Party Mix Beachside Crunch",
+  "species": "cat",
+  "form": "treat",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/cat/food-and-treats/treats/purina-friskies-party-mix-all-life-stages-cat-treats---beachside-crunch-with-vitamins-34791.html",
+  "ingredientsText": "Ocean Whitefish, Chicken Meal, Brewers Rice, Chicken By-Product Meal, Animal Fat Preserved With Mixed-Tocopherols, Pea Starch, Barley, Corn Protein Meal, Liver Flavor, Natural And Artificial Flavors, Cassava Root Flour, Phosphoric Acid, Calcium Carbonate, Potassium Chloride, Brewers Dried Yeast, Shrimp Meal, Crab Meal, Tuna Meal, Choline Chloride, Salt, Taurine, L-Ascorbyl-2-Polyphosphate, MINERALS [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Calcium Iodate, Sodium Selenite], VITAMINS [Vitamin E Supplement, Niacin, Vitamin A Supplement, Calcium Pantothenate, Thiamine Mononitrate, Riboflavin Supplement, Vitamin B-12 Supplement, Pyridoxine Hydrochloride, Folic Acid, Vitamin D-3 Supplement, Biotin, Menadione Sodium Bisulfite Complex], Yellow 5, Citric Acid, Yellow 6, Red 40, Blue 2, Bha (A Preservative), Bht (A Preservative).",
+  "proteinMin": 29,
+  "fatMin": 15,
+  "fiberMax": 4,
+  "moistureMax": 8,
+  "calories": {
+   "kcalPerKg": 4011,
+   "kcalPerUnit": 1.3,
+   "unit": "piece"
+  },
+  "line": "friskies-party-mix-cat",
+  "flavor": "Beachside",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Pup-Peroni",
+  "name": "Original Bacon Flavor",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.pupperoni.com/soft-dog-treats/original-bacon",
+  "ingredientsText": "Beef, Soy Grits, Beef Lung, Beef Liver, Sugar, Bacon, Vegetable Glycerin, Salt, Propylene Glycol, Potassium Sorbate (Used As A Preservative), Added Color, Natural Smoke Flavor, Citric Acid (Used As A Preservative), Bha (Used As A Preservative).",
+  "proteinMin": 24,
+  "fatMin": 8,
+  "fiberMax": 2,
+  "moistureMax": 24,
+  "calories": {
+   "kcalPerKg": 3103,
+   "kcalPerUnit": 28,
+   "unit": "piece"
+  },
+  "line": "pup-peroni-dog",
+  "flavor": "Bacon",
+  "formula": "Adult"
+ },
+ {
+  "brand": "Pup-Peroni",
+  "name": "Lean Beef Flavor",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.pupperoni.com/soft-dog-treats/lean-beef",
+  "ingredientsText": "Beef Lung, Soy Grits, Beef Liver, Sugar, Beef, Vegetable Glycerin, Salt, Propylene Glycol, Calcium Sulfate, Potassium Sorbate (Used As A Preservative), Added Color, Natural Smoke Flavor, Citric Acid (Used As A Preservative), Bha (Used As A Preservative)",
+  "proteinMin": 24,
+  "fatMin": 5,
+  "fiberMax": 2,
+  "moistureMax": 19.5,
+  "calories": {
+   "kcalPerKg": 2954,
+   "kcalPerUnit": 27,
+   "unit": "piece"
+  },
+  "line": "pup-peroni-dog",
+  "flavor": "Lean Beef",
+  "formula": "Adult"
+ }
+]

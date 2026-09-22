@@ -122,6 +122,17 @@ export function verdict(a: { name: string; result: ScoreResult }, b: { name: str
   return `${win.name} wins by ${Math.abs(d)} ${Math.abs(d) === 1 ? 'point' : 'points'}.${why.startsWith('Scores') ? '' : ` ${why}.`}`
 }
 
+// The Formula and Flavor pickers: the exact combination when the line has it, else the best scoring member that keeps
+// what was just tapped. `current` fills in the side that was not tapped.
+export function pickVariant(members: CatalogProduct[], want: { formula?: string; flavor?: string }, current: CatalogProduct): CatalogProduct {
+  const formula = want.formula ?? current.formula
+  const flavor = want.flavor ?? current.flavor
+  const exact = members.find((p) => p.formula === formula && p.flavor === flavor)
+  if (exact) return exact
+  const kept = members.filter((p) => (want.formula != null ? p.formula === want.formula : p.flavor === want.flavor))
+  return [...(kept.length ? kept : members)].sort((a, b) => b.result.score - a.result.score)[0] ?? current
+}
+
 // "Is it one of these?": catalog products that look like a scanned food, for linking it to an exact listing.
 // ponytail: shared word count on brand and name. Ceiling: a scan with no brand or name read gets no suggestions.
 const WORD_NOISE = new Set(['dog', 'dogs', 'cat', 'cats', 'food', 'dry', 'wet', 'recipe', 'formula', 'with', 'and', 'the', 'for', 'adult', 'real', 'natural'])

@@ -1,125 +1,219 @@
 // "Is this right for THIS pet": the fit verdict and the feeding guide, shown under the score of a scan or a catalog product.
-// All the rules live in lib/fit.ts. Nothing here changes a score.
-import type { ReactNode } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Bone, CheckCircle, Drop, Fire, Scales, Warning, XCircle } from 'phosphor-react-native'
+// All the rules live in lib/fit.ts. Nothing here changes a score. Pictures carry the numbers; a tap opens the full sentence.
+import { Image } from 'expo-image'
+import { useState, type ReactNode } from 'react'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { CaretDown, CheckCircle, Drop, Info, Lightbulb, PawPrint, Warning, XCircle } from 'phosphor-react-native'
 import { severityColor } from '@/components/FlagRow'
-import { ActionRow, Card, TextLink } from '@/components/ui'
-import { dailyKcal, feeding, fitFor, fraction, isLargeBreedPuppy, type Tone } from '@/lib/fit'
+import { PetHead } from '@/components/PetHead'
+import { ActionRow, Card, PillButton, TextLink } from '@/components/ui'
+import { dailyKcal, feeding, fitFor, fraction, isLargeBreedPuppy, type Feeding, type Tone } from '@/lib/fit'
+import { tap } from '@/lib/haptics'
 import type { LabelData, Pet } from '@/lib/types'
-import { color, radius, type } from '@/theme'
+import { color, font, radius, type } from '@/theme'
 
 const TONE: Record<Tone, string> = { good: color.green, caution: severityColor.caution, bad: color.bad, info: color.ink3 }
-const VERDICT = { good: CheckCircle, caution: Warning, bad: XCircle } as const
+const MARK = { good: CheckCircle, caution: Warning, bad: XCircle, info: Info } as const
+const VERDICT = { good: 'Good fit', caution: 'Check first', bad: 'Not a fit' } as const
 
-const num = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+const ART = {
+  bowl: require('../../assets/icons/food-bowl.png'),
+  catBowl: require('../../assets/icons/cat-bowl.png'),
+  water: require('../../assets/icons/water-bowl.png'),
+  cup: require('../../assets/icons/measuring-cup.png'),
+  can: require('../../assets/icons/wet-food-can.png'),
+  treat: require('../../assets/icons/treat.png'),
+  bag: require('../../assets/icons/food-bag.png'),
+  cake: require('../../assets/icons/birthday-cake.png'),
+  scale: require('../../assets/icons/scale.png'),
+  shield: require('../../assets/icons/shield.png'),
+  sun: require('../../assets/icons/sun.png'),
+  moon: require('../../assets/icons/moon.png'),
+} as const
+export type ArtName = keyof typeof ART
+export const Art = ({ name, size, faded }: { name: ArtName; size: number; faded?: boolean }) => (
+  <Image source={ART[name]} style={{ width: size, height: size, opacity: faded ? 0.35 : 1 }} contentFit="contain" accessibilityIgnoresInvertColors />
+)
+const LINE_ART: Record<string, ArtName> = { Age: 'cake', Size: 'scale', Allergies: 'shield' }
+
+export const num = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 const count = (n: number, word: string) => `${fraction(n)} ${n > 1 ? word + (/(s|x|ch|sh)$/.test(word) ? 'es' : 's') : word}`
 // "About Boxers" reads well, "About Poodle (Standard)s" does not.
 const aboutBreed = (breed: string) => (/[)sx]$|ese$/i.test(breed) ? `About the ${breed}` : `About ${breed}s`)
+// Tile sized: "9 months, puppy" reads "9 mo, puppy", "72 lb, giant breed" reads "72 lb, giant".
+const short = (v: string) => v.replace(/ months?\b/, ' mo').replace(/ years\b/, ' yr').replace(/ breed\b/, '')
 
 export const treatAllowance = (pet: Pet) => {
   const kcal = dailyKcal(pet)
   return kcal ? `Up to ${num(Math.round(kcal * 0.1))} calories a day` : undefined
 }
 
+// A small pill that opens its full sentence underneath.
+function Tip({ icon, label, text }: { icon: ReactNode; label: string; text: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <View style={{ gap: 6 }}>
+      <Pressable onPress={() => { tap('select'); setOpen((o) => !o) }} style={({ pressed }) => [s.tip, pressed && { opacity: 0.6 }]} accessibilityRole="button" accessibilityState={{ expanded: open }} accessibilityLabel={open ? label : `${label}. ${text}`}>
+        {icon}
+        <Text style={type.label}>{label}</Text>
+        <View style={open && { transform: [{ rotate: '180deg' }] }}><CaretDown size={14} weight="bold" color={color.ink2} /></View>
+      </Pressable>
+      {open ? <Text style={[type.caption, { color: color.ink }]}>{text}</Text> : null}
+    </View>
+  )
+}
+
 export function FitCard({ pet, label, claim, onEdit }: { pet: Pet; label: LabelData; claim?: LabelData['lifeStageClaim']; onEdit: () => void }) {
   const fit = fitFor(pet, label, claim)
-  const Icon = VERDICT[fit.verdict]
+  const [open, setOpen] = useState<string>()
   const breed = pet.breed?.trim()
+  const note = fit.lines.find((l) => l.label === open)?.note
   return (
     <Card style={s.card}>
-      <View style={s.head}>
-        <Icon size={30} weight="fill" color={TONE[fit.verdict]} />
-        <Text style={[type.h2, s.flex]}>{fit.headline}</Text>
+      <View style={s.head} accessible accessibilityLabel={fit.headline}>
+        <View style={s.headPet}><PetHead pet={pet} size={48} /></View>
+        <View style={[s.badge, { backgroundColor: TONE[fit.verdict] }]}>
+          <Text style={[type.h2, { color: fit.verdict === 'caution' ? color.ink : color.surface }]}>{label.isTreat && fit.verdict === 'good' ? 'Fine as a treat' : VERDICT[fit.verdict]}</Text>
+        </View>
       </View>
-      {fit.lines.map((l) => (
-        <View key={l.label} style={s.line}>
-          <View style={s.lineLabel}>
-            <View style={[s.dot, { backgroundColor: TONE[l.tone] }]} />
-            <Text style={type.caption}>{l.label}</Text>
-          </View>
-          <View style={s.flex}>
-            <Text style={type.title}>{l.value}</Text>
-            <Text style={type.caption}>{l.note}</Text>
-          </View>
-        </View>
-      ))}
-      {fit.breedNote ? (
-        <View style={s.info}>
-          {breed && breed.toLowerCase() !== 'mixed breed' ? <Text style={type.label}>{aboutBreed(breed)}</Text> : null}
-          <Text style={[type.caption, { color: color.ink }]}>{fit.breedNote}</Text>
-        </View>
-      ) : null}
+      <View style={s.tiles}>
+        {fit.lines.map((l) => {
+          const Mark = MARK[l.tone]
+          const on = open === l.label
+          return (
+            <Pressable key={l.label} onPress={() => { tap('select'); setOpen(on ? undefined : l.label) }} style={({ pressed }) => [s.tile, on && s.tileOn, pressed && { opacity: 0.7 }]} accessibilityRole="button" accessibilityState={{ expanded: on }} accessibilityLabel={`${l.label}: ${l.value}. ${l.note}`}>
+              <View>
+                <Art name={LINE_ART[l.label] ?? 'shield'} size={40} />
+                <View style={s.mark}><Mark size={18} weight="fill" color={TONE[l.tone]} /></View>
+              </View>
+              <Text style={s.value} numberOfLines={2}>{short(l.value)}</Text>
+              <Text style={s.tiny}>{l.label}</Text>
+            </Pressable>
+          )
+        })}
+      </View>
+      {note ? <Text style={[type.caption, { color: color.ink }]}>{note}</Text> : null}
+      {fit.breedNote ? <Tip icon={<PawPrint size={16} weight="fill" color={color.ink} />} label={breed && breed.toLowerCase() !== 'mixed breed' ? aboutBreed(breed) : 'Breed tip'} text={fit.breedNote} /> : null}
       {!pet.bornAt && !pet.weightLb ? <View style={s.nudge}><TextLink label={`Add ${pet.name}'s age and weight for a sharper answer`} onPress={onEdit} /></View> : null}
     </Card>
   )
 }
 
-function Row({ icon, children }: { icon: ReactNode; children: string }) {
-  return <View style={s.row}>{icon}<Text style={[type.label, s.flex]}>{children}</Text></View>
+// What goes above each bowl: the per meal amount the label lets us measure (cups, then grams, then cans), and the day's total.
+// Both undefined until the label gave calories.
+export function portion(plan: Feeding): { each?: string; total?: string } {
+  const per = (n: number) => Math.round((n / plan.meals) * 4) / 4 // a quarter cup is the smallest honest measure
+  const unit = plan.unit || 'serving'
+  // The day's total is what actually goes in the bowls, so the numbers always add up (2 bowls of 2 1/2 is 5, not 4 3/4).
+  const day = (n: number) => (per(n) ? per(n) * plan.meals : n)
+  if (plan.cups) return { each: per(plan.cups) ? count(per(plan.cups), 'cup') : 'Under 1/4 cup', total: `${count(day(plan.cups), 'cup')} a day` }
+  if (plan.grams) return { each: `${num(Math.round(plan.grams / plan.meals))} g`, total: `${num(Math.round(plan.grams / plan.meals) * plan.meals)} g a day` }
+  if (plan.units) return { each: per(plan.units) ? count(per(plan.units), unit) : `Under 1/4 ${unit}`, total: `${count(day(plan.units), unit)} a day` }
+  return {}
 }
 
-// The portion in one line, for the daily plan on Home: "2 meals of 2 1/2 cups". Undefined until the label gave calories.
-export function portionLine(pet: Pet, label: LabelData): string | undefined {
-  const plan = label.isTreat ? undefined : feeding(pet, label)
-  if (!plan) return undefined
-  const meals = `${plan.meals} ${plan.meals === 1 ? 'meal' : 'meals'}`
-  const each = (n: number) => Math.round((n / plan.meals) * 4) / 4
-  if (plan.cups) return each(plan.cups) ? `${meals} of ${count(each(plan.cups), 'cup')}` : `${count(plan.cups, 'cup')} a day`
-  if (plan.grams) return `${meals} of ${num(Math.round(plan.grams / plan.meals))} g`
-  if (plan.units) return each(plan.units) ? `${meals} of ${count(each(plan.units), plan.unit || 'serving')}` : undefined
-  return undefined
+const MEALS: Record<number, string[]> = { 1: ['Daily'], 2: ['Morning', 'Evening'], 3: ['Morning', 'Midday', 'Evening'], 4: ['Morning', 'Midday', 'Afternoon', 'Evening'] }
+
+// One bowl per meal, the portion above it and sun or moon under it. "?" when the portion is not known yet.
+export function Bowls({ meals, each, cat, can, mini }: { meals: number; each?: string; cat?: boolean; can?: boolean; mini?: boolean }) {
+  const words = MEALS[meals] ?? Array.from({ length: meals }, (_, i) => (i === meals - 1 ? 'Evening' : i ? 'Midday' : 'Morning'))
+  const size = (mini ? 40 : 64) * (meals > 3 ? 0.75 : 1)
+  return (
+    <View style={s.bowls}>
+      {words.map((w, i) => (
+        <View key={i} style={s.bowl} accessible accessibilityLabel={`${w}: ${each ?? 'amount not known yet'}`}>
+          <Text style={[mini ? type.label : type.title, s.bold, !each && { color: color.ink3 }]} numberOfLines={1} adjustsFontSizeToFit>{each ?? '?'}</Text>
+          <Art name={can ? 'can' : cat ? 'catBowl' : 'bowl'} size={size} faded={!each} />
+          <View style={s.when}><Art name={i === words.length - 1 && words.length > 1 ? 'moon' : 'sun'} size={12} /><Text style={s.tiny}>{w}</Text></View>
+        </View>
+      ))}
+    </View>
+  )
 }
 
-export function FeedingCard({ pet, label, onEdit }: { pet: Pet; label: LabelData; onEdit: () => void }) {
+export function Tile({ art, value, word, faded, mini }: { art: ArtName; value: string; word: string; faded?: boolean; mini?: boolean }) {
+  return (
+    <View style={[s.tile, mini && s.tileMini]} accessible accessibilityLabel={`${word}: ${value}`}>
+      <Art name={art} size={mini ? 28 : 36} faded={faded} />
+      <Text style={[mini ? s.valueMini : s.value, faded && { color: color.ink3 }]} numberOfLines={1} adjustsFontSizeToFit>{value}</Text>
+      <Text style={s.tiny}>{word}</Text>
+    </View>
+  )
+}
+
+// `onAddCalories` opens the food editor; without one (a catalog product) the card only says the calories are missing.
+export function FeedingCard({ pet, label, onEdit, onAddCalories }: { pet: Pet; label: LabelData; onEdit: () => void; onAddCalories?: () => void }) {
   const plan = feeding(pet, label)
-  if (!plan) return <Card style={s.ask}><ActionRow last label={`Add ${pet.name}'s weight to see how much to feed`} icon={<Scales size={22} weight="bold" color={color.ink} />} onPress={onEdit} /></Card>
+  if (!plan) return <Card style={s.ask}><ActionRow last label={`Add ${pet.name}'s weight to see how much to feed`} icon={<Art name="scale" size={32} />} onPress={onEdit} /></Card>
 
-  const meals = `${plan.meals} ${plan.meals === 1 ? 'meal' : 'meals'}`
-  const perMeal = (n: number) => Math.round((n / plan.meals) * 4) / 4
-  const split = (n: number, word: string) => (perMeal(n) ? `${meals} of ${count(perMeal(n), word)}` : `Split over ${meals}`) // a quarter cup is the smallest honest measure
-  const kcalLine = `About ${num(plan.kcal)} calories a day`
-  // [the big line, the line under it]. A food leads with whatever the label lets us measure: cups, then grams, then cans.
-  const [big, sub] = label.isTreat
-    ? plan.treatsPerDay ? [`Up to ${plan.treatsPerDay} a day`, `That is about ${num(plan.treatKcal)} calories, a tenth of the day`] : [`Up to ${num(plan.treatKcal)} calories of treats a day`, 'Snap the calorie line on the bag to see how many that is']
-    : plan.cups ? [`${count(plan.cups, 'cup')} a day`, split(plan.cups, 'cup')]
-    : plan.grams ? [`${num(plan.grams)} g a day`, `${meals} of ${num(Math.round(plan.grams / plan.meals))} g`]
-    : plan.units ? [`${count(plan.units, plan.unit || 'serving')} a day`, split(plan.units, plan.unit || 'serving')]
-    : [kcalLine, 'Snap the calorie line on the bag to get cups per meal']
-  const measured = Boolean(label.isTreat ? plan.treatsPerDay : plan.cups || plan.grams || plan.units)
+  const head = (right?: string) => (
+    <View style={s.feedHead}>
+      <Text style={[type.label, { color: color.ink2, flex: 1 }]}>Feeding {pet.name}</Text>
+      {right ? <Text style={[type.label, s.bold]}>{right}</Text> : null}
+    </View>
+  )
+  const fix = onAddCalories
+    ? <PillButton label={label.isTreat ? 'Add calories to see how many' : 'Add calories to see cups'} onPress={onAddCalories} />
+    : <Text style={[type.caption, { textAlign: 'center' }]}>Calories not listed for this food yet</Text>
+  const fine = <Text style={s.fine}>A starting point. Your vet knows your pet best.</Text>
 
+  if (label.isTreat)
+    return (
+      <Card style={s.card}>
+        {head()}
+        <View style={s.treat}>
+          <Art name="treat" size={64} faded={!plan.treatsPerDay} />
+          <View style={{ flex: 1 }}>
+            <Text style={[type.h1, !plan.treatsPerDay && { color: color.ink3 }]}>{`Up to ${plan.treatsPerDay ?? '?'} a day`}</Text>
+            <Text style={type.caption}>{`About ${num(plan.treatKcal)} cal, a tenth of the day`}</Text>
+          </View>
+        </View>
+        {plan.treatsPerDay ? null : fix}
+        {fine}
+      </Card>
+    )
+
+  const { each, total } = portion(plan)
+  const tips: [ReactNode, string, string][] = []
+  if (isLargeBreedPuppy(pet)) tips.push([<Lightbulb key="i" size={16} weight="fill" color={color.ink} />, 'Keep puppy lean', 'Keep big puppies lean. Slow, steady growth protects their joints.'])
+  if (label.foodForm === 'wet') tips.push([<Drop key="i" size={16} weight="fill" color={color.ink} />, 'Wet food counts', 'Wet food covers part of the water.'])
   return (
     <Card style={s.card}>
-      <View>
-        <Text style={[type.label, { color: color.ink2 }]}>Feeding {pet.name}</Text>
-        <Text style={measured ? type.h1 : type.h2}>{big}</Text>
-        <Text style={[type.body, { color: color.ink2 }]}>{sub}</Text>
+      {head(total)}
+      <Bowls meals={plan.meals} each={each} cat={pet.species === 'cat'} can={!plan.cups && !plan.grams && /can/i.test(plan.unit ?? '')} />
+      {each ? null : fix}
+      <View style={s.tiles}>
+        <Tile art="water" value={`${plan.waterOz} oz`} word="water" />
+        <Tile art="treat" value={`${num(plan.treatKcal)} cal`} word="treats" />
+        <Tile art="cup" value={`${num(plan.kcal)} cal`} word="a day" />
       </View>
-      <View style={s.rows}>
-        {big === kcalLine ? null : <Row icon={<Fire size={18} weight="bold" color={color.ink2} />}>{kcalLine}</Row>}
-        {label.isTreat ? null : (
-          <>
-            <Row icon={<Drop size={18} weight="bold" color={color.ink2} />}>{`Water: about ${plan.waterOz} oz a day${label.foodForm === 'wet' ? '. Wet food covers part of this' : ''}`}</Row>
-            <Row icon={<Bone size={18} weight="bold" color={color.ink2} />}>{`Treats: up to ${num(plan.treatKcal)} calories a day`}</Row>
-          </>
-        )}
-      </View>
-      {!label.isTreat && isLargeBreedPuppy(pet) ? <View style={s.info}><Text style={[type.caption, { color: color.ink }]}>Keep big puppies lean. Slow, steady growth protects their joints.</Text></View> : null}
-      <Text style={type.caption}>A starting point. Your vet knows your pet best.</Text>
+      {tips.map(([icon, l, text]) => <Tip key={l} icon={icon} label={l} text={text} />)}
+      {fine}
     </Card>
   )
 }
 
 const s = StyleSheet.create({
-  flex: { flex: 1 },
   card: { gap: 14, marginBottom: 12 },
   ask: { paddingVertical: 0, marginBottom: 12 },
-  head: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  line: { flexDirection: 'row', gap: 8, paddingTop: 14, borderTopWidth: 1, borderTopColor: color.hairline },
-  lineLabel: { width: 84, flexDirection: 'row', alignItems: 'center', gap: 8, height: 22 },
-  dot: { width: 8, height: 8, borderRadius: 4 },
-  info: { backgroundColor: color.yellowSoft, borderRadius: radius.chip, padding: 12, gap: 2 },
+  head: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  headPet: { width: 56, height: 56, borderRadius: 28, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  badge: { borderRadius: radius.pill, paddingHorizontal: 18, paddingVertical: 8 },
+  tiles: { flexDirection: 'row', gap: 8 },
+  tile: { flex: 1, alignItems: 'center', gap: 2, paddingVertical: 10, paddingHorizontal: 6, borderRadius: radius.chip, backgroundColor: color.bg, borderWidth: 1.5, borderColor: color.bg },
+  tileOn: { borderColor: color.ink },
+  tileMini: { paddingVertical: 8 },
+  mark: { position: 'absolute', right: -8, bottom: -2, backgroundColor: color.surface, borderRadius: 10 },
+  value: { ...type.label, fontFamily: font.textBold, textAlign: 'center', marginTop: 4 },
+  valueMini: { ...type.caption, fontFamily: font.textBold, color: color.ink, textAlign: 'center' },
+  tiny: { ...type.caption, fontSize: 11, lineHeight: 14 },
+  bold: { fontFamily: font.textBold, textAlign: 'center' },
   nudge: { alignItems: 'flex-start' },
-  rows: { gap: 10, paddingTop: 14, borderTopWidth: 1, borderTopColor: color.hairline },
-  row: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  tip: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: color.yellowSoft },
+  feedHead: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  bowls: { flexDirection: 'row', justifyContent: 'space-around', gap: 4 },
+  bowl: { flex: 1, alignItems: 'center', gap: 2 },
+  when: { flexDirection: 'row', alignItems: 'center', gap: 3 },
+  treat: { flexDirection: 'row', alignItems: 'center', gap: 16 },
+  fine: { ...type.caption, fontSize: 11, lineHeight: 14, color: color.ink3 },
 })

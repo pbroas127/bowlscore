@@ -89,6 +89,8 @@ export interface CatalogProduct {
   links: { amazon: string; chewy?: string }
   sizes?: BagSize[] // what it sells in, small to large, each with its own shop link
   line?: string // shared by the flavors and life stage versions of one product line
+  formula?: string // within a line: Adult, Puppy, Large Breed Puppy, Senior
+  flavor?: string // within a line: Chicken, Lamb and Rice
 }
 
 export interface BagSize { label: string; lb: number; url: string }

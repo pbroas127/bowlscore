@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // Run with: node --experimental-strip-types src/lib/catalog.test.ts
 import assert from 'node:assert/strict'
-import { allergyHits, formOf, proteinOf, recommend, topRated, verdict, whyBetter, closestProducts } from './recommend.ts'
+import { allergyHits, formOf, pickVariant, proteinOf, recommend, topRated, verdict, whyBetter, closestProducts } from './recommend.ts'
 import { SAMPLE_CATALOG, SAMPLE_GOOD, SAMPLE_POOR } from './sample.ts'
 import { bornAtFor } from './fit.ts'
 import type { CatalogProduct, Flag, Pet } from './types.ts'
@@ -82,13 +82,26 @@ assert.deepEqual(ids(recommend([...catalog, make('chick88', 88, {}, ['Chicken me
 assert.deepEqual(ids(recommend([...catalog, make('chick88', 88, {}, ['Chicken meal', 'Rice'])], { species: 'dog', stage: 'adult', form: 'dry', currentScore: 10, pet: { ...rex, protein: undefined } })), ['chicken99', 'adult91', 'b90cheap', 'a90', 'chick88', 'c80'])
 
 // The preview fixture is a valid catalog with no hyphens or dashes in anything a person reads, and shows both protein tags.
-assert.equal(SAMPLE_CATALOG.products.length, 5)
+assert.equal(SAMPLE_CATALOG.products.length, 8)
 for (const p of SAMPLE_CATALOG.products) assert.ok(!/[-\u2013\u2014]/.test(`${p.brand} ${p.name} ${whyBetter(p)}`), p.id)
 assert.equal(proteinOf(SAMPLE_CATALOG.products[0].label.ingredients), 'Chicken')
 const sample = (id: string) => SAMPLE_CATALOG.products.find((p) => p.id === id)!
 assert.equal(proteinOf(sample('sample-dog-wet').label.ingredients), 'Turkey')
 assert.equal(proteinOf(sample('sample-dog-puppy').label.ingredients), 'Lamb')
-assert.equal(sample('sample-dog-puppy').line, sample('sample-dog-dry').line) // the preview shows the Version picker
+assert.equal(sample('sample-dog-puppy').line, sample('sample-dog-dry').line) // the preview shows the Formula and Flavor pickers
+const previewLine = SAMPLE_CATALOG.products.filter((p) => p.line === 'sample-premium-dog')
+assert.ok(new Set(previewLine.map((p) => p.formula)).size >= 2 && new Set(previewLine.map((p) => p.flavor)).size >= 2 && previewLine.every((p) => p.label.calories?.kcalPerCup))
+
+// Formula and Flavor: the exact combination, else the best scoring member that keeps what was tapped.
+const v = (id: string, formula: string, flavor: string, score: number) => make(id, score, { formula, flavor })
+const members = [v('adultChicken', 'Adult', 'Chicken', 80), v('adultLamb', 'Adult', 'Lamb', 82), v('pupChicken', 'Puppy', 'Chicken', 85), v('bigPupLamb', 'Large Breed Puppy', 'Lamb', 70), v('bigPupFish', 'Large Breed Puppy', 'Fish', 75)]
+const m = (id: string) => members.find((p) => p.id === id)!
+assert.equal(pickVariant(members, { formula: 'Puppy' }, m('adultChicken')).id, 'pupChicken') // keeps the flavor
+assert.equal(pickVariant(members, { formula: 'Large Breed Puppy' }, m('adultLamb')).id, 'bigPupLamb')
+assert.equal(pickVariant(members, { formula: 'Large Breed Puppy' }, m('adultChicken')).id, 'bigPupFish') // no chicken: best score in that formula
+assert.equal(pickVariant(members, { flavor: 'Lamb' }, m('pupChicken')).id, 'adultLamb') // no puppy lamb: best scoring lamb
+assert.equal(pickVariant(members, { flavor: 'Chicken' }, m('adultLamb')).id, 'adultChicken')
+assert.equal(pickVariant(members, { flavor: 'Beef' }, m('adultLamb')).id, 'pupChicken') // nothing matches: best of the line
 
 // Linking a scanned food to the catalog: brand must match, and the closest name wins.
 const pro = make('pro', 80, { brand: 'Purina Pro Plan', name: 'Complete Essentials Chicken and Rice' })

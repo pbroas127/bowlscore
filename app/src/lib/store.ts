@@ -4,6 +4,7 @@ import { useSyncExternalStore } from 'react'
 import { PREVIEW } from './config'
 import { PROTEINS } from './recommend'
 import { SAMPLE_PET } from './sample'
+import { suggestScan } from './suggest'
 import type { Pet, Recall, Scan } from './types'
 
 export interface Quiz {
@@ -102,5 +103,7 @@ export function finishQuiz() {
 
 export function saveScan(scan: Scan) {
   setState((s) => ({ scans: [scan, ...s.scans].slice(0, 200) }))
+  // Not in the catalog yet: offer it to the catalog (product data only, reviewed by hand before anything is published).
+  if (!scan.productId && scan.source !== 'sample') suggestScan(scan.label, state.pets.find((p) => p.id === scan.petId)?.species ?? 'unknown', scan.source)
 }
 export const updateScan = (id: string, patch: (x: Scan) => Scan) => setState((s) => ({ scans: s.scans.map((x) => (x.id === id ? patch(x) : x)) }))

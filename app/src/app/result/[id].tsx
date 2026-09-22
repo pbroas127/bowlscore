@@ -46,8 +46,9 @@ export default function Result() {
   const isTreat = Boolean(pet?.treatScanIds.includes(scan.id))
   const own = catalog?.products.find((p) => p.id === scan.productId)
   const picks = catalog ? recommend(catalog.products, { species: pet?.species ?? 'dog', stage: pet && stageFor(pet), form: formOf(label), allergies: pet?.allergies, currentScore: result.score, excludeId: scan.productId, pet }) : []
-  // What the label did not show, with a way to add it. Treats are not made for a life stage, so only their calories matter.
-  const missing = [!hasCalories(label) ? 'Calories' : '', !label.isTreat && (!label.lifeStageClaim || label.lifeStageClaim === 'unknown') ? 'life stage statement' : ''].filter(Boolean)
+  // What the label did not show, with a way to add it. Missing calories already get the big button in the feeding card,
+  // so this row is only for the life stage statement (treats are not made for a life stage).
+  const missing = [!label.isTreat && (!label.lifeStageClaim || label.lifeStageClaim === 'unknown') ? 'Life stage statement' : ''].filter(Boolean)
   const missingLine = missing.length ? `${missing[0][0].toUpperCase()}${missing.join(' and ').slice(1)} not found` : undefined
 
   const share = () => shareScoreCard(card, `${label.productName || `${name}'s food`} scored ${result.score} out of 100 on BowlScore. ${SITE.home}`)
@@ -79,7 +80,7 @@ export default function Result() {
 
         <FoodReport label={label} result={result} species={pet?.species ?? 'dog'} petName={name} allergies={pet?.allergies} show={ringDone} stagger top={pet ? <>
           <FitCard pet={pet} label={label} onEdit={() => setDraft(pet)} />
-          <FeedingCard pet={pet} label={label} onEdit={() => setDraft(pet)} />
+          <FeedingCard pet={pet} label={label} onEdit={() => setDraft(pet)} onAddCalories={() => setFood(label)} />
           {missingLine && scan.source !== 'sample' ? (
             <Card style={s.missing}>
               <Text style={[type.label, { color: color.ink2, flex: 1 }]}>{missingLine}</Text>

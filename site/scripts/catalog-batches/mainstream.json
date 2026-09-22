@@ -1,0 +1,1989 @@
+[
+ {
+  "brand": "Diamond Naturals",
+  "name": "Adult Dog Beef Meal & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/adult-dog-beef-meal-rice-formula/",
+  "ingredientsText": "Beef meal, grain sorghum, white rice, dried yeast, egg product, rice bran, cracked pearled barley, chicken fat (preserved with mixed tocopherols), dried plain beet pulp, natural flavor, flaxseed, potassium chloride, salt, DL-Methionine, choline chloride, taurine, dried chicory root, glucosamine hydrochloride, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, chondroitin sulfate, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 25,
+  "fatMin": 15,
+  "fiberMax": 3.5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3518,
+   "kcalPerCup": 399
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-dog",
+  "flavor": "Beef Meal & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Adult Dog Lamb Meal & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/adult-dog-lamb-meal-rice/",
+  "ingredientsText": "Lamb meal, white rice, cracked pearled barley, grain sorghum, egg product, dried yeast, rice bran, chicken fat (preserved with mixed tocopherols), oatmeal, dried plain beet pulp, natural flavor, flaxseed, potassium chloride, salt, DL-Methionine, choline chloride, taurine, dried chicory root, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, L-Carnitine, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 23,
+  "fatMin": 14,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3550,
+   "kcalPerCup": 403
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-dog",
+  "flavor": "Lamb Meal & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Large Breed Adult Dog Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/large-breed-adult-dog-chicken-rice/",
+  "ingredientsText": "Chicken, chicken meal, whole grain brown rice, cracked pearled barley, white rice, rice bran, grain sorghum, dried yeast, chicken fat (preserved with mixed tocopherols), egg product, dried plain beet pulp, natural flavor, flaxseed, potassium chloride, salt, DL-Methionine, choline chloride, taurine, glucosamine hydrochloride, dried chicory root, L-Carnitine, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, chondroitin sulfate, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 23,
+  "fatMin": 13,
+  "fiberMax": 3.5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3499,
+   "kcalPerCup": 397
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Large Breed Puppy Lamb & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/large-breed-puppy-lamb-rice/",
+  "ingredientsText": "Lamb, lamb meal, whole grain brown rice, cracked pearled barley, grain sorghum, dried yeast, egg product, chicken fat (preserved with mixed tocopherols), white rice, fish meal, dried tomato pomace, natural flavor, flaxseed, salmon oil (source of DHA), salt, DL-Methionine, potassium chloride, choline chloride, taurine, dried chicory root, L-Carnitine, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 27,
+  "fatMin": 15,
+  "fiberMax": 3.5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3650,
+   "kcalPerCup": 414
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "diamond-naturals-dog",
+  "flavor": "Lamb & Rice",
+  "formula": "Large Breed Puppy",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Small Breed Adult Dog Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/small-breed-adult-dog-chicken-rice/",
+  "ingredientsText": "Chicken, chicken meal, cracked pearled barley, white rice, grain sorghum, chicken fat (preserved with mixed tocopherols), egg product, dried plain beet pulp, natural flavor, flaxseed, potassium chloride, salt, choline chloride, dried chicory root, L-Carnitine, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 27,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3683,
+   "kcalPerCup": 418
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Senior Dog Chicken, Egg & Oatmeal Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/senior-dog-chicken-egg-oatmeal/",
+  "ingredientsText": "Chicken, chicken meal, whole grain brown rice, cracked pearled barley, white rice, egg product, oatmeal, rice bran, dried plain beet pulp, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, potassium chloride, DL-Methionine, choline chloride, taurine, glucosamine hydrochloride, dried chicory root, L-Carnitine, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, chondroitin sulfate, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 25,
+  "fatMin": 11,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3400,
+   "kcalPerCup": 347
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-dog",
+  "flavor": "Chicken, Egg & Oatmeal",
+  "formula": "Senior",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "35 lb",
+    "lb": 35
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Light Adult Dog Lamb Meal & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/light-adult-dog-lamb-meal-rice/",
+  "ingredientsText": "Lamb meal, whole grain brown rice, oatmeal, cracked pearled barley, white rice, grain sorghum, ground Miscanthus grass, millet, dried yeast, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, potassium chloride, DL-Methionine, choline chloride, taurine, glucosamine hydrochloride, dried chicory root, L-Carnitine, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, chondroitin sulfate, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 18,
+  "fatMin": 6,
+  "fiberMax": 8,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3035,
+   "kcalPerCup": 310
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-dog",
+  "flavor": "Lamb Meal & Rice",
+  "formula": "Healthy Weight",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Small & Medium Breed Puppy Chicken & Rice Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/small-medium-breed-puppy-chicken-rice/",
+  "ingredientsText": "Chicken, chicken meal, white rice, chicken fat (preserved with mixed tocopherols), cracked pearled barley, egg product, dried yeast, dried plain beet pulp, fish meal, ground Miscanthus grass, natural flavor, flaxseed, salmon oil (source of DHA), salt, potassium chloride, choline chloride, dried chicory root, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, beta carotene, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 32,
+  "fatMin": 22,
+  "fiberMax": 3.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3995,
+   "kcalPerCup": 453
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "diamond-naturals-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Small Breed Puppy",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Skin & Coat All Life Stages Dog Salmon & Potato Formula",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/dog/diamond-naturals/skin-coat-all-life-stages-dog-salmon-potato-formula/",
+  "ingredientsText": "Salmon, fish meal, potatoes, lentils, peas, pea flour, canola oil (preserved with mixed tocopherols), dried yeast, dried tomato pomace, natural flavor, flaxseed, salmon oil, dicalcium phosphate, salt, potassium chloride, DL-Methionine, choline chloride, taurine, dried chicory root, L-Carnitine, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, vitamin E supplement, iron proteinate, zinc proteinate, copper proteinate, ferrous sulfate, zinc sulfate, manganese sulfate, copper sulfate, potassium iodide, thiamine mononitrate, manganese proteinate, vitamin A supplement, biotin, niacin, calcium pantothenate, sodium selenite, pyridoxine hydrochloride, vitamin B12 supplement, riboflavin, vitamin D3 supplement, folic acid.",
+  "proteinMin": 25,
+  "fatMin": 14,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3600,
+   "kcalPerCup": 408
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "diamond-naturals-dog",
+  "flavor": "Salmon & Potato",
+  "formula": "Sensitive Skin & Stomach",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Indoor Cat Chicken & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/cat/diamond-naturals/indoor-cat-chicken-meal-rice-formula/",
+  "ingredientsText": "Chicken meal, chicken, white rice, cracked pearled barley, grain sorghum, ground Miscanthus grass, potato protein, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, sodium bisulfate, potassium chloride, DL-Methionine, choline chloride, taurine, dried chicory root, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, zinc proteinate, vitamin E supplement, niacin, manganese proteinate, copper proteinate, zinc sulfate, manganese sulfate, copper sulfate, thiamine mononitrate, vitamin A supplement, biotin, potassium iodide, calcium pantothenate, riboflavin, pyridoxine hydrochloride, vitamin B12 supplement, sodium selenite, vitamin D3 supplement, folic acid.",
+  "proteinMin": 32,
+  "fatMin": 14,
+  "fiberMax": 8,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3470,
+   "kcalPerCup": 394
+  },
+  "lifeStageClaim": "adult",
+  "line": "diamond-naturals-cat",
+  "flavor": "Chicken & Rice",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Kitten Chicken & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/cat/diamond-naturals/kitten-chicken-rice-formula/",
+  "ingredientsText": "Chicken, chicken meal, whole grain brown rice, chicken fat (preserved with mixed tocopherols), dried yeast, white rice, fish meal, salmon meal, egg product, natural flavor, flaxseed, salmon oil (source of DHA), DL-Methionine, potassium chloride, salt, choline chloride, taurine, dried chicory root, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, zinc proteinate, vitamin E supplement, niacin, manganese proteinate, copper proteinate, zinc sulfate, manganese sulfate, copper sulfate, thiamine mononitrate, vitamin A supplement, biotin, potassium iodide, calcium pantothenate, riboflavin, pyridoxine hydrochloride, vitamin B12 supplement, sodium selenite, vitamin D3 supplement, folic acid.",
+  "proteinMin": 34,
+  "fatMin": 22,
+  "fiberMax": 2,
+  "moistureMax": 10,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4052,
+   "kcalPerCup": 460
+  },
+  "lifeStageClaim": "all",
+  "line": "diamond-naturals-cat",
+  "flavor": "Chicken & Rice",
+  "formula": "Kitten",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   }
+  ]
+ },
+ {
+  "brand": "Diamond Naturals",
+  "name": "Active Cat Chicken Meal & Rice Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.diamondpet.com/cat/diamond-naturals/active-cat-chicken-meal-rice-formula/",
+  "ingredientsText": "Chicken meal, white rice, potato protein, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, ground Miscanthus grass, sodium bisulfate, salmon oil (source of DHA), potassium chloride, choline chloride, DL-Methionine, taurine, dried chicory root, kale, chia seed, pumpkin, blueberries, oranges, quinoa, dried kelp, coconut, spinach, carrots, papaya, yucca schidigera extract, dried Lactobacillus plantarum fermentation product, dried Bacillus subtilis fermentation product, dried Lactobacillus acidophilus fermentation product, dried Enterococcus faecium fermentation product, dried Bifidobacterium animalis fermentation product, zinc proteinate, vitamin E supplement, niacin, manganese proteinate, copper proteinate, zinc sulfate, manganese sulfate, copper sulfate, thiamine mononitrate, vitamin A supplement, biotin, potassium iodide, calcium pantothenate, riboflavin, pyridoxine hydrochloride, vitamin B12 supplement, sodium selenite, vitamin D3 supplement, folic acid.",
+  "proteinMin": 40,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3900,
+   "kcalPerCup": 442
+  },
+  "lifeStageClaim": "all",
+  "line": "diamond-naturals-cat",
+  "flavor": "Chicken Meal & Rice",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Pacific Stream Canine Recipe with Smoke-Flavored Salmon",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/pacific-stream-with-smoke-flavored-salmon",
+  "ingredientsText": "Salmon, Fish Meal, Sweet Potatoes, Peas, Pea Flour, Lentils, Canola Oil (preserved with mixed tocopherols), Salmon Meal, Smoke-Flavored Salmon, Natural Flavor, Dried Tomato Pomace, Salt, DL-Methionine, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 25,
+  "fatMin": 15,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3600,
+   "kcalPerCup": 408
+  },
+  "lifeStageClaim": "adult",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Smoke-Flavored Salmon",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Pacific Stream Puppy Recipe with Smoke-Flavored Salmon",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/pacific-stream-puppy-with-smoke-flavored-salmon",
+  "ingredientsText": "Salmon, Fish Meal, Sweet Potatoes, Peas, Pea Flour, Canola Oil (preserved with mixed tocopherols), Lentils, Salmon Meal, Dried Yeast, Smoke-Flavored Salmon, Natural Flavor, Salmon Oil (a source of DHA), Dried Tomato Pomace, Dicalcium Phosphate, Salt, Potassium Chloride, DL-Methionine, Choline Chloride, Taurine, Dried Chicory Root, Yucca Schidigera Extract, Tomatoes, Blueberries, Raspberries, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 27,
+  "fatMin": 15,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3600,
+   "kcalPerCup": 408
+  },
+  "lifeStageClaim": "all",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Smoke-Flavored Salmon",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "High Prairie Puppy Recipe with Roasted Bison & Roasted Venison",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/high-prairie-puppy-with-roasted-bison-roasted-venison",
+  "ingredientsText": "Water Buffalo, Lamb Meal, Sweet Potatoes, Egg Product, Garbanzo Beans, Peas, Pea Flour, Chicken Fat (preserved with mixed tocopherols), Dried Yeast, Roasted Bison, Roasted Venison, Beef, Dried Tomato Pomace, Natural Flavor, Flaxseed, Fish Meal, Salmon Oil (a source of DHA), Salt, DL-Methionine, Potassium Chloride, Choline Chloride, Taurine, Dried Chicory Root, Yucca Schidigera Extract, Tomatoes, Blueberries, Raspberries, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 28,
+  "fatMin": 17,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3656,
+   "kcalPerCup": 415
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Bison & Venison",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Sierra Mountain Canine Recipe with Roasted Lamb",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/sierra-mountain-with-roasted-lamb",
+  "ingredientsText": "Lamb, Lamb Meal, Sweet Potatoes, Egg Product, Lentils, Garbanzo Beans, Peas, Pea Flour, Canola Oil (preserved with mixed tocopherols), Dried Yeast, Roasted Lamb, Dried Tomato Pomace, Natural Flavor, Salmon Oil (a source of DHA), DL-Methionine, Salt, Potassium Chloride, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 25,
+  "fatMin": 15,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3611,
+   "kcalPerCup": 410
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Roasted Lamb",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Southwest Canyon Canine Recipe with Wild Boar",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/southwest-canyon-with-wild-boar",
+  "ingredientsText": "Beef, Peas, Garbanzo Beans, Lamb Meal, Canola Oil (preserved with mixed tocopherols), Egg Product, Wild Boar, Fish Meal, Pea Flour, Dried Yeast, Dried Tomato Pomace, Natural Flavor, Flaxseed, Salmon Oil (a source of DHA), Salt, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 29,
+  "fatMin": 15,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3600,
+   "kcalPerCup": 408
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Wild Boar",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Wetlands Canine Recipe with Roasted Fowl",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/wetlands-with-roasted-fowl",
+  "ingredientsText": "Duck, Duck Meal, Chicken Meal, Sweet Potatoes, Peas, Pea Flour, Chicken Fat (preserved with mixed tocopherols), Egg Product, Natural Flavor, Fish Meal, Roasted Quail, Roasted Duck, Smoke-Flavored Turkey, Dried Tomato Pomace, Salt, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3750,
+   "kcalPerCup": 425
+  },
+  "lifeStageClaim": "adult",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Roasted Fowl",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Appalachian Valley Small Breed Canine Recipe with Venison & Garbanzo Beans",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/grain-free/appalachian-valley-small-breed-with-venison-garbanzo-beans",
+  "ingredientsText": "Venison, Lamb Meal, Garbanzo Beans, Peas, Lentils, Pea Protein, Canola Oil (preserved with mixed tocopherols), Egg Product, Duck Meal, Pea Flour, Dried Tomato Pomace, Natural Flavor, Fish Meal, Salt, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3719,
+   "kcalPerCup": 422
+  },
+  "lifeStageClaim": "adult",
+  "line": "taste-of-the-wild-dog",
+  "flavor": "Venison & Garbanzo Beans",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Ancient Prairie Canine Recipe with Roasted Bison & Roasted Venison",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/ancient-grains/ancient-prairie-with-roasted-bison-roasted-venison",
+  "ingredientsText": "Water Buffalo, Pork, Chicken Meal, Grain Sorghum, Millet, Chicken Fat (preserved with mixed tocopherols), Cracked Pearled Barley, Dried Yeast, Roasted Bison, Roasted Venison, Natural Flavor, Flaxseed, Beef, Quinoa, Chia Seed, Dried Tomato Pomace, Salmon Oil (a source of DHA), Dicalcium Phosphate, Calcium Carbonate, Salt, Potassium Chloride, DL-Methionine, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, L-Carnitine, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3920,
+   "kcalPerCup": 445
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "taste-of-the-wild-ancient-grains-dog",
+  "flavor": "Bison & Venison",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Ancient Stream Canine Recipe with Smoke-Flavored Salmon",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/dog/ancient-grains/ancient-stream-with-smoke-flavored-salmon",
+  "ingredientsText": "Salmon, Salmon Meal, Fish Meal, Grain Sorghum, Millet, Cracked Pearled Barley, Dried Yeast, Canola Oil (preserved with mixed tocopherols), Whole Grain Brown Rice, Smoke-Flavored Salmon, Natural Flavor, Dried Tomato Pomace, Salmon Oil (a source of DHA), Quinoa, Chia Seed, Salt, Potassium Chloride, DL-Methionine, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, L-Carnitine, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Vitamin E Supplement, Iron Proteinate, Zinc Proteinate, Copper Proteinate, Ferrous Sulfate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Thiamine Mononitrate, Manganese Proteinate, Vitamin A Supplement, Biotin, Niacin, Calcium Pantothenate, Sodium Selenite, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Riboflavin, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 30,
+  "fatMin": 15,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3640,
+   "kcalPerCup": 413
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "taste-of-the-wild-ancient-grains-dog",
+  "flavor": "Smoke-Flavored Salmon",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Canyon River Feline Recipe with Trout & Smoke-Flavored Salmon",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/cat/grain-free/canyon-river-with-trout-smoke-flavored-salmon",
+  "ingredientsText": "Trout, Fish Meal, Salmon Meal, Sweet Potatoes, Lentils, Peas, Canola Oil (preserved with mixed tocopherols), Smoke-Flavored Salmon, Natural Flavor, DL-Methionine, Potassium Chloride, Salt, Choline Chloride, Taurine, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Zinc Proteinate, Vitamin E Supplement, Menadione Sodium Bisulfite Complex, Niacin, Manganese Proteinate, Copper Proteinate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Thiamine Mononitrate, Vitamin A Supplement, Biotin, Potassium Iodide, Calcium Pantothenate, Riboflavin, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Sodium Selenite, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 32,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3741,
+   "kcalPerCup": 424
+  },
+  "lifeStageClaim": "all",
+  "line": "taste-of-the-wild-cat",
+  "flavor": "Trout & Salmon",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Rocky Mountain Feline Recipe with Roasted Venison & Smoke-Flavored Salmon",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/cat/grain-free/rocky-mountain-with-roasted-venison-smoke-flavored-salmon",
+  "ingredientsText": "Chicken Meal, Peas, Sweet Potatoes, Chicken Fat (preserved with mixed tocopherols), Pea Protein, Potato Protein, Roasted Venison, Smoke-Flavored Salmon, Natural Flavor, Fish Meal, DL-Methionine, Potassium Chloride, Taurine, Choline Chloride, Dried Chicory Root, Tomatoes, Blueberries, Raspberries, Yucca Schidigera Extract, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Zinc Proteinate, Vitamin E Supplement, Niacin, Manganese Proteinate, Copper Proteinate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Thiamine Mononitrate, Vitamin A Supplement, Biotin, Potassium Iodide, Calcium Pantothenate, Riboflavin, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Sodium Selenite, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 42,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3745,
+   "kcalPerCup": 425
+  },
+  "lifeStageClaim": "all",
+  "line": "taste-of-the-wild-cat",
+  "flavor": "Venison & Salmon",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Taste of the Wild",
+  "name": "Lowland Creek Feline Recipe with Roasted Quail & Roasted Duck",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.tasteofthewildpetfood.com/cat/grain-free/lowland-creek-with-roasted-quail-roasted-duck",
+  "ingredientsText": "Duck, Duck Meal, Turkey Meal, Chicken Meal, Sweet Potatoes, Lentils, Peas, Chicken Fat (preserved with mixed tocopherols), Roasted Quail, Roasted Duck, Natural Flavor, Salmon Oil (a source of DHA), DL-Methionine, Salt, Potassium Chloride, Choline Chloride, Taurine, Blueberries, Raspberries, Tomatoes, Dried Chicory Root, Dried Lactobacillus Plantarum Fermentation Product, Dried Bacillus Subtilis Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Bifidobacterium Animalis Fermentation Product, Zinc Proteinate, Vitamin E Supplement, Niacin, Manganese Proteinate, Copper Proteinate, Zinc Sulfate, Manganese Sulfate, Copper Sulfate, Thiamine Mononitrate, Vitamin A Supplement, Biotin, Potassium Iodide, Calcium Pantothenate, Riboflavin, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Sodium Selenite, Vitamin D3 Supplement, Folic Acid.",
+  "proteinMin": 36,
+  "fatMin": 16,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3558,
+   "kcalPerCup": 403
+  },
+  "lifeStageClaim": "all",
+  "line": "taste-of-the-wild-cat",
+  "flavor": "Quail & Duck",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "Small Breed Real Chicken & Veggies Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.nutrish.com/product/nutrish-small-breed-real-chicken-veggies-dry-dog-food/",
+  "ingredientsText": "Chicken, Chicken Meal, Soybean Meal, Whole Corn, Grain Sorghum, Chicken Fat (preserved With Mixed Tocopherols), Peas, Brown Rice, Carrots, Menhaden Fish Meal, Malted Barley Flour, Salt, Dicalcium Phosphate, Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate (Source of Vitamin C), Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, D-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Natural Flavor, Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Taurine, Citric Acid (Preservative), Choline Chloride, Lactic Acid, Mixed Tocopherols (Preservative), Rosemary Extract.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.25,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3720,
+   "kcalPerCup": 395
+  },
+  "lifeStageClaim": "adult",
+  "line": "rachael-ray-nutrish-dog",
+  "flavor": "Chicken & Veggies",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "Puppy Real Chicken & Brown Rice Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.nutrish.com/product/nutrish-puppy-real-chicken-brown-rice-dry-dog-food/",
+  "ingredientsText": "Chicken, Chicken Meal, Brown Rice, Soybean Meal, Whole Corn, Chicken Fat (Preserved with Mixed Tocopherols), Peas, Flaxseed, Carrots, Corn Protein Concentrate, Dried Plain Beet Pulp, Dicalcium Phosphate, Salt, Menhaden Fish Oil (Preserved with Mixed Tocopherols), Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate (Source of Vitamin C), Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, D-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Natural Flavor, Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Taurine, Citric Acid (preservative), Choline Chloride, Lactic Acid, Mixed Tocopherols (Preservative), Rosemary Extract.",
+  "proteinMin": 28,
+  "fatMin": 16,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3685,
+   "kcalPerCup": 390
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "rachael-ray-nutrish-dog",
+  "flavor": "Chicken & Brown Rice",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "Real Beef, Pea & Brown Rice Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.nutrish.com/product/nutrish-real-beef-pea-brown-rice-recipe-dry-dog-food/",
+  "ingredientsText": "Beef, Beef Meal, Soybean Meal, Whole Corn, Grain Sorghum, Dried Peas, Chicken Fat (Preserved With Mixed Tocopherols), Pea Starch, Brown Rice, Dried Plain Beet Pulp, Corn Protein Concentrate, Salt, Carrots, Fish Oil (preserved with Mixed Tocopherols), Malted Barley Flour, Natural Flavor, Taurine, Citric Acid (Preservative), Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate (Source of Vitamin C), Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, D-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Choline Chloride, Lactic Acid, Mixed Tocopherols (Preservative), Rosemary Extract, Carmine (Color).",
+  "proteinMin": 23,
+  "fatMin": 13,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3850,
+   "kcalPerCup": 365
+  },
+  "lifeStageClaim": "adult",
+  "line": "rachael-ray-nutrish-dog",
+  "flavor": "Beef, Pea & Brown Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "Dish Chicken & Brown Rice Recipe with Veggie & Fruit Blend",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.nutrish.com/product/nutrish-dish-chicken-brown-rice-recipe-with-veggie-fruit-blend-dry-dog-food/",
+  "ingredientsText": "Chicken, Chicken Meal, Dried Peas, Brown Rice, Brewers Rice, Pea Protein, Poultry Fat (Preserved with Mixed Tocopherols), Whole Flaxseed, Dried Plain Beet Pulp, Natural Flavor, Dried Apples, Dried Carrots, Whole Dried Potato, Salt, Dicalcium Phosphate, Vitamins (Vitamin E Supplement, Ascorbic Acid (Source of Vitamin C), Niacin, Vitamin A Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Potassium Chloride, Menhaden Fish Oil (Preserved with Mixed Tocopherols), Taurine, Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Choline Chloride, Glycerin, Sunflower Oil, Lactic Acid, Paprika Extract (Color), Brown Sugar, Zinc Sulfate, Citric Acid (preservative), Rosemary Extract.",
+  "proteinMin": 26,
+  "fatMin": 14,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3540,
+   "kcalPerCup": 350
+  },
+  "line": "rachael-ray-nutrish-dish-dog",
+  "flavor": "Chicken & Brown Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "3.75 lb",
+    "lb": 3.75
+   },
+   {
+    "label": "11.5 lb",
+    "lb": 11.5
+   },
+   {
+    "label": "23 lb",
+    "lb": 23
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "High Protein Beef, Potato & Peas Recipe with Venison & Lamb",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.nutrish.com/product/high-protein-beef-dry-dog-food/",
+  "ingredientsText": "Beef, Chicken Meal, Whole Dried Potato, Natural Pork Flavor, Dried Peas, Pea Starch, Sunflower Meal, Chicken Fat (Preserved with Mixed Tocopherols), Beef Meal, Whole Flaxseed, Pea Protein, Venison, Lamb, Menhaden Fish Meal, Natural Flavor, Salt, Taurine, Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate (Source of Vitamin C), Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Choline Chloride, Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Zinc Sulfate, Lactic Acid, Citric Acid (Preservative), Rosemary Extract.",
+  "proteinMin": 30,
+  "fatMin": 15,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.25,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3610,
+   "kcalPerCup": 342
+  },
+  "line": "rachael-ray-nutrish-high-protein-dog",
+  "flavor": "Beef, Venison & Lamb",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "23 lb",
+    "lb": 23
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "Indoor Complete Chicken, Lentils & Salmon Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.nutrish.com/product/nutrish-indoor-complete-chicken-lentils-salmon-recipe-dry-cat-food/",
+  "ingredientsText": "Chicken, Chicken Meal, Dried Peas, Brewers Rice, Corn Protein Concentrate, Lentils, Chicken Fat (Preserved with Mixed Tocopherols), Salmon, Cranberries, Pumpkin, Flaxseed, Dried Plain Beet Pulp, Natural Flavor, Malted Barley Flour, Dicalcium Phosphate, Blueberries, Potassium Chloride, Salt, Choline Chloride, Vitamins (Vitamin E Supplement, Ascorbic Acid (Source of Vitamin C), Niacin, Vitamin A Supplement, Thiamine Mononitrate, D-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Taurine, Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Lactic Acid, Mixed Tocopherols (Used As A Preservative), L-Carnitine, Citric Acid (Used As A Preservative), Rosemary Extract.",
+  "proteinMin": 34,
+  "fatMin": 12,
+  "fiberMax": 8,
+  "moistureMax": 9,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3520,
+   "kcalPerCup": 375
+  },
+  "line": "rachael-ray-nutrish-cat",
+  "flavor": "Chicken, Lentils & Salmon",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3
+   },
+   {
+    "label": "6 lb",
+    "lb": 6
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "brand": "Rachael Ray Nutrish",
+  "name": "Real Salmon & Brown Rice Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.nutrish.com/product/nutrish-real-salmon-brown-rice-recipe-dry-cat-food/",
+  "ingredientsText": "Salmon, Fish Meal, Corn Protein Concentrate, Ground Brown Rice, Dried Peas, Brewers Rice, Chicken Fat (Preserved with Mixed Tocopherols), Carrots, Flaxseed, Salmon Meal, Dried Plain Beet Pulp, Natural Flavors, Malted Barley Flour, Potassium Chloride, Salt, Choline Chloride, Vitamins (Vitamin E Supplement, Ascorbic Acid (Source of Vitamin C), Niacin, Vitamin A Supplement, Menadione Sodium Bisulfate Complex, Thiamine Mononitrate, D-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Biotin), Taurine, Minerals (Ferrous Sulfate, Zinc Sulfate, Copper Sulfate, Sodium Selenite, Manganese Sulfate, Calcium Iodate), Dicalcium Phosphate, Calcium Carbonate, Citric Acid (Preservative), Mixed Tocopherols (Preservative), Rosemary Extract.",
+  "proteinMin": 34,
+  "fatMin": 14,
+  "fiberMax": 4,
+  "moistureMax": 9,
+  "taurineMin": 0.12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3760,
+   "kcalPerCup": 399
+  },
+  "line": "rachael-ray-nutrish-cat",
+  "flavor": "Salmon & Brown Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5
+   },
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Kibbles 'n Bits",
+  "name": "Mini Bits Small Breed Savory Bacon & Steak Flavor",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.kibblesnbits.com/product/kibbles-n-bits-mini-bits-small-breed-savory-bacon-steak-flavor-dry-dog-food/",
+  "ingredientsText": "Corn, Soybean Meal, Beef And Bone Meal, Ground Wheat, Animal Fat (BHA Used As Preservative), Corn Syrup, Wheat Middlings, Water Sufficient For Processing, Animal Digest, Propylene Glycol, Salt, Hydrochloric Acid, Potassium Chloride, Caramel Color, Beef, Sorbic Acid (used As A Preservative), Choline Chloride, Sodium Carbonate, Vitamins (vitamin E Supplement, Niacin, D-calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Thiamine Mononitrate, Vitamin D3 Supplement, Vitamin B12 Supplement, Pyridoxine Hydrochloride, Folic Acid, Biotin), Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Calcium Iodate, Sodium Selenite), DL-methionine, Beef Stock, Hydrolyzed Corn Protein, Calcium Sulfate, Titanium Dioxide (color), Natural Flavor, Red 40, Bacon Broth (source Of Bacon Flavor), Lactic Acid, Red 40 Lake, Natural Beef Flavor (source Of Steak Flavor), Hydrolyzed Corn Gluten, Natural Smoke Flavor, Hydrolyzed Soy Protein, Yellow 5, BHA (used As A Preservative), Blue 2 Lake, Yellow 6 Lake, Hydrolyzed Wheat Gluten, Blue 1, Yellow 6.",
+  "proteinMin": 21,
+  "fatMin": 8,
+  "fiberMax": 4,
+  "moistureMax": 18,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3080,
+   "kcalPerCup": 360
+  },
+  "lifeStageClaim": "adult",
+  "line": "kibbles-n-bits-dog",
+  "flavor": "Bacon & Steak",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Kibbles 'n Bits",
+  "name": "Mini Bits Small Breed Bistro Oven Roasted Beef, Spring Vegetable & Apple Flavors",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.kibblesnbits.com/product/kibbles-n-bits-mini-bits-small-breed-bistro-oven-roasted-beef-spring-vegetable-apple-flavors-dry-dog-food/",
+  "ingredientsText": "Corn, Soybean Meal, Beef & Bone Meal, Ground Wheat, Wheat Middlings, Animal Fat (BHA Used As Preservative), Corn Syrup, Water Sufficient For Processing, Animal Digest (source Of Roasted Flavor), Propylene Glycol, Salt, Hydrochloric Acid, Apples, Potassium Chloride, Caramel Color, Sorbic Acid (used As A Preservative), Peas, Sodium Carbonate, Choline Chloride, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Calcium Iodate, Sodium Selenite), Vitamins (vitamin E Supplement, Niacin, d-Calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Thiamine Mononitrate, Vitamin D3 Supplement, Vitamin B12 Supplement, Pyridoxine Hydrochloride, Folic Acid, Biotin), DL-methionine, Calcium Sulfate, Titanium Dioxide (color), Carrots, Green Beans, Lactic Acid (used As A Preservative), Red 40 Lake, Yellow 5, Red 40, BHA (used As A Preservative), Blue 1, Blue 2 Lake, Yellow 6 Lake, Yellow 6.",
+  "proteinMin": 21,
+  "fatMin": 8,
+  "fiberMax": 4,
+  "moistureMax": 18,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3100,
+   "kcalPerCup": 410
+  },
+  "lifeStageClaim": "adult",
+  "line": "kibbles-n-bits-dog",
+  "flavor": "Bistro Beef, Vegetable & Apple",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "16 lb",
+    "lb": 16
+   }
+  ]
+ },
+ {
+  "brand": "Kibbles 'n Bits",
+  "name": "Triple Steak Flavor",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.kibblesnbits.com/product/kibbles-n-bits-triple-steak-flavor/",
+  "ingredientsText": "Soybean Meal, Whole Corn, Beef & Bone Meal, Whole Wheat, Animal Fat (BHA/BHT used as a preservative), Wheat Middlings, Corn Syrup, Beef, Water, Propylene Glycol, Salt, Hydrochloric Acid, Natural Flavor, Caramel Color, Potassium Chloride, Sorbic Acid (used as a preservative), Vitamins (Vitamin # Supplements, Niacin Supplement, D-Calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Vitamin B12 Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, Folic Acid, Biotin, Vitamin D3 Supplement), Sodium Carbonate, Choline Chloride, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), DL-Methionine, Calcium Sulfate, Titanium Dioxide (color), Mixed Tocopherols (preservative), Lactic Acid, Red 40, Red 40 Lake, BHA (used as a preservative), Beef Stock (source of steak flavor), Yeast Extract, Yellow 5, Blue 2 Lake, Yellow 6 Lake.",
+  "proteinMin": 23,
+  "fatMin": 8,
+  "fiberMax": 4,
+  "moistureMax": 18,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3025,
+   "kcalPerCup": 360
+  },
+  "line": "kibbles-n-bits-dog",
+  "flavor": "Triple Steak",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "brand": "9Lives",
+  "name": "Indoor Essentials",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.9lives.com/product/9lives-indoor-essentials-dry-cat-food/",
+  "ingredientsText": "Whole Ground Corn, Chicken By-Product Meal, Soybean Meal, Meat And Bone Meal, Whole Wheat, Corn Protein Meal, Animal Fat (Preserved With Mixed Tocopherols), Natural Flavor (Preserved With Mixed Tocopherols), Soybean Hulls, Salmon Meal, Phosphoric Acid, Dehydrated Alfalfa Meal, Salt, Titanium Dioxide (Color), Choline Chloride, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Riboflavin Supplement, D-Calcium Pantothenate, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Menadione Sodium Bisulfite Complex [Source Of Vitamin K Activity], Folic Acid, Biotin, Vitamin D3 Supplement), Taurine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Potassium Chloride, Red 40, Lactic Acid, BHA (Used As A Preservative), Yellow 5, Yellow 6, Blue 1, Rosemary Extract.",
+  "proteinMin": 28,
+  "fatMin": 9,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3360,
+   "kcalPerCup": 305
+  },
+  "lifeStageClaim": "adult",
+  "line": "9lives-cat",
+  "flavor": "Chicken & Salmon",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "9Lives",
+  "name": "Plus Urinary Tract Health",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.9lives.com/product/9lives-urinary-tract-health-dry-cat-food/",
+  "ingredientsText": "Whole Ground Corn, Corn Protein Meal, Poultry By-Product Meal, Whole Wheat, Beef Tallow (Preserved With Mixed Tocopherols), Animal Digest (Preserved With Mixed Tocopherols), Meat and Bone Meal, Phosphoric Acid, Calcium Carbonate, Salt, Potassium Chloride, Grain Distillers Dried Yeast, Tuna Meal, Choline Chloride, Titanium Dioxide (Color), Vitamins (Thiamine Mononitrate, Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Riboflavin Supplement, D-Calcium Pantothenate, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Menadione Sodium Bisulfite Complex [Source of Vitamin K Activity], Folic Acid, Biotin, Vitamin D3 Supplement), Taurine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Dried Egg Product, DL-Methionine, Iron Oxide (Color), Yellow 5, Lactic Acid, Yellow 6, Red 40, BHA (Used As A Preservative), Blue 1, Rosemary Extract.",
+  "proteinMin": 30,
+  "fatMin": 10,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3800,
+   "kcalPerCup": 355
+  },
+  "lifeStageClaim": "adult",
+  "line": "9lives-cat",
+  "formula": "Urinary Tract Health",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "15.5 lb",
+    "lb": 15.5
+   }
+  ]
+ },
+ {
+  "brand": "Nutro",
+  "name": "Sensitive Adult Formula with Chicken, Rice & Peas Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.nutro.com/products/dry/sensitive-adult-formula-chicken-rice-peas-recipe",
+  "ingredientsText": "Chicken, Chicken Meal, Brewers Rice, Split Peas, Pea Protein, Chicken Fat (preserved with Mixed Tocopherols), Chickpeas, Dried Plain Beet Pulp, Natural Flavor, Dried Egg Product, Salt, Potassium Chloride, Choline Chloride, Fish Oil (preserved with Mixed Tocopherols), Taurine, Citric Acid (preservative), Mixed Tocopherols (preservative), DL-Methionine, Vitamin E Supplement, Zinc Oxide, Calcium Carbonate, Manganese Sulfate, Niacin Supplement, Ferrous Sulfate, Ascorbic Acid (Vitamin C), Copper Sulfate, D-Calcium Pantothenate, Vitamin A Supplement, Biotin, Thiamine Mononitrate (Vitamin B1), Pyridoxine Hydrochloride (Vitamin B6), Vitamin B12 Supplement, Sodium Selenite, Vitamin D3 Supplement, Riboflavin Supplement (Vitamin B2), Folic Acid, Potassium Iodide, Rosemary Extract.",
+  "proteinMin": 33,
+  "fatMin": 16,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.18,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3756,
+   "kcalPerCup": 433
+  },
+  "line": "nutro-cat",
+  "flavor": "Chicken, Rice & Peas",
+  "formula": "Sensitive Skin & Stomach",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3
+   },
+   {
+    "label": "5 lb",
+    "lb": 5
+   }
+  ]
+ },
+ {
+  "brand": "Meow Mix",
+  "name": "Indoor Health",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.meowmix.com/cat-food/dry/indoor-health",
+  "ingredientsText": "Ground Corn, Chicken By-Product Meal, Soybean Meal, Corn Protein Meal, Beef Tallow (Mixed Tocopherols Used As A Preservative), Ground Soybean Hulls, Brewers Rice, Natural Flavor, Turkey By-Product Meal, Salmon Meal, Ocean Fish Meal (Ethoxyquin Used As A Preservative), Phosphoric Acid, Calcium Carbonate, Dehydrated Alfalfa Meal, Choline Chloride, Salt, Grain Distillers Dried Yeast, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, D-Calcium Pantothenate, Riboflavin Supplement, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Taurine, Dl-Methionine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Lactic Acid, Yellow 6, Red 40, Yellow 5, Blue 2, Rosemary Extract.",
+  "proteinMin": 31,
+  "fatMin": 11,
+  "fiberMax": 9,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3460
+  },
+  "lifeStageClaim": "adult",
+  "line": "meow-mix-cat",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "6.3 lb",
+    "lb": 6.3
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2
+   }
+  ]
+ },
+ {
+  "brand": "Meow Mix",
+  "name": "Kitten Lil Nibbles",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.meowmix.com/cat-food/dry/kitten-lil-nibbles",
+  "ingredientsText": "Chicken By-Product Meal, Brewers Rice, Corn Protein Meal, Ground Corn, Soybean Meal, Beef Tallow (Mixed Tocopherols Used As A Preservative), Ocean Fish Meal (Ethoxyquin Used As A Preservative), Natural Flavor, Salmon Meal, Turkey By-Product Meal, Phosphoric Acid, Calcium Carbonate, Potassium Chloride, Choline Chloride, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, D-Calcium Pantothenate, Riboflavin Supplement, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Taurine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Lactic Acid, Red 40, Yellow 5, Blue 2, Rosemary Extract.",
+  "proteinMin": 36,
+  "fatMin": 15,
+  "fiberMax": 4.5,
+  "moistureMax": 12,
+  "taurineMin": 0.15,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3750
+  },
+  "lifeStageClaim": "growth",
+  "line": "meow-mix-cat",
+  "formula": "Kitten",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2
+   }
+  ]
+ },
+ {
+  "brand": "Meow Mix",
+  "name": "Hairball Control",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.meowmix.com/cat-food/dry/hairball-control",
+  "ingredientsText": "Chicken By-Product Meal, Corn Protein Meal, Ground Corn, Brewers Rice, Ground Soybean Hulls, Beef Tallow (Mixed Tocopherols Used As A Preservative), Powdered Cellulose, Soybean Oil (Bha/BHT Used A Preservative), Natural Flavor, Calcium Carbonate, Turkey By-Product Meal, Salmon Meal, Ocean Fish Meal (Ethoxyquin Used As A Preservative), Phosphoric Acid, Potassium Chloride, Salt, Sodium Acid Pyrophosphate, Choline Chloride, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, D-Calcium Pantothenate, Riboflavin Supplement, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Grain Distillers Dried Yeast, Taurine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Red 40, Lactic Acid, Yellow 5, Blue 2, Bha (Used As A Preservative), Rosemary Extract.",
+  "proteinMin": 31,
+  "fatMin": 11,
+  "fiberMax": 7,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3404
+  },
+  "lifeStageClaim": "adult",
+  "line": "meow-mix-cat",
+  "formula": "Hairball Control",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "6.3 lb",
+    "lb": 6.3
+   }
+  ]
+ },
+ {
+  "brand": "Meow Mix",
+  "name": "Seafood Medley",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.meowmix.com/cat-food/dry/seafood-medley",
+  "ingredientsText": "Ground Corn, Chicken By-Product Meal, Soybean Meal, Beef Tallow (Mixed Tocopherols Used As A Preservative), Corn Protein Meal, Tuna Meal, Brewers Rice, Natural Flavor, Phosphoric Acid, Calcium Carbonate, Choline Chloride, Shrimp Meal, Crab Meal, Trout Meal, Salt, Potassium Chloride, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, D-Calcium Pantothenate, Riboflavin Supplement, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Titanium Dioxide (Color), Dl-Methionine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Taurine, Yellow 6, Lactic Acid, Red 40, Yellow 5, Blue 2, Rosemary Extract.",
+  "proteinMin": 30,
+  "fatMin": 12,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3480
+  },
+  "lifeStageClaim": "all",
+  "line": "meow-mix-cat",
+  "flavor": "Seafood Medley",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2
+   }
+  ]
+ },
+ {
+  "brand": "Meow Mix",
+  "name": "Tender Centers with Basted Bites Chicken & Tuna Flavors",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 1,
+  "sourceUrl": "https://www.meowmix.com/cat-food/dry/tender-centers/tender-centers-chicken-tuna-flavors",
+  "ingredientsText": "Ground Corn, Soybean Meal, Chicken By-Product Meal, Corn Protein Meal, Beef Tallow (Mixed Tocopherols Used As A Preservative), Whole Wheat, Natural Flavor, Calcium Carbonate, Tuna Meal, Phosphoric Acid, Corn Syrup, Glycerin, Choline Chloride, Salt, Potassium Sorbate (Used As A Preservative), Titanium Dioxide (Color), Calcium Sulfate, Vitamins (Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, Pyridoxine Hydrochloride, D-Calcium Pantothenate, Riboflavin Supplement, Vitamin B12 Supplement, Folic Acid, Biotin, Vitamin D3 Supplement), Caramel Color, Taurine, Minerals (Ferrous Sulfate, Zinc Oxide, Manganous Oxide, Copper Sulfate, Sodium Selenite, Calcium Iodate), Potassium Chloride, L-Lysine Monohydrochloride, Dicalcium Phosphate, Carrageenan, Dl-Methionine, Monoglycerides, Yellow 5, Lactic Acid, Red 40, Blue 2, Bha (Used As A Preservative), Natural White Meat Chicken Flavor, Rosemary Extract.",
+  "proteinMin": 31,
+  "fatMin": 11,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3490
+  },
+  "lifeStageClaim": "all",
+  "line": "meow-mix-tender-centers-cat",
+  "flavor": "Chicken & Tuna",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2
+   }
+  ]
+ },
+ {
+  "brand": "Merrick",
+  "name": "Limited Ingredient Diet Real Salmon & Brown Rice Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://merrickpetcare.com/dog/shop/limited-ingredient-diet-salmon-brown-rice-dry-dog-food",
+  "ingredientsText": "Deboned Salmon, Salmon Meal, Brown Rice, Oat Meal, Barley, Sweet Potatoes, Canola Oil, Potato Protein, Natural Flavor, Flaxseed, Miscanthus Grass, Dried Yeast, Potassium Chloride, Salt, Choline Chloride, MINERALS [Zinc Amino Acid Complex, Iron Amino Acid Complex, Sodium Selenite, Manganese Amino Acid Complex, Copper Amino Acid Complex, Calcium Iodate], DL-Methionine, Sunflower Oil, Taurine, VITAMINS [Vitamin E Supplement, Vitamin B-12 Supplement, Vitamin A Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Folic Acid (Vitamin B-9), Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Preserved With Mixed Tocopherols.",
+  "proteinMin": 24,
+  "fatMin": 14,
+  "fiberMax": 5,
+  "moistureMax": 11,
+  "taurineMin": 0.17,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3726,
+   "kcalPerCup": 462
+  },
+  "line": "merrick-limited-ingredient-diet-dog",
+  "flavor": "Salmon & Brown Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Merrick",
+  "name": "Limited Ingredient Diet Real Chicken & Brown Rice Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://merrickpetcare.com/dog/shop/limited-ingredient-diet-chicken-brown-rice-dry-dog-food",
+  "ingredientsText": "Deboned Chicken, Chicken Meal, Brown Rice, Oat Meal, Barley, Sweet Potatoes, Chicken Fat, Potato Protein, Flaxseed, Natural Flavor, Miscanthus Grass, Dried Yeast, Potassium Chloride, Salt, Choline Chloride, MINERALS [Zinc Amino Acid Complex, Iron Amino Acid Complex, Sodium Selenite, Manganese Amino Acid Complex, Copper Amino Acid Complex, Calcium Iodate], DL-Methionine, Sunflower Oil, Taurine, VITAMINS [Vitamin E Supplement, Vitamin B-12 Supplement, Vitamin A Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Folic Acid (Vitamin B-9), Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Preserved With Mixed Tocopherols.",
+  "proteinMin": 24,
+  "fatMin": 14,
+  "fiberMax": 5,
+  "moistureMax": 11,
+  "taurineMin": 0.17,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3716,
+   "kcalPerCup": 460
+  },
+  "line": "merrick-limited-ingredient-diet-dog",
+  "flavor": "Chicken & Brown Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Merrick",
+  "name": "Limited Ingredient Diet Grain Free Real Lamb & Sweet Potato Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://merrickpetcare.com/dog/shop/limited-ingredient-diet-grain-free-lamb-sweet-potato-dry-dog-food",
+  "ingredientsText": "Deboned Lamb, Lamb Meal, Sweet Potatoes, Potatoes, Peas, Canola Oil, Potato Protein, Pea Protein, Flaxseed, Natural Flavor, Miscanthus Grass, Dried Yeast, Potassium Chloride, Salt, Choline Chloride, MINERALS [Zinc Amino Acid Complex, Iron Amino Acid Complex, Sodium Selenite, Manganese Amino Acid Complex, Copper Amino Acid Complex, Calcium Iodate], DL-Methionine, Sunflower Oil, Taurine, VITAMINS [Vitamin E Supplement, Vitamin B-12 Supplement, Vitamin A Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Folic Acid (Vitamin B-9), Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Mixed Tocopherols For Freshness.",
+  "proteinMin": 23,
+  "fatMin": 14,
+  "fiberMax": 4.5,
+  "moistureMax": 11,
+  "taurineMin": 0.17,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 450
+  },
+  "line": "merrick-limited-ingredient-diet-dog",
+  "flavor": "Lamb & Sweet Potato",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Merrick",
+  "name": "Backcountry Raw Infused Great Plains Red Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://merrickpetcare.com/dog/shop/backcountry-raw-infused-great-plains-red-grain-free-dry-dog-food",
+  "ingredientsText": "Deboned Beef, Pork and Bone Meal, Salmon Meal, Sweet Potatoes, Potatoes, Peas, Pea Protein, Natural Flavor, Pork Fat, Potato Protein, Lamb, Sunflower Oil, Beef Liver, Flaxseed, Tapioca, Dried Yeast, Potassium Chloride, Salt, Choline Chloride, MINERALS (Zinc Amino Acid Complex, Iron Amino Acid Complex, Sodium Selenite, Manganese Amino Acid Complex, Copper Amino Acid Complex, Calcium Iodate), DL-Methionine, Taurine, Mixed Tocopherols for freshness, VITAMINS (Vitamin E Supplement, Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Thiamine Mononitrate, Riboflavin Supplement, D-Calcium Pantothenate, Folic Acid, Menadione Sodium Bisulfite Complex, Biotin, Pyridoxine Hydrochloride, Vitamin D3 Supplement).",
+  "proteinMin": 35,
+  "fatMin": 17,
+  "fiberMax": 3.5,
+  "moistureMax": 11,
+  "taurineMin": 0.17,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3710,
+   "kcalPerCup": 394
+  },
+  "line": "merrick-backcountry-dog",
+  "flavor": "Great Plains Red",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Merrick",
+  "name": "Backcountry Raw Infused Pacific Catch Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://merrickpetcare.com/dog/shop/backcountry-raw-infused-pacific-catch-grain-free-dry-dog-food",
+  "ingredientsText": "Deboned Salmon, Salmon Meal, Sweet Potatoes, Potatoes, Peas, Whitefish Meal, Pork Fat Preserved With Mixed Tocopherols, Potato Protein, Natural Flavor, Whitefish, Flaxseed, Sunflower Oil, Miscanthus Grass, Dried Yeast, Potassium Chloride, Salt, Tapioca, Choline Chloride, MINERALS [Zinc Amino Acid Complex, Iron Amino Acid Complex, Sodium Selenite, Manganese Amino Acid Complex, Copper Amino Acid Complex, Calcium Iodate], DL-Methionine, Taurine, VITAMINS [Vitamin E Supplement, Vitamin B-12 Supplement, Vitamin A Supplement, Niacin (Vitamin B-3), Thiamine Mononitrate (Vitamin B-1), Calcium Pantothenate (Vitamin B-5), Folic Acid (Vitamin B-9), Riboflavin Supplement (Vitamin B-2), Menadione Sodium Bisulfite Complex (Vitamin K), Pyridoxine Hydrochloride (Vitamin B-6), Biotin (Vitamin B-7), Vitamin D-3 Supplement], Preserved With Mixed Tocopherols.",
+  "proteinMin": 32,
+  "fatMin": 16,
+  "fiberMax": 3.5,
+  "moistureMax": 11,
+  "taurineMin": 0.17,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3744,
+   "kcalPerCup": 464
+  },
+  "line": "merrick-backcountry-dog",
+  "flavor": "Pacific Catch",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Merrick",
+  "name": "Backcountry Raw Infused Hero's Banquet Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://merrickpetcare.com/dog/shop/backcountry-raw-infused-heros-banquet-dry-dog-food",
+  "ingredientsText": "Deboned Beef, Pork and Bone Meal, Turkey Meal, Sweet Potatoes, Potatoes, Peas, Pea Protein, Chicken Fat, Natural Flavor, Turkey, Potato Protein, Flaxseed, Beef Liver, Tapioca, Dried Yeast, Potassium Chloride, Salt, Choline Chloride, MINERALS (Zinc Amino Acid Complex, Iron Amino Acid Complex, Sodium Selenite, Manganese Amino Acid Complex, Copper Amino Acid Complex, Calcium Iodate), DL-Methionine, Taurine, VITAMINS (Vitamin E Supplement, Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Thiamine Mononitrate, Riboflavin Supplement, D-Calcium Pantothenate, Folic Acid, Menadione Sodium Bisulfite Complex, Biotin, Pyridoxine Hydrochloride, Vitamin D3 Supplement), Mixed Tocopherols For Freshness.",
+  "proteinMin": 34,
+  "fatMin": 16,
+  "fiberMax": 3.5,
+  "moistureMax": 11,
+  "taurineMin": 0.17,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3700,
+   "kcalPerCup": 393
+  },
+  "line": "merrick-backcountry-dog",
+  "flavor": "Hero's Banquet",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Iams",
+  "name": "Proactive Health Adult Lamb & Rice Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/iamsandtrade-proactive-health-adult-dry-dog-food---lamb-and-rice-49981.html",
+  "ingredientsText": "Lamb, Brewers Rice, Chicken By-Product Meal, Ground Barley, Ground Whole Grain Corn, Ground Whole Grain Sorghum, Chicken Fat (preserved With Mixed Tocopherols), Chicken Meal, Soybean Meal, Corn Gluten Meal, Dried Plain Beet Pulp, Natural Flavors, Dried Egg Product, Flaxseed, Caramel Color, Potassium Chloride, Carrots, Fructooligosaccharides, Choline Chloride, Vitamins (Vitamin E Supplement, Ascorbic Acid, D-Calcium Pantothenate, Biotin, Thiamine Mononitrate (Vitamin B1), Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Riboflavin Supplement (Vitamin B2), Pyridoxine Hydrochloride (Vitamin B6), Vitamin D3 Supplement, Folic Acid), Calcium Carbonate, Minerals (Ferrous Sulfate, Zinc Oxide, Sodium Selenite, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Manganous Oxide), Mixed Tocopherols (preservative), Citric Acid (preservative), Rosemary Extract.",
+  "proteinMin": 25,
+  "fatMin": 14,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3672,
+   "kcalPerCup": 382
+  },
+  "line": "iams-proactive-health-dog",
+  "flavor": "Lamb & Rice",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Iams",
+  "name": "Proactive Health Senior Healthy Aging Chicken & Whole Grains Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/iamsandtrade-proactive-health-senior-dry-dog-food---healthy-aging-chicken-and-whole-grains-3489.html",
+  "ingredientsText": "Chicken, Chicken By-Product Meal, Ground Barley, Ground Whole Grain Corn, Ground Whole Grain Sorghum, Soybean Meal, Dried Plain Beet Pulp, Natural Flavor, Dried Egg Product, Calcium Carbonate, Marine Microalgae (source of DHA), Caramel Color, Potassium Chloride, L-Lysine, Chicken Fat (preserved with Mixed Tocopherols), Carrots, Choline Chloride, Fructooligosaccharides, Vitamins (Vitamin E Supplement, Ascorbic Acid, D-Calcium Pantothenate, Biotin, Thiamine Mononitrate (Vitamin B1), Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Riboflavin (Vitamin B2), Pyridoxine Hydrochloride (Vitamin B6), Vitamin D3 Supplement, Folic Acid), Minerals (Ferrous Sulfate, Zinc Oxide, Sodium Selenite, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Manganous Oxide), Beta Carotene, Mixed Tocopherols (preservative), Citric Acid (preservative), L-Carnitine, Rosemary Extract.",
+  "proteinMin": 24,
+  "fatMin": 10.5,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3428,
+   "kcalPerCup": 349
+  },
+  "line": "iams-proactive-health-dog",
+  "flavor": "Chicken & Whole Grains",
+  "formula": "Senior",
+  "sizes": [
+   {
+    "label": "29.1 lb",
+    "lb": 29.1
+   }
+  ]
+ },
+ {
+  "brand": "Iams",
+  "name": "Proactive Health Large Breed Adult Real Chicken & Whole Grains Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/iams-proactive-health-large-breed-adult-dry-dog-food-with-real-chicken-and-whole-grains-3469.html",
+  "ingredientsText": "Chicken, Ground Barley, Ground Whole Grain Corn, Chicken By-Product Meal (source of Glucosamine and Chondrotin Sulfate), Ground Whole Grain Sorghum, Soybean Meal, Dried Plain Beet Pulp, Natural Flavor, Brewers Dried Yeast, Dried Egg Product, Chicken Fat (preserved with Mixed Tocopherols), Flaxseed, Peas, Caramel Color, DL-Methionine, Potassium Chloride, Fructooligosaccharides, Choline Chloride, Dicalcium Phosphate, Carrots, Mixed Tocopherol (preservative), Citric Acid (preservative), Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate [Vitamin C], Calcium Pantothenate, Biotin, Thiamine Mononitrate [Vitamin B1], Vitamin B12 Supplement, Vitamin A Supplement, Niacin Supplement, Riboflavin Supplement [Vitamin B2], Pyridoxine Hydrochloride [Vitamin B6], Vitamin D3 Supplement, Folic Acid), Minerals (Ferrous Sulfate, Zinc Oxide, Sodium Selenite, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Manganous Oxide), Rosemary Extract.",
+  "proteinMin": 22.5,
+  "fatMin": 12.5,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 354
+  },
+  "line": "iams-proactive-health-dog",
+  "flavor": "Chicken & Whole Grains",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Iams",
+  "name": "Proactive Health Large Breed Puppy Healthy Development Chicken Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/iamsandtrade-proactive-health-large-breed-puppy-dry-dog-food---healthy-development-chicken-3483.html",
+  "ingredientsText": "Chicken, Ground Whole Grain Corn, Chicken By-Product Meal (source of Glucosamine and Chondroitin Sulfate), Ground Whole Grain Sorghum, Dried Plain Beet Pulp, Brewers Rice, Soybean Meal, Natural Flavor, Corn Gluten Meal, Fish Oil (preserved with Mixed Tocopherols), Dried Egg Product, Caramel Color, Dicalcium Phosphate, Salt, Carrots, Choline Chloride, Potassium Chloride, Fructooligosaccharides, Vitamins (Vitamin E Supplement, Ascorbic Acid, D-Calcium Pantothenate, Biotin, Thiamine Mononitrate (Vitamin B1), Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Riboflavin Supplement (Vitamin B2), Pyridoxine Hydrochloride (Vitamin B6), Vitamin D3 Supplement, Folic Acid), Minerals (Ferrous Sulfate, Zinc Oxide, Sodium Selenite, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Manganous Oxide), Mixed Tocopherols (preservative), Citric Acid (preservative), Rosemary Extract.",
+  "proteinMin": 28,
+  "fatMin": 14,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3633,
+   "kcalPerCup": 378
+  },
+  "line": "iams-proactive-health-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Puppy",
+  "sizes": [
+   {
+    "label": "30.6 lb",
+    "lb": 30.6
+   }
+  ]
+ },
+ {
+  "brand": "Iams",
+  "name": "Proactive Health Small Breed Adult Chicken & Whole Grains Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/iamsandtrade-proactive-health-small-breed-adult-dry-dog-food---chicken-and-whole-grains-49982.html",
+  "ingredientsText": "Chicken, Chicken By-Product Meal, Ground Whole Grain Corn, Ground Whole Grain Sorghum, Soybean Meal, Chicken Fat (preserved with Mixed Tocopherols), Dried Plain Beet Pulp, Natural Flavor, Dried Egg Product, Flaxseed, Caramel Color, Carrots, Choline Chloride, Potassium Chloride, Fructooligosaccharides, Vitamins (Vitamin E Supplement, Ascorbic Acid, D-Calcium Pantothenate, Biotin, Thiamine Mononitrate (Vitamin B1), Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Riboflavin Supplement (Vitamin B2), Pyridoxine Hydrochloride (Vitamin B6), Vitamin D3 Supplement, Folic Acid), Minerals (Ferrous Sulfate, Zinc Oxide, Sodium Selenite, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Manganous Oxide), Mixed Tocopherols (preservative), Citric Acid (preservative), Rosemary Extract.",
+  "proteinMin": 27,
+  "fatMin": 17,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 396
+  },
+  "line": "iams-proactive-health-dog",
+  "flavor": "Chicken & Whole Grains",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   }
+  ]
+ },
+ {
+  "brand": "Iams",
+  "name": "Proactive Health Puppy Healthy Development Chicken & Whole Grains Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/iamsandtrade-proactive-health-puppy-dry-dog-food---healthy-development-chicken-and-whole-grains-3471.html",
+  "ingredientsText": "Chicken, Chicken By-Product Meal, Ground Whole Grain Corn, Ground Whole Grain Sorghum, Brewers Rice, Dried Plain Beet Pulp, Soybean Meal, Chicken Fat (preserved with Mixed Tocopherols), Natural Flavor, Fish Oil (preserved with Mixed Tocopherols), Dried Egg Product, Salt, Dicalcium Phosphate, Caramel Color, Carrots, Potassium Chloride, Fructooligosaccharides, Choline Chloride, Vitamins (Vitamin E Supplement, Ascorbic Acid, D-Calcium Pantothenate, Biotin, Thiamine Mononitrate (Vitamin B1), Vitamin B12 Supplement, Vitamin A Supplement, Niacin, Riboflavin Supplement (Vitamin B2), Pyridoxine Hydrochloride (Vitamin B6), Vitamin D3 Supplement, Folic Acid), Minerals (Ferrous Sulfate, Zinc Oxide, Sodium Selenite, Manganese Sulfate, Copper Sulfate, Potassium Iodide, Manganous Oxide), Mixed Tocopherols (preservative), Citric Acid (preservative), Rosemary Extract.",
+  "proteinMin": 29,
+  "fatMin": 17.5,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3773,
+   "kcalPerCup": 397
+  },
+  "line": "iams-proactive-health-dog",
+  "flavor": "Chicken & Whole Grains",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15
+   }
+  ]
+ },
+ {
+  "brand": "Pedigree",
+  "name": "High Protein Adult Beef & Lamb Flavor",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/pedigree-high-protein-adult-dry-dog-food---beef-and-lamb-70828.html",
+  "ingredientsText": "Ground Whole Grain Corn, Meat and Bone Meal, Corn Protein Meal, Soybean Meal, Chicken By-Product Meal, Animal Fat (Source of Omega 6 Fatty Acids [Preserved with BHA and Citric Acid]), Ground Whole Grain Wheat, Beef, Dried Plain Beet Pulp, Natural Flavor, Salt, Lamb Meal, Choline Chloride, Potassium Chloride, DL-Methionine, Dried Peas, Calcium Carbonate, BHT (preservative), BHA (preservative), Citric Acid (preservative), Zinc Sulfate, Vitamin E Supplement, Dried Carrots, L-Tryptophan, Red 40, Yellow 6, Niacin Supplement (Vitamin B3), Blue 2, D-Calcium Pantothenate (Vitamin B5), Copper Sulfate, Yellow 5, Sodium Selenite, Potassium Iodide, Vitamin A Supplement, Riboflavin Supplement (Vitamin B2), Vitamin B12 Supplement, Thiamine Mononitrate (Vitamin B1), Vitamin D3 Supplement, Pyridoxine Hydrochloride (Vitamin B6), Folic Acid.",
+  "proteinMin": 27,
+  "fatMin": 10,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3437,
+   "kcalPerCup": 342
+  },
+  "line": "pedigree-dog",
+  "flavor": "Beef & Lamb",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "38 lb",
+    "lb": 38
+   }
+  ]
+ },
+ {
+  "brand": "Pedigree",
+  "name": "Complete Nutrition Small Breed Adult Chicken, Rice & Vegetable Flavor",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/pedigree-complete-nutrition-small-breed-adult-dry-dog-food---chicken-rice-and-vegetables-70825.html",
+  "ingredientsText": "Ground Whole Grain Corn, Chicken By–Product Meal (Source of Glucosamine & Chondroitin Sulfate), Corn Protein Meal, Meat and Bone Meal, Soybean Meal, Animal Fat (Source of Omega 6 Fatty Acids [Preserved with BHA and Citric Acid]), Ground Whole Grain Wheat, Brewers Rice, Natural Flavor (Source of Roasted Chicken Flavor), Salt, Calcium Carbonate, Potassium Chloride, BHA (Preservative), Citric Acid (Preservative), Choline Chloride, Monocalcium Phosphate, DL–Methionine, Dried Peas, Zinc Sulfate, Vitamin E Supplement, Dried Carrots, L–Tryptophan, Red 40, Yellow 5, Yellow 6, Blue 2, Niacin Supplement (Vitamin B3), D–Calcium Pantothenate (Vitamin B5), Copper Sulfate, Sodium Selenite, Potassium Iodide, Vitamin A Supplement, Riboflavin Supplement (Vitamin B2), Vitamin B12 Supplement, Thiamine Mononitrate (Vitamin B1), Vitamin D3 Supplement, Pyridoxine Hydrochloride (Vitamin B6), Folic Acid.",
+  "proteinMin": 21,
+  "fatMin": 11,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerCup": 341
+  },
+  "line": "pedigree-dog",
+  "flavor": "Chicken, Rice & Vegetable",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Pedigree",
+  "name": "Puppy Growth & Protection Chicken & Vegetable Flavor",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/pedigree-growth-and-protection-puppy-dry-dog-food---healthy-development-chicken-and-vegetables-2384.html",
+  "ingredientsText": "Ground Whole Grain Corn, Chicken By-Product Meal, Ground Whole Grain Wheat, Soybean Meal, Brewers Rice, Animal Fat (Source of Omega 6 Fatty Acids [Preserved with BHA and Citric Acid]), Meat and Bone Meal, Natural Flavor (Source of Chicken Flavor), Dried Brewers Yeast, Salt, Monocalcium Phosphate, Fish Oil ([Source of DHA] Preserved with Mixed Tocopherols), Dried Plain Beet Pulp, Potassium Chloride, Calcium Carbonate, Choline Chloride, DL-Methionine, Dried Peas, Zinc Sulfate, L-Tryptophan, Vitamin E Supplement, Red 40, Dried Carrots, Yellow 5, Blue 2, Copper Sulfate, Yellow 6, Niacin Supplement (Vitamin B3), Sodium Selenite, Potassium Iodide, D-Calcium Pantothenate (Vitamin B5), Vitamin A Supplement, Riboflavin Supplement (Vitamin B2), Vitamin B12 Supplement, Thiamine Mononitrate (Vitamin B1), Vitamin D3 Supplement, Pyridoxine Hydrochloride (Vitamin B6), Folic Acid.",
+  "proteinMin": 27,
+  "fatMin": 11,
+  "fiberMax": 3,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3463,
+   "kcalPerCup": 295
+  },
+  "line": "pedigree-dog",
+  "flavor": "Chicken & Vegetable",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   }
+  ]
+ },
+ {
+  "brand": "Pedigree",
+  "name": "Adult Large Breed Roasted Chicken, Rice & Vegetable Flavor",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 1,
+  "sourceUrl": "https://www.petsmart.com/dog/food/dry-food/-pedigree-adult-large-breed-dry-dog-food---roasted-chicken-rice-and-vegetable-flavor-96927.html",
+  "ingredientsText": "Ground Whole Grain Corn, Chicken By-Product Meal (Source of Glucosamine and Chondroitin Sulfate), Meat and Bone Meal, Soybean Meal, Animal Fat (Source of Omega 6 Fatty Acids [Preserved with BHA and Citric Acid]), Ground Whole Grain Wheat, Corn Protein Meal, Brewers Rice, Natural Flavor (Source of Roasted Chicken Flavor), Dried Plain Beet Pulp, Salt, Calcium Carbonate, Potassium Chloride, Choline Chloride, DL-Methionine, Monocalcium Phosphate, Dried Peas, BHT (preservative), BHA (preservative), Citric Acid (preservative), Zinc Sulfate, Vitamin E Supplement, L-Tryptophan, Dried Carrots, Red 40, Yellow 5, Yellow 6, Blue 2, Niacin Supplement (Vitamin B3), D-Calcium Pantothenate (Vitamin B5), Copper Sulfate, Sodium Selenite, Potassium Iodide, Vitamin A Supplement, Riboflavin Supplement (Vitamin B2), Vitamin B12 Supplement, Thiamine Mononitrate (Vitamin B1), Vitamin D3 Supplement, Pyridoxine Hydrochloride (Vitamin B6), Folic Acid.",
+  "proteinMin": 22,
+  "fatMin": 10,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3343,
+   "kcalPerCup": 332
+  },
+  "line": "pedigree-dog",
+  "flavor": "Chicken, Rice & Vegetable",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "38 lb",
+    "lb": 38
+   }
+  ]
+ }
+]

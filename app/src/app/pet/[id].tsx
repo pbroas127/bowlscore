@@ -111,7 +111,7 @@ export default function PetPage() {
         <EmptyState compact pose={cat ? 'kitten-peeking' : 'puppy-sniffing'} title={`No main food for ${pet.name} yet`} body="Scan the food that fills the bowl most days, then set it as the main food." action={<PillButton label="Scan a food" onPress={() => router.push('/scan')} />} />
       )}
 
-      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} /><BagCard pet={pet} scan={main} onEditPet={() => setDraft(pet)} onEditFood={() => setFood(main.label)} /></View> : null}
+      {main ? <View style={{ marginTop: 12, marginBottom: -12 }}><FeedingCard pet={pet} label={main.label} onEdit={() => setDraft(pet)} onAddCalories={() => setFood(main.label)} /><BagCard pet={pet} scan={main} onEditPet={() => setDraft(pet)} onEditFood={() => setFood(main.label)} /></View> : null}
 
       <SwitchPlanCard pet={pet} />
 

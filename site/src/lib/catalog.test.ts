@@ -42,10 +42,15 @@ for (const p of PRODUCTS) {
   assert.ok(p.image === null || /^https:\/\/.+\/products\/.+\.webp$/.test(p.image))
 }
 
-// ASINs are real Amazon ids, and a line only exists to link siblings.
+// ASINs are real Amazon ids. A line may have one member for now (its siblings join as the catalog grows), but its
+// members must be one species, and no two may share the same flavor and formula (the picker could not tell them apart).
 for (const e of CATALOG) for (const a of [e.asin, ...(e.sizes ?? []).map((s) => s.asin)]) if (a) assert.match(a, /^[A-Z0-9]{10}$/, `${e.id} asin ${a}`)
 const lines = Map.groupBy(CATALOG.filter((e) => e.line), (e) => e.line!)
-for (const [line, members] of lines) assert.ok(members.length >= 2, `line ${line} has only one member`)
+for (const [line, members] of lines) {
+  assert.equal(new Set(members.map((m) => m.species)).size, 1, `line ${line} mixes species`)
+  const combos = members.filter((m) => m.flavor || m.formula).map((m) => `${m.formula ?? ''}|${m.flavor ?? ''}`)
+  assert.equal(new Set(combos).size, combos.length, `line ${line} has two members with the same formula and flavor`)
+}
 
 // Matching: strong matches only. A wrong match is worse than none.
 const id = (scan: Parameters<typeof matchCatalog>[0]) => matchCatalog(scan)?.id ?? null
@@ -65,7 +70,7 @@ if (has('purina-one-chicken-and-rice-formula-dog')) {
 if (has('orijen-original-dog') && has('orijen-original-cat-cat')) {
   assert.equal(id({ brand: 'Orijen', name: 'Original Dry Dog Food', species: 'dog' }), 'orijen-original-dog')
   assert.equal(id({ brand: 'Orijen', name: 'Original', species: 'unknown' }), null, 'a one word recipe name needs a known species')
-  assert.equal(id({ brand: 'Orijen', name: 'Six Fish Dry Dog Food', species: 'dog' }), null)
+  assert.equal(id({ brand: 'Orijen', name: 'Six Fish Dry Dog Food', species: 'dog' }), has('orijen-six-fish-recipe-dog') ? 'orijen-six-fish-recipe-dog' : null)
 }
 assert.equal(id({ name: '' }), null)
 assert.deepEqual(scanMatch({ foodForm: 'dry', ingredients: [], aafco: 'not_found' }, 'dog'), {})

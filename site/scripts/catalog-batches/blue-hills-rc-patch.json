@@ -1,0 +1,6 @@
+[
+{"id":"blue-buffalo-wilderness-adult-chicken-recipe-dog","line":"blue-buffalo-wilderness-dog","flavor":"Chicken","formula":"Adult"},
+{"id":"blue-buffalo-homestyle-recipe-chicken-dinner-with-garden-vegetables-dog","line":"blue-buffalo-homestyle-recipe-dog","flavor":"Chicken","formula":"Adult"},
+{"id":"blue-buffalo-wilderness-adult-chicken-recipe-cat","line":"blue-buffalo-wilderness-cat","flavor":"Chicken","formula":"Adult"},
+{"id":"hills-science-diet-adult-indoor-chicken-recipe-cat","calories":{"kcalPerKg":3492,"kcalPerCup":327},"lifeStageClaim":"adult","line":"hills-science-diet-cat","flavor":"Chicken","formula":"Indoor"}
+]

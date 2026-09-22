@@ -9,7 +9,9 @@ const sharp = createRequire(import.meta.url)('../site/node_modules/sharp')
 
 const [name, ...breeds] = process.argv.slice(2)
 if (!name || breeds.length !== 6) throw new Error('usage: gen-breed-sheet.mjs <sheet-name> and exactly six breeds')
-const dir = 'assets/mascots/breeds'
+// Sheets named icons-* are objects (bowls, cups, cans) for the feeding and fit cards, drawn in the same clay style.
+const icons = name.startsWith('icons')
+const dir = icons ? 'assets/icons' : 'assets/mascots/breeds'
 mkdirSync(`${dir}/sheets`, { recursive: true })
 const sheet = `${dir}/sheets/${name}.png`
 // "Husky (gray mask, blue eyes)" names the file husky-head.png: the part in brackets is only a drawing hint.
@@ -22,7 +24,10 @@ const [animal, face, ref] = cat
   : ['puppy', 'the same big round glossy brown eyes with white highlights, the same happy open mouth smile with the pink tongue hanging out', 'app/assets/mascots/puppy-head.png']
 
 if (!existsSync(sheet)) {
-  const prompt = `A sprite sheet of SIX ${animal} heads arranged in a clean grid of 3 columns and 2 rows, evenly spaced, each head centered in its own cell with clear empty space around it, nothing overlapping or touching, no text, no labels, no borders, fully transparent background.
+  const prompt = icons ? `A sprite sheet of SIX separate objects arranged in a clean grid of 3 columns and 2 rows, evenly spaced, each object centered in its own cell with clear empty space around it, nothing overlapping or touching, no text, no numbers, no labels, no borders, no shadows on the ground, fully transparent background.
+Every object is drawn in EXACTLY the rendering style of the reference image: the same soft 3D clay like cartoon look, the same warm saturated colors, the same soft lighting and gentle highlights, simple rounded shapes, three quarter front view. Friendly and simple, readable at a small size.
+Top row, left to right: ${breeds.slice(0, 3).join(', ')}.
+Bottom row, left to right: ${breeds.slice(3).join(', ')}.` : `A sprite sheet of SIX ${animal} heads arranged in a clean grid of 3 columns and 2 rows, evenly spaced, each head centered in its own cell with clear empty space around it, nothing overlapping or touching, no text, no labels, no borders, fully transparent background.
 Every head is drawn in EXACTLY the style of the reference image: the same soft 3D clay like cartoon rendering, the same front facing angle, ${face}, the same head size, proportions and fluffy neck fur at the bottom. Only the breed changes: coat colors, markings, ear shape and fur length must clearly read as that breed as a ${animal}.
 Top row, left to right: ${breeds.slice(0, 3).join(', ')}.
 Bottom row, left to right: ${breeds.slice(3).join(', ')}.`
@@ -141,7 +146,7 @@ for (const [i, h] of heads.entries()) {
   }
   // Framed like puppy-head.png: the artwork fills about 90 percent of a 768 square, centered.
   const head = await sharp(px, { raw: { width: w, height: hh, channels: 4 } }).trim({ threshold: 1 }).resize(690, 690, { fit: 'inside' }).png().toBuffer()
-  const out = `${dir}/${slug(breeds[i])}-head.png`
+  const out = `${dir}/${slug(breeds[i])}${icons ? '' : '-head'}.png`
   await sharp({ create: { width: 768, height: 768, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } }).composite([{ input: head, gravity: 'center' }]).png().toFile(out)
   console.log('wrote', out)
 }

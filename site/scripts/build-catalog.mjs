@@ -281,7 +281,7 @@ const write = (list) => {
 function splitList(text) {
   const out = ['']
   let d = 0
-  for (const ch of text.trim().replace(/.$/, '')) {
+  for (const ch of text.trim().replace(/\.$/, '')) { // only a closing period; "Folic Acid" must not lose its "d"
     if ('([{'.includes(ch)) d++
     if (')]}'.includes(ch)) d--
     if (ch === ',' && d === 0) out.push('')

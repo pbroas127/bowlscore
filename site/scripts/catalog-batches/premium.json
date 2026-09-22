@@ -1,0 +1,1874 @@
+[
+ {
+  "brand": "Orijen",
+  "name": "Puppy",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/dogs/dog-food/puppy/ds-ori-puppy.html",
+  "ingredientsText": "Chicken, turkey, chicken liver, salmon, whole herring, dehydrated chicken, dehydrated turkey, dehydrated sardine, dehydrated chicken liver, dehydrated egg, whole red lentils, whole pinto beans, chicken fat, pollock oil, whole navy beans, whole green lentils, whole chickpeas, whole peas, turkey giblets (liver, heart, gizzard), eggs, natural chicken flavor, dried apple pomace, chicken heart, salt, vitamin E supplement, whole pumpkin, whole butternut squash, collard greens, whole pears, whole apples, whole cranberries, dried kelp, zinc proteinate, mixed tocopherols (preservative), niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, copper proteinate, dried Bacillus coagulans fermentation product, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 38,
+  "fatMin": 20,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3960,
+   "kcalPerCup": 475
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "orijen-dog",
+  "flavor": "Poultry & Fish",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "23.5 lb",
+    "lb": 23.5
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Six Fish Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/dogs/dog-food/six-fish-recipe/ds-ori-six-fish-dog.html",
+  "ingredientsText": "Whole herring, salmon, monkfish, Acadian redfish, flounder, whole hake, sardine meal, herring meal, blue whiting meal, pollock meal, whole red lentils, whole pinto beans, whole green lentils, dehydrated salmon, sunflower oil, whole navy beans, whole peas, natural fish flavor, dried apple pomace, herring oil, safflower oil, vitamin E supplement, mixed tocopherols (preservative), whole pumpkin, whole butternut squash, collard greens, whole apples, whole pears, dried kelp, zinc proteinate, niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, copper proteinate, dried Bacillus coagulans fermentation product, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 40,
+  "fatMin": 16,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3760,
+   "kcalPerCup": 451
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "orijen-dog",
+  "flavor": "Six Fish",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "23.5 lb",
+    "lb": 23.5
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Regional Red",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/dogs/dog-food/regional-red/ds-ori-regional-red-dog.html",
+  "ingredientsText": "Beef, wild boar, lamb, pork, beef liver, beef meal, lamb meal, mackerel meal, herring meal, pork meal, whole red lentils, whole pinto beans, whole navy beans, whole green lentils, whole chickpeas, whole herring, pork liver, beef fat, natural pork flavor, dried apple pomace, pollock oil, pork kidney, beef kidney, beef tripe, vitamin E supplement, dried kelp, whole pumpkin, whole butternut squash, collard greens, whole apples, whole pears, zinc proteinate, mixed tocopherols (preservative), niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, dried Bacillus coagulans fermentation product, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 38,
+  "fatMin": 18,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3860,
+   "kcalPerCup": 463
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "orijen-dog",
+  "flavor": "Regional Red",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "23.5 lb",
+    "lb": 23.5
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Amazing Grains Original",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/dogs/dog-food/amazing-grains%2C-original/ds-ori-amazing-grains-original.html",
+  "ingredientsText": "Chicken, turkey, chicken giblets (liver, heart, gizzard), whole herring, salmon, dehydrated chicken, dehydrated chicken liver, oat groats, millet, chicken fat, eggs, flounder, turkey giblets (liver, heart, gizzard), dehydrated herring, dehydrated turkey, dehydrated egg, natural chicken flavor, whole oats, ground whole flaxseed, pollock oil, quinoa seed, chia seed, inulin, vitamin E supplement, whole cranberries, dried kelp, zinc proteinate, salt, mixed tocopherols (preservative), whole pumpkin, whole butternut squash, whole zucchini, whole carrots, whole apples, whole pears, kale, spinach, beet greens, turnip greens, niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, whole blueberries, copper proteinate, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, dried Bacillus coagulans fermentation product, citric acid (preservative), rosemary extract.",
+  "proteinMin": 38,
+  "fatMin": 18,
+  "fiberMax": 4,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3920,
+   "kcalPerCup": 490
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "orijen-amazing-grains-dog",
+  "flavor": "Original",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Original Cat",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/cats/cat-food/original-cat/ds-ori-cat-kitten.html",
+  "ingredientsText": "Chicken, turkey, whole herring, turkey giblets (liver, heart, gizzard), salmon, dehydrated chicken, dehydrated turkey, dehydrated salmon, dehydrated chicken liver, dehydrated egg, whole red lentils, whole pinto beans, whole green lentils, chicken liver, eggs, chicken fat, natural chicken flavor, whole navy beans, whole chickpeas, whole peas, pollock oil, lentil fiber, chicken hearts, choline chloride, whole cranberries, dried kelp, mixed tocopherols (preservative), vitamin E supplement, zinc proteinate, whole pumpkin, whole butternut squash, collard greens, whole apples, whole pears, thiamine mononitrate, copper proteinate, niacin, pyridoxine hydrochloride, dried Bacillus coagulans fermentation product, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 40,
+  "fatMin": 20,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4120,
+   "kcalPerCup": 515
+  },
+  "lifeStageClaim": "all",
+  "line": "orijen-cat",
+  "flavor": "Original",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Kitten Formula",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/cats/cat-food/kitten-formula/ds-ori-kitten.html",
+  "ingredientsText": "Chicken, turkey, salmon, whole herring, chicken liver, dehydrated chicken, dehydrated turkey, dehydrated herring, dehydrated chicken liver, dehydrated egg, whole red lentils, whole pinto beans, turkey giblets (liver, heart, gizzard), eggs, pollock oil, chicken fat, whole green lentils, whole navy beans, whole chickpeas, whole peas, natural chicken flavor, ground miscanthus grass, chicken hearts, choline chloride, whole cranberries, dried kelp, mixed tocopherols (preservative), whole pumpkin, whole butternut squash, collard greens, whole apples, whole pears, zinc proteinate, riboflavin, folic acid, thiamine mononitrate, niacin, pyridoxine hydrochloride, copper proteinate, dried Bacillus coagulans fermentation product, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 40,
+  "fatMin": 20,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4120,
+   "kcalPerCup": 515
+  },
+  "lifeStageClaim": "growth",
+  "line": "orijen-cat",
+  "flavor": "Poultry & Fish",
+  "formula": "Kitten",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "7 lb",
+    "lb": 7
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Guardian 8",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/cats/cat-food/guardian-8/ds-ori-guardian-8.html",
+  "ingredientsText": "Chicken, salmon, turkey, whole herring, chicken liver, dehydrated chicken, dehydrated turkey, dehydrated sardine, dehydrated chicken liver, dehydrated egg, whole red lentils, whole pinto beans, turkey giblets (liver, heart, gizzard), eggs, rabbit, pollock oil, whole green lentils, whole navy beans, whole chickpeas, whole peas, ground miscanthus grass, natural chicken flavor, chicken fat, chicken hearts, whole cranberries, choline chloride, dried kelp, mixed tocopherols (preservative), whole pumpkin, whole butternut squash, collard greens, whole apples, whole pears, zinc proteinate, vitamin E supplement, dried chicory root, hydrolyzed yeast, dried brewers yeast, thiamine mononitrate, riboflavin, niacin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, copper proteinate, dried Bacillus coagulans fermentation product, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 40,
+  "fatMin": 18,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3980,
+   "kcalPerCup": 498
+  },
+  "lifeStageClaim": "adult",
+  "line": "orijen-cat",
+  "flavor": "Poultry & Fish",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   }
+  ]
+ },
+ {
+  "brand": "Orijen",
+  "name": "Regional Red",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.orijenpetfoods.com/en-US/cats/cat-food/regional-red/ds-ori-regional-red-cat.html",
+  "ingredientsText": "Beef, wild boar, beef liver, whole herring, pork, beef meal, lamb meal, pork meal, sardine meal, pollock meal, whole red lentils, whole pinto beans, lamb, herring meal, beef fat, natural fish flavor, lamb liver, whole green lentils, whole navy beans, beef kidney, pollock oil, whole chickpeas, whole peas, lentil fiber, dehydrated salmon, beef tripe, pork liver, pork kidney, whole cranberries, dried kelp, choline chloride, mixed tocopherols (preservative), whole pumpkin, whole butternut squash, collard greens, whole apples, whole pears, zinc proteinate, vitamin E supplement, thiamine mononitrate, niacin, pyridoxine hydrochloride, dried Bacillus coagulans fermentation product, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract.",
+  "proteinMin": 40,
+  "fatMin": 20,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 4080,
+   "kcalPerCup": 510
+  },
+  "lifeStageClaim": "all",
+  "line": "orijen-cat",
+  "flavor": "Regional Red",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Free-Run Poultry Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/free-run-poultry-recipe/ds-aca-free-run-poultry.html",
+  "ingredientsText": "Chicken, turkey, chicken meal, whole red lentils, whole pinto beans, whole green peas, chicken liver, chicken fat, catfish meal, whole chickpeas, whole green lentils, whole yellow peas, lentil fiber, turkey giblets (liver, heart, gizzard), eggs, fish oil, natural chicken flavor, chicken heart, pea starch, salt, vitamin E supplement, dried kelp, whole pumpkin, mixed tocopherols (preservative), zinc proteinate, calcium pantothenate, collard greens, whole apples, whole pears, vitamin A acetate, vitamin D3 supplement, riboflavin, folic acid, freeze-dried chicken, freeze-dried turkey, copper proteinate, dried chicory root, turmeric, sarsaparilla root, althea root, rose hips, juniper berries, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 29,
+  "fatMin": 17,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3475,
+   "kcalPerCup": 396
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "acana-dog",
+  "flavor": "Free-Run Poultry",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "25 lb",
+    "lb": 25
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Red Meat Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/red-meat-recipe/ds-aca-red-meat.html",
+  "ingredientsText": "Beef, pork, beef meal, whole red lentils, whole pinto beans, whole green peas, pork meal, beef fat, whole green lentils, whole chickpeas, whole yellow peas, lamb, fish oil, lentil fiber, natural pork flavor, pea starch, beef tripe, beef liver, beef kidney, pork liver, pork kidney, salt, vitamin E supplement, dried kelp, whole pumpkin, zinc proteinate, collard greens, whole apples, whole pears, mixed tocopherols (preservative), taurine, calcium pantothenate, freeze-dried beef, freeze-dried pork, freeze-dried lamb, riboflavin, folic acid, vitamin A acetate, vitamin D3 supplement, dried chicory root, turmeric, sarsaparilla root, althea root, rose hips, juniper berries, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 29,
+  "fatMin": 17,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3405,
+   "kcalPerCup": 388
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "acana-dog",
+  "flavor": "Red Meat",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "25 lb",
+    "lb": 25
+   },
+   {
+    "label": "32 lb",
+    "lb": 32
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Adult Large Breed Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/adult-large-breed-recipe/ds-aca-adult-large.html",
+  "ingredientsText": "Chicken, chicken meal, whole red lentils, whole green peas, turkey meal, whole chickpeas, chicken liver, chicken fat, eggs, whole whiting, fish oil, herring meal, whole green lentils, whole yellow peas, lentil fiber, natural chicken flavor, pea starch, chicken heart, chicken gizzard, turkey giblets (liver, heart, gizzard), salt, dried kelp, whole pumpkin, whole butternut squash, whole zucchini, whole carrots, whole apples, whole pears, choline chloride, vitamin E supplement, zinc proteinate, mixed tocopherols (preservative), kale, spinach, turnip greens, beet greens, whole cranberries, whole blueberries, vitamin A acetate, vitamin D3 supplement, vitamin B3 (niacin), vitamin B1 (thiamine mononitrate), vitamin B5 (calcium pantothenate), vitamin B6 (pyridoxine hydrochloride), vitamin B2 (riboflavin), vitamin B12 supplement, vitamin B9 (folic acid), copper proteinate, dried chicory root, turmeric, althea root, rose hips, juniper berries, rosemary extract, citric acid (preservative), dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 31,
+  "fatMin": 15,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3410,
+   "kcalPerCup": 389
+  },
+  "lifeStageClaim": "adult",
+  "line": "acana-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "25 lb",
+    "lb": 25
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Classics Chicken & Barley Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/classics%2C-chicken-and-barley-recipe/ds-aca-classics-chicken-barley.html",
+  "ingredientsText": "Chicken, chicken meal, pearled barley, whole peas, oat groats, chicken fat, whole oats, lentil fiber, natural chicken flavor, pea starch, fish oil, dicalcium phosphate, potassium chloride, dried kelp, salt, choline chloride, vitamin E supplement, zinc proteinate, mixed tocopherols (preservative), vitamin C (ascorbic acid), vitamin A supplement, vitamin D3 supplement, taurine, whole apples, whole butternut squash, whole carrots, collard greens, whole pears, whole pumpkin, copper proteinate, niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 25,
+  "fatMin": 15,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3305,
+   "kcalPerCup": 397
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "acana-classics-dog",
+  "flavor": "Chicken & Barley",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Classics Beef & Barley Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/classics%2C-beef-and-barley-recipe/ds-aca-classics-beef-barley.html",
+  "ingredientsText": "Beef, beef meal, pearled barley, whole peas, oat groats, pork fat, pork meal, whole oats, lentil fiber, natural pork flavor, pea starch, fish oil, potassium chloride, vitamin E supplement, dried kelp, salt, choline chloride, DL-methionine, taurine, zinc proteinate, mixed tocopherols (preservative), vitamin C (ascorbic acid), vitamin A supplement, vitamin D3 supplement, whole apples, whole butternut squash, whole carrots, collard greens, whole pears, whole pumpkin, niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, copper proteinate, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 25,
+  "fatMin": 15,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3305,
+   "kcalPerCup": 397
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "acana-classics-dog",
+  "flavor": "Beef & Barley",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   },
+   {
+    "label": "32 lb",
+    "lb": 32
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Classics Salmon & Barley Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/classics%2C-salmon-and-barley-recipe/ds-aca-classics-salmon-barley.html",
+  "ingredientsText": "Salmon, herring meal, pearled barley, whole peas, oat groats, pork fat, whole oats, lentil fiber, natural fish flavor, pea starch, fish oil, dicalcium phosphate, calcium carbonate, potassium chloride, dried kelp, choline chloride, vitamin E supplement, salt, zinc proteinate, vitamin C (ascorbic acid), mixed tocopherols (preservative), taurine, vitamin A supplement, vitamin D3 supplement, iron proteinate, whole apples, whole butternut squash, whole carrots, collard greens, whole pears, whole pumpkin, niacin, thiamine mononitrate, calcium pantothenate, pyridoxine hydrochloride, riboflavin, folic acid, vitamin B12 supplement, copper proteinate, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 25,
+  "fatMin": 15,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3305,
+   "kcalPerCup": 397
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "acana-classics-dog",
+  "flavor": "Salmon & Barley",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Wholesome Grains Free-Run Poultry & Grains Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/wholesome-grains%2C-free-run-poultry-and-grains-recipe/ds-aca-free-run-poultry-wg.html",
+  "ingredientsText": "Chicken, turkey, chicken meal, oat groats, whole sorghum, whole millet, catfish meal, whole oats, chicken fat, chicken liver, eggs, ground miscanthus grass, natural chicken flavor, fish oil, turkey giblets (liver, heart, gizzard), chicken heart, whole butternut squash, whole pumpkin, salt, potassium chloride, choline chloride, taurine, dried kelp, vitamin E supplement, mixed tocopherols (preservative), zinc proteinate, iron proteinate, vitamin D3 supplement, vitamin A acetate, copper proteinate, niacin, thiamine mononitrate, riboflavin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, dried chicory root, turmeric, sarsaparilla root, althea root, rose hips, juniper berries, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 27,
+  "fatMin": 17,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3370,
+   "kcalPerCup": 371
+  },
+  "lifeStageClaim": "all",
+  "line": "acana-wholesome-grains-dog",
+  "flavor": "Free-Run Poultry",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   },
+   {
+    "label": "32 lb",
+    "lb": 32
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Wholesome Grains Red Meat & Grains Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/wholesome-grains%2C-red-meat-and-grains-recipe/ds-aca-red-meat-wg.html",
+  "ingredientsText": "Beef, pork, beef meal, oat groats, whole sorghum, whole millet, pork meal, whole oats, beef fat, lamb, fish oil, ground miscanthus grass, natural pork flavor, beef liver, pork liver, pork kidney, beef tripe, beef kidney, potassium chloride, whole butternut squash, whole pumpkin, salt, taurine, choline chloride, vitamin E supplement, dried kelp, zinc proteinate, mixed tocopherols (preservative), vitamin D3 supplement, vitamin A acetate, niacin, thiamine mononitrate, riboflavin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, dried chicory root, turmeric, sarsaparilla root, althea root, rose hips, juniper berries, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 27,
+  "fatMin": 17,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3370,
+   "kcalPerCup": 371
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "acana-wholesome-grains-dog",
+  "flavor": "Red Meat",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Wholesome Grains Puppy Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/dogs/dog-food/wholesome-grains,-puppy-recipe/ds-aca-puppy-grains.html",
+  "ingredientsText": "Chicken, chicken meal, oat groats, whole sorghum, whole millet, chicken fat, whole oats, chicken liver, catfish meal, ground miscanthus grass, eggs, turkey, fish oil, natural chicken flavor, chicken heart, turkey giblets (liver, heart, gizzard), whole butternut squash, whole pumpkin, salt, potassium chloride, choline chloride, vitamin E supplement, taurine, dried kelp, mixed tocopherols (preservative), zinc proteinate, vitamin D3 supplement, vitamin A acetate, niacin, thiamine mononitrate, riboflavin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, iron proteinate, copper proteinate, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 28,
+  "fatMin": 19,
+  "fiberMax": 6,
+  "moistureMax": 12,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3540,
+   "kcalPerCup": 425
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "acana-wholesome-grains-dog",
+  "flavor": "Chicken",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "11.5 lb",
+    "lb": 11.5
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Market Medley Duck, Chicken & Turkey Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/cats/cat-food/market-medley-duck%2C%E2%80%AFchicken-and-turkey-recipe/ds-aca-marketmedley-duck-cat.html",
+  "ingredientsText": "Duck, chicken, eggs, chicken meal, turkey meal, catfish meal, whole red lentils, whole pinto beans, chicken fat, turkey, whole green lentils, whole chickpeas, pea starch, chicken liver, quail, fish oil, duck meal, lentil fiber, chicken gizzard, freeze-dried duck, freeze-dried duck liver, natural chicken flavor, whole cranberries, chicken heart, duck liver, freeze-dried turkey liver, choline chloride, whole pumpkin, collard greens, whole pears, whole apples, dried kelp, zinc proteinate, vitamin E supplement, mixed tocopherols (preservative), taurine, vitamin D3 supplement, vitamin A acetate, niacin, thiamine mononitrate, riboflavin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, biotin, copper proteinate, DL-methionine, ascorbic acid (vitamin C), dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, citric acid (preservative), rosemary extract, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product.",
+  "proteinMin": 36,
+  "fatMin": 18,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "lifeStageClaim": "all",
+  "line": "acana-market-medley-cat",
+  "flavor": "Duck, Chicken & Turkey",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "9 lb",
+    "lb": 9
+   }
+  ]
+ },
+ {
+  "brand": "Acana",
+  "name": "Market Medley Indoor Cat Chicken, Trout & Salmon Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.acana.com/en-US/cats/cat-food/market-medley%2C-indoor-cat-chicken%2C-trout-and-salmon-recipe/ds-aca-marketmedley-indoor-chicken-cat.html",
+  "ingredientsText": "Chicken, trout, salmon, chicken meal, pollock meal, herring meal, whole red lentils, whole pinto beans, chicken liver, whole green lentils, whole chickpeas, pea starch, ground miscanthus grass, chicken fat, turkey, eggs, pea fiber, fish oil, chicken gizzard, freeze-dried chicken, freeze-dried chicken liver, natural chicken flavor, chicken heart, whole cranberries, choline chloride, freeze-dried chicken heart, freeze-dried cod, freeze-dried cod liver, whole pumpkin, dried kelp, zinc proteinate, vitamin E supplement, mixed tocopherols (preservative), taurine, collard greens, whole pears, whole apples, copper proteinate, DL-methionine, vitamin A supplement, vitamin D3 supplement, niacin, vitamin C (ascorbic acid), thiamine mononitrate, riboflavin, calcium pantothenate, pyridoxine hydrochloride, folic acid, vitamin B12 supplement, biotin, menadione sodium bisulfite complex, dried chicory root, turmeric, sarsaparilla root, althea root, rosehips, juniper berries, dried Lactobacillus acidophilus fermentation product, dried Bifidobacterium animalis fermentation product, dried Lactobacillus casei fermentation product, citric acid (preservative), rosemary extract.",
+  "proteinMin": 38,
+  "fatMin": 15,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "lifeStageClaim": "adult",
+  "line": "acana-market-medley-cat",
+  "flavor": "Chicken, Trout & Salmon",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "9 lb",
+    "lb": 9
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Original Kibble Real Beef Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/original-kibble-for-dogs-beef",
+  "ingredientsText": "Beef, White Fish Meal, Herring Meal, Chicken Fat (preserved with Mixed Tocopherols and Citric Acid), Peas, Tapioca, Chicken Meal, Menhaden Fish Meal, Natural Flavor, Dried Tomato Pomace, Vitamins (Vitamin E Supplement, Vitamin A Supplement, L-Ascorbyl-2-Polyphosphate, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Chickpeas, Montmorillonite Clay, Carrots, Apples, Cranberries, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), Potassium Chloride, Salt, Choline Chloride, Taurine, Freeze Dried Beef, Freeze Dried Beef Liver, Pumpkinseeds, Freeze Dried Beef Heart, Freeze Dried Beef Kidney, Freeze Dried Beef Spleen, Dried Bacillus coagulans Fermentation Product, Rosemary Extract.",
+  "proteinMin": 35,
+  "fatMin": 20.5,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "line": "instinct-original-dog",
+  "flavor": "Beef",
+  "sizes": [
+   {
+    "label": "20 lb",
+    "lb": 20
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Original Kibble Real Salmon Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/original-kibble-for-dogs-salmon",
+  "ingredientsText": "Salmon, White Fish Meal (Pacific Whiting, Pacific Sole, Pacific Rockfish), Peas, Menhaden Fish Meal, Canola Oil (preserved with Mixed Tocopherols and Citric Acid), Herring Meal, Chickpeas, Pea Protein, Natural Flavor, Tapioca, Dried Tomato Pomace, Carrots, Apples, Cranberries, Montmorillonite Clay, Vitamins (L-Ascorbyl-2-Polyphosphate, Vitamin E Supplement, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Choline Chloride, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), Freeze Dried Cod, Dried Bacillus coagulans Fermentation Product, Rosemary Extract.",
+  "proteinMin": 37.5,
+  "fatMin": 21,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "line": "instinct-original-dog",
+  "flavor": "Salmon",
+  "sizes": [
+   {
+    "label": "20 lb",
+    "lb": 20
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Raw Boost Kibble Real Chicken Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/rawboost-kibble-chicken",
+  "ingredientsText": "Chicken, Chicken Meal, Peas, Chicken Fat (preserved with Mixed Tocopherols), Tapioca, Dried Yeast, Turkey Meal, Fish Meal, Sweet Potatoes, Freeze-Dried Chicken, Ground Flaxseeds, Natural Flavor, Freeze-Dried Chicken Liver, Dried Tomato Pomace, Pumpkin Seeds, Salt, Freeze-Dried Chicken Heart, Vitamins (Vitamin E Supplement, Vitamin A Supplement, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Apples, Blueberries, Carrots, Cranberries, Montmorillonite Clay, Choline Chloride, Ground Miscanthus Grass, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydroiodide), Potassium Chloride, Taurine, Yeast Culture, Dried Lactobacillus acidophilus Fermentation Product, Dried Enterococcus faecium Fermentation Product, Dried Aspergillus oryzae Fermentation Extract, Dried Trichoderma longibrachiatum Fermentation Extract, Dried Bacillus subtilis Fermentation Extract, Salmon Oil, Rosemary Extract.",
+  "proteinMin": 32,
+  "fatMin": 16.5,
+  "fiberMax": 4.5,
+  "moistureMax": 9,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "line": "instinct-raw-boost-dog",
+  "flavor": "Chicken",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Raw Boost Kibble for Small Breed Dogs Real Chicken Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/rawboost-kibble-for-small-breed-dogs-chicken",
+  "ingredientsText": "Chicken, Chicken Meal, Peas, Chicken Fat (Preserved with Mixed Tocopherols), Tapioca, Sweet Potatoes, Fish Meal, Turkey Meal, Freeze-Dried Chicken, Chickpeas, Dried Tomato Pomace, Natural Flavor, Ground Flaxseeds, Freeze-Dried Chicken Liver, Salt, Coconut Oil, Potassium Chloride, Pumpkin Seeds, Freeze-Dried Chicken Heart, Montmorillonite Clay, Ground Miscanthus Grass, Vitamins (Vitamin E Supplement, Vitamin A Supplement, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Apples, Blueberries, Carrots, Cranberries, Dried Yeast, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydroiodide), Choline Chloride, Taurine, Yeast Culture, Dried Lactobacillus acidophilus Fermentation Product, Dried Enterococcus faecium Fermentation Product, Dried Aspergillus oryzae Fermentation Extract, Dried Trichoderma longibrachiatum Fermentation Extract, Dried Bacillus subtilis Fermentation Extract, Salmon Oil, Rosemary Extract.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 4,
+  "moistureMax": 9,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "line": "instinct-raw-boost-dog",
+  "flavor": "Chicken",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Raw Boost Whole Grain Kibble for Puppies Chicken Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/rawboost-whole-grain-kibble-for-puppies-chicken",
+  "ingredientsText": "Chicken, Chicken Meal, Barley, Turkey Meal, Oatmeal, Brown Rice, Sorghum, Dried Yeast, Chicken Fat (Preserved with Mixed Tocopherols), Ground Flaxseeds, Salmon Oil, Freeze-Dried Chicken, Natural Flavor, Freeze-Dried Chicken Liver, Salt, Pumpkin Seeds, Freeze-Dried Chicken Heart, Apples, Blueberries, Cranberries, Carrots, Potassium Chloride, Montmorillonite Clay, Ground Miscanthus Grass, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydroiodide), Choline Chloride, Vitamins (Vitamin E Supplement, Vitamin A Supplement, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Taurine, Yeast Culture, Dried Lactobacillus acidophilus Fermentation Product, Dried Enterococcus Faecium Fermentation Product, Dried Aspergillus oryzae Fermentation Extract, Dried Trichoderma longibrachiatum Fermentation Extract, Dried Bacillus subtilis Fermentation Extract, Rosemary Extract.",
+  "proteinMin": 28,
+  "fatMin": 15,
+  "fiberMax": 4,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "line": "instinct-raw-boost-whole-grain-dog",
+  "flavor": "Chicken",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Limited Ingredient Diet Kibble Real Lamb Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/limited-ingredient-diet-kibble-for-dogs-lamb",
+  "ingredientsText": "Lamb Meal, Lamb, Tapioca, Peas, Canola Oil (preserved with Mixed Tocopherols and Citric Acid), Pea Protein, Montmorillonite Clay, Natural Flavor, Salt, Potassium Chloride, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), DL-Methionine, Coconut Oil, Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Choline Chloride, Freeze Dried Lamb, Pumpkinseeds, Freeze Dried Lamb Liver, Freeze Dried Lamb Spleen, Freeze Dried Lamb Heart, Freeze Dried Lamb Kidney, Rosemary Extract.",
+  "proteinMin": 24,
+  "fatMin": 21.5,
+  "fiberMax": 3.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "line": "instinct-limited-ingredient-dog",
+  "flavor": "Lamb",
+  "sizes": [
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Limited Ingredient Diet Kibble Real Salmon Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/limited-ingredient-diet-kibble-for-dogs-salmon",
+  "ingredientsText": "Salmon Meal, Salmon, Peas, Tapioca, Canola Oil (preserved with Mixed Tocopherols and Citric Acid), Montmorillonite Clay, Natural Flavor, Potassium Chloride, Salt, Choline Chloride, Coconut Oil, Vitamins (L-Ascorbyl-2-Polyphosphate, Vitamin E Supplement, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), Freeze Dried Cod, Rosemary Extract.",
+  "proteinMin": 28,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "line": "instinct-limited-ingredient-dog",
+  "flavor": "Salmon",
+  "sizes": [
+   {
+    "label": "20 lb",
+    "lb": 20
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Original Kibble Real Salmon Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/original-kibble-for-cats-salmon",
+  "ingredientsText": "Salmon, Menhaden Fish Meal, White Fish Meal, Peas, Herring Meal, Canola Oil (preserved with Mixed Tocopherols and Citric Acid), Tapioca, Salmon Meal, Natural Flavor, Dehydrated Alfalfa Meal, Salt, Montmorillonite Clay, Carrots, Apples, Cranberries, Vitamins (L-Ascorbyl-2-Polyphosphate, Vitamin E Supplement, Menadione Sodium Bisulfite Complex, Niacin Supplement, Vitamin A Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), Choline Chloride, Taurine, Freeze Dried Cod, Dried Bacillus coagulans Fermentation Product, Rosemary Extract.",
+  "proteinMin": 42,
+  "fatMin": 18,
+  "fiberMax": 3,
+  "moistureMax": 9,
+  "completeAndBalanced": true,
+  "line": "instinct-original-cat",
+  "flavor": "Salmon",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   },
+   {
+    "label": "11 lb",
+    "lb": 11
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Original Kibble for Kittens Chicken Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/original-kibble-for-kittens-chicken",
+  "ingredientsText": "Chicken, Turkey Meal, Menhaden Fish Meal, Peas, Chicken Fat (preserved with Mixed Tocopherols), Egg Product, Chicken Meal, White Fish Meal, Tapioca, Natural Flavor, Lamb Meal, Dried Tomato Pomace, Vitamins (Vitamin E Supplement, Vitamin A Supplement, L-Ascorbyl-2-Polyphosphate, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Apples, Carrots, Cranberries, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), Choline Chloride, Montmorillonite Clay, Potassium Chloride, Salt, Freeze Dried Pollock, Taurine, Pumpkinseeds, Dried Bacillus coagulans Fermentation Product, Rosemary Extract.",
+  "proteinMin": 42.5,
+  "fatMin": 22.5,
+  "fiberMax": 3,
+  "moistureMax": 9,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "line": "instinct-original-cat",
+  "flavor": "Chicken",
+  "formula": "Kitten",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Limited Ingredient Diet Kibble Real Rabbit Recipe",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/limited-ingredient-diet-kibble-for-cats-rabbit",
+  "ingredientsText": "Rabbit Meal, Peas, Tapioca, Canola Oil (preserved with Mixed Tocopherols and Citric Acid), Rabbit, Natural Flavor, Coconut Oil, Montmorillonite Clay, Taurine, Choline Chloride, Potassium Chloride, Vitamins (Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate, Niacin Supplement, Thiamine Mononitrate, d-Calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), DL-Methionine, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), Freeze Dried Rabbit, Salt, Pumpkinseeds, Rosemary Extract.",
+  "proteinMin": 35,
+  "fatMin": 19,
+  "fiberMax": 5.5,
+  "moistureMax": 9,
+  "completeAndBalanced": true,
+  "line": "instinct-limited-ingredient-cat",
+  "flavor": "Rabbit",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   },
+   {
+    "label": "11 lb",
+    "lb": 11
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Raw Boost Kibble Indoor Health Recipe with Real Chicken",
+  "species": "cat",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/raw-boost-kibble-for-cats-indoor-health-chicken",
+  "ingredientsText": "Chicken, Chicken Meal, Salmon Meal, Peas, Menhaden Fish Meal, Tapioca, Chicken Fat (preserved with Mixed Tocopherols and Citric Acid), Suncured Alfalfa Meal, Freeze Dried Chicken, Dried Tomato Pomace, Natural Flavor, Freeze Dried Chicken Liver, Fructooligosaccharides, Pumpkinseeds, Dried Chicory Root, Montmorillonite Clay, Vitamins (Vitamin E Supplement, Niacin Supplement, L-Ascorbyl-2-Polyphosphate, Thiamine Mononitrate, d-Calcium Pantothenate, Vitamin A Supplement, Riboflavin Supplement, Pyridoxine Hydrochloride, Menadione Sodium Bisulfite Complex, Vitamin B12 Supplement, Folic Acid, Vitamin D3 Supplement, Biotin), Freeze Dried Chicken Heart, Salt, Carrots, Apples, Cranberries, Choline Chloride, Potassium Chloride, Minerals (Zinc Proteinate, Iron Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Ethylenediamine Dihydriodide), DL-Methionine, Yucca Schidigera Extract, Taurine, Dried Kelp, Salmon Oil, Blueberries, Dried Bacillus coagulans Fermentation Product, Rosemary Extract.",
+  "proteinMin": 37.5,
+  "fatMin": 13,
+  "fiberMax": 5,
+  "moistureMax": 9,
+  "completeAndBalanced": true,
+  "line": "instinct-raw-boost-cat",
+  "flavor": "Chicken",
+  "formula": "Indoor",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   }
+  ]
+ },
+ {
+  "brand": "Instinct",
+  "name": "Original Real Chicken Recipe Pate",
+  "species": "cat",
+  "form": "wet",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://www.instinctpetfood.com/products/original-pates-for-cats-chicken",
+  "ingredientsText": "Chicken, Turkey, Chicken Liver, Chicken Broth, Ground Flaxseeds, Menhaden Fish Oil (preserved with Mixed Tocopherols), Egg Product, Peas, Carrots, Potassium Chloride, Minerals (Iron Proteinate, Zinc Proteinate, Copper Proteinate, Manganese Proteinate, Sodium Selenite, Potassium Iodide), Salt, Choline Chloride, Vitamins (Vitamin E Supplement, Niacin Supplement, Thiamine Mononitrate, Vitamin A Supplement, d-Calcium Pantothenate, Vitamin B12 Supplement, Riboflavin Supplement, Pyridoxine Hydrochloride, Biotin, Folic Acid, Vitamin D3 Supplement), Taurine, Magnesium Sulfate, Cranberries, Pumpkin, Tomato, Blueberries, Broccoli, Kale, Parsley.",
+  "proteinMin": 10,
+  "fatMin": 8.5,
+  "fiberMax": 2,
+  "moistureMax": 78,
+  "completeAndBalanced": true,
+  "line": "instinct-original-pate-cat",
+  "flavor": "Chicken",
+  "sizes": [
+   {
+    "label": "12 cans, 3 oz",
+    "lb": 2.25
+   },
+   {
+    "label": "12 cans, 5.5 oz",
+    "lb": 4.125
+   }
+  ]
+ },
+ {
+  "brand": "Open Farm",
+  "name": "Wild-Caught Salmon Grain-Free Dog Kibble",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://openfarmpet.com/products/wild-caught-salmon-dry-dog-food",
+  "ingredientsText": "Wild-Caught Pacific Salmon, Garbanzo Beans (Chickpeas), Ocean Whitefish Meal, Field Peas, Herring Meal, Red Lentils, Coconut Oil, Green Lentils, Coconut Meal, Pumpkin, Natural Flavor (yeast), Carrots, Sunflower Oil, Apples, Salt, Cranberries, Flaxseed, Dried Chicory Root, Vitamin E Supplement, Vitamin A Supplement, Niacin Supplement, D-calcium Pantothenate, Riboflavin Supplement, Thiamine Mononitrate, Vitamin B12 Supplement, Vitamin D3 Supplement, Folic Acid, Biotin, Zinc Proteinate, Iron Proteinate, Thiamine Hydrochloride, Manganese Proteinate, Copper Proteinate, Cobalt Proteinate, Selenium Yeast, Potassium Iodide, Choline Chloride, Mixed Tocopherols (preservative).",
+  "proteinMin": 30,
+  "fatMin": 14,
+  "fiberMax": 4.5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3600,
+   "kcalPerCup": 420
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "open-farm-grain-free-dog",
+  "flavor": "Salmon",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "11 lb",
+    "lb": 11
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Open Farm",
+  "name": "Pollock & Oatmeal Digestive Health Dog Kibble",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "sourceUrl": "https://openfarmpet.com/products/digestive-health-wild-pollock",
+  "ingredientsText": "Wild Alaskan Pollock, Whitefish Meal, Oatmeal, Barley, Pumpkin, Coconut Meal, Coconut Oil, Flaxseed, Natural Flavor (yeast), Yeast Culture, Sunflower Oil, Salt, Dicalcium Phosphate, Dried Chicory Root, Vitamin E Supplement, Vitamin A Supplement, Niacin Supplement, Pantothenic Acid, Riboflavin Supplement, Thiamine Mononitrate, Vitamin B12 Supplement, Pyridoxine Hydrochloride, Folic Acid, Blueberries, Apples, Carrots, Fructooligosaccharides, Taurine, Choline Chloride, Zinc Proteinate, Iron Proteinate, Selenium Yeast, Copper Proteinate, Manganese Proteinate, Calcium Iodate, Cranberries, Raspberries, Mixed Tocopherols, Turmeric, Cinnamon, Dried Bacillus Coagulans Fermentation Product, Rosemary Extract.",
+  "proteinMin": 28,
+  "fatMin": 10,
+  "fiberMax": 4.5,
+  "moistureMax": 10,
+  "taurineMin": 0.2,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3600,
+   "kcalPerCup": 410
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "open-farm-digestive-health-dog",
+  "flavor": "Pollock & Oatmeal",
+  "formula": "Sensitive Skin & Stomach",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Canidae",
+  "name": "PURE Farm to Bowl Wild-Caught Salmon & Sweet Potato Grain Free Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://canidae.com/pure-farm-to-bowl-wild-caught-salmon-sweet-potato-grain-free-recipe/",
+  "ingredientsText": "Salmon, Salmon Meal (Source of Glucosamine and Chondroitin Sulfate), Sardine Meal (Source of Glucosamine and Chondroitin Sulfate), Lentils, Sweet Potatoes, Peas, Dried Yeast, Canola Oil, Flaxseed, Garbanzo Beans, Natural Flavor, Choline Chloride, Taurine, Vitamin E Supplement, Mixed Tocopherols (Preservative), Potassium Chloride, L-Ascorbyl-2-Polyphosphate, Zinc Proteinate, Zinc Sulfate, Ferrous Sulfate, Iron Proteinate, Niacin Supplement, Copper Sulfate, Vitamin A Supplement, Copper Proteinate, Menadione Sodium Bisulfite Complex, Thiamine Mononitrate, Sodium Selenite, d-Calcium Pantothenate, Manganese Sulfate, Manganese Proteinate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Calcium Iodate, Dried Bacillus amyloliquefaciens Fermentation Product, Folic Acid, Biotin, Green Tea Extract, Rosemary Extract.",
+  "proteinMin": 33,
+  "fatMin": 14,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3546,
+   "kcalPerCup": 484
+  },
+  "lifeStageClaim": "adult",
+  "line": "canidae-pure-dog",
+  "flavor": "Salmon & Sweet Potato",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Canidae",
+  "name": "PURE Farm to Bowl Free-Range Bison, Lentil & Carrot Grain Free Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://canidae.com/pure-farm-to-bowl-free-range-bison-lentil-carrot-grain-free-recipe/",
+  "ingredientsText": "Bison, Lamb Meal (Source of Glucosamine and Chondroitin Sulfate), Sweet Potatoes, Peas, Lentils, Dried Yeast, Garbanzo Beans, Turkey Meal (Source of Glucosamine and Chondroitin Sulfate), Canola Oil, Suncured Alfalfa Meal, Carrots, Natural Flavor, Choline Chloride, Taurine, Mixed Tocopherols (Preservative), Potassium Chloride, Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate, Zinc Proteinate, Zinc Sulfate, Ferrous Sulfate, Iron Proteinate, Niacin Supplement, Copper Sulfate, Vitamin A Supplement, Copper Proteinate, Thiamine Mononitrate, Sodium Selenite, d-Calcium Pantothenate, Manganese Sulfate, Manganese Proteinate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Dried Bacillus amyloliquefaciens Fermentation Product, Calcium Iodate, Folic Acid, Vitamin D3 Supplement, Biotin, Green Tea Extract, Rosemary Extract.",
+  "proteinMin": 28.5,
+  "fatMin": 13,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3456,
+   "kcalPerCup": 498
+  },
+  "lifeStageClaim": "adult",
+  "line": "canidae-pure-dog",
+  "flavor": "Bison, Lentil & Carrot",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "10 lb",
+    "lb": 10
+   },
+   {
+    "label": "21 lb",
+    "lb": 21
+   }
+  ]
+ },
+ {
+  "brand": "Canidae",
+  "name": "PURE Farm to Bowl Grass-Fed Beef & Barley Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://canidae.com/pure-farm-to-bowl-grass-fed-beef-barley-recipe/",
+  "ingredientsText": "Beef, Chicken Meal (Source of Glucosamine and Chondroitin Sulfate), Pearled Barley, Whole Grain Sorghum, Millet, Beef Meal (Source of Glucosamine and Chondroitin Sulfate), Chicken Fat, Suncured Alfalfa Meal, Natural Flavor, Potassium Chloride, Salt, Choline Chloride, Mixed Tocopherols (Preservative), Taurine, Calcium Carbonate, Zinc Methionine Complex, Vitamin E Supplement, Niacin Supplement, Ferrous Sulfate, Iron Proteinate, Zinc Sulfate, L-Ascorbyl-2-Polyphosphate, Copper Proteinate, Vitamin A Supplement, Manganese Proteinate, Copper Sulfate, Thiamine Mononitrate, d-Calcium Pantothenate, Manganese Sulfate, Pyridoxine Hydrochloride, Riboflavin Supplement, Calcium Iodate, Vitamin D3 Supplement, Sodium Selenite, Biotin, Folic Acid, Vitamin B12 Supplement, Dried Bacillus coagulans Fermentation Product, Green Tea Extract, Rosemary Extract.",
+  "proteinMin": 24.5,
+  "fatMin": 14,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3528,
+   "kcalPerCup": 414
+  },
+  "lifeStageClaim": "adult",
+  "line": "canidae-pure-dog",
+  "flavor": "Beef & Barley",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Canidae",
+  "name": "PURE Farm to Bowl Pasture-Raised Lamb and Goat & Venison Meals Grain Free Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://canidae.com/pure-farm-to-bowl-pasture-raised-lamb-and-goat-venison-meals-grain-free-recipe/",
+  "ingredientsText": "Lamb, Lamb Meal (Source of Glucosamine and Chondroitin Sulfate), Lentils, Peas, Potatoes, Dried Yeast, Goat Meal (Source of Glucosamine and Chondroitin Sulfate), Canola Oil, Suncured Alfalfa Meal, Venison Meal (Source of Glucosamine and Chondroitin Sulfate), Flaxseed, Natural Flavor, Choline Chloride, Taurine, Threonine, Salt, Potassium Chloride, DL-Methionine, Mixed Tocopherols (Preservative), Vitamin E Supplement, L-Ascorbyl-2-Polyphosphate, Zinc Proteinate, Zinc Sulfate, Ferrous Sulfate, Iron Proteinate, Tryptophan, Niacin Supplement, Copper Sulfate, Vitamin A Supplement, Copper Proteinate, Thiamine Mononitrate, Sodium Selenite, d-Calcium Pantothenate, Manganese Sulfate, Manganese Proteinate, Riboflavin Supplement, Pyridoxine Hydrochloride, Vitamin B12 Supplement, Calcium Iodate, Dried Bacillus amyloliquefaciens Fermentation Product, Folic Acid, Vitamin D3 Supplement, Biotin, Green Tea Extract, Rosemary Extract.",
+  "proteinMin": 30.5,
+  "fatMin": 14,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3491,
+   "kcalPerCup": 503
+  },
+  "lifeStageClaim": "adult",
+  "line": "canidae-pure-dog",
+  "flavor": "Lamb, Goat & Venison",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Adult",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-adult-gold-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Chicken Broth, Oatmeal, Pearled Barley, Brown Rice, Chicken Fat (preserved with mixed tocopherols), Menhaden Fish Meal, Dried Tomato Pomace, Whole Oats, White Rice, Dried Egg Product, Whole Barley, Chicken Liver, Potatoes, Dried Yeast, Cheese, Flaxseed, Salmon Oil (preserved with mixed tocopherols), Salt, Carrots, Duck, Lamb, Sweet Potatoes, Celery, Alfalfa Meal, Monocalcium Phosphate, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Chicory Root Extract, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Sorbic Acid (Preservative), Yucca Schidigera Extract, L-Tryptophan, Taurine, DL-Methionine, Sodium Selenite, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 25,
+  "fatMin": 16,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3735,
+   "kcalPerCup": 418
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-gold-dog",
+  "flavor": "Chicken",
+  "formula": "Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Puppy",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-puppy-gold-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Chicken Broth, Oatmeal, Pearled Barley, Menhaden Fish Meal, Brown Rice, Chicken Fat (preserved with mixed tocopherols), Dried Tomato Pomace, Potatoes, Dried Egg Product, Whole Oats, Salmon Oil (preserved with mixed tocopherols), Dried Yeast, Whole Barley, Chicken Liver, Cheese, Flaxseed, Carrots, Duck, Lamb, Sweet Potatoes, Salt, Celery, Alfalfa Meal, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Monosodium Phosphate, DL-Methionine, Chicory Root Extract, Taurine, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Chicken Cartilage, Sorbic Acid (Preservative), L-Tryptophan, Yucca Schidigera Extract, Sodium Selenite, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 27,
+  "fatMin": 18,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3849,
+   "kcalPerCup": 420
+  },
+  "lifeStageClaim": "growth",
+  "largeSizeGrowth": "included",
+  "line": "fromm-gold-dog",
+  "flavor": "Chicken",
+  "formula": "Puppy",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Large Breed Puppy",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "growth",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-large-breed-puppy-gold-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Chicken Broth, Oatmeal, Pearled Barley, Brown Rice, Potatoes, Menhaden Fish Meal, Dried Tomato Pomace, Chicken Fat (preserved with mixed tocopherols), Dried Egg Product, Chicken Liver, Whole Oats, Dried Yeast, Flaxseed, Whole Barley, Cheese, Salmon Oil (preserved with mixed tocopherols), Salt, Carrots, Duck, Lamb, Sweet Potatoes, Celery, Alfalfa Meal, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Monosodium Phosphate, DL-Methionine, Chicory Root Extract, Calcium Sulfate, Taurine, Choline Chloride, Chicken Cartilage, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Sorbic Acid (Preservative), Yucca Schidigera Extract, L-Tryptophan, Sodium Selenite, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 26,
+  "fatMin": 14,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3625,
+   "kcalPerCup": 384
+  },
+  "lifeStageClaim": "growth",
+  "largeSizeGrowth": "included",
+  "line": "fromm-gold-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Puppy",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Large Breed Adult",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-large-breed-adult-gold-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Chicken Broth, Oatmeal, Pearled Barley, Brown Rice, White Rice, Dried Tomato Pomace, Whole Oats, Whole Barley, Menhaden Fish Meal, Chicken Liver, Dried Egg Product, Chicken Fat (preserved with mixed tocopherols), Potatoes, Cheese, Flaxseed, Salmon Oil (preserved with mixed tocopherols), Dried Yeast, Carrots, Salt, Duck, Lamb, Sweet Potatoes, Celery, Alfalfa Meal, Monosodium Phosphate, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Calcium Sulfate, Chicory Root Extract, Taurine, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Sorbic Acid (Preservative), Yucca Schidigera Extract, DL-Methionine, Sodium Selenite, L-Tryptophan, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 23,
+  "fatMin": 12,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3561,
+   "kcalPerCup": 377
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-gold-dog",
+  "flavor": "Chicken",
+  "formula": "Large Breed Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Small Breed Adult",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-small-breed-adult-gold-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Oatmeal, Pearled Barley, Chicken Broth, Brown Rice, Menhaden Fish Meal, Chicken Fat (preserved with mixed tocopherols), Dried Tomato Pomace, Dried Egg Product, Whole Oats, Salmon Oil (preserved with mixed tocopherols), Whole Barley, Dried Yeast, Chicken Liver, Cheese, Flaxseed, White Rice, Potatoes, Carrots, Salt, Duck, Lamb, Sweet Potatoes, Celery, Alfalfa Meal, Monosodium Phosphate, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Taurine, Chicory Root Extract, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Yucca Schidigera Extract, Sorbic Acid (Preservative), DL-Methionine, L-Tryptophan, Sodium Selenite, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 26,
+  "fatMin": 17,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3797,
+   "kcalPerCup": 425
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-gold-dog",
+  "flavor": "Chicken",
+  "formula": "Small Breed Adult",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Weight Management",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-weight-management-gold-food-for-dogs",
+  "ingredientsText": "Turkey Liver, Chicken Meal, Turkey Broth, Oatmeal, Pearled Barley, Menhaden Fish Meal, Whole Oats, Dried Tomato Pomace, Whitefish, Whole Barley, Brown Rice, Millet, White Rice, Oat Hulls, Flaxseed, Pea Fiber, Dried Yeast, Salmon Oil (preserved with mixed tocopherols), Chicken Fat (preserved with mixed tocopherols), Dried Egg Product, Potatoes, Salt, Sweet Potatoes, Carrots, Celery, Cheese, Alfalfa Meal, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Taurine, Chicory Root Extract, Sorbic Acid (Preservative), Monosodium Phosphate, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Yucca Schidigera Extract, L-Carnitine, DL-Methionine, L-Tryptophan, Sodium Selenite, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 25,
+  "fatMin": 10,
+  "fiberMax": 10,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3241,
+   "kcalPerCup": 334
+  },
+  "lifeStageClaim": "adult",
+  "line": "fromm-gold-dog",
+  "flavor": "Turkey & Chicken",
+  "formula": "Healthy Weight",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Gold Reduced Activity & Senior",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "senior",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-family-reduced-activity-senior-gold-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Chicken Broth, Oatmeal, Pearled Barley, Brown Rice, Potatoes, Millet, Dried Tomato Pomace, Menhaden Fish Meal, Whole Oats, Chicken Liver, White Rice, Whole Barley, Salmon Oil (preserved with mixed tocopherols), Chicken Fat (preserved with mixed tocopherols), Dried Yeast, Cheese, Flaxseed, Dried Egg Product, Salt, Carrots, Duck, Lamb, Sweet Potatoes, Celery, Alfalfa Meal, Chicken Cartilage, Monosodium Phosphate, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Chicory Root Extract, Yucca Schidigera Extract, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Sorbic Acid (Preservative), Taurine, L-Tryptophan, DL-Methionine, Sodium Selenite, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 23,
+  "fatMin": 11,
+  "fiberMax": 5.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3475,
+   "kcalPerCup": 368
+  },
+  "lifeStageClaim": "adult",
+  "line": "fromm-gold-dog",
+  "flavor": "Chicken",
+  "formula": "Senior",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Four-Star Chicken Au Frommage Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-four-star-nutritionals-chicken-au-frommage-food-for-dogs",
+  "ingredientsText": "Chicken, Chicken Meal, Chickpeas, Lentils, Peas, Potatoes, Sweet Potatoes, Dried Egg Product, Dried Tomato Pomace, Chicken Fat (preserved with mixed tocopherols), Cheese, Flaxseed, Salmon Oil (preserved with mixed tocopherols), Chicken Liver, Pears, Apples, Broccoli, Potassium Chloride, Salt, Calcium Sulfate, Monocalcium Phosphate, Vitamins [Choline Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Olive Oil (preserved with mixed tocopherols), Chicory Root Extract, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Cranberries, Yucca Schidigera Extract, Sorbic Acid (Preservative), Taurine, Blueberries, Sodium Selenite, Parsley, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 26,
+  "fatMin": 16,
+  "fiberMax": 6.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3702,
+   "kcalPerCup": 392
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-four-star-dog",
+  "flavor": "Chicken Au Frommage",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "26 lb",
+    "lb": 26
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Four-Star Beef Frittata Veg Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-four-star-nutritionals-beef-frittata-veg-food-for-dogs",
+  "ingredientsText": "Beef, Beef Broth, Dried Egg Product, Lentils, Peas, pork meat and bone meal, Potatoes, Pork, Pork Fat (preserved with mixed tocopherols), Sweet Potatoes, Dried Tomato Pomace, Pork Liver, Beef Liver, Chickpeas, Pea Protein, Salmon Oil (preserved with mixed tocopherols), Pea Flour, Cheese, Flaxseed, Carrots, Apples, Broccoli, Celery, Natural Flavor, Vitamins [Choline Chloride, Potassium Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Chicory Root Extract, Salt, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Cranberries, Yucca Schidigera Extract, Sorbic Acid (Preservative), Blueberries, Sodium Selenite, Taurine, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 30,
+  "fatMin": 18,
+  "fiberMax": 6.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3765,
+   "kcalPerCup": 399
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-four-star-dog",
+  "flavor": "Beef Frittata Veg",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "26 lb",
+    "lb": 26
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Four-Star Salmon Tunalini Recipe",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-four-star-nutritionals-salmon-tunalini-food-for-dogs",
+  "ingredientsText": "Salmon, Salmon Meal, Peas, Lentils, Pinto Beans, Potatoes, Chicken Fat (preserved with mixed tocopherols), Dried Tomato Pomace, Tuna, Dried Egg Product, Chicken Liver, Chickpeas, Salmon Oil (preserved with mixed tocopherols), Sardine Meal, Flaxseed, Cheese, Monocalcium Phosphate, Calcium Sulfate, Zucchini, Carrots, Apples, Broccoli, Natural Flavor, Potassium Chloride, Salt, Vitamins [Choline Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Chicory Root Extract, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Cranberries, Yucca Schidigera Extract, Sodium Selenite, Sorbic Acid (Preservative), Blueberries, Taurine, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 28,
+  "fatMin": 16,
+  "fiberMax": 6.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3658,
+   "kcalPerCup": 388
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-four-star-dog",
+  "flavor": "Salmon Tunalini",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "26 lb",
+    "lb": 26
+   }
+  ]
+ },
+ {
+  "brand": "Fromm",
+  "name": "Four-Star Hasen Duckenpfeffer",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://frommfamily.com/fromm-four-star-nutritionals-hasen-duckenpfeffer-food-for-dogs",
+  "ingredientsText": "Rabbit, Duck, Pork, pork meat and bone meal, Chickpeas, Lentils, Peas, Potatoes, Pea Flour, Pork Liver, Pork Fat (preserved with mixed tocopherols), Dried Egg Product, Dried Tomato Pomace, Duck Meal, Pea Protein, Salmon Oil (preserved with mixed tocopherols), Rabbit Meal, Cheese, Flaxseed, Carrots, Apples, Broccoli, Alfalfa Sprouts, Natural Flavor, Potassium Chloride, Vitamins [Choline Chloride, Vitamin E Supplement, Ascorbic Acid, Calcium Carbonate, Riboflavin Supplement, Niacin Supplement, Calcium Pantothenate, Vitamin A Supplement, Vitamin D3 Supplement, Pyridoxine Hydrochloride, Biotin, Vitamin B12 Supplement, Thiamine Mononitrate, Folic Acid], Salt, Chicory Root Extract, Minerals [Zinc Sulfate, Manganese Sulfate, Ferrous Sulfate, Magnesium Sulfate, Zinc Proteinate, ferrous proteinate, Manganese Proteinate, Copper Sulfate, Magnesium Proteinate, Copper Proteinate, Calcium Iodate], Cranberries, Yucca Schidigera Extract, Sorbic Acid (Preservative), Sodium Selenite, Blueberries, Taurine, dried Lactobacillus paracasei fermentation product, Dried Lactobacillus reuteri Fermentation Product, Dried Lactobacillus acidophilus Fermentation Product, dried Lactobacillus plantarum fermentation product.",
+  "proteinMin": 28,
+  "fatMin": 17,
+  "fiberMax": 6.5,
+  "moistureMax": 10,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3729,
+   "kcalPerCup": 395
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "fromm-four-star-dog",
+  "flavor": "Hasen Duckenpfeffer",
+  "formula": "All Life Stages",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "12 lb",
+    "lb": 12
+   },
+   {
+    "label": "26 lb",
+    "lb": 26
+   }
+  ]
+ },
+ {
+  "brand": "Earthborn Holistic",
+  "name": "Great Plains Feast",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.earthbornholisticpetfood.com/product/dog-food/grain-free/great-plains-feast/",
+  "ingredientsText": "Bison Meal, Peas, Pea Protein, Canola Oil, Beef Meal, Flaxseed, Dried Yeast, Tapioca, Pea Starch, Sweet Potato, Pumpkin, Dried Egg, Salmon Meal, Alaska Pollock Meal, Whiting Meal, Natural Flavor, Apples, Blueberries, Carrots, Cranberries, Spinach, Dried Chicory Root (A Source of Inulin, a Prebiotic), Choline (Choline Chloride), Salt, Potassium Chloride, Taurine, L-Carnitine, Vitamins [Vitamin E (α-Tocopherol Acetate), Vitamin C (L-Ascorbyl-2-Polyphosphate), Vitamin B3 (Niacin), Vitamin B5 (Calcium Pantothenate), Vitamin B1 (Thiamine Mononitrate), Vitamin B2 (Riboflavin), Vitamin A (Vitamin A Acetate), Vitamin B12 Supplement, Vitamin B6 (Pyridoxine Hydrochloride), Vitamin D3 (Cholecalciferol), Vitamin B7 (Biotin), Vitamin B9 (Folic Acid)], Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Zinc Proteinate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Yucca Schidigera Extract, Rosemary Extract, Dried Enterococcus Faecium Fermentation Product, Dried Lactobacillus Casei Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3650,
+   "kcalPerCup": 360
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "earthborn-grain-free-dog",
+  "flavor": "Bison",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Earthborn Holistic",
+  "name": "Coastal Catch",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.earthbornholisticpetfood.com/product/dog-food/grain-free/coastal-catch/",
+  "ingredientsText": "Herring Meal, Peas, Pea Protein, Canola Oil, Tapioca, Flaxseed, Dried Yeast, Pea Starch, Pumpkin, Sweet Potato, Dried Egg, Natural Flavor, Salmon Meal, Alaska Pollock Meal, Whiting Meal, Apples, Blueberries, Carrots, Cranberries, Spinach, Dried Chicory Root (A Source of Inulin, a Prebiotic), Choline (Choline Chloride), Salt, Potassium Chloride, Taurine, L-Carnitine, Vitamins [Vitamin E (α-Tocopherol Acetate), Vitamin C (L-Ascorbyl-2-Polyphosphate), Vitamin B3 (Niacin), Vitamin B5 (Calcium Pantothenate), Vitamin B1 (Thiamine Mononitrate), Vitamin B2 (Riboflavin), Vitamin A (Vitamin A Acetate), Vitamin B12 Supplement, Vitamin B6 (Pyridoxine Hydrochloride), Vitamin D3 (Cholecalciferol), Vitamin B7 (Biotin), Vitamin B9 (Folic Acid)], Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Zinc Proteinate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Yucca Schidigera Extract, Rosemary Extract, Dried Enterococcus Faecium Fermentation Product, Dried Lactobacillus Casei Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3700,
+   "kcalPerCup": 365
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "included",
+  "line": "earthborn-grain-free-dog",
+  "flavor": "Herring",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Earthborn Holistic",
+  "name": "Primitive Natural",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "sourceUrl": "https://www.earthbornholisticpetfood.com/product/dog-food/grain-free/primitive-natural/",
+  "ingredientsText": "Turkey Meal (Natural Source of Glucosamine and Chondroitin), Chicken Meal (Natural Source of Glucosamine and Chondroitin), Tapioca, Chicken Fat (Preserved with Mixed Tocopherols), Sweet Potato, Pumpkin, Flaxseed, Dried Yeast, Dried Egg, Natural Flavor, Salmon Meal, Alaska Pollock Meal, Whiting Meal, Apples, Blueberries, Carrots, Cranberries, Spinach, Dried Chicory Root (A Source of Inulin, a Prebiotic), Choline (Choline Chloride), Salt, Potassium Chloride, Taurine, L-Carnitine, Vitamins [Vitamin E (α-Tocopherol Acetate), Vitamin C (L-Ascorbyl-2-Polyphosphate), Vitamin B3 (Niacin), Vitamin B5 (Calcium Pantothenate), Vitamin B1 (Thiamine Mononitrate), Vitamin B2 (Riboflavin), Vitamin A (Vitamin A Acetate), Vitamin B12 Supplement, Vitamin B6 (Pyridoxine Hydrochloride), Vitamin D3 (Cholecalciferol), Vitamin B7 (Biotin), Vitamin B9 (Folic Acid)], Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Zinc Proteinate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Yucca Schidigera Extract, Rosemary Extract, Dried Enterococcus Faecium Fermentation Product, Dried Lactobacillus Casei Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product.",
+  "proteinMin": 32,
+  "fatMin": 18,
+  "fiberMax": 5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3700,
+   "kcalPerCup": 365
+  },
+  "lifeStageClaim": "all",
+  "largeSizeGrowth": "excluded",
+  "line": "earthborn-grain-free-dog",
+  "flavor": "Turkey & Chicken",
+  "formula": "All Life Stages"
+ },
+ {
+  "brand": "Earthborn Holistic",
+  "name": "Weight Control",
+  "species": "dog",
+  "form": "dry",
+  "lifeStage": "adult",
+  "priceTier": 2,
+  "sourceUrl": "https://www.earthbornholisticpetfood.com/product/dog-food/grain-free/weight-control/",
+  "ingredientsText": "Chicken Meal (Natural Source of Glucosamine and Chondroitin), Peas, Sweet Potato, Tapioca, Pea Starch, Pea Fiber, Dried Yeast, Pumpkin, Dried Egg, Flaxseed, Canola Oil, Natural Flavor, Salmon Meal, Alaska Pollock Meal, Whiting Meal, Apples, Blueberries, Carrots, Cranberries, Spinach, Dried Chicory Root (A Source of Inulin, a Prebiotic), Choline (Choline Chloride), Salt, Potassium Chloride, Taurine, L-Carnitine, Vitamins [Vitamin E (α-Tocopherol Acetate), Vitamin C (L-Ascorbyl-2-Polyphosphate), Vitamin B3 (Niacin), Vitamin B5 (Calcium Pantothenate), Vitamin B1 (Thiamine Mononitrate), Vitamin B2 (Riboflavin), Vitamin A (Vitamin A Acetate), Vitamin B12 Supplement, Vitamin B6 (Pyridoxine Hydrochloride), Vitamin D3 (Cholecalciferol), Vitamin B7 (Biotin), Vitamin B9 (Folic Acid)], Minerals [Zinc Sulfate, Ferrous Sulfate, Manganese Sulfate, Copper Sulfate, Zinc Proteinate, Manganese Proteinate, Copper Proteinate, Calcium Iodate, Sodium Selenite], Yucca Schidigera Extract, Rosemary Extract, Dried Enterococcus Faecium Fermentation Product, Dried Lactobacillus Casei Fermentation Product, Dried Lactobacillus Acidophilus Fermentation Product.",
+  "proteinMin": 25,
+  "fatMin": 7,
+  "fiberMax": 7.5,
+  "moistureMax": 10,
+  "taurineMin": 0.1,
+  "completeAndBalanced": true,
+  "calories": {
+   "kcalPerKg": 3200,
+   "kcalPerCup": 315
+  },
+  "lifeStageClaim": "adult",
+  "line": "earthborn-grain-free-dog",
+  "flavor": "Chicken",
+  "formula": "Healthy Weight"
+ },
+ {
+  "brand": "Zuke's",
+  "name": "Mini Naturals Peanut Butter & Oats Recipe",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "foodForm": "semi_moist",
+  "sourceUrl": "https://www.zukes.com/dog-treats-and-chews/mini-naturals/peanut-butter-oats-recipe",
+  "ingredientsText": "Peanut butter, rice, water, oats, potatoes, cane sugar, glycerin, malted barley flour, potato protein, salt, dried cultured whey, citric acid, natural flavor, cherries, vinegar, turmeric spice, Vitamin E supplement, zinc proteinate, mixed tocopherols for freshness.",
+  "proteinMin": 10,
+  "fatMin": 6,
+  "fiberMax": 2,
+  "moistureMax": 30,
+  "calories": {
+   "kcalPerKg": 2950,
+   "kcalPerUnit": 2,
+   "unit": "piece"
+  },
+  "line": "zukes-mini-naturals-dog",
+  "flavor": "Peanut Butter & Oats",
+  "sizes": [
+   {
+    "label": "3 oz",
+    "lb": 0.1875
+   },
+   {
+    "label": "6 oz",
+    "lb": 0.375
+   },
+   {
+    "label": "10 oz",
+    "lb": 0.625
+   },
+   {
+    "label": "16 oz",
+    "lb": 1
+   }
+  ]
+ },
+ {
+  "brand": "Zuke's",
+  "name": "Mini Naturals Duck Recipe",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "all",
+  "priceTier": 2,
+  "foodForm": "semi_moist",
+  "sourceUrl": "https://www.zukes.com/dog-treats-and-chews/mini-naturals/duck-recipe",
+  "ingredientsText": "Duck, rice, oats, glycerin, potatoes, cane sugar, malted barley flour, potato protein, salt, dried cultured whey, citric acid, natural flavor, cherries, vinegar, turmeric spice, Vitamin E supplement, zinc proteinate, mixed tocopherols for freshness.",
+  "proteinMin": 5,
+  "fatMin": 3,
+  "fiberMax": 2,
+  "moistureMax": 30,
+  "calories": {
+   "kcalPerKg": 2725,
+   "kcalPerUnit": 2,
+   "unit": "piece"
+  },
+  "line": "zukes-mini-naturals-dog",
+  "flavor": "Duck",
+  "sizes": [
+   {
+    "label": "6 oz",
+    "lb": 0.375
+   },
+   {
+    "label": "16 oz",
+    "lb": 1
+   }
+  ]
+ },
+ {
+  "brand": "Stewart",
+  "name": "Freeze Dried Chicken Breast",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "foodForm": "freeze_dried",
+  "sourceUrl": "https://stewartpet.com/product/single-ingredient/",
+  "ingredientsText": "Chicken Breast.",
+  "proteinMin": 74,
+  "fatMin": 3,
+  "fiberMax": 1,
+  "moistureMax": 7.5,
+  "calories": {
+   "kcalPerKg": 3693
+  },
+  "line": "stewart-freeze-dried-dog",
+  "flavor": "Chicken Breast"
+ },
+ {
+  "brand": "Stewart",
+  "name": "Freeze Dried Chicken Liver",
+  "species": "dog",
+  "form": "treat",
+  "lifeStage": "all",
+  "priceTier": 3,
+  "foodForm": "freeze_dried",
+  "sourceUrl": "https://stewartpet.com/product/single-ingredient/",
+  "ingredientsText": "Chicken Liver.",
+  "proteinMin": 60,
+  "fatMin": 10,
+  "fiberMax": 2,
+  "moistureMax": 7.5,
+  "calories": {
+   "kcalPerKg": 4035
+  },
+  "line": "stewart-freeze-dried-dog",
+  "flavor": "Chicken Liver"
+ }
+]

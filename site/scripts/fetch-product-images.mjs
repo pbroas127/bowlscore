@@ -89,7 +89,7 @@ async function upcImages(e, query = `${e.brand} ${e.name}`) {
   const brand = tokens(e.brand)
   const items = ((await res.json()).items ?? []).filter((i) => {
     const seen = new Set(tokens(`${i.brand ?? ''} ${i.title ?? ''}`))
-    const other = new RegExp((e.species === 'dog' ? '\bcats?\b|kitten' : '\bdogs?\b|pupp') + (e.form === 'treat' ? '' : '|biscuit|treat|variety|bundle'), 'i')
+    const other = new RegExp((e.species === 'dog' ? '\\bcats?\\b|kitten' : '\\bdogs?\\b|pupp') + (e.form === 'treat' ? '' : '|biscuit|treat|variety|bundle'), 'i')
     return brand.every((t) => seen.has(t)) && !other.test(i.title ?? '') && want.filter((t) => seen.has(t)).length / want.length >= 0.6
   })
   const rank = (u) => (/target.scene7|walmartimages|petco|chewy/.test(u) ? 0 : 1)
@@ -106,15 +106,18 @@ const worker = async () => {
   for (let e; !sync && (e = todo.shift()); ) {
     const file = path.join(OUT, `${e.id}.webp`)
     const own = (u) => u && !RETAILERS.test(host(u)) && !/\.pdf($|\?)/i.test(u)
+    // The page the ingredients were transcribed from is trusted for its pack shot even at a pet store (never Amazon,
+    // whose images are only licensed through its own API). Pages found by search must be the brand's own.
+    const source = (u) => u && !/amazon|google|youtube|facebook|reddit/.test(host(u)) && !/\.pdf($|\?)/i.test(u)
     let done = false
-    for (const find of [() => [PAGES[e.id], e.sourceUrl], () => findPages(e)]) {
-      for (const page of [...new Set((await find()).filter(own))].slice(0, 5)) {
+    for (const [find, ok] of [[() => [PAGES[e.id], e.sourceUrl], source], [() => findPages(e), own]]) {
+      for (const page of [...new Set((await find()).filter(ok))].slice(0, 5)) {
         const img = await imageOn(page, e).catch(() => null)
         if (img && (await save(img, page, file).catch(() => false))) { console.log(`ok   ${e.id}\n     ${img}`); done = true; break }
       }
       if (done) break
     }
-    if (!done) for (const img of [...(await upcImages(e).catch(() => [])), ...(await upcImages(e, e.amazonQuery).catch(() => []))]) {
+    if (!done && !process.env.NO_UPC) for (const img of [...(await upcImages(e).catch(() => [])), ...(await upcImages(e, e.amazonQuery).catch(() => []))]) {
       if (await save(img, img, file).catch(() => false)) { console.log(`ok   ${e.id} (retailer shot)
      ${img}`); done = true; break }
     }

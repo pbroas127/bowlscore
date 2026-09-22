@@ -64,7 +64,7 @@ export const SAMPLE_GOOD: { label: LabelData; result: ScoreResult } = {
   },
 }
 
-// The preview catalog: four products, enough to see every catalog screen without a server.
+// The preview catalog: a handful of products, enough to see every catalog screen without a server.
 const fixture = (id: string, brand: string, name: string, species: 'dog' | 'cat', form: CatalogProduct['form'], priceTier: 1 | 2 | 3, score: number, ingredients: string[], flags: Flag[], dm: [number, number, number], calories?: LabelData['calories']): CatalogProduct => ({
   id, brand, name, species, form, priceTier, lifeStage: 'all', image: null,
   label: { productName: name, brand, foodForm: form === 'treat' ? 'dry' : form, isTreat: form === 'treat', aafco: form === 'treat' ? 'not_found' : 'complete', ingredients, calories, lifeStageClaim: form === 'treat' ? undefined : 'all', largeSizeGrowth: form !== 'treat' && species === 'dog' ? 'included' : undefined },
@@ -74,12 +74,18 @@ const fixture = (id: string, brand: string, name: string, species: 'dog' | 'cat'
 const meatFirst = (first: string): Flag => ({ severity: 'good', title: 'Real meat comes first', detail: `${first} is the main ingredient.`, ingredient: first })
 const naturalPreservatives: Flag = { severity: 'good', title: 'Natural preservatives', detail: 'Preserved with vitamin E or rosemary instead of synthetic chemicals.' }
 
+const bags = [4, 15, 30, 40].map((lb) => ({ label: `${lb} lb`, lb, url: `https://www.amazon.com/s?k=sample+${lb}+lb&tag=bowlscore-20` }))
+
 export const SAMPLE_CATALOG: Catalog = {
   version: 'preview',
   products: [
-    // Two versions of one line with bag sizes, so the preview shows the Version and Size pickers.
-    { ...fixture('sample-dog-dry', SAMPLE_GOOD.label.brand!, SAMPLE_GOOD.label.productName!, 'dog', 'dry', 2, 93, [], [], [0, 0, 0]), label: SAMPLE_GOOD.label, result: SAMPLE_GOOD.result, line: 'sample-premium-dog', sizes: [4, 15, 30, 40].map((lb) => ({ label: `${lb} lb`, lb, url: `https://www.amazon.com/s?k=sample+${lb}+lb&tag=bowlscore-20` })) },
-    { ...fixture('sample-dog-puppy', SAMPLE_GOOD.label.brand!, 'Puppy Lamb and Brown Rice', 'dog', 'dry', 2, 91, ['Deboned lamb', 'Lamb meal', 'Brown rice', 'Oatmeal', 'Salmon oil'], [meatFirst('Deboned lamb'), naturalPreservatives], [30, 18, 38], { kcalPerKg: 3700, kcalPerCup: 400 }), lifeStage: 'growth', line: 'sample-premium-dog', sizes: [4, 15, 30, 40].map((lb) => ({ label: `${lb} lb`, lb, url: `https://www.amazon.com/s?k=sample+${lb}+lb&tag=bowlscore-20` })) },
+    // One line in 3 formulas and 2 flavors with bag sizes, so the preview shows the Formula, Flavor and Size pickers.
+    // Large Breed Puppy comes in chicken only, so its chip fades while a lamb version is open.
+    { ...fixture('sample-dog-dry', SAMPLE_GOOD.label.brand!, SAMPLE_GOOD.label.productName!, 'dog', 'dry', 2, 93, [], [], [0, 0, 0]), label: SAMPLE_GOOD.label, result: SAMPLE_GOOD.result, line: 'sample-premium-dog', formula: 'All life stages', flavor: 'Chicken', sizes: bags },
+    { ...fixture('sample-dog-lamb', SAMPLE_GOOD.label.brand!, 'Lamb and Brown Rice', 'dog', 'dry', 2, 90, ['Deboned lamb', 'Lamb meal', 'Brown rice', 'Oatmeal', 'Salmon oil'], [meatFirst('Deboned lamb'), naturalPreservatives], [29, 17, 40], { kcalPerKg: 3600, kcalPerCup: 370 }), line: 'sample-premium-dog', formula: 'All life stages', flavor: 'Lamb', sizes: bags },
+    { ...fixture('sample-dog-puppy', SAMPLE_GOOD.label.brand!, 'Puppy Lamb and Brown Rice', 'dog', 'dry', 2, 91, ['Deboned lamb', 'Lamb meal', 'Brown rice', 'Oatmeal', 'Salmon oil'], [meatFirst('Deboned lamb'), naturalPreservatives], [30, 18, 38], { kcalPerKg: 3700, kcalPerCup: 400 }), lifeStage: 'growth', line: 'sample-premium-dog', formula: 'Puppy', flavor: 'Lamb', sizes: bags },
+    { ...fixture('sample-dog-puppy-chicken', SAMPLE_GOOD.label.brand!, 'Puppy Chicken and Brown Rice', 'dog', 'dry', 2, 92, ['Deboned chicken', 'Chicken meal', 'Brown rice', 'Oatmeal', 'Salmon oil'], [meatFirst('Deboned chicken'), naturalPreservatives], [31, 18, 37], { kcalPerKg: 3750, kcalPerCup: 405 }), lifeStage: 'growth', line: 'sample-premium-dog', formula: 'Puppy', flavor: 'Chicken', sizes: bags },
+    { ...fixture('sample-dog-large-puppy', SAMPLE_GOOD.label.brand!, 'Large Breed Puppy Chicken and Oatmeal', 'dog', 'dry', 2, 90, ['Deboned chicken', 'Chicken meal', 'Oatmeal', 'Barley', 'Salmon oil'], [meatFirst('Deboned chicken'), naturalPreservatives], [29, 14, 40], { kcalPerKg: 3500, kcalPerCup: 360 }), lifeStage: 'growth', line: 'sample-premium-dog', formula: 'Large Breed Puppy', flavor: 'Chicken', sizes: bags },
     fixture('sample-dog-wet', 'Sample pantry', 'Turkey and Pumpkin Stew', 'dog', 'wet', 3, 88, ['Turkey', 'Turkey broth', 'Turkey liver', 'Pumpkin', 'Carrots', 'Flaxseed'], [meatFirst('Turkey'), { severity: 'good', title: 'High protein', detail: 'About 42% protein once water is removed.' }], [42, 24, 18], { kcalPerKg: 1150, kcalPerUnit: 410, unit: 'can' }),
     fixture('sample-dog-treat', 'Sample bakery', 'Single Ingredient Beef Liver Bites', 'dog', 'treat', 1, 84, ['Beef liver'], [meatFirst('Beef liver'), { severity: 'info', title: 'This is a treat', detail: 'Scored on ingredients only. Treats should stay under ten percent of daily calories.' }], [62, 12, 8], { kcalPerKg: 4100, kcalPerUnit: 9, unit: 'treat' }),
     fixture('sample-cat-dry', 'Sample feline', 'Salmon and Turkey Recipe', 'cat', 'dry', 2, 86, ['Deboned salmon', 'Turkey meal', 'Peas', 'Chicken fat (preserved with mixed tocopherols)', 'Taurine'], [meatFirst('Deboned salmon'), naturalPreservatives, { severity: 'good', title: 'Taurine included', detail: 'Cats cannot make enough taurine on their own, and this food adds it.' }], [40, 18, 27], { kcalPerKg: 3900, kcalPerCup: 430 }),

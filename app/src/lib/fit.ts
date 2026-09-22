@@ -94,10 +94,11 @@ export function fitFor(pet: Pet, label: LabelData, claim: LabelData['lifeStageCl
     else lines.push({ label: 'Size', value, note: 'Big puppies need controlled calcium. Look for the words "including growth of large size dogs" on the bag.', tone: 'caution' })
   }
 
+  // The value stands alone in a small tile, so it says what this food has or lacks, not just the pet's list.
   const hits = allergyHits(pet.allergies, label.ingredients)
   lines.push(hits.length
-    ? { label: 'Allergies', value: pet.allergies.join(', '), note: `Contains ${hits.join(' and ').toLowerCase()}.`, tone: 'bad' }
-    : { label: 'Allergies', value: pet.allergies.length ? pet.allergies.join(', ') : 'None', note: pet.allergies.length ? 'None of these are in the ingredients.' : 'Nothing to avoid.', tone: 'good' })
+    ? { label: 'Allergies', value: `Has ${hits.join(', ').toLowerCase()}`, note: `Contains ${hits.join(' and ').toLowerCase()}.`, tone: 'bad' }
+    : { label: 'Allergies', value: pet.allergies.length ? `No ${pet.allergies.join(', ').toLowerCase()}` : 'None', note: pet.allergies.length ? 'None of these are in the ingredients.' : 'Nothing to avoid.', tone: 'good' })
 
   const verdict = lines.some((l) => l.tone === 'bad') ? 'bad' : lines.some((l) => l.tone === 'caution') ? 'caution' : 'good'
   const headline = verdict === 'bad' ? `Not a fit for ${pet.name}` : verdict === 'caution' ? `Check before feeding ${pet.name}` : treat ? `Fine as a treat for ${pet.name}` : `A good fit for ${pet.name}`

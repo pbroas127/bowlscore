@@ -1,0 +1,105 @@
+[
+ {
+  "id": "purina-pro-plan-complete-essentials-shredded-blend-chicken-and-rice-formula-dog",
+  "calories": {
+   "kcalPerKg": 3790,
+   "kcalPerCup": 369
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Shredded Chicken & Rice",
+  "formula": "Adult"
+ },
+ {
+  "id": "purina-pro-plan-puppy-chicken-and-rice-formula-dog",
+  "calories": {
+   "kcalPerKg": 4188,
+   "kcalPerCup": 456
+  },
+  "line": "purina-pro-plan-complete-essentials-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Puppy"
+ },
+ {
+  "id": "purina-one-chicken-and-rice-formula-dog",
+  "calories": {
+   "kcalPerKg": 4004,
+   "kcalPerCup": 383
+  },
+  "line": "purina-one-smartblend-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Adult"
+ },
+ {
+  "id": "purina-dog-chow-complete-adult-with-real-chicken-dog",
+  "calories": {
+   "kcalPerKg": 3469,
+   "kcalPerCup": 405
+  },
+  "line": "purina-dog-chow-dog",
+  "flavor": "Chicken",
+  "formula": "Adult"
+ },
+ {
+  "id": "purina-pro-plan-complete-essentials-chicken-and-rice-entree-classic-dog",
+  "calories": {
+   "kcalPerKg": 1186,
+   "kcalPerUnit": 437,
+   "unit": "can"
+  },
+  "line": "purina-pro-plan-complete-essentials-wet-dog",
+  "flavor": "Chicken & Rice",
+  "formula": "Adult"
+ },
+ {
+  "id": "friskies-seafood-sensations-cat",
+  "calories": {
+   "kcalPerKg": 3631,
+   "kcalPerCup": 392
+  },
+  "line": "friskies-dry-cat",
+  "flavor": "Seafood Sensations",
+  "formula": "Adult"
+ },
+ {
+  "id": "purina-cat-chow-complete-cat",
+  "calories": {
+   "kcalPerKg": 3688,
+   "kcalPerCup": 411
+  },
+  "line": "purina-cat-chow-cat",
+  "flavor": "Chicken",
+  "formula": "All Life Stages"
+ },
+ {
+  "id": "purina-pro-plan-complete-essentials-chicken-and-rice-formula-cat",
+  "calories": {
+   "kcalPerKg": 4358,
+   "kcalPerCup": 494
+  },
+  "line": "purina-pro-plan-complete-essentials-cat",
+  "flavor": "Chicken & Rice",
+  "formula": "Adult"
+ },
+ {
+  "id": "beggin-strips-original-with-bacon-dog",
+  "calories": {
+   "kcalPerKg": 3003,
+   "kcalPerUnit": 36,
+   "unit": "piece"
+  },
+  "line": "beggin-strips-dog",
+  "flavor": "Bacon",
+  "formula": "Adult"
+ },
+ {
+  "id": "pup-peroni-original-beef-flavor-dog",
+  "calories": {
+   "kcalPerKg": 3001,
+   "kcalPerUnit": 27,
+   "unit": "piece"
+  },
+  "line": "pup-peroni-dog",
+  "flavor": "Beef",
+  "formula": "Adult"
+ }
+]

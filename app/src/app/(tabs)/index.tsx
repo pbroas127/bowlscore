@@ -1,10 +1,10 @@
 import { router, useFocusEffect } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
-import { useCallback, useState, type ReactNode } from 'react'
+import { useCallback, useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { Bone, BowlFood, Drop, GearSix, Package, Scales, SealWarning } from 'phosphor-react-native'
-import { bagLine } from '@/components/BagCard'
-import { portionLine, treatAllowance } from '@/components/FitCard'
+import { GearSix, SealWarning } from 'phosphor-react-native'
+import { bagDays } from '@/components/BagCard'
+import { Art, Bowls, num, portion, Tile, type ArtName } from '@/components/FitCard'
 import { Mascot, mascotFor } from '@/components/Mascot'
 import { PetHead } from '@/components/PetHead'
 import { PetEditor } from '@/components/PetEditor'
@@ -38,29 +38,29 @@ function RecallBanner({ recall }: { recall: Recall }) {
   )
 }
 
-// Today at a glance: how much to feed, the treat allowance, water, and how long the bag will last.
+// Today at a glance: a bowl per meal with its portion, then water, treats and how long the bag will last.
 function DailyPlan({ pet, scan, onEdit }: { pet: Pet; scan: Scan; onEdit: () => void }) {
   const plan = scan.label.isTreat ? undefined : feeding(pet, scan.label)
-  const rows: [ReactNode, string][] = []
-  if (plan) {
-    rows.push([<BowlFood key="i" size={18} weight="bold" color={color.ink2} />, portionLine(pet, scan.label) ?? `About ${plan.kcal} calories a day`])
-    rows.push([<Bone key="i" size={18} weight="bold" color={color.ink2} />, `Treats: ${treatAllowance(pet)?.toLowerCase()}`])
-    rows.push([<Drop key="i" size={18} weight="bold" color={color.ink2} />, `Water: about ${plan.waterOz} oz a day`])
-    const bag = bagLine(pet, scan)
-    if (bag) rows.push([<Package key="i" size={18} weight="bold" color={color.ink2} />, bag])
-  }
+  const left = bagDays(pet, scan)
   // One next step at most, so the card stays calm. Weight fixes happen right here; the rest live on the pet page.
   const toPet = () => router.push(`/pet/${pet.id}`)
-  const [nudge, onNudge] = !pet.weightLb ? [`Add ${pet.name}'s weight to see portions`, onEdit]
-    : weighInDue(pet) ? [`Time to weigh ${pet.name} again`, onEdit]
-    : plan && !hasCalories(scan.label) ? ['Add the calories for cups per meal', toPet]
-    : plan && !pet.bag ? ['Track this bag', toPet]
-    : [undefined, onEdit]
-  if (!rows.length && !nudge) return null
+  const [nudge, art, onNudge]: [string | undefined, ArtName, () => void] = !pet.weightLb ? [`Add ${pet.name}'s weight`, 'scale', onEdit]
+    : weighInDue(pet) ? [`Time to weigh ${pet.name} again`, 'scale', onEdit]
+    : plan && !hasCalories(scan.label) ? ['Add calories to see cups', 'cup', toPet]
+    : plan && !pet.bag ? ['Track this bag', 'bag', toPet]
+    : [undefined, 'scale', onEdit]
+  if (!plan && !nudge) return null
   return (
     <View style={s.plan}>
-      {rows.map(([icon, text]) => <View key={text} style={s.planRow}>{icon}<Text style={[type.label, { flex: 1 }]}>{text}</Text></View>)}
-      {nudge ? <Pressable hitSlop={8} onPress={() => { tap('select'); onNudge() }} style={s.planRow}><Scales size={18} weight="bold" color={color.ink} /><Text style={[type.label, { flex: 1, textDecorationLine: 'underline' }]}>{nudge}</Text></Pressable> : null}
+      {scan.label.isTreat ? null : <Bowls mini meals={plan?.meals ?? pet.meals ?? 2} each={plan && portion(plan).each} cat={pet.species === 'cat'} />}
+      {plan ? (
+        <View style={s.tiles}>
+          <Tile mini art="water" value={`${plan.waterOz} oz`} word="water" />
+          <Tile mini art="treat" value={`${num(plan.treatKcal)} cal`} word="treats" />
+          <Tile mini art="bag" value={left != null ? `${left} ${left === 1 ? 'day' : 'days'}` : '?'} word="bag" faded={left == null} />
+        </View>
+      ) : null}
+      {nudge ? <Pressable hitSlop={8} onPress={() => { tap('select'); onNudge() }} style={s.planRow}><Art name={art} size={24} /><Text style={[type.label, { flex: 1, textDecorationLine: 'underline' }]}>{nudge}</Text></Pressable> : null}
     </View>
   )
 }
@@ -152,7 +152,8 @@ const s = StyleSheet.create({
   avatar: { width: 52, height: 52, borderRadius: 26, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   currentCard: { padding: 20, borderRadius: 28, gap: 16 },
   current: { flexDirection: 'row', alignItems: 'center', gap: 16 },
-  plan: { gap: 10, paddingTop: 16, borderTopWidth: 1, borderTopColor: color.hairline },
+  plan: { gap: 12, paddingTop: 16, borderTopWidth: 1, borderTopColor: color.hairline },
+  tiles: { flexDirection: 'row', gap: 8 },
   planRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   empty: { alignItems: 'center', gap: 8, padding: 24, borderRadius: 28 },
   filters: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 12 },
