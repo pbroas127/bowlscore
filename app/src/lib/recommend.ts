@@ -121,3 +121,15 @@ export function verdict(a: { name: string; result: ScoreResult }, b: { name: str
   const why = whyBetter(win, lose)
   return `${win.name} wins by ${Math.abs(d)} ${Math.abs(d) === 1 ? 'point' : 'points'}.${why.startsWith('Scores') ? '' : ` ${why}.`}`
 }
+
+// "Is it one of these?": catalog products that look like a scanned food, for linking it to an exact listing.
+// ponytail: shared word count on brand and name. Ceiling: a scan with no brand or name read gets no suggestions.
+const WORD_NOISE = new Set(['dog', 'dogs', 'cat', 'cats', 'food', 'dry', 'wet', 'recipe', 'formula', 'with', 'and', 'the', 'for', 'adult', 'real', 'natural'])
+const words = (t: string) => new Set(t.toLowerCase().replace(/['’]/g, '').split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !WORD_NOISE.has(w)))
+export function closestProducts(catalog: CatalogProduct[], label: LabelData, species: Species, max = 3): CatalogProduct[] {
+  const scanned = words(`${label.brand ?? ''} ${label.productName ?? ''}`)
+  if (!scanned.size) return []
+  const shared = (p: CatalogProduct) => [...words(`${p.brand} ${p.name}`)].filter((w) => scanned.has(w)).length
+  const brandHit = (p: CatalogProduct) => [...words(p.brand)].some((w) => scanned.has(w))
+  return catalog.filter((p) => p.species === species && brandHit(p) && shared(p) >= 2).sort((a, b) => shared(b) - shared(a) || b.result.score - a.result.score).slice(0, max)
+}

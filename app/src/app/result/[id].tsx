@@ -8,7 +8,7 @@ import { FeedingCard, FitCard } from '@/components/FitCard'
 import { FoodEditor } from '@/components/FoodEditor'
 import { FoodHero, FoodReport, Notice, sectionTitle } from '@/components/FoodReport'
 import { PetEditor } from '@/components/PetEditor'
-import { AffiliateNote, ProductCarousel } from '@/components/ProductCard'
+import { AffiliateNote, ProductCarousel, ProductSkeleton } from '@/components/ProductCard'
 import { ShareCard, shareScoreCard } from '@/components/ShareCard'
 import { ActionRow, Card, PillButton, TextLink } from '@/components/ui'
 import { formOf, proteinOf, recommend, useCatalog, whyBetter } from '@/lib/catalog'
@@ -92,6 +92,11 @@ export default function Result() {
             <>
               <Text style={sectionTitle}>Better picks for {name}</Text>
               <ProductCarousel products={picks} why={(p) => whyBetter(p, scan)} />
+            </>
+          ) : !catalog ? (
+            <>
+              <Text style={sectionTitle}>Better picks for {name}</Text>
+              <ProductSkeleton />
             </>
           ) : null}
           <Card style={{ paddingVertical: 0, marginTop: 24 }}>

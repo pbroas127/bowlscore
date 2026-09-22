@@ -1,5 +1,6 @@
-// The scored product catalog: fetched from the site, cached in AsyncStorage, refreshed at most every 12 hours.
-// Offline the cache is served; with no cache at all `useCatalog()` returns undefined and product sections hide.
+// The scored product catalog: the saved copy shows instantly, and a fresh one is fetched in the background every time the
+// app opens or comes back (at most every 5 minutes). About 25 KB gzipped (half a second), so it never slows the app down.
+// Offline the saved copy is served; with none at all `useCatalog()` returns undefined and product sections show placeholders.
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useSyncExternalStore } from 'react'
 import { API_URL, PREVIEW } from './config'
@@ -8,8 +9,9 @@ import type { Catalog, CatalogProduct } from './types'
 
 export * from './recommend'
 
-const KEY = 'bowlscore.catalog.v1'
-export const REFRESH_MS = 12 * 60 * 60 * 1000
+// v2: copies saved before sizes and exact links existed are dropped instead of lingering.
+const KEY = 'bowlscore.catalog.v2'
+export const REFRESH_MS = 5 * 60 * 1000
 
 let catalog: Catalog | undefined = PREVIEW ? SAMPLE_CATALOG : undefined
 let fetchedAt = 0
@@ -37,13 +39,14 @@ async function load(force: boolean) {
     if (!next.products.length) return
     fetchedAt = Date.now()
     if (next.version !== catalog?.version || next.products.length !== catalog.products.length) publish(next)
-    AsyncStorage.setItem(KEY, JSON.stringify({ ...(catalog ?? next), fetchedAt })).catch(() => {})
+    AsyncStorage.setItem(KEY, JSON.stringify({ ...next, fetchedAt })).catch(() => {})
+    AsyncStorage.removeItem('bowlscore.catalog.v1').catch(() => {})
   } finally {
     clearTimeout(timer)
   }
 }
 
-// Safe to call often (app start, Home focus): it only hits the network when the cache is older than 12 hours.
+// Safe to call often (app start, coming back to the app, Home focus): it only hits the network every 5 minutes.
 export function refreshCatalog(force = false) {
   if (PREVIEW) return Promise.resolve()
   loading ??= load(force).catch(() => {}).finally(() => { loading = undefined })

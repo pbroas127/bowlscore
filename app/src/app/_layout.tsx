@@ -1,4 +1,5 @@
 import { BricolageGrotesque_700Bold, BricolageGrotesque_800ExtraBold } from '@expo-google-fonts/bricolage-grotesque'
+import { AppState } from 'react-native'
 import { DMSans_400Regular, DMSans_500Medium, DMSans_600SemiBold } from '@expo-google-fonts/dm-sans'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
@@ -27,6 +28,9 @@ export default function RootLayout() {
     startAuth()
     startNotifications()
     refreshCatalog()
+    // Coming back to the app is when prices and listings are most likely stale.
+    const sub = AppState.addEventListener('change', (s) => { if (s === 'active') refreshCatalog() })
+    return () => sub.remove()
   }, [])
 
   // RevenueCat follows the Firebase user id, so a subscription survives reinstalling and signing back in.

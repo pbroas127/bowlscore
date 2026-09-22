@@ -1,4 +1,7 @@
 import { API_URL as BASE } from './config'
+import { AMAZON_TAG } from './ownLink'
+
+export { ownLink } from './ownLink'
 export const SITE = {
   home: BASE,
   terms: `${BASE}/terms`,
@@ -11,7 +14,6 @@ export const SUPPORT_EMAIL = 'pbroas127+bowlscore@gmail.com'
 
 // Affiliate links. Every Amazon link carries the Associates tag. Chewy approval is pending: flip CHEWY_ON once it
 // lands and every built Chewy link in the app switches on from this one place.
-const AMAZON_TAG = 'bowlscore-20'
 const CHEWY_ON = false
 export const tagged = (url: string) => (!/amazon\./i.test(url) || /[?&]tag=/.test(url) ? url : `${url}${url.includes('?') ? '&' : '?'}tag=${AMAZON_TAG}`)
 export const amazonSearch = (query: string) => `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}`

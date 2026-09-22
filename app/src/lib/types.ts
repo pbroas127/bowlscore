@@ -55,7 +55,7 @@ export interface Pet {
 }
 
 // The open bag of the main food. Days left are worked out from the feeding guide, see bagStatus in lib/fit.ts.
-export interface Bag { lb: number; openedAt: number; scanId: string; notificationIds: string[] }
+export interface Bag { lb: number; openedAt: number; scanId: string; notificationIds: string[]; link?: string } // link: the person's own reorder link, already tagged
 
 export interface SwitchPlan { productId: string; name: string; startedAt: number; notificationIds: string[] }
 

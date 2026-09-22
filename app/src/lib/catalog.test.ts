@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // Run with: node --experimental-strip-types src/lib/catalog.test.ts
 import assert from 'node:assert/strict'
-import { allergyHits, formOf, proteinOf, recommend, topRated, verdict, whyBetter } from './recommend.ts'
+import { allergyHits, formOf, proteinOf, recommend, topRated, verdict, whyBetter, closestProducts } from './recommend.ts'
 import { SAMPLE_CATALOG, SAMPLE_GOOD, SAMPLE_POOR } from './sample.ts'
 import { bornAtFor } from './fit.ts'
 import type { CatalogProduct, Flag, Pet } from './types.ts'
@@ -89,5 +89,13 @@ const sample = (id: string) => SAMPLE_CATALOG.products.find((p) => p.id === id)!
 assert.equal(proteinOf(sample('sample-dog-wet').label.ingredients), 'Turkey')
 assert.equal(proteinOf(sample('sample-dog-puppy').label.ingredients), 'Lamb')
 assert.equal(sample('sample-dog-puppy').line, sample('sample-dog-dry').line) // the preview shows the Version picker
+
+// Linking a scanned food to the catalog: brand must match, and the closest name wins.
+const pro = make('pro', 80, { brand: 'Purina Pro Plan', name: 'Complete Essentials Chicken and Rice' })
+const one = make('one', 70, { brand: 'Purina ONE', name: 'Chicken and Rice Formula' })
+const blue = make('blue', 85, { brand: 'Blue Buffalo', name: 'Life Protection Chicken and Brown Rice' })
+assert.deepEqual(ids(closestProducts([blue, one, pro], { foodForm: 'dry', aafco: 'complete', ingredients: [], brand: 'Purina', productName: 'Pro Plan Chicken & Rice Formula' }, 'dog')), ['pro', 'one'])
+assert.deepEqual(closestProducts([pro], { foodForm: 'dry', aafco: 'complete', ingredients: [] }, 'dog'), [])
+assert.deepEqual(closestProducts([pro], { foodForm: 'dry', aafco: 'complete', ingredients: [], brand: 'Purina', productName: 'Pro Plan Chicken' }, 'cat'), [])
 
 console.log('catalog tests passed')

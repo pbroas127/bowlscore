@@ -1,7 +1,7 @@
 import { Image } from 'expo-image'
 import { router } from 'expo-router'
 import { useState } from 'react'
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View  } from 'react-native'
 import { BowlFood, CaretRight, CurrencyCircleDollar } from 'phosphor-react-native'
 import { ScoreRing } from '@/components/ScoreRing'
 import { tap } from '@/lib/haptics'
@@ -57,6 +57,18 @@ export function ProductCard({ product, why }: { product: CatalogProduct; why: st
   )
 }
 
+// Shown where products will appear while the first catalog download is still on its way.
+export function ProductSkeleton() {
+  return (
+    <View style={{ marginHorizontal: -gutter }}>
+      <View style={{ flexDirection: 'row', gap: 12, paddingHorizontal: gutter }}>
+        {[0, 1, 2].map((i) => <View key={i} style={s.ghost}><View style={s.ghostPhoto} /><View style={[s.ghostLine, { width: '60%' }]} /><View style={s.ghostLine} /></View>)}
+      </View>
+      <View style={s.ghostVeil}><ActivityIndicator color={color.ink2} /><Text style={[type.label, { color: color.ink2 }]}>Loading products</Text></View>
+    </View>
+  )
+}
+
 // Edge to edge carousel that still lines up with the 20 gutter.
 export function ProductCarousel({ products, why }: { products: CatalogProduct[]; why: (p: CatalogProduct) => string }) {
   return (
@@ -88,6 +100,10 @@ export function AffiliateNote({ center }: { center?: boolean }) {
 }
 
 const s = StyleSheet.create({
+  ghost: { width: 168, gap: 10, padding: 12, borderRadius: radius.card, backgroundColor: color.surface, borderWidth: 1, borderColor: color.hairline },
+  ghostPhoto: { height: 120, borderRadius: radius.chip, backgroundColor: color.hairline },
+  ghostLine: { height: 12, borderRadius: 6, backgroundColor: color.hairline },
+  ghostVeil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   fine: { fontSize: 11, lineHeight: 15, color: color.ink3, marginTop: 16 },
   photo: { borderRadius: radius.chip, borderWidth: 1, borderColor: color.hairline, backgroundColor: color.bg, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   photoFill: { position: 'absolute', top: 4, left: 4, right: 4, bottom: 4 },

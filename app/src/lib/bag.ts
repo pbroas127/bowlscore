@@ -12,17 +12,20 @@ export async function stopBag(pet: Pet) {
 }
 
 // Reminds five days before the bag runs out, which is about how long a delivery takes.
-export async function startBag(pet: Pet, scan: Scan, lb: number) {
+// `openedAt` can be in the past: a bag bought last week is tracked from last week.
+export async function startBag(pet: Pet, scan: Scan, lb: number, openedAt = Date.now()) {
+  const link = pet.bag?.scanId === scan.id ? pet.bag.link : undefined // a new bag of the same food keeps its reorder link
   await stopBag(pet)
-  const openedAt = Date.now()
   const grams = gramsPerDay(pet, scan.label)
   const ids: (string | undefined)[] = []
   if (grams && (await askToNotify())) {
     const when = at(bagStatus({ lb, openedAt }, grams).emptyAt - 5 * 86_400_000, 9)
-    if (when.getTime() > openedAt) ids.push(await notify(`${pet.name}'s food is running low`, `About 5 days of ${scan.label.productName || 'food'} left. Open BowlScore to reorder.`, when))
+    if (when.getTime() > Date.now()) ids.push(await notify(`${pet.name}'s food is running low`, `About 5 days of ${scan.label.productName || 'food'} left. Open BowlScore to reorder.`, when))
   }
-  updatePet(pet.id, (p) => ({ ...p, bag: { lb, openedAt, scanId: scan.id, notificationIds: ids.filter((id) => id != null) } }))
+  updatePet(pet.id, (p) => ({ ...p, bag: { lb, openedAt, scanId: scan.id, notificationIds: ids.filter((id) => id != null), link } }))
 }
+
+export const setBagLink = (pet: Pet, link?: string) => updatePet(pet.id, (p) => (p.bag ? { ...p, bag: { ...p.bag, link } } : p))
 
 // Call after a weight is saved. Never prompts: the reminder is a bonus for people who already allow notifications.
 export async function scheduleWeighIn(pet: Pet) {

@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Animated, { Easing, FadeIn, ReduceMotion, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated'
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
-import { Bone, BowlFood, CaretDown, Check, Images, Lightning, X } from 'phosphor-react-native'
+import { Bone, BowlFood, CaretDown, Check, Fire, Images, Lightning, ListBullets, Table, X } from 'phosphor-react-native'
 import { Mascot, mascotFor } from '@/components/Mascot'
 import { PetHead } from '@/components/PetHead'
 import { PillButton, TextLink } from '@/components/ui'
@@ -49,21 +49,22 @@ const mergeLabel = (old: LabelData, fresh: LabelData): LabelData => ({
 const statusAt = (sec: number, pet: string) =>
   sec < 3 ? 'Reading the label' : sec < 7 ? 'Checking the ingredients' : sec < 13 ? `Scoring for ${pet}` : sec < 28 ? 'Still working. Long labels take a little longer' : 'Almost there. Thanks for waiting'
 
-// The back of a bag, drawn: the three blocks a photo has to hold.
+// The three blocks a label photo has to hold. Full words on their own rows, so nothing is squeezed or cut off.
+const GUIDE = [['Ingredients', ListBullets], ['Guaranteed analysis', Table], ['Calories', Fire]] as const
 function Guide({ onDone }: { onDone: () => void }) {
   return (
     <Animated.View entering={FadeIn} style={[s.guide, shadow]}>
-      <View style={s.bag}>
-        <View style={s.bagSeal} />
-        {['Ingredients', 'Guaranteed analysis', 'Calories'].map((l) => (
-          <View key={l} style={s.bagBlock}><Text style={s.bagLabel}>{l}</Text><View style={s.bagLine} /><View style={[s.bagLine, { width: '55%' }]} /></View>
+      <Text style={type.h2}>What to scan</Text>
+      <View style={{ gap: 8 }}>
+        {GUIDE.map(([label, Icon]) => (
+          <View key={label} style={s.guideRow}>
+            <View style={s.guideIcon}><Icon size={20} weight="bold" color={color.ink} /></View>
+            <Text style={type.title}>{label}</Text>
+          </View>
         ))}
       </View>
-      <View style={{ flex: 1, gap: 8 }}>
-        <Text style={type.h2}>What to scan</Text>
-        <Text style={[type.label, { color: color.ink2 }]}>Get all three in the photo. They sit together on the back or side.</Text>
-        <TextLink label="Got it" tone={color.ink} onPress={() => { tap('select'); onDone() }} />
-      </View>
+      <Text style={[type.label, { color: color.ink2 }]}>Get all three in the photo. They sit together on the back or side of the bag.</Text>
+      <PillButton label="Got it" onPress={() => { tap('select'); onDone() }} />
     </Animated.View>
   )
 }
@@ -375,12 +376,9 @@ const s = StyleSheet.create({
   sheet: { backgroundColor: color.surface, borderRadius: radius.sheet, padding: 20, gap: 12, marginHorizontal: 12, marginBottom: 8 },
   sheetHead: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   sheetIcon: { width: 44, height: 44, borderRadius: 22, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center' },
-  guide: { alignSelf: 'center', width: '90%', flexDirection: 'row', alignItems: 'center', gap: 16, backgroundColor: color.surface, borderRadius: radius.sheet, padding: 20 },
-  bag: { width: 112, height: 160, borderRadius: 14, borderWidth: 2, borderColor: color.ink, backgroundColor: color.bg, padding: 10, gap: 8 },
-  bagSeal: { height: 0, borderTopWidth: 2, borderStyle: 'dashed', borderColor: color.ink3, marginHorizontal: -4 },
-  bagBlock: { flex: 1, borderRadius: 8, backgroundColor: color.yellowSoft, borderWidth: 1.5, borderColor: color.yellow, paddingHorizontal: 6, paddingVertical: 5, gap: 4 },
-  bagLabel: { fontFamily: font.textBold, fontSize: 10, lineHeight: 12, color: color.ink },
-  bagLine: { width: '80%', height: 3, borderRadius: 2, backgroundColor: color.yellowEdge, opacity: 0.4 },
+  guide: { alignSelf: 'center', width: '90%', gap: 16, backgroundColor: color.surface, borderRadius: radius.sheet, padding: 20 },
+  guideRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 10, paddingHorizontal: 12, borderRadius: radius.chip, backgroundColor: color.yellowSoft },
+  guideIcon: { width: 36, height: 36, borderRadius: 18, backgroundColor: color.surface, alignItems: 'center', justifyContent: 'center' },
   // The taller top bar costs a few points on the smallest phones, so the guide frame gives them back.
   frame: { alignSelf: 'center', width: '78%', aspectRatio: 0.78, flexShrink: 1 },
   frameBarcode: { aspectRatio: 1.7 },

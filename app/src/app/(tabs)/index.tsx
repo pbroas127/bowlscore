@@ -8,7 +8,7 @@ import { portionLine, treatAllowance } from '@/components/FitCard'
 import { Mascot, mascotFor } from '@/components/Mascot'
 import { PetHead } from '@/components/PetHead'
 import { PetEditor } from '@/components/PetEditor'
-import { AffiliateNote, ProductCarousel } from '@/components/ProductCard'
+import { AffiliateNote, ProductCarousel, ProductSkeleton } from '@/components/ProductCard'
 import { ago, ScanRow } from '@/components/ScanRow'
 import { ScoreRing } from '@/components/ScoreRing'
 import { Card, Chip, PillButton, Screen, TextLink } from '@/components/ui'
@@ -123,6 +123,11 @@ export default function Home() {
             <TextLink label="See all" onPress={() => router.push('/catalog')} />
           </View>
           <ProductCarousel products={top} why={(p) => whyBetter(p)} />
+        </>
+      ) : !catalog ? (
+        <>
+          <Text style={[type.h2, s.sectionRow]} numberOfLines={1}>Top rated for {pet?.name}</Text>
+          <ProductSkeleton />
         </>
       ) : null}
 
