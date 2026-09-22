@@ -34,6 +34,8 @@ for (const p of PRODUCTS) {
     assert.ok(s.label && s.lb > 0, `${p.id} size ${s.label}`)
     if (i) assert.ok(s.lb >= p.sizes![i - 1].lb, `${p.id} sizes sorted small to large`)
     if (s.asin) assert.equal(s.url, dp(s.asin))
+    // No listing for this size: the nearest size that has one, else the product's own listing, else a search.
+    else if (p.sizes!.some((o) => o.asin) || p.asin) assert.match(s.url, /^https:\/\/www\.amazon\.com\/dp\/[A-Z0-9]{10}\?tag=bowlscore-20$/)
     else assert.match(s.url, search)
   }
   assert.ok(!('amazonQuery' in p))

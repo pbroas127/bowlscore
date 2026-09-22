@@ -33,9 +33,14 @@ const TAG = 'bowlscore-20'
 const amazon = (asin: string | undefined, query: string) =>
   asin ? `https://www.amazon.com/dp/${asin}?tag=${TAG}` : `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${TAG}`
 
+// A size without its own listing links to the nearest size that has one (then the product's own listing): the same food
+// in a different bag beats dropping the shopper into a whole search page. Search is the last resort.
+const nearestAsin = (lb: number, sizes: { lb: number; asin?: string }[], fallback?: string) =>
+  sizes.filter((s) => s.asin).sort((a, b) => Math.abs(a.lb - lb) - Math.abs(b.lb - lb))[0]?.asin ?? fallback
+
 export const PRODUCTS: CatalogProduct[] = CATALOG.map(({ amazonQuery, sizes, ...entry }) => ({
   ...entry,
-  ...(sizes && { sizes: sizes.map((s) => ({ ...s, url: amazon(s.asin, `${amazonQuery} ${s.label}`) })) }),
+  ...(sizes && { sizes: sizes.map((s) => ({ ...s, url: amazon(s.asin ?? nearestAsin(s.lb, sizes, entry.asin), `${amazonQuery} ${s.label}`) })) }),
   image: absolute(entry.image),
   result: scoreFood(entry.label, entry.species, entry.lifeStage === 'growth' ? 'growth' : 'adult'),
   links: { amazon: amazon(entry.asin, amazonQuery) },
