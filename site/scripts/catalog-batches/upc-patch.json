@@ -73,6 +73,28 @@
   ]
  },
  {
+  "id": "purina-pro-plan-puppy-chicken-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "upc": "038100113627"
+   },
+   {
+    "label": "18 lb",
+    "lb": 18,
+    "asin": "B000633JS6",
+    "upc": "038100132710"
+   },
+   {
+    "label": "34 lb",
+    "lb": 34,
+    "asin": "B003R0LLA8",
+    "upc": "038100132703"
+   }
+  ]
+ },
+ {
   "id": "purina-dog-chow-complete-adult-with-real-chicken-dog",
   "sizes": [
    {
@@ -152,6 +174,55 @@
     "label": "40 lb",
     "lb": 40,
     "asin": "B09RPGC2TM"
+   }
+  ]
+ },
+ {
+  "id": "kibbles-n-bits-original-savory-beef-and-chicken-flavors-dog",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B00H6Y5T7M"
+   },
+   {
+    "label": "4.2 lb",
+    "lb": 4.2,
+    "asin": "B074JN3Y2D"
+   },
+   {
+    "label": "8 lb",
+    "lb": 8,
+    "asin": "B00H3FO0SS"
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B06XGGFD7S",
+    "upc": "079100514465"
+   },
+   {
+    "label": "17.6 lb",
+    "lb": 17.6,
+    "asin": "B075YB65WP"
+   },
+   {
+    "label": "31 lb",
+    "lb": 31,
+    "asin": "B008X30LQO"
+   },
+   {
+    "label": "45 lb",
+    "lb": 45
+   },
+   {
+    "label": "50 lb",
+    "lb": 50,
+    "asin": "B01JIRKLP4"
    }
   ]
  },
@@ -313,6 +384,25 @@
     "label": "25 lb",
     "lb": 25,
     "upc": "310425673872"
+   }
+  ]
+ },
+ {
+  "id": "open-farm-grass-fed-beef-and-ancient-grains-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "upc": "683547125780"
+   },
+   {
+    "label": "11 lb",
+    "lb": 11
+   },
+   {
+    "label": "22 lb",
+    "lb": 22,
+    "upc": "683547125803"
    }
   ]
  },

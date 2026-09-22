@@ -18,7 +18,13 @@
   "ziwi-peak-air-dried-beef-recipe-dog": true,
   "rachael-ray-nutrish-chicken-paw-pie-dog": true,
   "cesar-classic-loaf-in-sauce-filet-mignon-flavor-dog": true,
-  "blue-buffalo-homestyle-recipe-chicken-dinner-with-garden-vegetables-dog": true
+  "blue-buffalo-homestyle-recipe-chicken-dinner-with-garden-vegetables-dog": true,
+  "purina-pro-plan-puppy-chicken-and-rice-formula-dog": true,
+  "kibbles-n-bits-original-savory-beef-and-chicken-flavors-dog": true,
+  "blue-buffalo-wilderness-adult-chicken-recipe-dog": true,
+  "wellness-complete-health-adult-deboned-chicken-and-oatmeal-recipe-dog": true,
+  "open-farm-grass-fed-beef-and-ancient-grains-dog": true,
+  "pedigree-chopped-ground-dinner-with-chicken-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -133,6 +139,36 @@
    {
     "lb": 0.5,
     "upc": "071190006745"
+   }
+  ],
+  "purina-pro-plan-puppy-chicken-and-rice-formula-dog": [
+   {
+    "lb": 6,
+    "upc": "038100113627"
+   },
+   {
+    "lb": 18,
+    "upc": "038100132710"
+   },
+   {
+    "lb": 34,
+    "upc": "038100132703"
+   }
+  ],
+  "kibbles-n-bits-original-savory-beef-and-chicken-flavors-dog": [
+   {
+    "lb": 16,
+    "upc": "079100514465"
+   }
+  ],
+  "open-farm-grass-fed-beef-and-ancient-grains-dog": [
+   {
+    "lb": 4,
+    "upc": "683547125780"
+   },
+   {
+    "lb": 22,
+    "upc": "683547125803"
    }
   ]
  }
