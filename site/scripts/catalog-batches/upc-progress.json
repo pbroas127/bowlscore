@@ -1,0 +1,139 @@
+{
+ "searched": {
+  "purina-one-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-complete-essentials-shredded-blend-chicken-and-rice-formula-dog": true,
+  "purina-dog-chow-complete-adult-with-real-chicken-dog": true,
+  "pedigree-complete-nutrition-adult-roasted-chicken-rice-and-vegetable-flavor-dog": true,
+  "iams-proactive-health-adult-minichunks-chicken-and-whole-grains-recipe-dog": true,
+  "kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog": true,
+  "rachael-ray-nutrish-real-chicken-and-veggies-recipe-dog": true,
+  "blue-buffalo-life-protection-formula-adult-chicken-and-brown-rice-recipe-dog": true,
+  "royal-canin-medium-adult-dog": true,
+  "taste-of-the-wild-high-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog": true,
+  "merrick-grain-free-real-texas-beef-sweet-potato-recipe-dog": true,
+  "nutro-natural-choice-adult-chicken-and-brown-rice-recipe-dog": true,
+  "orijen-original-dog": true,
+  "acana-free-run-poultry-recipe-dog": true,
+  "instinct-original-grain-free-recipe-with-real-chicken-dog": true,
+  "ziwi-peak-air-dried-beef-recipe-dog": true,
+  "rachael-ray-nutrish-chicken-paw-pie-dog": true,
+  "cesar-classic-loaf-in-sauce-filet-mignon-flavor-dog": true,
+  "blue-buffalo-homestyle-recipe-chicken-dinner-with-garden-vegetables-dog": true
+ },
+ "found": {
+  "purina-one-chicken-and-rice-formula-dog": [
+   {
+    "lb": 8,
+    "upc": "017800475686"
+   },
+   {
+    "lb": 16.5,
+    "upc": "017800149372"
+   }
+  ],
+  "purina-pro-plan-complete-essentials-shredded-blend-chicken-and-rice-formula-dog": [
+   {
+    "lb": 15,
+    "upc": "038100101679"
+   },
+   {
+    "lb": 47,
+    "upc": "038100177667"
+   }
+  ],
+  "purina-dog-chow-complete-adult-with-real-chicken-dog": [
+   {
+    "lb": 4.4,
+    "upc": "017800410274"
+   },
+   {
+    "lb": 18.5,
+    "upc": "818209326964"
+   }
+  ],
+  "pedigree-complete-nutrition-adult-roasted-chicken-rice-and-vegetable-flavor-dog": [
+   {
+    "lb": 3.5,
+    "upc": "023100103631"
+   }
+  ],
+  "kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog": [
+   {
+    "lb": 40,
+    "upc": "096619253470"
+   },
+   {
+    "lb": 40,
+    "upc": "096619295067"
+   },
+   {
+    "lb": 40,
+    "upc": "739394170692"
+   }
+  ],
+  "rachael-ray-nutrish-real-chicken-and-veggies-recipe-dog": [
+   {
+    "lb": 6,
+    "upc": "071190006011"
+   }
+  ],
+  "blue-buffalo-life-protection-formula-adult-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 15,
+    "upc": "859610000098"
+   },
+   {
+    "lb": 30,
+    "upc": "859610000111"
+   }
+  ],
+  "royal-canin-medium-adult-dog": [
+   {
+    "lb": 30,
+    "upc": "030111517432"
+   },
+   {
+    "lb": 17,
+    "upc": "030111517470"
+   },
+   {
+    "lb": 30,
+    "upc": "030111517739"
+   }
+  ],
+  "merrick-grain-free-real-texas-beef-sweet-potato-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "022808383390"
+   }
+  ],
+  "nutro-natural-choice-adult-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 5,
+    "upc": "079105116466"
+   }
+  ],
+  "acana-free-run-poultry-recipe-dog": [
+   {
+    "lb": 13,
+    "upc": "310425673865"
+   },
+   {
+    "lb": 25,
+    "upc": "310425673872"
+   }
+  ],
+  "instinct-original-grain-free-recipe-with-real-chicken-dog": [
+   {
+    "lb": 22.5,
+    "upc": "769949657255"
+   }
+  ],
+  "rachael-ray-nutrish-chicken-paw-pie-dog": [
+   {
+    "lb": 0.5,
+    "upc": "071190006745"
+   }
+  ]
+ }
+}

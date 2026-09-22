@@ -235,7 +235,7 @@ function extras(x) {
   const out = {}
   for (const k of ['line', 'flavor', 'formula']) if (typeof x[k] === 'string' && x[k].trim()) out[k] = x[k].trim().slice(0, 60)
   if (typeof x.asin === 'string' && /^[A-Z0-9]{10}$/.test(x.asin)) out.asin = x.asin
-  if (Array.isArray(x.sizes)) out.sizes = x.sizes.filter((z) => z && typeof z.label === 'string' && z.lb > 0).map((z) => ({ label: z.label, lb: z.lb, ...(/^[A-Z0-9]{10}$/.test(z.asin ?? '') && { asin: z.asin }) })).sort((a, b) => a.lb - b.lb)
+  if (Array.isArray(x.sizes)) out.sizes = x.sizes.filter((z) => z && typeof z.label === 'string' && z.lb > 0).map((z) => ({ label: z.label, lb: z.lb, ...(/^[A-Z0-9]{10}$/.test(z.asin ?? '') && { asin: z.asin }), ...(/^\d{8,14}$/.test(z.upc ?? '') && { upc: z.upc }) })).sort((a, b) => a.lb - b.lb)
   return out
 }
 

@@ -1,0 +1,353 @@
+[
+ {
+  "id": "purina-one-chicken-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3
+   },
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "8 lb",
+    "lb": 8,
+    "asin": "B0000AH3QT",
+    "upc": "017800475686"
+   },
+   {
+    "label": "13.5 lb",
+    "lb": 13.5
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5,
+    "asin": "B006JCUGVQ",
+    "upc": "017800149372"
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1,
+    "asin": "B008MKI7KU"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B073PCGRR2"
+   },
+   {
+    "label": "44 lb",
+    "lb": 44
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-complete-essentials-shredded-blend-chicken-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0DKY79FVN"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B0DKY8Y7ZW",
+    "upc": "038100101679"
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   },
+   {
+    "label": "35 lb",
+    "lb": 35,
+    "asin": "B001QCKS4O"
+   },
+   {
+    "label": "47 lb",
+    "lb": 47,
+    "upc": "038100177667"
+   }
+  ]
+ },
+ {
+  "id": "purina-dog-chow-complete-adult-with-real-chicken-dog",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "4.4 lb",
+    "lb": 4.4,
+    "upc": "017800410274"
+   },
+   {
+    "label": "8.8 lb",
+    "lb": 8.8,
+    "asin": "B002QT1U9S"
+   },
+   {
+    "label": "18.5 lb",
+    "lb": 18.5,
+    "asin": "B00HATAJQO",
+    "upc": "818209326964"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20
+   },
+   {
+    "label": "32 lb",
+    "lb": 32
+   },
+   {
+    "label": "44 lb",
+    "lb": 44
+   }
+  ]
+ },
+ {
+  "id": "pedigree-complete-nutrition-adult-roasted-chicken-rice-and-vegetable-flavor-dog",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B007ZZDJWY",
+    "upc": "023100103631"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B09RP1NXDC"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B016ZPBD04"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B09RPCS6ZP"
+   },
+   {
+    "label": "20.4 lb",
+    "lb": 20.4,
+    "asin": "B016ZPBCI2"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B09RP8X162"
+   },
+   {
+    "label": "36 lb",
+    "lb": 36,
+    "asin": "B005M16UHE"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B09RPGC2TM"
+   }
+  ]
+ },
+ {
+  "id": "kirkland-signature-adult-formula-chicken-rice-and-vegetable-dog",
+  "sizes": [
+   {
+    "label": "25 lb",
+    "lb": 25
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B0057GYSEQ",
+    "upc": "096619253470"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-real-chicken-and-veggies-recipe-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "upc": "071190006011"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B00FBT7XAK"
+   },
+   {
+    "label": "50 lb",
+    "lb": 50
+   }
+  ]
+ },
+ {
+  "id": "blue-buffalo-life-protection-formula-adult-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B09K8YYVWV"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B0009YUGAG",
+    "upc": "859610000098"
+   },
+   {
+    "label": "24 lb",
+    "lb": 24,
+    "asin": "B07VGS6HY6"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0009YWKUA",
+    "upc": "859610000111"
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-medium-adult-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0DQYL8WKD"
+   },
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B013DQWPXW",
+    "upc": "030111517470"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B00CITL9N8",
+    "upc": "030111517432"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B0DQYMRJQ2"
+   }
+  ]
+ },
+ {
+  "id": "merrick-grain-free-real-texas-beef-sweet-potato-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B00C6Z77L2",
+    "upc": "022808383390"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   }
+  ]
+ },
+ {
+  "id": "nutro-natural-choice-adult-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "upc": "079105116466"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B00TZGAB36"
+   },
+   {
+    "label": "36 lb",
+    "lb": 36
+   }
+  ]
+ },
+ {
+  "id": "acana-free-run-poultry-recipe-dog",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5
+   },
+   {
+    "label": "13 lb",
+    "lb": 13,
+    "upc": "310425673865"
+   },
+   {
+    "label": "25 lb",
+    "lb": 25,
+    "upc": "310425673872"
+   }
+  ]
+ },
+ {
+  "id": "instinct-original-grain-free-recipe-with-real-chicken-dog",
+  "sizes": [
+   {
+    "label": "20 lb",
+    "lb": 20
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "upc": "769949657255"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-chicken-paw-pie-dog",
+  "sizes": [
+   {
+    "label": "1 tub, 8 oz",
+    "lb": 0.5,
+    "asin": "B00AQFQ9AO",
+    "upc": "071190006745"
+   },
+   {
+    "label": "8 tubs, 8 oz",
+    "lb": 4,
+    "asin": "B006WW84YO"
+   },
+   {
+    "label": "16 tubs, 8 oz",
+    "lb": 8
+   }
+  ]
+ }
+]
