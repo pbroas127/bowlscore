@@ -2,23 +2,46 @@ import { Brand } from '@/components/Brand'
 import { router, useLocalSearchParams } from 'expo-router'
 import * as StoreReview from 'expo-store-review'
 import { useEffect, useRef, useState } from 'react'
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ArrowLeft, ArrowsLeftRight, Check, Export, PencilSimple, ShoppingCart } from 'phosphor-react-native'
+import { ArrowLeft, ArrowsLeftRight, Check, DotsThree, Export, PencilSimple, ShoppingCart } from 'phosphor-react-native'
 import { FeedingCard, FitCard } from '@/components/FitCard'
 import { FoodEditor } from '@/components/FoodEditor'
 import { FoodHero, FoodReport, Notice, sectionTitle } from '@/components/FoodReport'
 import { PetEditor } from '@/components/PetEditor'
-import { AffiliateNote, ProductCarousel, ProductSkeleton } from '@/components/ProductCard'
+import { AffiliateNote, ProductCarousel, ProductPhoto, ProductSkeleton } from '@/components/ProductCard'
 import { ShareCard, shareScoreCard } from '@/components/ShareCard'
 import { ActionRow, Card, PillButton, TextLink } from '@/components/ui'
-import { formOf, proteinOf, recommend, useCatalog, whyBetter } from '@/lib/catalog'
+import { closestProducts, formOf, recommend, useCatalog, whyBetter } from '@/lib/catalog'
 import { hasCalories, stageFor } from '@/lib/fit'
 import { SITE } from '@/lib/links'
-import { checkRecalls } from '@/lib/recalls'
-import { getState, setState, updatePet, useStore } from '@/lib/store'
-import type { LabelData, Pet } from '@/lib/types'
-import { color, gutter, shadow, type } from '@/theme'
+import { tap } from '@/lib/haptics'
+import { toggle } from '@/lib/pantry'
+import { getState, setState, updateScan, useStore } from '@/lib/store'
+import type { CatalogProduct, LabelData, Pet, Scan } from '@/lib/types'
+import { color, font, gutter, radius, shadow, type } from '@/theme'
+
+// One button for what the label says it is (a food or a treat), and a small one for the other choice,
+// for the rare label we read the wrong way.
+function PlaceBar({ pet, scan }: { pet: Pet; scan: Scan }) {
+  const treat = Boolean(scan.label.isTreat)
+  const isCurrent = pet.currentScanId === scan.id
+  const isTreat = pet.treatScanIds.includes(scan.id)
+  const done = treat ? isTreat : isCurrent
+  const label = treat ? (isTreat ? `One of ${pet.name}'s treats` : 'Save as a treat') : isCurrent ? `This is ${pet.name}'s food` : `Set as ${pet.name}'s food`
+  const other = treat ? (isCurrent ? `Remove as ${pet.name}'s food` : `Use as ${pet.name}'s main food`) : isTreat ? 'Remove from treats' : 'Save as a treat instead'
+  const more = () => Alert.alert(scan.label.productName || 'This food', undefined, [{ text: other, onPress: () => toggle(pet, scan, treat ? 'main' : 'treat') }, { text: 'Cancel', style: 'cancel' }])
+  return (
+    <View style={s.placeRow}>
+      <View style={{ flex: 1 }}>
+        <PillButton label={label} variant={done ? 'quiet' : 'primary'} icon={done ? <Check size={20} weight="bold" color={color.green} /> : undefined} onPress={() => { tap('select'); toggle(pet, scan, treat ? 'treat' : 'main') }} />
+      </View>
+      <Pressable onPress={more} hitSlop={6} style={({ pressed }) => [s.more, pressed && { opacity: 0.6 }]} accessibilityRole="button" accessibilityLabel="More options">
+        <DotsThree size={24} weight="bold" color={color.ink} />
+      </Pressable>
+    </View>
+  )
+}
 
 export default function Result() {
   const { id, fresh } = useLocalSearchParams<{ id: string; fresh?: string }>()
@@ -43,8 +66,6 @@ export default function Result() {
 
   const { label, result } = scan
   const name = pet?.name ?? 'your pet'
-  const isCurrent = pet?.currentScanId === scan.id
-  const isTreat = Boolean(pet?.treatScanIds.includes(scan.id))
   const own = catalog?.products.find((p) => p.id === scan.productId)
   const picks = catalog ? recommend(catalog.products, { species: pet?.species ?? 'dog', stage: pet && stageFor(pet), form: formOf(label), allergies: pet?.allergies, currentScore: result.score, excludeId: scan.productId, pet }) : []
   // What the label did not show, with a way to add it. Missing calories already get the big button in the feeding card,
@@ -53,17 +74,9 @@ export default function Result() {
   const missingLine = missing.length ? `${missing[0][0].toUpperCase()}${missing.join(' and ').slice(1)} not found` : undefined
 
   const share = () => shareScoreCard(card, `${label.productName || `${name}'s food`} scored ${result.score} out of 100 on BowlScore. ${SITE.home}`)
-  // A food is the main food or a treat, never both. Tapping the active one again clears it.
-  const place = (as: 'main' | 'treat') => {
-    updatePet(pet?.id, ({ currentScanId, ...p }) => ({
-      ...p,
-      ...(as === 'main' ? (isCurrent ? {} : { currentScanId: scan.id, protein: proteinOf(label.ingredients) ?? p.protein }) : currentScanId && currentScanId !== scan.id ? { currentScanId } : {}),
-      treatScanIds: as === 'treat' && !isTreat ? [...p.treatScanIds, scan.id] : p.treatScanIds.filter((t) => t !== scan.id),
-    }))
-    checkRecalls() // the pantry changed, so its brands may have too
-  }
-  const mainButton = <PillButton key="main" label={isCurrent ? `This is ${name}'s food` : `Set as ${name}'s food`} variant={isCurrent || label.isTreat ? 'quiet' : 'primary'} icon={isCurrent ? <Check size={20} weight="bold" color={color.green} /> : undefined} onPress={() => place('main')} />
-  const treatButton = <PillButton key="treat" label={isTreat ? `One of ${name}'s treats` : 'Save as a treat'} variant={isTreat || !label.isTreat ? 'quiet' : 'primary'} icon={isTreat ? <Check size={20} weight="bold" color={color.green} /> : undefined} onPress={() => place('treat')} />
+  // Not matched to the catalog on its own: offer the closest catalog foods, and link the one they pick.
+  const guesses = !own && catalog && pet && scan.source !== 'sample' && !scan.matchSkipped ? closestProducts(catalog.products, label, pet.species) : []
+  const link = (p: CatalogProduct) => { tap('success'); updateScan(scan.id, (x) => ({ ...x, productId: p.id, image: p.image ?? x.image, label: p.label, result: p.result })) }
 
   return (
     <SafeAreaView style={s.root} edges={['top']}>
@@ -78,6 +91,19 @@ export default function Result() {
       </View>
       <ScrollView contentContainerStyle={{ paddingHorizontal: gutter, paddingBottom: 210 }} showsVerticalScrollIndicator={false}>
         <FoodHero image={scan.image} name={label.productName || 'Scanned food'} subtitle={[label.brand, `Scored for ${name}`].filter(Boolean).join(' · ')} score={result.score} animate={Boolean(fresh)} onDone={() => setRingDone(true)} />
+        {guesses.length ? (
+          <Card style={s.guessCard}>
+            <Text style={type.title}>Is this what you scanned?</Text>
+            {guesses.map((p) => (
+              <Pressable key={p.id} onPress={() => link(p)} style={({ pressed }) => [s.guess, pressed && { opacity: 0.6 }]} accessibilityRole="button" accessibilityLabel={`Yes, ${p.brand} ${p.name}`}>
+                <ProductPhoto uri={p.image} size={44} />
+                <View style={{ flex: 1 }}><Text style={type.caption} numberOfLines={1}>{p.brand}</Text><Text style={type.label} numberOfLines={2}>{p.name}</Text></View>
+                <Text style={s.guessYes}>Yes</Text>
+              </Pressable>
+            ))}
+            <View style={{ alignItems: 'center' }}><TextLink label="None of these" onPress={() => updateScan(scan.id, (x) => ({ ...x, matchSkipped: true }))} /></View>
+          </Card>
+        ) : null}
         {scan.source === 'web' ? <Notice tone="info"><Text style={[type.label, { flex: 1 }]}>Scored from the ingredient list published for this product. Recipes change, so check it against your bag or snap the label.</Text></Notice> : null}
 
         <FoodReport label={label} result={result} species={pet?.species ?? 'dog'} petName={name} allergies={pet?.allergies} show={ringDone} stagger top={pet ? <>
@@ -112,7 +138,7 @@ export default function Result() {
       </ScrollView>
 
       <SafeAreaView edges={['bottom']} style={[s.sticky, shadow]}>
-        {label.isTreat ? [treatButton, mainButton] : [mainButton, treatButton]}
+        {pet ? <PlaceBar pet={pet} scan={scan} /> : null}
       </SafeAreaView>
       <PetEditor draft={draft} setDraft={setDraft} />
       <FoodEditor scan={scan} pet={pet} draft={food} setDraft={setFood} />
@@ -126,5 +152,10 @@ const s = StyleSheet.create({
   cover: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: color.bg },
   nav: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: gutter, height: 44, alignItems: 'center' },
   missing: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 12, paddingVertical: 12, marginBottom: 12 },
+  guessCard: { gap: 10, marginBottom: 16 },
+  guess: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 8, borderRadius: radius.chip, borderWidth: 1, borderColor: color.hairline, backgroundColor: color.bg },
+  guessYes: { fontFamily: font.textBold, fontSize: 15, color: color.ink, paddingHorizontal: 8 },
+  placeRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  more: { width: 52, height: 52, borderRadius: 26, borderWidth: 1.5, borderColor: color.hairline, alignItems: 'center', justifyContent: 'center', backgroundColor: color.surface },
   sticky: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: color.surface, borderTopWidth: 1, borderTopColor: color.hairline, paddingHorizontal: gutter, paddingTop: 12, paddingBottom: 8, gap: 10 },
 })

@@ -63,12 +63,13 @@ export interface Scan {
   id: string
   petId: string
   createdAt: number
-  source: 'label' | 'barcode' | 'web' | 'sample'
+  source: 'label' | 'barcode' | 'web' | 'sample' | 'catalog' // catalog: picked from the catalog, not scanned
   sourceUrl?: string
   label: LabelData
   result: ScoreResult
   photoUri?: string
   productId?: string // set when the scan matched a catalog product
+  matchSkipped?: boolean // they said none of the suggested catalog foods is this one
   image?: string // that product's photo
 }
 

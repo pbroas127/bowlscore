@@ -12,11 +12,12 @@ import { Mascot, mascotFor } from '@/components/Mascot'
 import { PetHead } from '@/components/PetHead'
 import { PillButton, TextLink } from '@/components/ui'
 import { rescoreLabel, scanFood, ScanError, type Product, type ScanResponse } from '@/lib/api'
+import { closestProducts, useCatalog } from '@/lib/catalog'
 import { hasCalories, stageFor } from '@/lib/fit'
 import { tap, tapForGrade } from '@/lib/haptics'
 import { activePet, newId, saveScan, setState, updateScan, useStore } from '@/lib/store'
 import { learnBarcode } from '@/lib/suggest'
-import type { LabelData } from '@/lib/types'
+import type { CatalogProduct, LabelData } from '@/lib/types'
 import { color, font, radius, shadow, type } from '@/theme'
 
 type Mode = 'barcode' | 'label'
@@ -70,6 +71,9 @@ function Guide({ onDone }: { onDone: () => void }) {
   )
 }
 
+const norm = (s?: string) => (s ?? '').toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, ' ').trim()
+const sameName = (p: CatalogProduct, label: LabelData) => norm(p.brand) === norm(label.brand) && norm(p.name) === norm(label.productName)
+
 export default function ScanScreen() {
   // `add` is a saved scan that wants one more photo, for the calories or life stage line the first read missed.
   const { add } = useLocalSearchParams<{ add?: string }>()
@@ -77,6 +81,7 @@ export default function ScanScreen() {
   const active = useStore(activePet)
   const pets = useStore((st) => st.pets)
   const pet = target ? pets.find((p) => p.id === target.petId) : active
+  const catalog = useCatalog()?.products
   const guideSeen = useStore((st) => st.guideSeen)
   const insets = useSafeAreaInsets()
   const [permission, requestPermission] = useCameraPermissions()
@@ -115,8 +120,12 @@ export default function ScanScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [busy])
 
-  const finish = (res: ScanResponse, photoUri?: string) => {
+  const finish = (found: ScanResponse, photoUri?: string) => {
     if (!pet) return
+    // The same brand and name as a catalog food: link it right away (full label, photo, shop links). Close but not
+    // identical names are left for the "Is this what you scanned?" question on the score screen.
+    const same = !found.productId && catalog ? closestProducts(catalog, found.label, pet.species).find((p) => sameName(p, found.label)) : undefined
+    const res = same ? { ...found, productId: same.id, image: same.image ?? found.image, label: { ...same.label, isTreat: found.label.isTreat ?? same.label.isTreat }, result: same.result } : found
     const id = newId()
     if (missed.current && res.source === 'label') learnBarcode(missed.current, res.label, res.speciesOnLabel ?? pet.species)
     missed.current = undefined

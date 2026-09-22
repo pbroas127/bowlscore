@@ -3,7 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router'
 import { useState } from 'react'
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ArrowLeft, ArrowsLeftRight, CalendarCheck, LockSimple } from 'phosphor-react-native'
+import { ArrowLeft, ArrowsLeftRight, CalendarCheck, Check, DotsThree, LockSimple } from 'phosphor-react-native'
 import { FeedingCard, FitCard } from '@/components/FitCard'
 import { FoodHero, FoodReport } from '@/components/FoodReport'
 import { PetEditor } from '@/components/PetEditor'
@@ -12,12 +12,33 @@ import { AffiliateNote, ProductPhoto, ProteinTag } from '@/components/ProductCar
 import { ActionRow, Card, EmptyState, PillButton } from '@/components/ui'
 import { claimOf, proteinOf, refreshCatalog, useCatalog } from '@/lib/catalog'
 import { tap } from '@/lib/haptics'
+import { scanFor, toggle } from '@/lib/pantry'
 import { openShop, productLinks, tagged } from '@/lib/links'
 import { usePro } from '@/lib/purchases'
 import { activePet, useStore } from '@/lib/store'
 import { startPlan } from '@/lib/switchPlan'
-import type { BagSize, Pet } from '@/lib/types'
+import type { BagSize, CatalogProduct, Pet } from '@/lib/types'
 import { color, gutter, shadow, type } from '@/theme'
+
+// Picking this food without scanning it: as the main food, or as a treat for treat products. The small button
+// holds the other choice, for a product filed the wrong way.
+function PickBar({ pet, product }: { pet: Pet; product: CatalogProduct }) {
+  const saved = useStore((st) => st.scans.find((x) => x.petId === pet.id && x.productId === product.id))
+  const treat = product.form === 'treat'
+  const isCurrent = Boolean(saved && pet.currentScanId === saved.id)
+  const isTreat = Boolean(saved && pet.treatScanIds.includes(saved.id))
+  const done = treat ? isTreat : isCurrent
+  const label = treat ? (isTreat ? `One of ${pet.name}'s treats` : 'Save as a treat') : isCurrent ? `This is ${pet.name}'s food` : `Set as ${pet.name}'s food`
+  const other = treat ? (isCurrent ? `Remove as ${pet.name}'s food` : `Use as ${pet.name}'s main food`) : isTreat ? 'Remove from treats' : 'Save as a treat instead'
+  const act = (as: 'main' | 'treat') => { tap('select'); toggle(pet, scanFor(pet, product), as) }
+  const more = () => Alert.alert(product.name, undefined, [{ text: other, onPress: () => act(treat ? 'main' : 'treat') }, { text: 'Cancel', style: 'cancel' }])
+  return (
+    <View style={s.pickRow}>
+      <View style={{ flex: 1 }}><PillButton label={label} variant="quiet" icon={done ? <Check size={20} weight="bold" color={color.green} /> : undefined} onPress={() => act(treat ? 'treat' : 'main')} /></View>
+      <Pressable onPress={more} hitSlop={6} style={({ pressed }) => [s.more, pressed && { opacity: 0.6 }]} accessibilityRole="button" accessibilityLabel="More options"><DotsThree size={24} weight="bold" color={color.ink} /></Pressable>
+    </View>
+  )
+}
 
 export default function Product() {
   const { id } = useLocalSearchParams<{ id: string }>()
@@ -65,7 +86,7 @@ export default function Product() {
   return (
     <SafeAreaView style={s.root} edges={['top']}>
       {nav}
-      <ScrollView contentContainerStyle={{ paddingHorizontal: gutter, paddingBottom: links.chewy ? 270 : 200 }} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ paddingHorizontal: gutter, paddingBottom: (links.chewy ? 270 : 200) + (pet && pet.species === product.species ? 64 : 0) }} showsVerticalScrollIndicator={false}>
         {product.image ? <View style={{ marginBottom: 16 }}><ProductPhoto uri={product.image} size="100%" height={220} /></View> : null}
         <View style={{ marginBottom: 8 }}><ProteinTag product={product} /></View>
         <FoodHero name={product.name} subtitle={[product.brand, pet?.species === product.species ? `Scored for ${name}` : `Made for ${product.species === 'cat' ? 'cats' : 'dogs'}`].join(' · ')} score={product.result.score} />
@@ -85,6 +106,7 @@ export default function Product() {
 
       <SafeAreaView edges={['bottom']} style={[s.sticky, shadow]}>
         <PillButton label={size ? `Shop ${size.label} on Amazon` : 'Shop on Amazon'} onPress={() => shop(amazon)} />
+        {pet && pet.species === product.species ? <PickBar pet={pet} product={product} /> : null}
         {links.chewy ? <PillButton label="Shop on Chewy" variant="quiet" onPress={() => shop(links.chewy!)} /> : null}
         <AffiliateNote center />
       </SafeAreaView>
@@ -96,5 +118,7 @@ export default function Product() {
 const s = StyleSheet.create({
   root: { flex: 1, backgroundColor: color.bg },
   nav: { flexDirection: 'row', paddingHorizontal: gutter, height: 44, alignItems: 'center' },
+  pickRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  more: { width: 52, height: 52, borderRadius: 26, borderWidth: 1.5, borderColor: color.hairline, alignItems: 'center', justifyContent: 'center', backgroundColor: color.surface },
   sticky: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: color.surface, borderTopWidth: 1, borderTopColor: color.hairline, paddingHorizontal: gutter, paddingTop: 12, paddingBottom: 8, gap: 10 },
 })
