@@ -7,7 +7,7 @@ import { Bell, Check, LockOpen, Star } from 'phosphor-react-native'
 import { Mascot } from '@/components/Mascot'
 import { PillButton, Screen, TextLink } from '@/components/ui'
 import { tap } from '@/lib/haptics'
-import { loadPlans, purchase, restore, type Plan } from '@/lib/purchases'
+import { loadPlans, purchase, restore, usePro, type Plan } from '@/lib/purchases'
 import { activePet, useStore } from '@/lib/store'
 import { SITE } from '@/lib/links'
 import { color, radius, type } from '@/theme'
@@ -18,7 +18,10 @@ export default function Paywall() {
   const [picked, setPicked] = useState<Plan['id']>('yearly')
   const [busy, setBusy] = useState(false)
 
+  const pro = usePro()
   useEffect(() => { loadPlans().then(setPlans).catch(() => setPlans([])) }, [])
+  // A subscription confirmed late (slow network, restored on another screen) lets the user straight in.
+  useEffect(() => { if (pro) router.replace('/') }, [pro])
 
   const plan = plans?.find((p) => p.id === picked) ?? plans?.[0]
   const yearly = plans?.find((p) => p.id === 'yearly')

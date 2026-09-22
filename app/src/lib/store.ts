@@ -26,6 +26,7 @@ export interface Quiz {
 export interface AppState {
   ready: boolean
   onboarded: boolean
+  proCached: boolean // last known entitlement, only a hint until RevenueCat answers
   mockPro: boolean // only used when purchases run in mock mode (web preview or no RevenueCat key)
   coachSeen: boolean
   guideSeen: boolean // the "what to scan" diagram on the scanner
@@ -40,7 +41,7 @@ export interface AppState {
 }
 
 const KEY = 'bowlscore.state.v1'
-const initial: AppState = { ready: false, onboarded: false, mockPro: false, coachSeen: false, guideSeen: false, ratingAsks: 0, quiz: { step: 0, concerns: [], allergies: [] }, pets: [], scans: [], recalls: [], recallsSeen: [] }
+const initial: AppState = { ready: false, onboarded: false, mockPro: false, proCached: false, coachSeen: false, guideSeen: false, ratingAsks: 0, quiz: { step: 0, concerns: [], allergies: [] }, pets: [], scans: [], recalls: [], recallsSeen: [] }
 
 // Pets saved by an older build (or restored from an older backup) lack the newer fields. Breed, age, weight and meals are optional everywhere, so only the list needs a default.
 export const withDefaults = (pets: Pet[]): Pet[] => pets.map((p) => ({ ...p, treatScanIds: p.treatScanIds ?? [] }))

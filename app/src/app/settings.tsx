@@ -10,7 +10,7 @@ import { Card, Screen } from '@/components/ui'
 import { deleteAccount, useUser } from '@/lib/auth'
 import { SITE, SUPPORT_EMAIL } from '@/lib/links'
 import { askToNotify } from '@/lib/notify'
-import { restore } from '@/lib/purchases'
+import { restore, useProStatus } from '@/lib/purchases'
 import { resetState } from '@/lib/store'
 import { deleteBackup } from '@/lib/sync'
 import { color, type } from '@/theme'
@@ -32,6 +32,10 @@ const web = (url: string) => () => WebBrowser.openBrowserAsync(url)
 export default function Settings() {
   const user = useUser()
   const signedIn = user && !user.isAnonymous
+  const sub = useProStatus()
+  const until = sub.expires ? new Date(sub.expires).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : undefined
+  const subValue = !sub.active ? 'Not active' : until ? `${sub.plan}, ${sub.renews ? 'renews' : 'ends'} ${until}` : sub.plan
+  const mail = (subject: string) => () => Linking.openURL(`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`\n\nBowlScore ${Constants.expoConfig?.version}`)}`)
 
   const onRestore = async () => {
     const ok = await restore().catch(() => false)
@@ -64,6 +68,7 @@ export default function Settings() {
         <Row label={signedIn ? 'Signed in' : 'Sign in to back up your pets'} value={signedIn ? user.email ?? 'Apple ID' : undefined} onPress={() => router.push('/account')} last />
       </Group>
       <Group title="Subscription">
+        <Row label="BowlScore Pro" value={subValue} onPress={() => (sub.active ? Linking.openURL('https://apps.apple.com/account/subscriptions') : router.push('/paywall'))} />
         <Row label="Manage subscription" onPress={() => Linking.openURL('https://apps.apple.com/account/subscriptions')} />
         <Row label="Restore purchases" onPress={onRestore} last />
       </Group>
@@ -76,7 +81,9 @@ export default function Settings() {
         <Row label="Not veterinary advice" onPress={() => Alert.alert('Not veterinary advice', 'BowlScore rates what is printed on the label. It cannot examine your pet. For medical questions and prescription diets, always ask your veterinarian.')} last />
       </Group>
       <Group title="Support">
-        <Row label="Contact us" onPress={() => Linking.openURL(`mailto:${SUPPORT_EMAIL}?subject=BowlScore%20support`)} />
+        <Row label="Help and FAQ" onPress={() => router.push('/faq')} />
+        <Row label="Contact us" value={SUPPORT_EMAIL} onPress={mail('BowlScore support')} />
+        <Row label="Send feedback" onPress={mail('BowlScore feedback')} />
         <Row label="Rate BowlScore" onPress={async () => { if (await StoreReview.isAvailableAsync().catch(() => false)) StoreReview.requestReview() }} />
         <Row label="Share with a friend" onPress={() => Share.share({ message: `I use BowlScore to check what is really in my pet's food. ${SITE.home}` })} last />
       </Group>

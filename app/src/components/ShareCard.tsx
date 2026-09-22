@@ -39,7 +39,7 @@ export function ShareCard({ cardRef, label, result }: { cardRef: RefObject<View 
       </View>
       <View style={s.foot}>
         <Text style={[type.label, { fontFamily: font.heading }]}>Scored with BowlScore</Text>
-        <Text style={type.caption}>bowlscoreapp.vercel.app</Text>
+        <Text style={type.caption}>bowlscore.app</Text>
       </View>
     </View>
   )

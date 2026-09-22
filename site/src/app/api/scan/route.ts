@@ -248,7 +248,7 @@ export async function POST(req: Request) {
 
   if (typeof barcode === 'string') {
     const res = await fetch(`https://world.openpetfoodfacts.org/api/v2/product/${barcode}.json`, {
-      headers: { 'User-Agent': 'BowlScore/1.0 (pbroas127+bowlscore@gmail.com)' },
+      headers: { 'User-Agent': 'BowlScore/1.0 (support@bowlscore.app)' },
       signal: AbortSignal.timeout(10_000),
     }).catch(() => null)
     const product = res?.ok ? (await res.json().catch(() => null))?.product : null

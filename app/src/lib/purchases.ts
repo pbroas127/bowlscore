@@ -23,17 +23,38 @@ const MOCK_PLANS: Plan[] = [
   { id: 'monthly', price: 5.99, priceString: '$5.99', trialDays: 0 },
 ]
 
+// What Settings shows. `expires` is null for lifetime or unknown; `renews` false once cancelled in Apple settings.
+export interface ProStatus { active: boolean; plan?: string; expires?: string | null; renews?: boolean }
 let pro = false
+let status: ProStatus = { active: false }
 const listeners = new Set<() => void>()
-const setPro = (v: boolean) => { if (v !== pro) { pro = v; listeners.forEach((l) => l()) } }
+const emit = () => listeners.forEach((l) => l())
+// The last known answer is remembered so a subscriber never flashes the paywall while RevenueCat wakes up.
+// An expired subscription flips this to false on the next check and the tabs gate sends the user to the paywall.
+const setPro = (v: boolean) => { if (v !== pro) { pro = v; setState({ proCached: v }); emit() } }
+type Info = import('react-native-purchases').CustomerInfo
+const apply = (info: Info) => {
+  const e = info.entitlements.active[ENTITLEMENT]
+  status = e ? { active: true, plan: /month/i.test(e.productIdentifier) ? 'Monthly' : 'Yearly', expires: e.expirationDate, renews: e.willRenew } : { active: false }
+  setPro(Boolean(e))
+  emit()
+  return Boolean(e)
+}
 const rc = async () => (await import('react-native-purchases')).default
 
 export async function startPurchases(appUserID?: string) {
-  if (mock) return setPro(getState().mockPro)
+  if (mock) { status = { active: getState().mockPro, plan: 'Yearly', expires: null, renews: true }; return setPro(getState().mockPro) }
+  setPro(Boolean(getState().proCached))
   const Purchases = await rc()
   Purchases.configure({ apiKey: KEY!, appUserID })
-  Purchases.addCustomerInfoUpdateListener((info) => setPro(Boolean(info.entitlements.active[ENTITLEMENT])))
-  try { setPro(Boolean((await Purchases.getCustomerInfo()).entitlements.active[ENTITLEMENT])) } catch {}
+  Purchases.addCustomerInfoUpdateListener(apply)
+  await refreshPro()
+}
+
+// Called when the app comes back to the foreground, so a subscription that lapsed while away is caught.
+export async function refreshPro() {
+  if (mock) return
+  try { apply(await (await rc()).getCustomerInfo()) } catch {}
 }
 
 export async function identify(appUserID: string) {
@@ -45,6 +66,9 @@ export function usePro() {
   return useSyncExternalStore((l) => { listeners.add(l); return () => listeners.delete(l) }, () => pro, () => pro)
 }
 export const isPro = () => pro
+export function useProStatus() {
+  return useSyncExternalStore((l) => { listeners.add(l); return () => listeners.delete(l) }, () => status, () => status)
+}
 
 export async function loadPlans(): Promise<Plan[]> {
   if (mock) return MOCK_PLANS
@@ -71,14 +95,13 @@ export async function purchase(plan: Plan): Promise<boolean> {
   if (mock || !plan.pkg) {
     await new Promise((r) => setTimeout(r, 900))
     setState({ mockPro: true })
+    status = { active: true, plan: plan.id === 'monthly' ? 'Monthly' : 'Yearly', expires: null, renews: true }
     setPro(true)
     return true
   }
   try {
     const { customerInfo } = await (await rc()).purchasePackage(plan.pkg)
-    const active = Boolean(customerInfo.entitlements.active[ENTITLEMENT])
-    setPro(active)
-    return active
+    return apply(customerInfo)
   } catch (e) {
     if ((e as { userCancelled?: boolean }).userCancelled) return false
     throw e
@@ -87,8 +110,5 @@ export async function purchase(plan: Plan): Promise<boolean> {
 
 export async function restore(): Promise<boolean> {
   if (mock) return pro
-  const info = await (await rc()).restorePurchases()
-  const active = Boolean(info.entitlements.active[ENTITLEMENT])
-  setPro(active)
-  return active
+  return apply(await (await rc()).restorePurchases())
 }

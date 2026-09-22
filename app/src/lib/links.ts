@@ -1,16 +1,17 @@
-import { API_URL as BASE } from './config'
 import { AMAZON_TAG } from './ownLink'
 
 export { ownLink } from './ownLink'
+// The public site lives on the custom domain; the API keeps the vercel.app host (no redirect on POST).
+const WEB = 'https://www.bowlscore.app'
 export const SITE = {
-  home: BASE,
-  terms: `${BASE}/terms`,
-  privacy: `${BASE}/privacy`,
-  support: `${BASE}/support`,
-  methodology: `${BASE}/methodology`,
-  affiliate: `${BASE}/affiliate-disclosure`,
+  home: WEB,
+  terms: `${WEB}/terms`,
+  privacy: `${WEB}/privacy`,
+  support: `${WEB}/support`,
+  methodology: `${WEB}/methodology`,
+  affiliate: `${WEB}/affiliate-disclosure`,
 }
-export const SUPPORT_EMAIL = 'pbroas127+bowlscore@gmail.com'
+export const SUPPORT_EMAIL = 'support@bowlscore.app'
 
 // Affiliate links. Every Amazon link carries the Associates tag. Chewy approval is pending: flip CHEWY_ON once it
 // lands and every built Chewy link in the app switches on from this one place.

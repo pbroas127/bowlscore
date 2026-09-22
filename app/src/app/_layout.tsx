@@ -10,7 +10,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { startAuth, useUser } from '@/lib/auth'
 import { refreshCatalog } from '@/lib/catalog'
 import { startNotifications } from '@/lib/notify'
-import { identify, startPurchases } from '@/lib/purchases'
+import { identify, refreshPro, startPurchases } from '@/lib/purchases'
 import { checkRecalls } from '@/lib/recalls'
 import { loadState, useStore } from '@/lib/store'
 import { startSync } from '@/lib/sync'
@@ -29,7 +29,7 @@ export default function RootLayout() {
     startNotifications()
     refreshCatalog()
     // Coming back to the app is when prices and listings are most likely stale.
-    const sub = AppState.addEventListener('change', (s) => { if (s === 'active') refreshCatalog() })
+    const sub = AppState.addEventListener('change', (s) => { if (s === 'active') { refreshCatalog(); refreshPro() } })
     return () => sub.remove()
   }, [])
 
