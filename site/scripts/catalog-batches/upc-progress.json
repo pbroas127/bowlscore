@@ -44,7 +44,21 @@
   "fancy-feast-classic-pate-tender-beef-feast-cat": true,
   "blue-buffalo-tastefuls-chicken-entree-pate-cat": true,
   "milk-bone-original-dog-biscuits-dog": true,
-  "beggin-strips-original-with-bacon-dog": true
+  "beggin-strips-original-with-bacon-dog": true,
+  "purina-pro-plan-complete-essentials-chicken-and-rice-entree-classic-dog": true,
+  "weruva-paw-lickin-chicken-in-gravy-dog": true,
+  "iams-proactive-health-indoor-weight-and-hairball-care-cat": true,
+  "purina-pro-plan-kitten-chicken-and-rice-formula-cat": true,
+  "orijen-original-cat-cat": true,
+  "stella-and-chewys-chick-chick-chicken-dinner-morsels-freeze-dried-raw-cat": true,
+  "pup-peroni-original-beef-flavor-dog": true,
+  "greenies-original-regular-dental-dog-treats-dog": true,
+  "temptations-classic-tasty-chicken-flavor-cat": true,
+  "greenies-feline-dental-treats-oven-roasted-chicken-flavor-cat": true,
+  "wellness-soft-puppy-bites-lamb-and-salmon-recipe-dog": true,
+  "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog": true,
+  "full-moon-chicken-jerky-dog": true,
+  "stewart-freeze-dried-beef-liver-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -279,6 +293,78 @@
    {
     "lb": 11,
     "upc": "769949658566"
+   }
+  ],
+  "purina-pro-plan-kitten-chicken-and-rice-formula-cat": [
+   {
+    "lb": 3.5,
+    "upc": "038100131706"
+   }
+  ],
+  "pup-peroni-original-beef-flavor-dog": [
+   {
+    "lb": 1.56,
+    "upc": "079100836307"
+   }
+  ],
+  "greenies-original-regular-dental-dog-treats-dog": [
+   {
+    "lb": 0.38,
+    "upc": "642863102936"
+   },
+   {
+    "lb": 0.38,
+    "upc": "642863106996"
+   }
+  ],
+  "temptations-classic-tasty-chicken-flavor-cat": [
+   {
+    "lb": 1.88,
+    "upc": "023100117188"
+   }
+  ],
+  "greenies-feline-dental-treats-oven-roasted-chicken-flavor-cat": [
+   {
+    "lb": 0.61,
+    "upc": "642863107689"
+   },
+   {
+    "lb": 1.31,
+    "upc": "642863107030"
+   }
+  ],
+  "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog": [
+   {
+    "lb": 1.25,
+    "upc": "076344101970"
+   },
+   {
+    "lb": 6,
+    "upc": "076344101727"
+   }
+  ],
+  "full-moon-chicken-jerky-dog": [
+   {
+    "lb": 0.75,
+    "upc": "072745974014"
+   },
+   {
+    "lb": 0.75,
+    "upc": "072745974571"
+   },
+   {
+    "lb": 1.5,
+    "upc": "072745974939"
+   },
+   {
+    "lb": 0.75,
+    "upc": "072745974977"
+   }
+  ],
+  "stewart-freeze-dried-beef-liver-dog": [
+   {
+    "lb": 1.31,
+    "upc": "073101212450"
    }
   ]
  }

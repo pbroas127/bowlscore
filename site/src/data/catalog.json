@@ -3451,7 +3451,8 @@
       {
         "label": "3.5 lb",
         "lb": 3.5,
-        "asin": "B0F56RSJHZ"
+        "asin": "B0F56RSJHZ",
+        "upc": "038100131706"
       },
       {
         "label": "16 lb",
@@ -4654,7 +4655,8 @@
       },
       {
         "label": "25 oz",
-        "lb": 1.56
+        "lb": 1.56,
+        "upc": "079100836307"
       },
       {
         "label": "35 oz",
@@ -4736,7 +4738,8 @@
       {
         "label": "6 oz, 6 count",
         "lb": 0.38,
-        "asin": "B00DQR4DX4"
+        "asin": "B00DQR4DX4",
+        "upc": "642863102936"
       },
       {
         "label": "12 oz, 12 count",
@@ -4931,7 +4934,8 @@
       {
         "label": "30 oz",
         "lb": 1.88,
-        "asin": "B01LNB6SA0"
+        "asin": "B01LNB6SA0",
+        "upc": "023100117188"
       },
       {
         "label": "48 oz",
@@ -5028,12 +5032,14 @@
       {
         "label": "9.75 oz",
         "lb": 0.61,
-        "asin": "B0828WNJXC"
+        "asin": "B0828WNJXC",
+        "upc": "642863107689"
       },
       {
         "label": "21 oz",
         "lb": 1.31,
-        "asin": "B071FH2NLX"
+        "asin": "B071FH2NLX",
+        "upc": "642863107030"
       }
     ],
     "asin": "B0828WNJXC",
@@ -5215,12 +5221,14 @@
       {
         "label": "20 oz",
         "lb": 1.25,
-        "asin": "B012NZ2V0Q"
+        "asin": "B012NZ2V0Q",
+        "upc": "076344101970"
       },
       {
         "label": "6 lb",
         "lb": 6,
-        "asin": "B07D9X5JG3"
+        "asin": "B07D9X5JG3",
+        "upc": "076344101727"
       }
     ],
     "asin": "B012NZ2V0Q",
@@ -5330,11 +5338,13 @@
     "sizes": [
       {
         "label": "12 oz",
-        "lb": 0.75
+        "lb": 0.75,
+        "upc": "072745974014"
       },
       {
         "label": "24 oz",
-        "lb": 1.5
+        "lb": 1.5,
+        "upc": "072745974939"
       }
     ],
     "asin": "B0857ZHLJ9",
@@ -5395,7 +5405,8 @@
       {
         "label": "21 oz",
         "lb": 1.31,
-        "asin": "B0765C1R3F"
+        "asin": "B0765C1R3F",
+        "upc": "073101212450"
       }
     ],
     "asin": "B00SX4V7NE",

@@ -559,6 +559,22 @@
   ]
  },
  {
+  "id": "purina-pro-plan-kitten-chicken-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B0F56RSJHZ",
+    "upc": "038100131706"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B0F56MHDCF"
+   }
+  ]
+ },
+ {
   "id": "blue-buffalo-wilderness-adult-chicken-recipe-cat",
   "sizes": [
    {
@@ -650,6 +666,220 @@
     "label": "11 lb",
     "lb": 11,
     "upc": "769949658566"
+   }
+  ]
+ },
+ {
+  "id": "pup-peroni-original-beef-flavor-dog",
+  "sizes": [
+   {
+    "label": "5.6 oz",
+    "lb": 0.35
+   },
+   {
+    "label": "7.8 oz",
+    "lb": 0.49
+   },
+   {
+    "label": "10 oz",
+    "lb": 0.63
+   },
+   {
+    "label": "25 oz",
+    "lb": 1.56,
+    "upc": "079100836307"
+   },
+   {
+    "label": "35 oz",
+    "lb": 2.19
+   },
+   {
+    "label": "38 oz",
+    "lb": 2.38,
+    "asin": "B071ZB41VC"
+   },
+   {
+    "label": "40 oz",
+    "lb": 2.5,
+    "asin": "B0090NQPFC"
+   },
+   {
+    "label": "46 oz",
+    "lb": 2.88
+   },
+   {
+    "label": "50 oz",
+    "lb": 3.13,
+    "asin": "B01MY41FFT"
+   }
+  ]
+ },
+ {
+  "id": "greenies-original-regular-dental-dog-treats-dog",
+  "sizes": [
+   {
+    "label": "6 oz, 6 count",
+    "lb": 0.38,
+    "asin": "B00DQR4DX4",
+    "upc": "642863102936"
+   },
+   {
+    "label": "12 oz, 12 count",
+    "lb": 0.75,
+    "asin": "B000KEVF1O"
+   },
+   {
+    "label": "18 oz, 18 count",
+    "lb": 1.13,
+    "asin": "B000KETAGG"
+   },
+   {
+    "label": "27 oz, 27 count",
+    "lb": 1.69,
+    "asin": "B000KEVF32"
+   },
+   {
+    "label": "36 oz, 36 count",
+    "lb": 2.25,
+    "asin": "B006W6YHHI"
+   },
+   {
+    "label": "72 oz, 72 count",
+    "lb": 4.5,
+    "asin": "B06XZZZ9MY"
+   }
+  ]
+ },
+ {
+  "id": "temptations-classic-tasty-chicken-flavor-cat",
+  "sizes": [
+   {
+    "label": "1 oz",
+    "lb": 0.06,
+    "asin": "B00IOOOXKM"
+   },
+   {
+    "label": "3 oz",
+    "lb": 0.19,
+    "asin": "B006LRL8IO"
+   },
+   {
+    "label": "6.3 oz",
+    "lb": 0.39
+   },
+   {
+    "label": "12 oz",
+    "lb": 0.75
+   },
+   {
+    "label": "16 oz",
+    "lb": 1,
+    "asin": "B00IOTB7PG"
+   },
+   {
+    "label": "30 oz",
+    "lb": 1.88,
+    "asin": "B01LNB6SA0",
+    "upc": "023100117188"
+   },
+   {
+    "label": "48 oz",
+    "lb": 3,
+    "asin": "B09DQ753C4"
+   }
+  ]
+ },
+ {
+  "id": "greenies-feline-dental-treats-oven-roasted-chicken-flavor-cat",
+  "sizes": [
+   {
+    "label": "2.1 oz",
+    "lb": 0.13,
+    "asin": "B0828W6NXJ"
+   },
+   {
+    "label": "2.5 oz",
+    "lb": 0.16,
+    "asin": "B008PNN7B8"
+   },
+   {
+    "label": "4.6 oz",
+    "lb": 0.29
+   },
+   {
+    "label": "9.75 oz",
+    "lb": 0.61,
+    "asin": "B0828WNJXC",
+    "upc": "642863107689"
+   },
+   {
+    "label": "21 oz",
+    "lb": 1.31,
+    "asin": "B071FH2NLX",
+    "upc": "642863107030"
+   }
+  ]
+ },
+ {
+  "id": "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog",
+  "sizes": [
+   {
+    "label": "20 oz",
+    "lb": 1.25,
+    "asin": "B012NZ2V0Q",
+    "upc": "076344101970"
+   },
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B07D9X5JG3",
+    "upc": "076344101727"
+   }
+  ]
+ },
+ {
+  "id": "full-moon-chicken-jerky-dog",
+  "sizes": [
+   {
+    "label": "12 oz",
+    "lb": 0.75,
+    "upc": "072745974014"
+   },
+   {
+    "label": "24 oz",
+    "lb": 1.5,
+    "upc": "072745974939"
+   }
+  ]
+ },
+ {
+  "id": "stewart-freeze-dried-beef-liver-dog",
+  "sizes": [
+   {
+    "label": "2 oz",
+    "lb": 0.13,
+    "asin": "B00HMMA48M"
+   },
+   {
+    "label": "4 oz",
+    "lb": 0.25,
+    "asin": "B0002DGRRA"
+   },
+   {
+    "label": "12 oz",
+    "lb": 0.75,
+    "asin": "B00SX4V7NE"
+   },
+   {
+    "label": "14 oz",
+    "lb": 0.88,
+    "asin": "B000255OIG"
+   },
+   {
+    "label": "21 oz",
+    "lb": 1.31,
+    "asin": "B0765C1R3F",
+    "upc": "073101212450"
    }
   ]
  }
