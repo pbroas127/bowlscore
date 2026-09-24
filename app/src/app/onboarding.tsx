@@ -1,10 +1,9 @@
 import { Image } from 'expo-image'
-import * as Notifications from 'expo-notifications'
 import { router } from 'expo-router'
 import { useEffect, useState, type ReactNode } from 'react'
-import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native'
 import Animated, { Easing, FadeIn, FadeInDown, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
-import { ArrowLeft, Bell, Cat, Check, Dog, Heart, MagnifyingGlass, PawPrint, Scan, ShieldCheck, Sparkle } from 'phosphor-react-native'
+import { ArrowLeft, Cat, Check, Dog, Heart, MagnifyingGlass, PawPrint, Scan, ShieldCheck } from 'phosphor-react-native'
 import { FlagRow } from '@/components/FlagRow'
 import { Mascot, mascotFor } from '@/components/Mascot'
 import { BirthdayField, BreedField, petLine, pounds } from '@/components/PetEditor'
@@ -21,7 +20,7 @@ import { color, radius, type } from '@/theme'
 type StepProps = { quiz: Quiz; next: () => void; pet: string }
 type StepFn = (p: StepProps) => ReactNode
 
-const STEPS: StepFn[] = [Welcome, PetType, PetName, Breed, Age, Weight, Protein, Stage, Size, FoodType, HeardFrom, Concerns, Allergies, Fact, Trust, DemoScan, NotifyPrimer, Building, Reveal, Recap]
+const STEPS: StepFn[] = [Welcome, PetType, PetName, Breed, Age, Weight, Protein, Stage, Size, HeardFrom, Health, Fact, DemoScan, Building, Reveal]
 
 // Never ask what we already know: an age gives the life stage, a known breed gives the size, and cats have no size question.
 const skips = (S: StepFn, q: Quiz) =>
@@ -98,23 +97,17 @@ function Single({ title, sub, options, value, onPick, next }: { title: string; s
   )
 }
 
-function Multi({ title, sub, options, value, onChange, next, none }: { title: string; sub?: string; options: string[]; value: string[]; onChange: (v: string[]) => void; next: () => void; none: string }) {
-  const toggle = (o: string) => onChange(o === none ? [none] : value.includes(o) ? value.filter((v) => v !== o) : [...value.filter((v) => v !== none), o])
-  return (
-    <Q title={title} sub={sub} footer={<PillButton label="Continue" onPress={next} disabled={!value.length} />}>
-      <View style={s.chips}>{[...options, none].map((o) => <Chip key={o} label={o} selected={value.includes(o)} onPress={() => toggle(o)} />)}</View>
-    </Q>
-  )
-}
-
 function Welcome({ next }: StepProps) {
   const [restoring, setRestoring] = useState(false)
   return (
     <View style={[s.q, { paddingTop: 12 }]}>
       <View style={s.heroArt}>
         <View style={s.heroGlow} />
-        <Mascot pose="pair-happy" size={280} />
-        <Animated.View entering={FadeInDown.delay(500).duration(400)} style={s.heroRing}><ScoreRing score={92} size={92} stroke={9} delay={700} /></Animated.View>
+        {/* The ring rides on the mascot's shoulder at any screen width. */}
+        <View>
+          <Mascot pose="pair-happy" size={280} />
+          <Animated.View entering={FadeInDown.delay(500).duration(400)} style={s.heroRing}><ScoreRing score={92} size={92} stroke={9} delay={700} /></Animated.View>
+        </View>
       </View>
       <View style={{ gap: 12, marginBottom: 28 }}>
         <Text style={type.display}>Know what is really in the bowl</Text>
@@ -227,49 +220,44 @@ function Size({ quiz, next, pet }: StepProps) {
   return <Single title={`How big is ${pet}?`} options={[{ label: 'Small', hint: 'Under 20 lb' }, { label: 'Medium', hint: '20 to 50 lb' }, { label: 'Large', hint: '50 to 90 lb' }, { label: 'Giant', hint: 'Over 90 lb' }]} value={quiz.size} onPick={(size) => setQuiz({ size })} next={next} />
 }
 
-function FoodType({ quiz, next, pet }: StepProps) {
-  return <Single title={`What does ${pet} eat most days?`} options={[{ label: 'Dry kibble' }, { label: 'Wet or canned' }, { label: 'Fresh or raw' }, { label: 'A mix' }]} value={quiz.foodType} onPick={(foodType) => setQuiz({ foodType })} next={next} />
-}
-
 function HeardFrom({ quiz, next }: StepProps) {
   return <Single title="Where did you hear about us?" options={['TikTok', 'Instagram', 'YouTube', 'A friend', 'App Store', 'Somewhere else'].map((label) => ({ label }))} value={quiz.heardFrom} onPick={(heardFrom) => setQuiz({ heardFrom })} next={next} />
 }
 
-function Concerns({ quiz, next, pet }: StepProps) {
-  return <Multi title={`Anything bothering ${pet}?`} sub="Pick all that apply. We will watch for ingredients linked to each one." options={['Itchy skin', 'Sensitive stomach', 'Weight', 'Picky eater', 'Dull coat', 'Joint health']} none="None of these" value={quiz.concerns} onChange={(concerns) => setQuiz({ concerns })} next={next} />
-}
-
-function Allergies({ quiz, next, pet }: StepProps) {
-  return <Multi title={`Does ${pet} have any allergies?`} sub="We will warn you whenever a scanned food contains one." options={['Chicken', 'Beef', 'Dairy', 'Grain', 'Fish', 'Egg']} none="None that I know of" value={quiz.allergies} onChange={(allergies) => setQuiz({ allergies })} next={next} />
-}
-
-function Fact({ quiz, next }: StepProps) {
+// Allergies and concerns on one screen. Nothing picked means nothing to watch, so Continue is always on.
+function Health({ quiz, next, pet }: StepProps) {
+  const flip = (list: string[], o: string) => (list.includes(o) ? list.filter((v) => v !== o) : [...list.filter((v) => !v.startsWith('None')), o])
   return (
-    <Q title="" footer={<PillButton label="Good to know" onPress={next} />}>
-      <View style={s.factCard}>
-        <Text style={[type.label, { color: color.ink2 }]}>DID YOU KNOW</Text>
-        <Text style={[type.h1, { fontSize: 30, lineHeight: 36 }]}>A food called “with chicken” only has to contain 3 percent chicken.</Text>
-        <Text style={type.caption}>Source: AAFCO pet food labeling rules</Text>
-      </View>
-      <Mascot pose={mascotFor(quiz.petType, 'worried')} size={190} style={{ alignSelf: 'center', marginTop: 8 }} />
+    <Q title={`Anything to watch for ${pet}?`} sub="Pick any that apply, or skip." footer={<PillButton label={quiz.allergies.length || quiz.concerns.length ? 'Continue' : 'Nothing to watch'} onPress={next} />}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
+        <Text style={[type.label, { color: color.ink2 }]}>Allergies</Text>
+        <View style={s.chips}>{['Chicken', 'Beef', 'Dairy', 'Grain', 'Fish', 'Egg'].map((o) => <Chip key={o} label={o} selected={quiz.allergies.includes(o)} onPress={() => setQuiz({ allergies: flip(quiz.allergies, o) })} />)}</View>
+        <Text style={[type.label, { color: color.ink2, marginTop: 12 }]}>Concerns</Text>
+        <View style={s.chips}>{['Itchy skin', 'Sensitive stomach', 'Weight', 'Picky eater', 'Dull coat', 'Joint health'].map((o) => <Chip key={o} label={o} selected={quiz.concerns.includes(o)} onPress={() => setQuiz({ concerns: flip(quiz.concerns, o) })} />)}</View>
+      </ScrollView>
     </Q>
   )
 }
 
-function Trust({ next }: StepProps) {
+// The hook and the promise on one screen: what labels get away with, then why this score is different.
+function Fact({ next }: StepProps) {
   const rows = [
-    { icon: <MagnifyingGlass size={24} weight="bold" color={color.ink} />, title: 'Scored from the label', body: 'Every point comes from the ingredients and the nutrition panel. Never from advertising.' },
-    { icon: <ShieldCheck size={24} weight="bold" color={color.ink} />, title: 'Brands cannot pay for a score', body: 'No sponsored ratings. The same label always gets the same score.' },
-    { icon: <Heart size={24} weight="bold" color={color.ink} />, title: 'Built on real standards', body: 'AAFCO nutrient profiles and FDA rules, with separate math for dogs and cats.' },
+    { icon: <MagnifyingGlass size={20} weight="bold" color={color.ink} />, title: 'Scored only from the label' },
+    { icon: <ShieldCheck size={20} weight="bold" color={color.ink} />, title: 'Brands cannot pay for a score' },
+    { icon: <Heart size={20} weight="bold" color={color.ink} />, title: 'Built on AAFCO standards' },
   ]
   return (
-    <Q title="A score you can trust" footer={<PillButton label="Continue" onPress={next} />}>
+    <Q title="" footer={<PillButton label="Continue" onPress={next} />}>
+      <View style={s.factCard}>
+        <Text style={[type.label, { color: color.ink2 }]}>DID YOU KNOW</Text>
+        <Text style={[type.h1, { fontSize: 28, lineHeight: 34 }]}>A food called “with chicken” only has to contain 3 percent chicken.</Text>
+        <Text style={type.caption}>Source: AAFCO pet food labeling rules</Text>
+      </View>
+      <Text style={[type.h2, { marginTop: 12 }]}>A score you can trust</Text>
       {rows.map((r, i) => (
-        <Animated.View key={r.title} entering={FadeInDown.delay(i * 90).duration(300)}>
-          <Card style={{ flexDirection: 'row', gap: 14, alignItems: 'flex-start' }}>
-            <View style={s.iconBubble}>{r.icon}</View>
-            <View style={{ flex: 1, gap: 2 }}><Text style={type.title}>{r.title}</Text><Text style={[type.label, { color: color.ink2, fontFamily: type.body.fontFamily }]}>{r.body}</Text></View>
-          </Card>
+        <Animated.View key={r.title} entering={FadeInDown.delay(150 + i * 90).duration(300)} style={{ flexDirection: 'row', gap: 12, alignItems: 'center' }}>
+          <View style={[s.iconBubble, { width: 40, height: 40 }]}>{r.icon}</View>
+          <Text style={[type.title, { flex: 1 }]}>{r.title}</Text>
         </Animated.View>
       ))}
     </Q>
@@ -318,25 +306,6 @@ function DemoScan({ next, pet }: StepProps) {
   )
 }
 
-function NotifyPrimer({ next, pet }: StepProps) {
-  const allow = async () => {
-    if (Platform.OS !== 'web') await Notifications.requestPermissionsAsync().catch(() => {})
-    next()
-  }
-  return (
-    <Q title={`Stay ahead for ${pet}`} sub="Two kinds of alerts, nothing else." footer={<><PillButton label="Turn on alerts" onPress={allow} /><View style={{ alignItems: 'center' }}><TextLink label="Not now" onPress={next} /></View></>}>
-      <Card style={{ gap: 16 }}>
-        {[['Trial reminder', 'We remind you the day before your free trial ends.'], ['Score updates', `A heads up when we learn something new about ${pet}'s food.`]].map(([t, b]) => (
-          <View key={t} style={{ flexDirection: 'row', gap: 14 }}>
-            <View style={s.iconBubble}><Bell size={22} weight="bold" color={color.ink} /></View>
-            <View style={{ flex: 1 }}><Text style={type.title}>{t}</Text><Text style={type.caption}>{b}</Text></View>
-          </View>
-        ))}
-      </Card>
-    </Q>
-  )
-}
-
 function Building({ next, pet, quiz }: StepProps) {
   const items = ['Life stage needs', 'Allergy watchlist', 'Ingredient red flags', 'Better food matches']
   const [pct, setPct] = useState(0)
@@ -367,6 +336,7 @@ function Building({ next, pet, quiz }: StepProps) {
 }
 
 function Reveal({ next, pet, quiz }: StepProps) {
+  const tall = useWindowDimensions().height >= 800 // shorter phones get a smaller mascot so it never sits on the button
   const allergy = quiz.allergies.find((a) => !a.startsWith('None'))
   const concern = quiz.concerns.find((c) => !c.startsWith('None'))
   const watch = [
@@ -379,7 +349,7 @@ function Reveal({ next, pet, quiz }: StepProps) {
       <Card style={{ gap: 16, borderRadius: radius.sheet, padding: 20 }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
           <View style={s.avatar}><Mascot pose={mascotFor(quiz.petType, 'head')} size={56} bob={false} /></View>
-          <View style={{ flex: 1 }}><Text style={type.h2}>{pet}</Text><Text style={type.caption}>{[...petLine(petFromQuiz(quiz)), quiz.foodType].filter(Boolean).join(' · ')}</Text></View>
+          <View style={{ flex: 1 }}><Text style={type.h2}>{pet}</Text><Text style={type.caption}>{petLine(petFromQuiz(quiz)).join(' · ')}</Text></View>
         </View>
         {watch.map((w, i) => (
           <Animated.View key={w} entering={FadeInDown.delay(200 + i * 120).duration(300)} style={{ flexDirection: 'row', gap: 12, alignItems: 'center' }}>
@@ -388,26 +358,7 @@ function Reveal({ next, pet, quiz }: StepProps) {
           </Animated.View>
         ))}
       </Card>
-      <Mascot pose={mascotFor(quiz.petType, 'happy')} size={180} style={{ alignSelf: 'center', marginTop: 12 }} />
-    </Q>
-  )
-}
-
-function Recap({ next, pet }: StepProps) {
-  const rows = [
-    { icon: <Scan size={24} weight="bold" color={color.ink} />, title: 'Unlimited scans', body: 'Every bag, can, pouch and treat.' },
-    { icon: <Sparkle size={24} weight="bold" color={color.ink} />, title: `Flags matched to ${pet}`, body: 'Allergies and life stage built into every score.' },
-    { icon: <Heart size={24} weight="bold" color={color.ink} />, title: 'Better foods, ranked', body: 'See what to look for in the next bag.' },
-  ]
-  return (
-    <Q title={`Everything ${pet} needs`} footer={<PillButton label="Continue" onPress={next} />}>
-      {rows.map((r) => (
-        <View key={r.title} style={{ flexDirection: 'row', gap: 14, alignItems: 'center', paddingVertical: 8 }}>
-          <View style={s.iconBubble}>{r.icon}</View>
-          <View style={{ flex: 1 }}><Text style={type.title}>{r.title}</Text><Text style={type.caption}>{r.body}</Text></View>
-        </View>
-      ))}
-      <Mascot pose="pair-celebrating" size={200} style={{ alignSelf: 'center', marginTop: 8 }} />
+      <Mascot pose={mascotFor(quiz.petType, 'happy')} size={tall ? 160 : 96} style={{ alignSelf: 'center', marginTop: 12 }} />
     </Q>
   )
 }
@@ -420,7 +371,7 @@ const s = StyleSheet.create({
   input: { ...type.h2, height: 64, borderRadius: radius.card, borderWidth: 1.5, borderColor: color.ink, backgroundColor: color.surface, paddingHorizontal: 20 },
   heroArt: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   heroGlow: { position: 'absolute', width: 300, height: 300, borderRadius: 150, backgroundColor: color.yellowSoft },
-  heroRing: { position: 'absolute', right: 12, top: '12%', backgroundColor: color.surface, borderRadius: 60, padding: 8, borderWidth: 1, borderColor: color.hairline },
+  heroRing: { position: 'absolute', right: -16, top: 12, backgroundColor: color.surface, borderRadius: 60, padding: 8, borderWidth: 1, borderColor: color.hairline },
   factCard: { backgroundColor: color.yellow, borderRadius: radius.sheet, padding: 24, gap: 14 },
   unit: { flex: 1, flexDirection: 'row', alignItems: 'center', height: 64, borderRadius: radius.card, borderWidth: 1.5, borderColor: color.ink, backgroundColor: color.surface, paddingHorizontal: 20 },
   unitInput: { ...type.h2, flex: 1, height: 64 },

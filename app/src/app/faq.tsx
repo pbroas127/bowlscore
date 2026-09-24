@@ -13,7 +13,7 @@ const FAQ: [string, string][] = [
   ['A barcode was not found', 'Snap the ingredient list instead. You still get a score, and the food is added to our catalog.'],
   ['A score looks wrong', 'Open the scan, tap Edit details and fix the text. Or email us a photo of the label.'],
   ['How do I cancel?', 'iPhone Settings, your name, Subscriptions, BowlScore, Cancel. Do it 24 hours before renewal.'],
-  ['New phone or reinstall?', 'Tap Restore purchases on the paywall or in Settings. Sign in to bring your pets back.'],
+  ['New phone or reinstall?', 'Tap Restore on the paywall, or Restore purchases in Settings. Sign in to bring your pets back.'],
   ['What happens to my photos?', 'They are read and then discarded. We keep only the text and the score.'],
 ]
 
@@ -39,7 +39,7 @@ export default function Faq() {
       </Card>
       <View style={{ gap: 8, marginTop: 24, alignItems: 'center' }}>
         <Text style={type.caption}>Still stuck? A real person replies.</Text>
-        <PillButton label="Email us" onPress={() => Linking.openURL(`mailto:${SUPPORT_EMAIL}?subject=BowlScore%20help`)} />
+        <View style={{ alignSelf: 'stretch' }}><PillButton label="Email us" onPress={() => Linking.openURL(`mailto:${SUPPORT_EMAIL}?subject=BowlScore%20help`)} /></View>
       </View>
     </Screen>
   )

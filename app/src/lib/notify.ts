@@ -23,6 +23,8 @@ const REORDER = 'reorder'
 
 export const canNotify = async () => native && (await Notifications.getPermissionsAsync().catch(() => undefined))?.granted === true
 // Prompts. Only call this from something the person just tapped.
+// True only before the person has ever answered the iOS prompt, when asking can still show it.
+export const notifyUndecided = async () => native && (await Notifications.getPermissionsAsync().catch(() => undefined))?.status === 'undetermined'
 export const askToNotify = async () => (await canNotify()) || (native && (await Notifications.requestPermissionsAsync().catch(() => undefined))?.granted === true)
 
 // Fires now, or at `when`. Resolves to the id needed to cancel it, or undefined if scheduling failed.

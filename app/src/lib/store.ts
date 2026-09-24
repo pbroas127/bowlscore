@@ -29,6 +29,7 @@ export interface AppState {
   proCached: boolean // last known entitlement, only a hint until RevenueCat answers
   mockPro: boolean // only used when purchases run in mock mode (web preview or no RevenueCat key)
   coachSeen: boolean
+  alertsAsked?: boolean // the one time Home card asking for notifications was answered
   guideSeen: boolean // the "what to scan" diagram on the scanner
   ratingAsks: number
   quiz: Quiz

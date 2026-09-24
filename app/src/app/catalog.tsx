@@ -2,7 +2,7 @@
 // It is also free mode: closing the paywall lands here, with scores and shop links but nothing about a pet.
 import { router } from 'expo-router'
 import { useState } from 'react'
-import { FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft, MagnifyingGlass } from 'phosphor-react-native'
 import { Brand } from '@/components/Brand'
@@ -13,7 +13,7 @@ import { fitFor } from '@/lib/fit'
 import { usePro } from '@/lib/purchases'
 import { activePet, useStore } from '@/lib/store'
 import type { CatalogProduct, FoodForm, Pet, Species } from '@/lib/types'
-import { color, font, gutter, radius, type } from '@/theme'
+import { color, column, font, gutter, radius, type } from '@/theme'
 
 const FORMS: [string, FoodForm | undefined][] = [['All', undefined], ['Dry', 'dry'], ['Wet', 'wet'], ['Treats', 'treat']]
 const PRICES = [1, 2, 3] as const
@@ -27,7 +27,12 @@ const unfit = (pet: Pet | undefined, p: CatalogProduct) => {
   return bad.label === 'Age' ? `Not for ${pet.species === 'cat' ? 'kittens' : 'puppies'}` : bad.label === 'Size' ? 'Not for large breed puppies' : bad.note.split('. ')[0]
 }
 
-export default function CatalogScreen() {
+export default function CatalogRoute() {
+  return <CatalogScreen />
+}
+
+export function CatalogScreen({ tab }: { tab?: boolean }) {
+  const cols = useWindowDimensions().width >= 700 ? 2 : 1 // iPad: two columns of rows
   const pro = usePro()
   const stored = useStore(activePet)
   const pet = pro ? stored : undefined
@@ -46,7 +51,10 @@ export default function CatalogScreen() {
 
   return (
     <SafeAreaView style={s.root} edges={['top']}>
-      {pro ? (
+      <View style={[s.root, cols > 1 ? { width: '100%', maxWidth: 960, alignSelf: 'center' } : column]}>
+      {tab ? (
+        <Text style={[type.h1, s.title]}>Foods for {pet?.name ?? 'your pet'}</Text>
+      ) : pro ? (
         <View style={s.nav}>
           <Pressable hitSlop={12} onPress={() => router.back()} accessibilityLabel="Back" style={({ pressed }) => pressed && { opacity: 0.5 }}><ArrowLeft size={24} weight="bold" color={color.ink} /></Pressable>
           <Text style={type.h2} numberOfLines={1}>Foods for {pet?.name ?? (species === 'cat' ? 'cats' : 'dogs')}</Text>
@@ -72,12 +80,15 @@ export default function CatalogScreen() {
         </ScrollView>
       </View>
       <FlatList
+        key={cols}
+        numColumns={cols}
+        columnWrapperStyle={cols > 1 ? { gap: 32 } : undefined}
         data={shown}
         keyExtractor={(p) => p.id}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={s.listPad}
-        renderItem={({ item, index }) => <ProductRow product={item} last={index === shown.length - 1} note={unfit(pet, item)} />}
+        renderItem={({ item, index }) => <View style={{ flex: 1 }}><ProductRow product={item} last={index >= shown.length - cols} note={unfit(pet, item)} /></View>}
         ListFooterComponent={shown.length ? <AffiliateNote /> : null}
         ListEmptyComponent={
           catalog
@@ -85,6 +96,7 @@ export default function CatalogScreen() {
             : <EmptyState pose="pair-sleeping" title="The catalog is not loaded yet" body="It needs a connection the first time. Your scans still work without it." action={<PillButton label="Try again" onPress={() => refreshCatalog(true)} />} />
         }
       />
+      </View>
     </SafeAreaView>
   )
 }
@@ -93,6 +105,7 @@ const s = StyleSheet.create({
   root: { flex: 1, backgroundColor: color.bg },
   unlock: { backgroundColor: color.yellow, borderRadius: radius.pill, paddingHorizontal: 16, paddingVertical: 8, borderBottomWidth: 2, borderBottomColor: color.yellowEdge },
   unlockText: { fontFamily: font.textBold, fontSize: 14, lineHeight: 18, color: color.ink },
+  title: { paddingTop: 12, paddingHorizontal: gutter, marginBottom: 16 },
   nav: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, height: 44, paddingHorizontal: gutter, marginBottom: 12 },
   search: { flexDirection: 'row', alignItems: 'center', gap: 8, height: 52, marginHorizontal: gutter, borderRadius: radius.chip, borderWidth: 1.5, borderColor: color.hairline, backgroundColor: color.surface, paddingHorizontal: 14 },
   input: { ...type.body, flex: 1, height: 52 },

@@ -7,8 +7,8 @@ import { useEffect, useRef, useState } from 'react'
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Animated, { Easing, FadeIn, ReduceMotion, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated'
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
-import { Bone, BowlFood, CaretDown, Check, Fire, Images, Lightning, ListBullets, Table, X } from 'phosphor-react-native'
-import { Mascot, mascotFor } from '@/components/Mascot'
+import { Barcode, CaretDown, Check, Fire, Images, Lightning, ListBullets, Table, X } from 'phosphor-react-native'
+import { Mascot } from '@/components/Mascot'
 import { PetHead } from '@/components/PetHead'
 import { PillButton, TextLink } from '@/components/ui'
 import { rescoreLabel, scanFood, ScanError, type Product, type ScanResponse } from '@/lib/api'
@@ -18,11 +18,8 @@ import { tap, tapForGrade } from '@/lib/haptics'
 import { activePet, newId, saveScan, setState, updateScan, useStore } from '@/lib/store'
 import { learnBarcode } from '@/lib/suggest'
 import type { CatalogProduct, LabelData } from '@/lib/types'
-import { color, font, radius, shadow, type } from '@/theme'
+import { color, radius, shadow, type } from '@/theme'
 
-type Mode = 'barcode' | 'label'
-type Kind = 'food' | 'treat'
-const KINDS = [['food', 'Food', BowlFood], ['treat', 'Treat', Bone]] as const
 type ScanInput = { images?: string[]; barcode?: string; product?: Product }
 const MAX_PHOTOS = 3 // what the server accepts in one request
 
@@ -66,6 +63,10 @@ function Guide({ onDone }: { onDone: () => void }) {
         ))}
       </View>
       <Text style={[type.label, { color: color.ink2 }]}>Get all three in the photo. They sit together on the back or side of the bag.</Text>
+      <View style={[s.guideRow, { backgroundColor: color.bg }]}>
+        <View style={s.guideIcon}><Barcode size={20} weight="bold" color={color.ink} /></View>
+        <Text style={[type.label, { flex: 1 }]}>Or just point at the barcode. It scans on its own.</Text>
+      </View>
       <PillButton label="Got it" onPress={() => { tap('select'); onDone() }} />
     </Animated.View>
   )
@@ -85,12 +86,8 @@ export default function ScanScreen() {
   const guideSeen = useStore((st) => st.guideSeen)
   const insets = useSafeAreaInsets()
   const [permission, requestPermission] = useCameraPermissions()
-  const [mode, setMode] = useState<Mode>('label')
-  const [kind, setKind] = useState<Kind>(target?.label.isTreat ? 'treat' : 'food')
   const [picking, setPicking] = useState(false)
   const [guide, setGuide] = useState(false)
-  // The person said food and the label reads as a treat, or the other way round: ask before saving anything.
-  const [ask, setAsk] = useState<{ res: ScanResponse; photoUri?: string; fixing?: boolean; failed?: string }>()
   const [torch, setTorch] = useState(false)
   const [photos, setPhotos] = useState<string[]>([])
   const [adding, setAdding] = useState(false) // the camera is live again to add another photo to the set
@@ -101,6 +98,7 @@ export default function ScanScreen() {
   const lock = useRef(false)
   const lastInput = useRef<ScanInput>(undefined)
   const known = useRef<Product>(undefined) // named by a barcode scan, attached to the label photo that follows
+  const seen = useRef({ code: '', at: 0 })
   const missed = useRef<string>(undefined) // that barcode, so the label read next can be saved under it for everyone
   const shown = adding ? undefined : photos[photos.length - 1] // the photo in the frame; the camera is live when there is none
 
@@ -146,20 +144,6 @@ export default function ScanScreen() {
     router.back()
   }
 
-  // Their answer wins. When it differs from what the server scored, the same label is scored again the other way, which is free and instant.
-  const answer = async (isTreat: boolean) => {
-    if (!ask || !pet) return
-    if (isTreat === Boolean(ask.res.label.isTreat)) return finish(ask.res, ask.photoUri)
-    setAsk({ ...ask, fixing: true, failed: undefined })
-    try {
-      const again = await rescoreLabel({ species: pet.species, lifeStage: stageFor(pet), label: { ...ask.res.label, isTreat } })
-      finish({ ...ask.res, label: again.label, result: again.result }, ask.photoUri)
-    } catch (e) {
-      tap('warning')
-      setAsk({ ...ask, fixing: false, failed: e instanceof ScanError && e.code === 'offline' ? e.message : 'We could not score it that way just now. Try again, or keep our reading.' })
-    }
-  }
-
   const run = async (input: ScanInput, photoUri?: string) => {
     if (!pet) return
     lastInput.current = input
@@ -168,16 +152,13 @@ export default function ScanScreen() {
     try {
       const res = await scanFood({ species: pet.species, lifeStage: stageFor(pet), product: known.current, ...input })
       if (target) return absorb(res)
-      if (Boolean(res.label.isTreat) === (kind === 'treat')) return finish(res, photoUri)
-      tap('light')
-      setAsk({ res, photoUri })
-      setBusy(false)
+      finish(res, photoUri) // food or treat is read from the label; the score screen can switch it
     } catch (e) {
       const err = e instanceof ScanError ? e : new ScanError('server', 'Something went wrong on our side. Please try again in a moment.')
       tap('warning')
       // A close up of the calorie line has no ingredients, which the server reads as an unreadable label.
       setError(target && err.code === 'unreadable' ? new ScanError('unreadable', 'We could not read that. Get the ingredients in the photo too.') : err)
-      if (err.code === 'barcode_not_found') { known.current = err.product; missed.current = input.barcode; setMode('label') } // never a dead end: fall back to a label photo
+      if (err.code === 'barcode_not_found') { known.current = err.product; missed.current = input.barcode } // never a dead end: the label photo is the same screen
       setBusy(false)
       lock.current = false
     }
@@ -202,6 +183,7 @@ export default function ScanScreen() {
     const next = [...photos, uri].slice(-MAX_PHOTOS)
     setPhotos(next)
     setAdding(false)
+    setError(undefined) // a barcode we could not find leaves a note that the photo answers
     // The saved photo of the bag goes along, so the ingredients are in the set and the server does not reject the read.
     if (target) send([uri], target.photoUri)
   }
@@ -222,8 +204,11 @@ export default function ScanScreen() {
   const retake = () => { setPhotos([]); setAdding(false); setError(undefined); lastInput.current = undefined }
   const remove = (i: number) => { tap('select'); setPhotos((p) => p.filter((_, j) => j !== i)) }
 
+  // Barcodes scan on their own whenever the camera is live. One we already missed is ignored so it cannot loop.
   const onBarcode = ({ data }: { data: string }) => {
-    if (mode !== 'barcode' || busy || lock.current) return
+    if (busy || lock.current || data === missed.current) return
+    if (data === seen.current.code && Date.now() - seen.current.at < 5000) return // a failed read waits before the same code tries again
+    seen.current = { code: data, at: Date.now() }
     lock.current = true
     tap('medium')
     run({ barcode: data })
@@ -246,32 +231,27 @@ export default function ScanScreen() {
       </SafeAreaView>
     )
 
-  const showGuide = mode === 'label' && !shown && !busy && !ask && !target && (guide || !guideSeen)
-  const review = Boolean(shown) && !busy && !ask && !error && !target
+  const showGuide = !shown && !busy && !target && (guide || !guideSeen)
+  const review = Boolean(shown) && !busy && !error && !target
+  const listening = !shown && !busy && !target && !adding && !showGuide
 
   return (
     <View style={s.root}>
       {shown ? null : (
-        <CameraView ref={camera} style={StyleSheet.absoluteFill} facing="back" enableTorch={torch} barcodeScannerSettings={{ barcodeTypes: ['ean13', 'ean8', 'upc_a', 'upc_e'] }} onBarcodeScanned={mode === 'barcode' ? onBarcode : undefined} />
+        <CameraView ref={camera} style={StyleSheet.absoluteFill} facing="back" enableTorch={torch} barcodeScannerSettings={{ barcodeTypes: ['ean13', 'ean8', 'upc_a', 'upc_e'] }} onBarcodeScanned={listening ? onBarcode : undefined} />
       )}
       <SafeAreaView style={s.overlay}>
         <View style={s.topRow}>
           <Pressable style={s.round} onPress={() => router.back()} accessibilityLabel="Close"><X size={22} weight="bold" color={color.surface} /></Pressable>
-          {/* Who the scan is for and what is being scanned. Locked while a scan is in flight so the answer cannot change under it. */}
-          <View style={[s.topMid, (busy || ask || target) && { opacity: 0.5 }]} pointerEvents={busy || ask || target ? 'none' : 'auto'}>
-            <Pressable style={s.petChip} disabled={pets.length < 2} onPress={() => { tap('select'); setPicking((p) => !p) }} accessibilityRole="button" accessibilityLabel={`Scanning for ${pet?.name}`} accessibilityHint={pets.length > 1 ? 'Choose another pet' : undefined}>
-              {pet ? <PetHead pet={pet} size={24} /> : null}
-              <Text style={[type.label, { color: color.surface, flexShrink: 1 }]} numberOfLines={1}>For {pet?.name}</Text>
-              {pets.length > 1 ? <CaretDown size={14} weight="bold" color={color.surface} /> : null}
-            </Pressable>
-            <View style={s.segment}>
-              {KINDS.map(([k, word, Icon]) => (
-                <Pressable key={k} onPress={() => { tap('select'); setKind(k) }} style={[s.kindItem, kind === k && s.segOn]} accessibilityRole="button" accessibilityState={{ selected: kind === k }}>
-                  <Icon size={16} weight="fill" color={kind === k ? color.ink : color.surface} />
-                  <Text style={[type.label, { color: kind === k ? color.ink : color.surface }]}>{word}</Text>
-                </Pressable>
-              ))}
-            </View>
+          {/* Who the scan is for, only when there is a choice. Locked while a scan is in flight so it cannot change under it. */}
+          <View style={[s.topMid, (busy || target) && { opacity: 0.5 }]} pointerEvents={busy || target ? 'none' : 'auto'}>
+            {pets.length > 1 ? (
+              <Pressable style={s.petChip} onPress={() => { tap('select'); setPicking((p) => !p) }} accessibilityRole="button" accessibilityLabel={`Scanning for ${pet?.name}`} accessibilityHint="Choose another pet">
+                {pet ? <PetHead pet={pet} size={24} /> : null}
+                <Text style={[type.label, { color: color.surface, flexShrink: 1 }]} numberOfLines={1}>For {pet?.name}</Text>
+                <CaretDown size={14} weight="bold" color={color.surface} />
+              </Pressable>
+            ) : null}
           </View>
           {shown ? <View style={{ width: 44 }} /> : (
             <Pressable style={[s.round, torch && { backgroundColor: color.yellow }]} onPress={() => setTorch((t) => !t)} accessibilityLabel="Flashlight"><Lightning size={22} weight="fill" color={torch ? color.ink : color.surface} /></Pressable>
@@ -280,25 +260,14 @@ export default function ScanScreen() {
 
         {showGuide ? <Guide onDone={() => { setGuide(false); setState({ guideSeen: true }) }} /> : (
           /* With a photo, the frame grows to hold the WHOLE picture, sharp and uncropped, and the sweep covers all of it. */
-          <View style={[s.frame, shown ? s.framePhoto : mode === 'barcode' && s.frameBarcode]} onLayout={(e) => { frameH.value = e.nativeEvent.layout.height }}>
+          <View style={[s.frame, shown && s.framePhoto]} onLayout={(e) => { frameH.value = e.nativeEvent.layout.height }}>
             {shown ? <Image source={{ uri: shown }} style={s.photo} contentFit="contain" /> : null}
             {(['tl', 'tr', 'bl', 'br'] as const).map((k) => <View key={k} style={[s.corner, s[k], busy && { borderColor: color.green }]} />)}
             {busy ? <Animated.View style={[s.scanLine, lineStyle]} /> : null}
           </View>
         )}
 
-        {ask ? (
-          <Animated.View entering={FadeIn} style={[s.sheet, shadow]}>
-            <View style={s.sheetHead}>
-              <View style={s.sheetIcon}>{ask.res.label.isTreat ? <Bone size={22} weight="fill" color={color.ink} /> : <BowlFood size={22} weight="fill" color={color.ink} />}</View>
-              <Text style={[type.h2, { flex: 1 }]}>{ask.res.label.isTreat ? 'This looks like a treat' : 'This looks like a food'}</Text>
-            </View>
-            <Text style={[type.body, { color: color.ink2 }]}>{ask.res.label.isTreat ? 'Treats are scored on ingredients only. Score it as a treat?' : 'Foods are scored on ingredients and nutrition. Score it as a food?'}</Text>
-            {ask.failed ? <Text style={[type.label, { color: color.bad }]}>{ask.failed}</Text> : null}
-            <PillButton label={ask.res.label.isTreat ? 'Yes, it is a treat' : 'Yes, it is a food'} disabled={ask.fixing} onPress={() => answer(Boolean(ask.res.label.isTreat))} />
-            <PillButton label={ask.res.label.isTreat ? 'No, it is a food' : 'No, it is a treat'} variant="quiet" loading={ask.fixing} onPress={() => answer(!ask.res.label.isTreat)} />
-          </Animated.View>
-        ) : busy ? (
+        {busy ? (
           <Animated.View entering={FadeIn} style={s.busy}>
             <View style={s.busyRow}>
               <ActivityIndicator color={color.surface} />
@@ -331,24 +300,13 @@ export default function ScanScreen() {
           </Animated.View>
         ) : (
           <View style={s.bottom}>
-            {error ? <View style={s.error}><Text style={[type.label, { color: color.ink, textAlign: 'center' }]}>{error.message}</Text></View> : <Text style={[type.label, s.hint]}>{target ? 'Get the calorie line and the life stage statement in the frame' : adding ? 'Get the rest of the label in the frame' : mode === 'label' ? 'Fit the label in the frame' : 'Point at the barcode'}</Text>}
+            {error ? <View style={s.error}><Text style={[type.label, { color: color.ink, textAlign: 'center' }]}>{error.message}</Text></View> : <Text style={[type.label, s.hint]}>{target ? 'Get the calorie line and the life stage statement in the frame' : adding ? 'Get the rest of the label in the frame' : 'Point at the barcode, or snap the label'}</Text>}
             <View style={s.controls}>
               <Pressable style={s.round} onPress={pick} accessibilityLabel="Choose a photo"><Images size={22} weight="bold" color={color.surface} /></Pressable>
-              {mode === 'label' ? <Pressable onPress={shoot} style={({ pressed }) => [s.shutter, pressed && { transform: [{ scale: 0.94 }] }]} accessibilityLabel="Take photo" /> : <View style={{ width: 76, height: 76 }} />}
+              <Pressable onPress={shoot} style={({ pressed }) => [s.shutter, pressed && { transform: [{ scale: 0.94 }] }]} accessibilityLabel="Take photo" />
               <View style={{ width: 44 }} />
             </View>
-            {target ? null : adding ? <TextLink label="Back to the photos" tone={color.surface} onPress={() => setAdding(false)} /> : (
-              <>
-                <View style={s.segment}>
-                  {(['label', 'barcode'] as const).map((m) => (
-                    <Pressable key={m} onPress={() => { tap('select'); setMode(m); setError(undefined) }} style={[s.segItem, mode === m && s.segOn]}>
-                      <Text style={[type.label, { color: mode === m ? color.ink : color.surface }]}>{m === 'label' ? 'Label' : 'Barcode'}</Text>
-                    </Pressable>
-                  ))}
-                </View>
-                {mode === 'label' && guideSeen && !showGuide ? <TextLink label="What to scan" tone={color.surface} onPress={() => setGuide(true)} /> : null}
-              </>
-            )}
+            {target ? null : adding ? <TextLink label="Back to the photos" tone={color.surface} onPress={() => setAdding(false)} /> : guideSeen && !showGuide ? <TextLink label="What to scan" tone={color.surface} onPress={() => setGuide(true)} /> : null}
           </View>
         )}
 
@@ -381,20 +339,15 @@ const s = StyleSheet.create({
   topMid: { flex: 1, alignItems: 'center', gap: 6, marginHorizontal: 8, paddingTop: 4 },
   round: { width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(20,17,13,0.55)', alignItems: 'center', justifyContent: 'center' },
   petChip: { height: 36, maxWidth: '100%', paddingLeft: 8, paddingRight: 16, borderRadius: 18, backgroundColor: 'rgba(20,17,13,0.55)', flexDirection: 'row', alignItems: 'center', gap: 6 },
-  kindItem: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, paddingVertical: 6, borderRadius: radius.pill },
   menu: { position: 'absolute', alignSelf: 'center', width: 240, maxHeight: 300, backgroundColor: color.surface, borderRadius: radius.card, paddingHorizontal: 14, overflow: 'hidden' },
   menuRow: { flexDirection: 'row', alignItems: 'center', gap: 10, minHeight: 52 },
   menuDivider: { borderTopWidth: 1, borderTopColor: color.hairline },
   menuAvatar: { width: 34, height: 34, borderRadius: 17, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  sheet: { backgroundColor: color.surface, borderRadius: radius.sheet, padding: 20, gap: 12, marginHorizontal: 12, marginBottom: 8 },
-  sheetHead: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  sheetIcon: { width: 44, height: 44, borderRadius: 22, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center' },
   guide: { alignSelf: 'center', width: '90%', gap: 16, backgroundColor: color.surface, borderRadius: radius.sheet, padding: 20 },
   guideRow: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 10, paddingHorizontal: 12, borderRadius: radius.chip, backgroundColor: color.yellowSoft },
   guideIcon: { width: 36, height: 36, borderRadius: 18, backgroundColor: color.surface, alignItems: 'center', justifyContent: 'center' },
   // The taller top bar costs a few points on the smallest phones, so the guide frame gives them back.
   frame: { alignSelf: 'center', width: '78%', aspectRatio: 0.78, flexShrink: 1 },
-  frameBarcode: { aspectRatio: 1.7 },
   framePhoto: { flex: 1, width: '90%', aspectRatio: undefined, marginVertical: 16 },
   photo: { position: 'absolute', top: 8, left: 8, right: 8, bottom: 8, borderRadius: 12 },
   corner: bracket,
@@ -413,9 +366,6 @@ const s = StyleSheet.create({
   error: { backgroundColor: color.yellow, borderRadius: radius.card, paddingHorizontal: 16, paddingVertical: 12, marginHorizontal: 24 },
   controls: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', alignSelf: 'stretch', paddingHorizontal: 32 },
   shutter: { width: 76, height: 76, borderRadius: 38, backgroundColor: color.surface, borderWidth: 5, borderColor: 'rgba(255,255,255,0.4)' },
-  segment: { flexDirection: 'row', backgroundColor: 'rgba(20,17,13,0.55)', borderRadius: radius.pill, padding: 4 },
-  segItem: { paddingHorizontal: 22, paddingVertical: 8, borderRadius: radius.pill },
-  segOn: { backgroundColor: color.surface },
   closeLight: { padding: 20 },
   primer: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12, paddingHorizontal: 24, paddingBottom: 40 },
 })

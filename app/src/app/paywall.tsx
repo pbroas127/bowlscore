@@ -2,13 +2,14 @@ import * as Notifications from 'expo-notifications'
 import { router, useLocalSearchParams } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
 import { useEffect, useState } from 'react'
-import { Alert, Platform, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Alert, Platform, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 import { Bell, Check, LockOpen, Star, X } from 'phosphor-react-native'
 import { Mascot } from '@/components/Mascot'
 import { PillButton, Screen, TextLink } from '@/components/ui'
 import { tap } from '@/lib/haptics'
 import { loadPlans, purchase, restore, usePro, type Plan } from '@/lib/purchases'
-import { activePet, useStore } from '@/lib/store'
+import { askToNotify } from '@/lib/notify'
+import { activePet, setState, useStore } from '@/lib/store'
 import { SITE } from '@/lib/links'
 import { color, radius, type } from '@/theme'
 
@@ -18,6 +19,9 @@ export default function Paywall() {
   const [plans, setPlans] = useState<Plan[]>()
   const [picked, setPicked] = useState<Plan['id']>('yearly')
   const [busy, setBusy] = useState(false)
+  const { width, height } = useWindowDimensions()
+  const wide = width >= 700
+  const short = !wide && height < 740 // iPhone SE and the iPhone window an iPad shows
 
   const pro = usePro()
   useEffect(() => { loadPlans().then(setPlans).catch(() => setPlans([])) }, [])
@@ -36,7 +40,9 @@ export default function Paywall() {
     setBusy(true)
     try {
       if (await purchase(plan)) {
-        if (plan.trialDays > 1) scheduleTrialReminder(plan.trialDays, pet)
+        // The timeline promised a reminder, so this is the moment to ask for notifications.
+        if (plan.trialDays > 1 && (await askToNotify())) scheduleTrialReminder(plan.trialDays, pet)
+        setState({ alertsAsked: true })
         router.replace('/')
       }
     } catch (e) {
@@ -54,64 +60,76 @@ export default function Paywall() {
     else Alert.alert('Nothing to restore', 'We could not find an active subscription for this Apple ID.')
   }
 
-  return (
-    <Screen
-      footer={
-        <>
-          <PillButton label={trial > 0 ? `Try free for ${trial} days` : 'Continue'} onPress={buy} loading={busy || !plans} disabled={!plan} />
-          <Text style={[type.caption, { textAlign: 'center', color: color.ink2 }]}>
-            {plan ? (trial > 0 ? `${trial} days free, then ${plan.priceString} per year. ` : `${plan.priceString} per ${plan.id === 'yearly' ? 'year' : 'month'}. `) : ''}Renews automatically. Cancel anytime.
-          </Text>
-          <View style={s.legal}>
-            <TextLink label="Restore purchases" onPress={onRestore} />
-            <TextLink label="Terms of Use" onPress={() => WebBrowser.openBrowserAsync(SITE.terms)} />
-            <TextLink label="Privacy Policy" onPress={() => WebBrowser.openBrowserAsync(SITE.privacy)} />
-          </View>
-        </>
-      }>
+  const legal = (
+    <>
+      <PillButton label={trial > 0 ? `Try free for ${trial} days` : 'Continue'} onPress={buy} loading={busy || !plans} disabled={!plan} />
+      <Text style={[type.caption, { textAlign: 'center', color: color.ink2 }]}>
+        {plan ? (trial > 0 ? `${trial} days free, then ${plan.priceString} per year. ` : `${plan.priceString} per ${plan.id === 'yearly' ? 'year' : 'month'}. `) : ''}Renews automatically. Cancel anytime.
+      </Text>
+      <View style={s.legal}>
+        <TextLink label="Restore" onPress={onRestore} />
+        <TextLink label="Terms" onPress={() => WebBrowser.openBrowserAsync(SITE.terms)} />
+        <TextLink label="Privacy" onPress={() => WebBrowser.openBrowserAsync(SITE.privacy)} />
+      </View>
+    </>
+  )
+  const steps = [
+    { icon: <LockOpen size={18} weight="fill" color={color.ink} />, when: 'Today', what: 'Unlock every scan, flag and better food pick', short: 'Full access' },
+    { icon: <Bell size={18} weight="fill" color={color.ink} />, when: `Day ${(yearly?.trialDays ?? 3) - 1}`, what: 'We remind you that your trial is ending', short: 'Reminder' },
+    { icon: <Star size={18} weight="fill" color={color.ink} />, when: `Day ${yearly?.trialDays ?? 3}`, what: 'Billing starts. Cancel before then and pay nothing', short: 'First charge' },
+  ]
+  const content = (
+    <>
       {/* A quiet way out to free mode: the scored catalog and its shop links, nothing personal. */}
       <Pressable hitSlop={14} onPress={() => (from === 'free' ? router.back() : router.replace('/catalog'))} style={s.close} accessibilityRole="button" accessibilityLabel="Close, browse foods for free">
         <X size={18} weight="bold" color={color.ink3} />
       </Pressable>
       <View style={s.top}>
-        <View style={{ flex: 1, gap: 6 }}>
-          <Text style={type.h1}>{showTimeline ? `Start ${pet}'s ${yearly?.trialDays} day free trial` : `Unlock BowlScore for ${pet}`}</Text>
-        </View>
-        <Mascot pose="pair-happy" size={96} />
+        <Text style={[type.h1, { flex: 1 }, short && { fontSize: 26, lineHeight: 31 }]}>{showTimeline ? `Start ${pet}'s ${yearly?.trialDays} day free trial` : `Unlock BowlScore for ${pet}`}</Text>
+        <Mascot pose="pair-happy" size={short ? 72 : 96} />
       </View>
 
       {showTimeline ? (
-        <View style={s.timeline}>
-          {[
-            { icon: <LockOpen size={18} weight="fill" color={color.ink} />, when: 'Today', what: 'Unlock every scan, flag and better food pick' },
-            { icon: <Bell size={18} weight="fill" color={color.ink} />, when: `Day ${(yearly?.trialDays ?? 3) - 1}`, what: 'We remind you that your trial is ending' },
-            { icon: <Star size={18} weight="fill" color={color.ink} />, when: `Day ${yearly?.trialDays ?? 3}`, what: 'Billing starts. Cancel before then and pay nothing' },
-          ].map((n, i, all) => (
-            <View key={n.when} style={s.node}>
-              <View style={{ alignItems: 'center' }}>
-                <View style={s.nodeIcon}>{n.icon}</View>
-                {i < all.length - 1 ? <View style={s.nodeLine} /> : null}
+        short ? (
+          // Short phones get the same three steps on one line, so both plans and the button fit without scrolling.
+          <View style={s.strip}>
+            {steps.map((n) => (
+              <View key={n.when} style={s.stripStep}>
+                <View style={[s.nodeIcon, { width: 32, height: 32 }]}>{n.icon}</View>
+                <Text style={type.label}>{n.when}</Text>
+                <Text style={[type.caption, { fontSize: 12, lineHeight: 16 }]}>{n.short}</Text>
               </View>
-              <View style={{ flex: 1, paddingBottom: 14 }}>
-                <Text style={type.title}>{n.when}</Text>
-                <Text style={type.caption}>{n.what}</Text>
+            ))}
+          </View>
+        ) : (
+          <View style={s.timeline}>
+            {steps.map((n, i) => (
+              <View key={n.when} style={s.node}>
+                <View style={{ alignItems: 'center' }}>
+                  <View style={s.nodeIcon}>{n.icon}</View>
+                  {i < steps.length - 1 ? <View style={s.nodeLine} /> : null}
+                </View>
+                <View style={{ flex: 1, paddingBottom: 14 }}>
+                  <Text style={type.title}>{n.when}</Text>
+                  <Text style={type.caption}>{n.what}</Text>
+                </View>
               </View>
-            </View>
-          ))}
-        </View>
+            ))}
+          </View>
+        )
       ) : (
-        <View style={{ gap: 10, marginBottom: 12 }}>
+        <View style={{ gap: 10, marginBottom: 16 }}>
           {['Unlimited scans for dogs and cats', `Flags matched to ${pet}`, 'Better foods, ranked'].map((f) => (
             <View key={f} style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}><Check size={18} weight="bold" color={color.green} /><Text style={type.body}>{f}</Text></View>
           ))}
         </View>
       )}
 
-      <View style={{ gap: 12 }}>
+      <View style={{ gap: short ? 10 : 12 }}>
         {(plans ?? []).map((p) => {
           const on = p.id === picked
           return (
-            <Pressable key={p.id} onPress={() => { tap('select'); setPicked(p.id) }} style={[s.plan, on && s.planOn]} accessibilityRole="radio" accessibilityState={{ selected: on }}>
+            <Pressable key={p.id} onPress={() => { tap('select'); setPicked(p.id) }} style={[s.plan, short && { paddingVertical: 12 }, on && s.planOn]} accessibilityRole="radio" accessibilityState={{ selected: on }}>
               {p.id === 'yearly' && p.trialDays > 0 ? <View style={s.badge}><Text style={s.badgeText}>{p.trialDays} DAYS FREE</Text></View> : null}
               <View style={{ flex: 1 }}>
                 <Text style={type.title}>{p.id === 'yearly' ? 'Yearly' : 'Monthly'}</Text>
@@ -135,8 +153,17 @@ export default function Paywall() {
       {trial > 0 ? (
         <View style={s.reassure}><Check size={16} weight="bold" color={color.green} /><Text style={[type.label, { color: color.ink2 }]}>No payment due now</Text></View>
       ) : null}
-    </Screen>
+    </>
   )
+
+  // iPad: one centered card with the button inside it, instead of a phone layout stretched across the screen.
+  if (wide)
+    return (
+      <Screen scroll style={s.wideWrap}>
+        <View style={s.wideCard}>{content}<View style={{ gap: 12, marginTop: 20 }}>{legal}</View></View>
+      </Screen>
+    )
+  return <Screen scroll footer={legal}>{content}</Screen>
 }
 
 // The paywall promises a reminder before billing, so it has to really be scheduled.
@@ -152,6 +179,10 @@ const s = StyleSheet.create({
   close: { alignSelf: 'flex-end', padding: 4, marginTop: 4, opacity: 0.8 },
   top: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingTop: 0, marginBottom: 16 },
   timeline: { marginBottom: 20 },
+  strip: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, marginBottom: 20 },
+  stripStep: { flex: 1, alignItems: 'center', gap: 2 },
+  wideWrap: { flexGrow: 1, justifyContent: 'center', paddingVertical: 40 },
+  wideCard: { alignSelf: 'center', width: '100%', maxWidth: 520, backgroundColor: color.surface, borderRadius: radius.sheet, borderWidth: 1, borderColor: color.hairline, padding: 28 },
   node: { flexDirection: 'row', gap: 14 },
   nodeIcon: { width: 36, height: 36, borderRadius: 18, backgroundColor: color.yellow, alignItems: 'center', justifyContent: 'center' },
   nodeLine: { width: 3, flex: 1, backgroundColor: color.yellowSoft, marginVertical: 2, borderRadius: 2 },

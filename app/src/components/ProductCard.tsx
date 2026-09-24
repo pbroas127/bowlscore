@@ -97,8 +97,8 @@ export function ProductRow({ product, note, last, onPress }: { product: CatalogP
 }
 
 // Amazon requires this exact sentence to be visible; the FTC wants it near the shop buttons. Once per screen, as fine print.
-export function AffiliateNote({ center }: { center?: boolean }) {
-  return <Text style={[s.fine, center && { textAlign: 'center' }]}>As an Amazon Associate I earn from qualifying purchases.</Text>
+export function AffiliateNote({ center, tight }: { center?: boolean; tight?: boolean }) {
+  return <Text style={[s.fine, center && { textAlign: 'center' }, tight && { marginTop: 6 }]}>As an Amazon Associate I earn from qualifying purchases.</Text>
 }
 
 const s = StyleSheet.create({

@@ -4,17 +4,17 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } fr
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { CaretRight, Check } from 'phosphor-react-native'
 import { Mascot, type Pose } from '@/components/Mascot'
-import { color, gutter, radius, spring, type } from '@/theme'
+import { color, column, gutter, radius, spring, type } from '@/theme'
 import { tap } from '@/lib/haptics'
 
 export function Screen({ children, scroll, footer, style, edges = ['top', 'bottom'] }: { children: ReactNode; scroll?: boolean; footer?: ReactNode; style?: StyleProp<ViewStyle>; edges?: ('top' | 'bottom')[] }) {
   const Body = scroll ? ScrollView : View
   return (
     <SafeAreaView style={s.screen} edges={edges}>
-      <Body style={s.flex} {...(scroll ? { contentContainerStyle: [s.pad, { paddingBottom: 32 }, style], showsVerticalScrollIndicator: false, keyboardShouldPersistTaps: 'handled' as const } : { style: [s.flex, s.pad, style] })}>
+      <Body style={s.flex} {...(scroll ? { contentContainerStyle: [s.pad, column, { paddingBottom: 32 }, style], showsVerticalScrollIndicator: false, keyboardShouldPersistTaps: 'handled' as const } : { style: [s.flex, s.pad, column, style] })}>
         {children}
       </Body>
-      {footer ? <View style={s.footer}>{footer}</View> : null}
+      {footer ? <View style={[s.footer, column]}>{footer}</View> : null}
     </SafeAreaView>
   )
 }

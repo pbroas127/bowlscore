@@ -4,7 +4,7 @@ import * as StoreReview from 'expo-store-review'
 import * as WebBrowser from 'expo-web-browser'
 import type { ReactNode } from 'react'
 import { Alert, Linking, Pressable, Share, StyleSheet, Text, View } from 'react-native'
-import { ArrowLeft, CaretRight } from 'phosphor-react-native'
+import { CaretRight } from 'phosphor-react-native'
 import { Mascot } from '@/components/Mascot'
 import { Card, Screen } from '@/components/ui'
 import { deleteAccount, useUser } from '@/lib/auth'
@@ -57,12 +57,8 @@ export default function Settings() {
     ])
 
   return (
-    <Screen scroll>
-      <View style={s.nav}>
-        <Pressable hitSlop={12} onPress={() => router.back()} accessibilityLabel="Back"><ArrowLeft size={24} weight="bold" color={color.ink} /></Pressable>
-        <Text style={type.h2}>Settings</Text>
-        <View style={{ width: 24 }} />
-      </View>
+    <Screen scroll edges={['top']}>
+      <Text style={[type.h1, { paddingTop: 12, marginBottom: 20 }]}>Settings</Text>
 
       <Group title="Account">
         <Row label={signedIn ? 'Signed in' : 'Sign in to back up your pets'} value={signedIn ? user.email ?? 'Apple ID' : undefined} onPress={() => router.push('/account')} last />
@@ -102,7 +98,6 @@ export default function Settings() {
 }
 
 const s = StyleSheet.create({
-  nav: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 44, marginBottom: 16 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 8, minHeight: 54 },
   divider: { borderBottomWidth: 1, borderBottomColor: color.hairline },
 })

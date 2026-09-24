@@ -40,8 +40,8 @@ export const num = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','
 const count = (n: number, word: string) => `${fraction(n)} ${n > 1 ? word + (/(s|x|ch|sh)$/.test(word) ? 'es' : 's') : word}`
 // "About Boxers" reads well, "About Poodle (Standard)s" does not.
 const aboutBreed = (breed: string) => (/[)sx]$|ese$/i.test(breed) ? `About the ${breed}` : `About ${breed}s`)
-// Tile sized: "9 months, puppy" reads "9 mo, puppy", "72 lb, giant breed" reads "72 lb, giant".
-const short = (v: string) => v.replace(/ months?\b/, ' mo').replace(/ years\b/, ' yr').replace(/ breed\b/, '')
+// Tile sized, one line: "9 months, puppy" reads "9 mo", "72 lb, giant breed" reads "72 lb". The full sentence opens on tap.
+const short = (v: string) => v.split(', ')[0].replace(/ months?\b/, ' mo').replace(/ years?\b/, ' yr').replace(/ breed\b/, '')
 
 export const treatAllowance = (pet: Pet) => {
   const kcal = dailyKcal(pet)
@@ -63,19 +63,32 @@ function Tip({ icon, label, text }: { icon: ReactNode; label: string; text: stri
   )
 }
 
-export function FitCard({ pet, label, claim, onEdit }: { pet: Pet; label: LabelData; claim?: LabelData['lifeStageClaim']; onEdit: () => void }) {
+// The verdict alone, for the folded "Fit for" header on the score and product pages.
+export function FitChip({ pet, label, claim }: { pet: Pet; label: LabelData; claim?: LabelData['lifeStageClaim'] }) {
+  const { verdict } = fitFor(pet, label, claim)
+  return (
+    <View style={[s.chip, { backgroundColor: TONE[verdict] }]}>
+      <Text style={[s.chipText, verdict === 'caution' && { color: color.ink }]}>{label.isTreat && verdict === 'good' ? 'Fine as a treat' : VERDICT[verdict]}</Text>
+    </View>
+  )
+}
+export const fitOpen = (pet: Pet, label: LabelData, claim?: LabelData['lifeStageClaim']) => fitFor(pet, label, claim).verdict !== 'good'
+
+// `bare` drops the card and the verdict head, for use inside the folded section that already shows the verdict.
+export function FitCard({ pet, label, claim, onEdit, bare }: { pet: Pet; label: LabelData; claim?: LabelData['lifeStageClaim']; onEdit: () => void; bare?: boolean }) {
   const fit = fitFor(pet, label, claim)
   const [open, setOpen] = useState<string>()
   const breed = pet.breed?.trim()
   const note = fit.lines.find((l) => l.label === open)?.note
+  const Wrap = bare ? View : Card
   return (
-    <Card style={s.card}>
-      <View style={s.head} accessible accessibilityLabel={fit.headline}>
+    <Wrap style={bare ? { gap: 14 } : s.card}>
+      {bare ? null : <View style={s.head} accessible accessibilityLabel={fit.headline}>
         <View style={s.headPet}><PetHead pet={pet} size={48} /></View>
         <View style={[s.badge, { backgroundColor: TONE[fit.verdict] }]}>
           <Text style={[type.h2, { color: fit.verdict === 'caution' ? color.ink : color.surface }]}>{label.isTreat && fit.verdict === 'good' ? 'Fine as a treat' : VERDICT[fit.verdict]}</Text>
         </View>
-      </View>
+      </View>}
       <View style={s.tiles}>
         {fit.lines.map((l) => {
           const Mark = MARK[l.tone]
@@ -86,7 +99,7 @@ export function FitCard({ pet, label, claim, onEdit }: { pet: Pet; label: LabelD
                 <Art name={LINE_ART[l.label] ?? 'shield'} size={40} />
                 <View style={s.mark}><Mark size={18} weight="fill" color={TONE[l.tone]} /></View>
               </View>
-              <Text style={s.value} numberOfLines={2}>{short(l.value)}</Text>
+              <Text style={s.value} numberOfLines={1} adjustsFontSizeToFit>{l.label === 'Allergies' ? l.value : short(l.value)}</Text>
               <Text style={s.tiny}>{l.label}</Text>
             </Pressable>
           )
@@ -95,7 +108,7 @@ export function FitCard({ pet, label, claim, onEdit }: { pet: Pet; label: LabelD
       {note ? <Text style={[type.caption, { color: color.ink }]}>{note}</Text> : null}
       {fit.breedNote ? <Tip icon={<PawPrint size={16} weight="fill" color={color.ink} />} label={breed && breed.toLowerCase() !== 'mixed breed' ? aboutBreed(breed) : 'Breed tip'} text={fit.breedNote} /> : null}
       {!pet.bornAt && !pet.weightLb ? <View style={s.nudge}><TextLink label={`Add ${pet.name}'s age and weight for a sharper answer`} onPress={onEdit} /></View> : null}
-    </Card>
+    </Wrap>
   )
 }
 
@@ -210,6 +223,8 @@ const s = StyleSheet.create({
   ask: { paddingVertical: 0, marginBottom: 12 },
   head: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   headPet: { width: 56, height: 56, borderRadius: 28, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  chip: { borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 4 },
+  chipText: { fontFamily: font.textBold, fontSize: 13, lineHeight: 17, color: color.surface },
   badge: { borderRadius: radius.pill, paddingHorizontal: 18, paddingVertical: 8 },
   tiles: { flexDirection: 'row', gap: 8 },
   tile: { flex: 1, alignItems: 'center', gap: 2, paddingVertical: 10, paddingHorizontal: 6, borderRadius: radius.chip, backgroundColor: color.bg, borderWidth: 1.5, borderColor: color.bg },

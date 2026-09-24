@@ -24,6 +24,8 @@ export const color = {
 export const radius = { chip: 12, card: 20, sheet: 28, pill: 999 } as const
 export const space = { 1: 4, 2: 8, 3: 12, 4: 16, 5: 20, 6: 24, 8: 32, 12: 48 } as const
 export const gutter = 20
+// iPad: every page reads as one centered phone width column instead of stretching edge to edge.
+export const column = { width: '100%', maxWidth: 640, alignSelf: 'center' } as const
 
 export const font = {
   display: 'BricolageGrotesque_800ExtraBold',

@@ -9,7 +9,8 @@
     "userInterfaceStyle": "light",
     "ios": {
       "bundleIdentifier": "com.peterbroas.bowlscore",
-      "supportsTablet": false,
+      "supportsTablet": true,
+      "requireFullScreen": true,
       "usesAppleSignIn": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false

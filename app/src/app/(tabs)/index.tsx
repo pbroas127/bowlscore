@@ -1,12 +1,12 @@
 import { Brand } from '@/components/Brand'
 import { router, useFocusEffect } from 'expo-router'
 import * as WebBrowser from 'expo-web-browser'
-import { useCallback, useState } from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { GearSix, SealWarning } from 'phosphor-react-native'
+import { useCallback, useEffect, useState } from 'react'
+import { Alert, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Bell, CaretDown, SealWarning, X } from 'phosphor-react-native'
 import { bagDays, reorderLink } from '@/components/BagCard'
 import { Art, Bowls, num, portion, Tile, type ArtName } from '@/components/FitCard'
-import { Mascot, mascotFor } from '@/components/Mascot'
+import { Mascot } from '@/components/Mascot'
 import { PetHead } from '@/components/PetHead'
 import { PetEditor } from '@/components/PetEditor'
 import { AffiliateNote, ProductCarousel, ProductSkeleton } from '@/components/ProductCard'
@@ -18,7 +18,8 @@ import { tap } from '@/lib/haptics'
 import { openShop } from '@/lib/links'
 import { feeding, hasCalories, weighInDue } from '@/lib/fit'
 import { checkRecalls, dismissRecall, recallDate } from '@/lib/recalls'
-import { activePet, useStore } from '@/lib/store'
+import { askToNotify, notifyUndecided } from '@/lib/notify'
+import { activePet, setState, useStore } from '@/lib/store'
 import type { Pet, Recall, Scan } from '@/lib/types'
 import { color, font, gradeFor, radius, type, type Grade } from '@/theme'
 
@@ -36,6 +37,26 @@ function RecallBanner({ recall }: { recall: Recall }) {
         <TextLink label="Read the notice" tone={color.ink} onPress={() => WebBrowser.openBrowserAsync(recall.url).catch(() => {})} />
         <TextLink label="Dismiss" onPress={() => { tap('select'); dismissRecall(recall.id) }} />
       </View>
+    </View>
+  )
+}
+
+// Onboarding no longer asks for notifications up front. This asks once, on Home, and goes away for good either way.
+function AlertsCard() {
+  const asked = useStore((s) => s.alertsAsked)
+  const [open, setOpen] = useState(false)
+  useEffect(() => { if (!asked) notifyUndecided().then(setOpen) }, [asked])
+  if (asked || !open) return null
+  const done = () => setState({ alertsAsked: true })
+  return (
+    <View style={s.alerts}>
+      <View style={s.bell}><Bell size={22} weight="fill" color={color.ink} /></View>
+      <View style={{ flex: 1 }}>
+        <Text style={type.title}>Recall and bag alerts</Text>
+        <Text style={type.caption}>Only when it matters.</Text>
+      </View>
+      <Pressable onPress={() => { tap('select'); askToNotify().finally(done) }} style={({ pressed }) => [s.reorderPill, pressed && { opacity: 0.8 }]} accessibilityRole="button"><Text style={s.reorderText}>Turn on</Text></Pressable>
+      <Pressable hitSlop={12} onPress={done} accessibilityLabel="Not now"><X size={18} weight="bold" color={color.ink3} /></Pressable>
     </View>
   )
 }
@@ -85,6 +106,11 @@ export default function Home() {
   const shown = scans.filter((x) => filter === 'All' || gradeFor(x.result.score) === filter)
   const catalog = useCatalog()
   const top = catalog && pet ? topRated(catalog.products, pet.species, pet.allergies, 8, pet) : []
+  const pets = useStore((s) => s.pets)
+  // One pet opens its page; two or more pick who is being fed and scanned for.
+  const switchPet = () => pets.length > 1
+    ? Alert.alert('Who are you feeding?', undefined, [...pets.map((p) => ({ text: p.name, onPress: () => setState({ activePetId: p.id }) })), { text: 'Cancel', style: 'cancel' as const }])
+    : pet && router.push(`/pet/${pet.id}`)
   const seen = useStore((s) => s.recallsSeen)
   const recalls = useStore((s) => s.recalls).filter((r) => !seen.includes(r.id))
 
@@ -95,15 +121,14 @@ export default function Home() {
     <Screen scroll edges={['top']}>
       <View style={s.brandRow}>
         <Brand />
-        <Pressable hitSlop={12} onPress={() => router.push('/settings')} accessibilityLabel="Settings"><GearSix size={26} weight="bold" color={color.ink} /></Pressable>
-      </View>
-      <View style={s.header}>
-        <Pressable style={s.who} onPress={() => router.push('/(tabs)/pets')}>
-          <View style={s.avatar}>{pet ? <PetHead pet={pet} size={44} /> : <Mascot pose="puppy-head" size={44} bob={false} />}</View>
-          <View><Text style={type.caption}>Feeding</Text><Text style={type.h2}>{pet?.name ?? 'Your pet'}</Text></View>
+        <Pressable onPress={() => { tap('select'); switchPet() }} style={({ pressed }) => [s.who, pressed && { opacity: 0.7 }]} accessibilityRole="button" accessibilityLabel={pets.length > 1 ? `Feeding ${pet?.name}. Switch pet` : `Open ${pet?.name}`}>
+          <Text style={type.title} numberOfLines={1}>{pet?.name ?? 'Your pet'}</Text>
+          {pets.length > 1 ? <CaretDown size={14} weight="bold" color={color.ink2} /> : null}
+          <View style={s.avatar}>{pet ? <PetHead pet={pet} size={36} /> : <Mascot pose="puppy-head" size={36} bob={false} />}</View>
         </Pressable>
       </View>
 
+      <AlertsCard />
       {recalls.map((r) => <RecallBanner key={r.id} recall={r} />)}
 
       {current ? (
@@ -133,7 +158,7 @@ export default function Home() {
         <>
           <View style={s.sectionRow}>
             <Text style={[type.h2, { flex: 1 }]} numberOfLines={1}>Top rated for {pet?.name}</Text>
-            <TextLink label="See all" onPress={() => router.push('/catalog')} />
+            <TextLink label="See all" onPress={() => router.navigate('/foods')} />
           </View>
           <ProductCarousel products={top} why={(p) => whyBetter(p)} />
         </>
@@ -160,10 +185,11 @@ export default function Home() {
 }
 
 const s = StyleSheet.create({
-  brandRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, marginBottom: 16 },
-  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 },
-  who: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  avatar: { width: 52, height: 52, borderRadius: 26, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  brandRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingTop: 8, marginBottom: 20 },
+  who: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1, backgroundColor: color.surface, borderRadius: radius.pill, borderWidth: 1, borderColor: color.hairline, paddingLeft: 14, paddingRight: 4, paddingVertical: 4 },
+  alerts: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: color.surface, borderRadius: radius.card, borderWidth: 1, borderColor: color.hairline, padding: 12, marginBottom: 16 },
+  bell: { width: 40, height: 40, borderRadius: 20, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center' },
+  avatar: { width: 40, height: 40, borderRadius: 20, backgroundColor: color.yellowSoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   currentCard: { padding: 20, borderRadius: 28, gap: 16 },
   current: { flexDirection: 'row', alignItems: 'center', gap: 16 },
   plan: { gap: 12, paddingTop: 16, borderTopWidth: 1, borderTopColor: color.hairline },
