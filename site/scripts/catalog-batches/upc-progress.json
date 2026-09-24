@@ -58,7 +58,27 @@
   "wellness-soft-puppy-bites-lamb-and-salmon-recipe-dog": true,
   "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog": true,
   "full-moon-chicken-jerky-dog": true,
-  "stewart-freeze-dried-beef-liver-dog": true
+  "stewart-freeze-dried-beef-liver-dog": true,
+  "purina-cat-chow-complete-cat": true,
+  "nutro-wholesome-essentials-indoor-adult-chicken-and-brown-rice-recipe-cat": true,
+  "zukes-mini-naturals-chicken-recipe-dog": true,
+  "inaba-churu-tuna-recipe-cat": true,
+  "purebites-chicken-breast-freeze-dried-dog": true,
+  "purebites-chicken-breast-freeze-dried-cat": true,
+  "diamond-naturals-adult-dog-beef-meal-and-rice-formula-dog": true,
+  "diamond-naturals-adult-dog-lamb-meal-and-rice-formula-dog": true,
+  "diamond-naturals-large-breed-puppy-lamb-and-rice-formula-dog": true,
+  "diamond-naturals-small-breed-adult-dog-chicken-and-rice-formula-dog": true,
+  "diamond-naturals-light-adult-dog-lamb-meal-and-rice-formula-dog": true,
+  "diamond-naturals-small-and-medium-breed-puppy-chicken-and-rice-formula-dog": true,
+  "diamond-naturals-indoor-cat-chicken-and-rice-formula-cat": true,
+  "diamond-naturals-kitten-chicken-and-rice-formula-cat": true,
+  "taste-of-the-wild-pacific-stream-canine-recipe-with-smoke-flavored-salmon-dog": true,
+  "taste-of-the-wild-pacific-stream-puppy-recipe-with-smoke-flavored-salmon-dog": true,
+  "taste-of-the-wild-sierra-mountain-canine-recipe-with-roasted-lamb-dog": true,
+  "taste-of-the-wild-southwest-canyon-canine-recipe-with-wild-boar-dog": true,
+  "taste-of-the-wild-appalachian-valley-small-breed-canine-recipe-with-venison-and-garbanzo-beans-dog": true,
+  "taste-of-the-wild-ancient-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -365,6 +385,102 @@
    {
     "lb": 1.31,
     "upc": "073101212450"
+   }
+  ],
+  "purina-cat-chow-complete-cat": [
+   {
+    "lb": 3.15,
+    "upc": "017800150149"
+   },
+   {
+    "lb": 6.3,
+    "upc": "017800150125"
+   },
+   {
+    "lb": 15,
+    "upc": "017800184953"
+   }
+  ],
+  "nutro-wholesome-essentials-indoor-adult-chicken-and-brown-rice-recipe-cat": [
+   {
+    "lb": 3,
+    "upc": "079105117456"
+   },
+   {
+    "lb": 5,
+    "upc": "079105128780"
+   }
+  ],
+  "zukes-mini-naturals-chicken-recipe-dog": [
+   {
+    "lb": 1,
+    "upc": "013423330210"
+   },
+   {
+    "lb": 1,
+    "upc": "689998378294"
+   }
+  ],
+  "inaba-churu-tuna-recipe-cat": [
+   {
+    "lb": 0.13,
+    "upc": "857276007376"
+   },
+   {
+    "lb": 0.13,
+    "upc": "857276007406"
+   }
+  ],
+  "diamond-naturals-adult-dog-beef-meal-and-rice-formula-dog": [
+   {
+    "lb": 40,
+    "upc": "074198608331"
+   },
+   {
+    "lb": 40,
+    "upc": "804081125863"
+   }
+  ],
+  "diamond-naturals-large-breed-puppy-lamb-and-rice-formula-dog": [
+   {
+    "lb": 20,
+    "upc": "074198608362"
+   },
+   {
+    "lb": 6,
+    "upc": "074198609994"
+   },
+   {
+    "lb": 20,
+    "upc": "736816397392"
+   }
+  ],
+  "diamond-naturals-kitten-chicken-and-rice-formula-cat": [
+   {
+    "lb": 6,
+    "upc": "689829750220"
+   }
+  ],
+  "taste-of-the-wild-ancient-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog": [
+   {
+    "lb": 5,
+    "upc": "074198614455"
+   },
+   {
+    "lb": 14,
+    "upc": "074198614462"
+   },
+   {
+    "lb": 28,
+    "upc": "074198614479"
+   },
+   {
+    "lb": 28,
+    "upc": "717181957985"
+   },
+   {
+    "lb": 28,
+    "upc": "763271760188"
    }
   ]
  }

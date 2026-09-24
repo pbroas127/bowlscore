@@ -488,6 +488,42 @@
   ]
  },
  {
+  "id": "purina-cat-chow-complete-cat",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15,
+    "asin": "B0842ZX7K8",
+    "upc": "017800150149"
+   },
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B0001RWU32"
+   },
+   {
+    "label": "6.3 lb",
+    "lb": 6.3,
+    "upc": "017800150125"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B07W5SZHQX",
+    "upc": "017800184953"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20,
+    "asin": "B088MHRLZG"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22
+   }
+  ]
+ },
+ {
   "id": "9lives-daily-essentials-cat",
   "sizes": [
    {
@@ -634,6 +670,27 @@
   ]
  },
  {
+  "id": "nutro-wholesome-essentials-indoor-adult-chicken-and-brown-rice-recipe-cat",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "upc": "079105117456"
+   },
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B07S57GMZK",
+    "upc": "079105128780"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B00TZI3Q7M"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-indoor-adult-cat",
   "sizes": [
    {
@@ -751,6 +808,28 @@
   ]
  },
  {
+  "id": "zukes-mini-naturals-chicken-recipe-dog",
+  "sizes": [
+   {
+    "label": "3 oz",
+    "lb": 0.1875
+   },
+   {
+    "label": "6 oz",
+    "lb": 0.375
+   },
+   {
+    "label": "10 oz",
+    "lb": 0.625
+   },
+   {
+    "label": "16 oz",
+    "lb": 1,
+    "upc": "013423330210"
+   }
+  ]
+ },
+ {
   "id": "temptations-classic-tasty-chicken-flavor-cat",
   "sizes": [
    {
@@ -821,6 +900,31 @@
   ]
  },
  {
+  "id": "inaba-churu-tuna-recipe-cat",
+  "sizes": [
+   {
+    "label": "4 tubes, 2 oz",
+    "lb": 0.13,
+    "asin": "B0778DNNGH",
+    "upc": "857276007376"
+   },
+   {
+    "label": "12 tubes, 6 oz",
+    "lb": 0.38,
+    "asin": "B07R3TPF5P"
+   },
+   {
+    "label": "20 tubes, 10 oz",
+    "lb": 0.63
+   },
+   {
+    "label": "48 tubes, 24 oz",
+    "lb": 1.5,
+    "asin": "B07QZTS122"
+   }
+  ]
+ },
+ {
   "id": "old-mother-hubbard-classic-p-nuttier-mini-biscuits-dog",
   "sizes": [
    {
@@ -880,6 +984,67 @@
     "lb": 1.31,
     "asin": "B0765C1R3F",
     "upc": "073101212450"
+   }
+  ]
+ },
+ {
+  "id": "diamond-naturals-adult-dog-beef-meal-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B000084F1I",
+    "upc": "074198608331"
+   }
+  ]
+ },
+ {
+  "id": "diamond-naturals-large-breed-puppy-lamb-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "upc": "074198609994"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20,
+    "upc": "074198608362"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40
+   }
+  ]
+ },
+ {
+  "id": "diamond-naturals-kitten-chicken-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B0018CG2QA",
+    "upc": "689829750220"
+   }
+  ]
+ },
+ {
+  "id": "taste-of-the-wild-ancient-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "upc": "074198614455"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "upc": "074198614462"
+   },
+   {
+    "label": "28 lb",
+    "lb": 28,
+    "upc": "074198614479"
    }
   ]
  }
