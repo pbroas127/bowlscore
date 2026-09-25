@@ -78,7 +78,27 @@
   "taste-of-the-wild-sierra-mountain-canine-recipe-with-roasted-lamb-dog": true,
   "taste-of-the-wild-southwest-canyon-canine-recipe-with-wild-boar-dog": true,
   "taste-of-the-wild-appalachian-valley-small-breed-canine-recipe-with-venison-and-garbanzo-beans-dog": true,
-  "taste-of-the-wild-ancient-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog": true
+  "taste-of-the-wild-ancient-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog": true,
+  "instinct-original-real-chicken-recipe-pate-cat": true,
+  "blue-buffalo-nudges-grillers-steak-dog": true,
+  "diamond-naturals-large-breed-adult-dog-chicken-and-rice-formula-dog": true,
+  "diamond-naturals-senior-dog-chicken-egg-and-oatmeal-formula-dog": true,
+  "diamond-naturals-active-cat-chicken-meal-and-rice-formula-cat": true,
+  "taste-of-the-wild-high-prairie-puppy-recipe-with-roasted-bison-and-roasted-venison-dog": true,
+  "taste-of-the-wild-ancient-stream-canine-recipe-with-smoke-flavored-salmon-dog": true,
+  "taste-of-the-wild-canyon-river-feline-recipe-with-trout-and-smoke-flavored-salmon-cat": true,
+  "taste-of-the-wild-lowland-creek-feline-recipe-with-roasted-quail-and-roasted-duck-cat": true,
+  "rachael-ray-nutrish-small-breed-real-chicken-and-veggies-recipe-dog": true,
+  "rachael-ray-nutrish-real-beef-pea-and-brown-rice-recipe-dog": true,
+  "rachael-ray-nutrish-dish-chicken-and-brown-rice-recipe-with-veggie-and-fruit-blend-dog": true,
+  "rachael-ray-nutrish-indoor-complete-chicken-lentils-and-salmon-recipe-cat": true,
+  "rachael-ray-nutrish-real-salmon-and-brown-rice-recipe-cat": true,
+  "kibbles-n-bits-mini-bits-small-breed-bistro-oven-roasted-beef-spring-vegetable-and-apple-flavors-dog": true,
+  "kibbles-n-bits-triple-steak-flavor-dog": true,
+  "9lives-plus-urinary-tract-health-cat": true,
+  "nutro-sensitive-adult-formula-with-chicken-rice-and-peas-recipe-cat": true,
+  "meow-mix-kitten-lil-nibbles-cat": true,
+  "meow-mix-hairball-control-cat": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -481,6 +501,94 @@
    {
     "lb": 28,
     "upc": "763271760188"
+   }
+  ],
+  "blue-buffalo-nudges-grillers-steak-dog": [
+   {
+    "lb": 0.63,
+    "upc": "840243147809"
+   }
+  ],
+  "diamond-naturals-large-breed-adult-dog-chicken-and-rice-formula-dog": [
+   {
+    "lb": 40,
+    "upc": "736816045798"
+   },
+   {
+    "lb": 40,
+    "upc": "741986083938"
+   }
+  ],
+  "diamond-naturals-senior-dog-chicken-egg-and-oatmeal-formula-dog": [
+   {
+    "lb": 35,
+    "upc": "736816051195"
+   }
+  ],
+  "taste-of-the-wild-ancient-stream-canine-recipe-with-smoke-flavored-salmon-dog": [
+   {
+    "lb": 28,
+    "upc": "763663988329"
+   }
+  ],
+  "rachael-ray-nutrish-small-breed-real-chicken-and-veggies-recipe-dog": [
+   {
+    "lb": 6,
+    "upc": "691338133616"
+   }
+  ],
+  "rachael-ray-nutrish-real-beef-pea-and-brown-rice-recipe-dog": [
+   {
+    "lb": 40,
+    "upc": "071190000958"
+   }
+  ],
+  "rachael-ray-nutrish-dish-chicken-and-brown-rice-recipe-with-veggie-and-fruit-blend-dog": [
+   {
+    "lb": 11.5,
+    "upc": "071190008053"
+   },
+   {
+    "lb": 3.75,
+    "upc": "071190008046"
+   },
+   {
+    "lb": 23,
+    "upc": "071190008060"
+   }
+  ],
+  "rachael-ray-nutrish-indoor-complete-chicken-lentils-and-salmon-recipe-cat": [
+   {
+    "lb": 3,
+    "upc": "071190003607"
+   },
+   {
+    "lb": 6,
+    "upc": "071190003614"
+   },
+   {
+    "lb": 14,
+    "upc": "071190003621"
+   },
+   {
+    "lb": 14,
+    "upc": "714863976203"
+   },
+   {
+    "lb": 6,
+    "upc": "714863976227"
+   }
+  ],
+  "rachael-ray-nutrish-real-salmon-and-brown-rice-recipe-cat": [
+   {
+    "lb": 14,
+    "upc": "071190007018"
+   }
+  ],
+  "meow-mix-kitten-lil-nibbles-cat": [
+   {
+    "lb": 3.15,
+    "upc": "829274007108"
    }
   ]
  }

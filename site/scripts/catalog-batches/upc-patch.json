@@ -942,6 +942,34 @@
   ]
  },
  {
+  "id": "blue-buffalo-nudges-grillers-steak-dog",
+  "sizes": [
+   {
+    "label": "5 oz",
+    "lb": 0.31
+   },
+   {
+    "label": "10 oz",
+    "lb": 0.63,
+    "asin": "B0GRL282Z6",
+    "upc": "840243147809"
+   },
+   {
+    "label": "16 oz",
+    "lb": 1,
+    "asin": "B0BCX4939V"
+   },
+   {
+    "label": "36 oz",
+    "lb": 2.25
+   },
+   {
+    "label": "48 oz",
+    "lb": 3
+   }
+  ]
+ },
+ {
   "id": "full-moon-chicken-jerky-dog",
   "sizes": [
    {
@@ -999,6 +1027,17 @@
   ]
  },
  {
+  "id": "diamond-naturals-large-breed-adult-dog-chicken-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B000WFKUOY",
+    "upc": "736816045798"
+   }
+  ]
+ },
+ {
   "id": "diamond-naturals-large-breed-puppy-lamb-and-rice-formula-dog",
   "sizes": [
    {
@@ -1014,6 +1053,27 @@
    {
     "label": "40 lb",
     "lb": 40
+   }
+  ]
+ },
+ {
+  "id": "diamond-naturals-senior-dog-chicken-egg-and-oatmeal-formula-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B0018CLWG0"
+   },
+   {
+    "label": "18 lb",
+    "lb": 18,
+    "asin": "B000WFKNLE"
+   },
+   {
+    "label": "35 lb",
+    "lb": 35,
+    "asin": "B000WFIWXU",
+    "upc": "736816051195"
    }
   ]
  },
@@ -1045,6 +1105,150 @@
     "label": "28 lb",
     "lb": 28,
     "upc": "074198614479"
+   }
+  ]
+ },
+ {
+  "id": "taste-of-the-wild-ancient-stream-canine-recipe-with-smoke-flavored-salmon-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14
+   },
+   {
+    "label": "28 lb",
+    "lb": 28,
+    "upc": "763663988329"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-small-breed-real-chicken-and-veggies-recipe-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B07921R559",
+    "upc": "691338133616"
+   },
+   {
+    "label": "13 lb",
+    "lb": 13,
+    "asin": "B0FWPLNRGR"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-real-beef-pea-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0FWQ4LTRR"
+   },
+   {
+    "label": "13 lb",
+    "lb": 13,
+    "asin": "B0FWPGVSNQ"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B06WGLV27L",
+    "upc": "071190000958"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-dish-chicken-and-brown-rice-recipe-with-veggie-and-fruit-blend-dog",
+  "sizes": [
+   {
+    "label": "3.75 lb",
+    "lb": 3.75,
+    "asin": "B0GVV9VXBG",
+    "upc": "071190008046"
+   },
+   {
+    "label": "11.5 lb",
+    "lb": 11.5,
+    "upc": "071190008053"
+   },
+   {
+    "label": "23 lb",
+    "lb": 23,
+    "upc": "071190008060"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-indoor-complete-chicken-lentils-and-salmon-recipe-cat",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "upc": "071190003607"
+   },
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "upc": "071190003614"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "upc": "071190003621"
+   },
+   {
+    "label": "18 lb",
+    "lb": 18
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-real-salmon-and-brown-rice-recipe-cat",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B0FWNBJ38F"
+   },
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0FWQ5N6P7"
+   },
+   {
+    "label": "13 lb",
+    "lb": 13
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B00I2KPNZM",
+    "upc": "071190007018"
+   }
+  ]
+ },
+ {
+  "id": "meow-mix-kitten-lil-nibbles-cat",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15,
+    "asin": "B0GHCP8MC7",
+    "upc": "829274007108"
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2
    }
   ]
  }
