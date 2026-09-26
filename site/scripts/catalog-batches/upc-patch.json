@@ -1078,6 +1078,21 @@
   ]
  },
  {
+  "id": "diamond-naturals-skin-and-coat-all-life-stages-dog-salmon-and-potato-formula-dog",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "upc": "736816468306"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "upc": "736816173231"
+   }
+  ]
+ },
+ {
   "id": "diamond-naturals-kitten-chicken-and-rice-formula-cat",
   "sizes": [
    {
@@ -1139,6 +1154,23 @@
     "label": "13 lb",
     "lb": 13,
     "asin": "B0FWPLNRGR"
+   }
+  ]
+ },
+ {
+  "id": "rachael-ray-nutrish-puppy-real-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0FWQRH5LJ",
+    "upc": "071190493446"
+   },
+   {
+    "label": "13 lb",
+    "lb": 13,
+    "asin": "B0FWQ164CW",
+    "upc": "071190493330"
    }
   ]
  },
@@ -1249,6 +1281,120 @@
    {
     "label": "14.2 lb",
     "lb": 14.2
+   }
+  ]
+ },
+ {
+  "id": "meow-mix-seafood-medley-cat",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15,
+    "asin": "B0781YMMP5",
+    "upc": "829274023818"
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2,
+    "upc": "829274502290"
+   }
+  ]
+ },
+ {
+  "id": "merrick-limited-ingredient-diet-real-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B07YH17YD2",
+    "upc": "022808391876"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22,
+    "upc": "022808390893"
+   }
+  ]
+ },
+ {
+  "id": "merrick-limited-ingredient-diet-grain-free-real-lamb-and-sweet-potato-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B07YGZS4HT",
+    "upc": "022808390756"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22,
+    "upc": "022808390855"
+   }
+  ]
+ },
+ {
+  "id": "merrick-backcountry-raw-infused-pacific-catch-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "upc": "022808370703"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20,
+    "asin": "B086BMRMZ5"
+   }
+  ]
+ },
+ {
+  "id": "iams-proactive-health-small-breed-adult-chicken-and-whole-grains-recipe-dog",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B07BCSJ1XJ",
+    "upc": "019014803453"
+   }
+  ]
+ },
+ {
+  "id": "pedigree-complete-nutrition-small-breed-adult-chicken-rice-and-vegetable-flavor-dog",
+  "sizes": [
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B09RP1NXDC",
+    "upc": "368180252597"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-x-small-puppy-dog",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "upc": "030111512109"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B008EXFSLQ"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-x-small-adult-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "upc": "699957436392"
    }
   ]
  }

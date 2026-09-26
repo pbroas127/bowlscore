@@ -98,7 +98,27 @@
   "9lives-plus-urinary-tract-health-cat": true,
   "nutro-sensitive-adult-formula-with-chicken-rice-and-peas-recipe-cat": true,
   "meow-mix-kitten-lil-nibbles-cat": true,
-  "meow-mix-hairball-control-cat": true
+  "meow-mix-hairball-control-cat": true,
+  "vital-essentials-freeze-dried-minnows-cat": true,
+  "diamond-naturals-skin-and-coat-all-life-stages-dog-salmon-and-potato-formula-dog": true,
+  "taste-of-the-wild-rocky-mountain-feline-recipe-with-roasted-venison-and-smoke-flavored-salmon-cat": true,
+  "rachael-ray-nutrish-puppy-real-chicken-and-brown-rice-recipe-dog": true,
+  "kibbles-n-bits-mini-bits-small-breed-savory-bacon-and-steak-flavor-dog": true,
+  "9lives-indoor-essentials-cat": true,
+  "meow-mix-seafood-medley-cat": true,
+  "meow-mix-tender-centers-with-basted-bites-chicken-and-tuna-flavors-cat": true,
+  "merrick-limited-ingredient-diet-real-chicken-and-brown-rice-recipe-dog": true,
+  "merrick-limited-ingredient-diet-grain-free-real-lamb-and-sweet-potato-recipe-dog": true,
+  "merrick-backcountry-raw-infused-pacific-catch-recipe-dog": true,
+  "merrick-backcountry-raw-infused-heros-banquet-recipe-dog": true,
+  "iams-proactive-health-senior-healthy-aging-chicken-and-whole-grains-recipe-dog": true,
+  "iams-proactive-health-large-breed-adult-real-chicken-and-whole-grains-recipe-dog": true,
+  "iams-proactive-health-small-breed-adult-chicken-and-whole-grains-recipe-dog": true,
+  "iams-proactive-health-puppy-healthy-development-chicken-and-whole-grains-recipe-dog": true,
+  "pedigree-complete-nutrition-small-breed-adult-chicken-rice-and-vegetable-flavor-dog": true,
+  "pedigree-puppy-growth-and-protection-chicken-and-vegetable-flavor-dog": true,
+  "royal-canin-x-small-puppy-dog": true,
+  "royal-canin-x-small-adult-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -589,6 +609,94 @@
    {
     "lb": 3.15,
     "upc": "829274007108"
+   }
+  ],
+  "diamond-naturals-skin-and-coat-all-life-stages-dog-salmon-and-potato-formula-dog": [
+   {
+    "lb": 30,
+    "upc": "736816173231"
+   },
+   {
+    "lb": 15,
+    "upc": "736816468306"
+   }
+  ],
+  "rachael-ray-nutrish-puppy-real-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 13,
+    "upc": "071190493330"
+   },
+   {
+    "lb": 5,
+    "upc": "071190493446"
+   }
+  ],
+  "meow-mix-seafood-medley-cat": [
+   {
+    "lb": 3.15,
+    "upc": "829274023818"
+   },
+   {
+    "lb": 14.2,
+    "upc": "829274502290"
+   }
+  ],
+  "merrick-limited-ingredient-diet-real-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 22,
+    "upc": "022808390893"
+   },
+   {
+    "lb": 4,
+    "upc": "022808391876"
+   }
+  ],
+  "merrick-limited-ingredient-diet-grain-free-real-lamb-and-sweet-potato-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "022808390756"
+   },
+   {
+    "lb": 22,
+    "upc": "022808390855"
+   }
+  ],
+  "merrick-backcountry-raw-infused-pacific-catch-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "022808370703"
+   },
+   {
+    "lb": 4,
+    "upc": "022808371090"
+   }
+  ],
+  "iams-proactive-health-small-breed-adult-chicken-and-whole-grains-recipe-dog": [
+   {
+    "lb": 15,
+    "upc": "019014803453"
+   }
+  ],
+  "pedigree-complete-nutrition-small-breed-adult-chicken-rice-and-vegetable-flavor-dog": [
+   {
+    "lb": 14,
+    "upc": "368180252597"
+   }
+  ],
+  "royal-canin-x-small-puppy-dog": [
+   {
+    "lb": 3,
+    "upc": "030111512109"
+   },
+   {
+    "lb": 3,
+    "upc": "696393610553"
+   }
+  ],
+  "royal-canin-x-small-adult-dog": [
+   {
+    "lb": 14,
+    "upc": "699957436392"
    }
   ]
  }
