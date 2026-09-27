@@ -1104,6 +1104,27 @@
   ]
  },
  {
+  "id": "taste-of-the-wild-wetlands-canine-recipe-with-roasted-fowl-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0018CJYTC"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B07KNLTTLN"
+   },
+   {
+    "label": "28 lb",
+    "lb": 28,
+    "asin": "B07KNF5CXX",
+    "upc": "696227975070"
+   }
+  ]
+ },
+ {
   "id": "taste-of-the-wild-ancient-prairie-canine-recipe-with-roasted-bison-and-roasted-venison-dog",
   "sizes": [
    {
@@ -1333,6 +1354,22 @@
   ]
  },
  {
+  "id": "merrick-backcountry-raw-infused-great-plains-red-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B086WPG2SM",
+    "upc": "022808205043"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20,
+    "asin": "B086BJBSRR"
+   }
+  ]
+ },
+ {
   "id": "merrick-backcountry-raw-infused-pacific-catch-recipe-dog",
   "sizes": [
    {
@@ -1395,6 +1432,169 @@
     "label": "14 lb",
     "lb": 14,
     "upc": "699957436392"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-large-adult-dog",
+  "sizes": [
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B0DQYNQTJF"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0BZ1GHL2T",
+    "upc": "030111179302"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B0DQYM2MNW"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-giant-adult-dog",
+  "sizes": [
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0BX1M3SY8",
+    "upc": "030111184306"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-labrador-retriever-adult-dog",
+  "sizes": [
+   {
+    "label": "5.5 lb",
+    "lb": 5.5,
+    "upc": "030111453709"
+   },
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B01LZEE2HW",
+    "upc": "030111453778"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0032BH4K8",
+    "upc": "030111416735"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-golden-retriever-adult-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0GR6RBL2V"
+   },
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B00JN9LPQ2",
+    "upc": "030111416872"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0033XQF8C",
+    "upc": "030111169051"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-golden-retriever-puppy-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B0G2THFLV7"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B00CKEE852",
+    "upc": "030111454331"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-french-bulldog-adult-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B00OV5KJFQ",
+    "upc": "030111457868"
+   },
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B00OV5KLEA",
+    "upc": "030111457875"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0DQYM3Z76"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-french-bulldog-puppy-dog",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "asin": "B077Y7RTD2",
+    "upc": "030111111166"
+   },
+   {
+    "label": "10.5 lb",
+    "lb": 10.5,
+    "upc": "030111111098"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-shih-tzu-adult-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B0036APTKW"
+   },
+   {
+    "label": "10 lb",
+    "lb": 10,
+    "asin": "B003P9WUG0",
+    "upc": "030111451514"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-digestive-care-cat",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "asin": "B013DQWGC2",
+    "upc": "030111444202"
+   },
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B00YUS45AY",
+    "upc": "030111444233"
    }
   ]
  }

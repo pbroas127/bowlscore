@@ -118,7 +118,27 @@
   "pedigree-complete-nutrition-small-breed-adult-chicken-rice-and-vegetable-flavor-dog": true,
   "pedigree-puppy-growth-and-protection-chicken-and-vegetable-flavor-dog": true,
   "royal-canin-x-small-puppy-dog": true,
-  "royal-canin-x-small-adult-dog": true
+  "royal-canin-x-small-adult-dog": true,
+  "taste-of-the-wild-wetlands-canine-recipe-with-roasted-fowl-dog": true,
+  "rachael-ray-nutrish-high-protein-beef-potato-and-peas-recipe-with-venison-and-lamb-dog": true,
+  "merrick-limited-ingredient-diet-real-salmon-and-brown-rice-recipe-dog": true,
+  "merrick-backcountry-raw-infused-great-plains-red-recipe-dog": true,
+  "iams-proactive-health-large-breed-puppy-healthy-development-chicken-recipe-dog": true,
+  "pedigree-high-protein-adult-beef-and-lamb-flavor-dog": true,
+  "royal-canin-small-puppy-dog": true,
+  "royal-canin-small-adult-dog": true,
+  "royal-canin-large-puppy-dog": true,
+  "royal-canin-large-adult-dog": true,
+  "royal-canin-giant-adult-dog": true,
+  "royal-canin-labrador-retriever-adult-dog": true,
+  "royal-canin-golden-retriever-adult-dog": true,
+  "royal-canin-golden-retriever-puppy-dog": true,
+  "royal-canin-french-bulldog-adult-dog": true,
+  "royal-canin-french-bulldog-puppy-dog": true,
+  "royal-canin-shih-tzu-adult-dog": true,
+  "royal-canin-kitten-cat": true,
+  "royal-canin-digestive-care-cat": true,
+  "royal-canin-hair-and-skin-care-cat": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -697,6 +717,104 @@
    {
     "lb": 14,
     "upc": "699957436392"
+   }
+  ],
+  "taste-of-the-wild-wetlands-canine-recipe-with-roasted-fowl-dog": [
+   {
+    "lb": 28,
+    "upc": "696227975070"
+   }
+  ],
+  "merrick-backcountry-raw-infused-great-plains-red-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "022808205043"
+   }
+  ],
+  "royal-canin-large-adult-dog": [
+   {
+    "lb": 30,
+    "upc": "030111179302"
+   },
+   {
+    "lb": 30,
+    "upc": "030111518231"
+   }
+  ],
+  "royal-canin-giant-adult-dog": [
+   {
+    "lb": 30,
+    "upc": "030111184306"
+   }
+  ],
+  "royal-canin-labrador-retriever-adult-dog": [
+   {
+    "lb": 30,
+    "upc": "030111416735"
+   },
+   {
+    "lb": 5.5,
+    "upc": "030111453709"
+   },
+   {
+    "lb": 17,
+    "upc": "030111453778"
+   }
+  ],
+  "royal-canin-golden-retriever-adult-dog": [
+   {
+    "lb": 30,
+    "upc": "030111169051"
+   },
+   {
+    "lb": 17,
+    "upc": "030111416872"
+   }
+  ],
+  "royal-canin-golden-retriever-puppy-dog": [
+   {
+    "lb": 30,
+    "upc": "030111454331"
+   },
+   {
+    "lb": 30,
+    "upc": "301114543316"
+   }
+  ],
+  "royal-canin-french-bulldog-adult-dog": [
+   {
+    "lb": 6,
+    "upc": "030111457868"
+   },
+   {
+    "lb": 17,
+    "upc": "030111457875"
+   }
+  ],
+  "royal-canin-french-bulldog-puppy-dog": [
+   {
+    "lb": 10.5,
+    "upc": "030111111098"
+   },
+   {
+    "lb": 3,
+    "upc": "030111111166"
+   }
+  ],
+  "royal-canin-shih-tzu-adult-dog": [
+   {
+    "lb": 10,
+    "upc": "030111451514"
+   }
+  ],
+  "royal-canin-digestive-care-cat": [
+   {
+    "lb": 3,
+    "upc": "030111444202"
+   },
+   {
+    "lb": 6,
+    "upc": "030111444233"
    }
   ]
  }
