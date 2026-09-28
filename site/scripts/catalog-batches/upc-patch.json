@@ -1291,6 +1291,27 @@
   ]
  },
  {
+  "id": "meow-mix-indoor-health-cat",
+  "sizes": [
+   {
+    "label": "3.15 lb",
+    "lb": 3.15,
+    "asin": "B0781XXB5Z"
+   },
+   {
+    "label": "6.3 lb",
+    "lb": 6.3,
+    "asin": "B000QSKB7S"
+   },
+   {
+    "label": "14.2 lb",
+    "lb": 14.2,
+    "asin": "B000M5U6CU",
+    "upc": "692618133036"
+   }
+  ]
+ },
+ {
   "id": "meow-mix-kitten-lil-nibbles-cat",
   "sizes": [
    {
@@ -1385,6 +1406,22 @@
   ]
  },
  {
+  "id": "iams-proactive-health-adult-lamb-and-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B07BCRTZ71",
+    "upc": "736816242197"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B07BCV9MM7"
+   }
+  ]
+ },
+ {
   "id": "iams-proactive-health-small-breed-adult-chicken-and-whole-grains-recipe-dog",
   "sizes": [
    {
@@ -1436,6 +1473,25 @@
   ]
  },
  {
+  "id": "royal-canin-medium-puppy-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "upc": "030111493880"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "upc": "030111493897"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-large-adult-dog",
   "sizes": [
    {
@@ -1453,6 +1509,17 @@
     "label": "40 lb",
     "lb": 40,
     "asin": "B0DQYM2MNW"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-giant-puppy-dog",
+  "sizes": [
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B006HKAKQ6",
+    "upc": "030111494177"
    }
   ]
  },
@@ -1528,6 +1595,27 @@
   ]
  },
  {
+  "id": "royal-canin-german-shepherd-adult-dog",
+  "sizes": [
+   {
+    "label": "5.5 lb",
+    "lb": 5.5
+   },
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B013DQVU7Y",
+    "upc": "030111520876"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B00IK5RNBG",
+    "upc": "301114517058"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-french-bulldog-adult-dog",
   "sizes": [
    {
@@ -1566,6 +1654,23 @@
   ]
  },
  {
+  "id": "royal-canin-dachshund-adult-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B003M64U2I",
+    "upc": "030111451620"
+   },
+   {
+    "label": "10 lb",
+    "lb": 10,
+    "asin": "B003P9WU7E",
+    "upc": "030111451613"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-shih-tzu-adult-dog",
   "sizes": [
    {
@@ -1595,6 +1700,70 @@
     "lb": 6,
     "asin": "B00YUS45AY",
     "upc": "030111444233"
+   }
+  ]
+ },
+ {
+  "id": "blue-buffalo-life-protection-formula-senior-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B09K8RGBVR"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0009YUGA6",
+    "upc": "859610000173"
+   }
+  ]
+ },
+ {
+  "id": "blue-buffalo-life-protection-formula-small-breed-adult-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B09K9FDLFN"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B003O7ZON4",
+    "upc": "840243104888"
+   }
+  ]
+ },
+ {
+  "id": "blue-buffalo-life-protection-formula-large-breed-adult-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "upc": "859610000388"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-dachshund-puppy-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B00JN9LQJ8",
+    "upc": "030111451958"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-german-shepherd-puppy-dog",
+  "sizes": [
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B003M61HU6",
+    "upc": "030111418005"
    }
   ]
  }

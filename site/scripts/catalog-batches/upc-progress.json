@@ -138,7 +138,27 @@
   "royal-canin-shih-tzu-adult-dog": true,
   "royal-canin-kitten-cat": true,
   "royal-canin-digestive-care-cat": true,
-  "royal-canin-hair-and-skin-care-cat": true
+  "royal-canin-hair-and-skin-care-cat": true,
+  "meow-mix-indoor-health-cat": true,
+  "iams-proactive-health-adult-lamb-and-rice-recipe-dog": true,
+  "royal-canin-medium-puppy-dog": true,
+  "royal-canin-giant-puppy-dog": true,
+  "royal-canin-german-shepherd-adult-dog": true,
+  "royal-canin-dachshund-adult-dog": true,
+  "blue-buffalo-life-protection-formula-adult-lamb-and-brown-rice-recipe-dog": true,
+  "blue-buffalo-life-protection-formula-senior-chicken-and-brown-rice-recipe-dog": true,
+  "blue-buffalo-life-protection-formula-small-breed-adult-chicken-and-brown-rice-recipe-dog": true,
+  "blue-buffalo-life-protection-formula-large-breed-adult-chicken-and-brown-rice-recipe-dog": true,
+  "blue-buffalo-wilderness-puppy-chicken-recipe-dog": true,
+  "blue-buffalo-wilderness-indoor-adult-chicken-recipe-cat": true,
+  "blue-buffalo-wilderness-adult-salmon-recipe-cat": true,
+  "blue-buffalo-wilderness-indoor-hairball-and-weight-control-chicken-recipe-cat": true,
+  "blue-buffalo-homestyle-recipe-beef-dinner-with-garden-vegetables-dog": true,
+  "blue-buffalo-homestyle-recipe-lamb-dinner-with-garden-vegetables-dog": true,
+  "blue-buffalo-homestyle-recipe-senior-chicken-dinner-with-garden-vegetables-dog": true,
+  "blue-buffalo-homestyle-recipe-puppy-chicken-dinner-with-garden-vegetables-and-brown-rice-dog": true,
+  "royal-canin-dachshund-puppy-dog": true,
+  "royal-canin-german-shepherd-puppy-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -815,6 +835,96 @@
    {
     "lb": 6,
     "upc": "030111444233"
+   }
+  ],
+  "meow-mix-indoor-health-cat": [
+   {
+    "lb": 14.2,
+    "upc": "692618133036"
+   },
+   {
+    "lb": 14.2,
+    "upc": "829274502306"
+   }
+  ],
+  "iams-proactive-health-adult-lamb-and-rice-recipe-dog": [
+   {
+    "lb": 15,
+    "upc": "736816242197"
+   }
+  ],
+  "royal-canin-medium-puppy-dog": [
+   {
+    "lb": 17,
+    "upc": "030111493880"
+   },
+   {
+    "lb": 30,
+    "upc": "030111493897"
+   }
+  ],
+  "royal-canin-giant-puppy-dog": [
+   {
+    "lb": 30,
+    "upc": "030111494177"
+   }
+  ],
+  "royal-canin-german-shepherd-adult-dog": [
+   {
+    "lb": 17,
+    "upc": "030111520876"
+   },
+   {
+    "lb": 30,
+    "upc": "301114517058"
+   }
+  ],
+  "royal-canin-dachshund-adult-dog": [
+   {
+    "lb": 10,
+    "upc": "030111451613"
+   },
+   {
+    "lb": 2.5,
+    "upc": "030111451620"
+   }
+  ],
+  "blue-buffalo-life-protection-formula-senior-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 30,
+    "upc": "859610000173"
+   }
+  ],
+  "blue-buffalo-life-protection-formula-small-breed-adult-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 15,
+    "upc": "840243104888"
+   }
+  ],
+  "blue-buffalo-life-protection-formula-large-breed-adult-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 30,
+    "upc": "859610000388"
+   }
+  ],
+  "royal-canin-dachshund-puppy-dog": [
+   {
+    "lb": 2.5,
+    "upc": "030111451958"
+   }
+  ],
+  "royal-canin-german-shepherd-puppy-dog": [
+   {
+    "lb": 30,
+    "upc": "030111418005"
+   },
+   {
+    "lb": 30,
+    "upc": "301114180054"
+   },
+   {
+    "lb": 30,
+    "upc": "818248804331"
    }
   ]
  }
