@@ -1557,6 +1557,17 @@
   ]
  },
  {
+  "id": "royal-canin-labrador-retriever-puppy-dog",
+  "sizes": [
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B003M5ZKD2",
+    "upc": "030111418203"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-golden-retriever-adult-dog",
   "sizes": [
    {
@@ -1720,6 +1731,20 @@
   ]
  },
  {
+  "id": "blue-buffalo-life-protection-formula-puppy-chicken-and-brown-rice-recipe-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "upc": "859610000036"
+   }
+  ]
+ },
+ {
   "id": "blue-buffalo-life-protection-formula-small-breed-adult-chicken-and-brown-rice-recipe-dog",
   "sizes": [
    {
@@ -1764,6 +1789,89 @@
     "lb": 30,
     "asin": "B003M61HU6",
     "upc": "030111418005"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-yorkshire-terrier-adult-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B003545AJE",
+    "upc": "030111141408"
+   },
+   {
+    "label": "10 lb",
+    "lb": 10,
+    "asin": "B0032BOIH0",
+    "upc": "764999724148"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-boxer-adult-dog",
+  "sizes": [
+   {
+    "label": "17 lb",
+    "lb": 17,
+    "asin": "B013DQUXGI",
+    "upc": "030111520470"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B00IK5RZDC",
+    "upc": "030111520449"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-x-small-adult-8-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "upc": "818225578071"
+   }
+  ]
+ },
+ {
+  "id": "blue-buffalo-true-chews-premium-jerky-cuts-with-real-steak-dog",
+  "sizes": [
+   {
+    "label": "10 oz",
+    "lb": 0.625,
+    "asin": "B0BJFMV5P4"
+   },
+   {
+    "label": "20 oz",
+    "lb": 1.25,
+    "asin": "B0BJFNTNRL",
+    "upc": "840243149377"
+   }
+  ]
+ },
+ {
+  "id": "orijen-amazing-grains-original-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B09QLLXCHV",
+    "upc": "064992720384"
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "asin": "B09QLLZP4J",
+    "upc": "763511747115"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B0FB6KVM7P",
+    "upc": "064992728458"
    }
   ]
  }

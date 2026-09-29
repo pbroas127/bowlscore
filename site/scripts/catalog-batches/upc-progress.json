@@ -158,7 +158,27 @@
   "blue-buffalo-homestyle-recipe-senior-chicken-dinner-with-garden-vegetables-dog": true,
   "blue-buffalo-homestyle-recipe-puppy-chicken-dinner-with-garden-vegetables-and-brown-rice-dog": true,
   "royal-canin-dachshund-puppy-dog": true,
-  "royal-canin-german-shepherd-puppy-dog": true
+  "royal-canin-german-shepherd-puppy-dog": true,
+  "pedigree-adult-large-breed-roasted-chicken-rice-and-vegetable-flavor-dog": true,
+  "royal-canin-labrador-retriever-puppy-dog": true,
+  "blue-buffalo-life-protection-formula-puppy-chicken-and-brown-rice-recipe-dog": true,
+  "blue-buffalo-wilderness-adult-salmon-recipe-dog": true,
+  "blue-buffalo-wilderness-chicken-pate-cat": true,
+  "blue-buffalo-homestyle-recipe-turkey-dinner-with-garden-vegetables-dog": true,
+  "royal-canin-yorkshire-terrier-adult-dog": true,
+  "royal-canin-boxer-adult-dog": true,
+  "royal-canin-x-small-adult-8-dog": true,
+  "royal-canin-labrador-retriever-adult-loaf-in-sauce-dog": true,
+  "royal-canin-weight-care-cat": true,
+  "royal-canin-indoor-7-cat": true,
+  "blue-buffalo-true-chews-premium-jerky-cuts-with-real-steak-dog": true,
+  "blue-buffalo-bursts-paw-lickin-chicken-crunchy-and-creamy-cat-treats-cat": true,
+  "blue-buffalo-bursts-delish-liver-and-beef-crunchy-and-creamy-cat-treats-cat": true,
+  "orijen-puppy-dog": true,
+  "orijen-regional-red-dog": true,
+  "orijen-amazing-grains-original-dog": true,
+  "orijen-guardian-8-cat": true,
+  "orijen-regional-red-cat": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -925,6 +945,68 @@
    {
     "lb": 30,
     "upc": "818248804331"
+   }
+  ],
+  "royal-canin-labrador-retriever-puppy-dog": [
+   {
+    "lb": 30,
+    "upc": "030111418203"
+   },
+   {
+    "lb": 30,
+    "upc": "622113070376"
+   }
+  ],
+  "blue-buffalo-life-protection-formula-puppy-chicken-and-brown-rice-recipe-dog": [
+   {
+    "lb": 15,
+    "upc": "859610000036"
+   }
+  ],
+  "royal-canin-yorkshire-terrier-adult-dog": [
+   {
+    "lb": 2.5,
+    "upc": "030111141408"
+   },
+   {
+    "lb": 10,
+    "upc": "764999724148"
+   }
+  ],
+  "royal-canin-boxer-adult-dog": [
+   {
+    "lb": 30,
+    "upc": "030111520449"
+   },
+   {
+    "lb": 17,
+    "upc": "030111520470"
+   }
+  ],
+  "royal-canin-x-small-adult-8-dog": [
+   {
+    "lb": 2.5,
+    "upc": "818225578071"
+   }
+  ],
+  "blue-buffalo-true-chews-premium-jerky-cuts-with-real-steak-dog": [
+   {
+    "lb": 1.25,
+    "upc": "840243149377"
+   }
+  ],
+  "orijen-amazing-grains-original-dog": [
+   {
+    "lb": 4,
+    "upc": "064992720384"
+   },
+   {
+    "lb": 30,
+    "upc": "064992728458"
+   },
+   {
+    "lb": 22.5,
+    "upc": "763511747115"
    }
   ]
  }

@@ -11502,7 +11502,8 @@
       {
         "label": "30 lb",
         "lb": 30,
-        "asin": "B003M5ZKD2"
+        "asin": "B003M5ZKD2",
+        "upc": "030111418203"
       }
     ],
     "asin": "B003M5ZKD2"
@@ -12724,7 +12725,8 @@
       },
       {
         "label": "15 lb",
-        "lb": 15
+        "lb": 15,
+        "upc": "859610000036"
       }
     ],
     "asin": "B000XKCDNE"
@@ -14398,12 +14400,14 @@
       {
         "label": "2.5 lb",
         "lb": 2.5,
-        "asin": "B003545AJE"
+        "asin": "B003545AJE",
+        "upc": "030111141408"
       },
       {
         "label": "10 lb",
         "lb": 10,
-        "asin": "B0032BOIH0"
+        "asin": "B0032BOIH0",
+        "upc": "764999724148"
       }
     ],
     "asin": "B003545AJE"
@@ -14482,12 +14486,14 @@
       {
         "label": "17 lb",
         "lb": 17,
-        "asin": "B013DQUXGI"
+        "asin": "B013DQUXGI",
+        "upc": "030111520470"
       },
       {
         "label": "30 lb",
         "lb": 30,
-        "asin": "B00IK5RZDC"
+        "asin": "B00IK5RZDC",
+        "upc": "030111520449"
       }
     ],
     "asin": "B00IK5RZDC"
@@ -14634,7 +14640,8 @@
     "sizes": [
       {
         "label": "2.5 lb",
-        "lb": 2.5
+        "lb": 2.5,
+        "upc": "818225578071"
       }
     ],
     "asin": "B008LMFPCW"
@@ -15055,7 +15062,8 @@
       {
         "label": "20 oz",
         "lb": 1.25,
-        "asin": "B0BJFNTNRL"
+        "asin": "B0BJFNTNRL",
+        "upc": "840243149377"
       }
     ],
     "asin": "B0BJFMV5P4"
@@ -15643,17 +15651,20 @@
       {
         "label": "4 lb",
         "lb": 4,
-        "asin": "B09QLLXCHV"
+        "asin": "B09QLLXCHV",
+        "upc": "064992720384"
       },
       {
         "label": "22.5 lb",
         "lb": 22.5,
-        "asin": "B09QLLZP4J"
+        "asin": "B09QLLZP4J",
+        "upc": "763511747115"
       },
       {
         "label": "30 lb",
         "lb": 30,
-        "asin": "B0FB6KVM7P"
+        "asin": "B0FB6KVM7P",
+        "upc": "064992728458"
       }
     ],
     "asin": "B09QLLZP4J"
