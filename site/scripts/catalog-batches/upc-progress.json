@@ -178,7 +178,27 @@
   "orijen-regional-red-dog": true,
   "orijen-amazing-grains-original-dog": true,
   "orijen-guardian-8-cat": true,
-  "orijen-regional-red-cat": true
+  "orijen-regional-red-cat": true,
+  "royal-canin-fussy-adult-cat": true,
+  "blue-buffalo-wilderness-kitten-chicken-recipe-cat": true,
+  "royal-canin-shih-tzu-puppy-dog": true,
+  "royal-canin-hairball-care-cat": true,
+  "blue-buffalo-bursts-savory-seafood-crunchy-and-creamy-cat-treats-cat": true,
+  "orijen-six-fish-recipe-dog": true,
+  "acana-red-meat-recipe-dog": true,
+  "acana-adult-large-breed-recipe-dog": true,
+  "acana-classics-beef-and-barley-recipe-dog": true,
+  "acana-classics-salmon-and-barley-recipe-dog": true,
+  "acana-wholesome-grains-red-meat-and-grains-recipe-dog": true,
+  "acana-wholesome-grains-puppy-recipe-dog": true,
+  "acana-market-medley-indoor-cat-chicken-trout-and-salmon-recipe-cat": true,
+  "instinct-original-kibble-real-beef-recipe-dog": true,
+  "instinct-raw-boost-kibble-real-chicken-recipe-dog": true,
+  "instinct-raw-boost-kibble-for-small-breed-dogs-real-chicken-recipe-dog": true,
+  "instinct-limited-ingredient-diet-kibble-real-lamb-recipe-dog": true,
+  "instinct-limited-ingredient-diet-kibble-real-salmon-recipe-dog": true,
+  "instinct-original-kibble-for-kittens-chicken-recipe-cat": true,
+  "instinct-limited-ingredient-diet-kibble-real-rabbit-recipe-cat": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1007,6 +1027,98 @@
    {
     "lb": 22.5,
     "upc": "763511747115"
+   }
+  ],
+  "blue-buffalo-wilderness-kitten-chicken-recipe-cat": [
+   {
+    "lb": 5,
+    "upc": "859610006069"
+   }
+  ],
+  "royal-canin-shih-tzu-puppy-dog": [
+   {
+    "lb": 2.5,
+    "upc": "030111452252"
+   },
+   {
+    "lb": 2.5,
+    "upc": "764999724124"
+   }
+  ],
+  "royal-canin-hairball-care-cat": [
+   {
+    "lb": 14,
+    "upc": "030111443342"
+   },
+   {
+    "lb": 3,
+    "upc": "030111630216"
+   },
+   {
+    "lb": 6,
+    "upc": "030111630223"
+   }
+  ],
+  "acana-red-meat-recipe-dog": [
+   {
+    "lb": 25,
+    "upc": "310425680757"
+   }
+  ],
+  "acana-classics-beef-and-barley-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "064992724863"
+   },
+   {
+    "lb": 22.5,
+    "upc": "064992724870"
+   },
+   {
+    "lb": 4,
+    "upc": "064992724917"
+   },
+   {
+    "lb": 32,
+    "upc": "064992728489"
+   },
+   {
+    "lb": 4,
+    "upc": "115554000052"
+   }
+  ],
+  "acana-classics-salmon-and-barley-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "064992724887"
+   },
+   {
+    "lb": 22.5,
+    "upc": "064992724894"
+   },
+   {
+    "lb": 4,
+    "upc": "064992724924"
+   }
+  ],
+  "acana-wholesome-grains-red-meat-and-grains-recipe-dog": [
+   {
+    "lb": 22.5,
+    "upc": "376128697782"
+   }
+  ],
+  "acana-wholesome-grains-puppy-recipe-dog": [
+   {
+    "lb": 11.5,
+    "upc": "064992715717"
+   },
+   {
+    "lb": 4,
+    "upc": "064992724450"
+   },
+   {
+    "lb": 22.5,
+    "upc": "064992724467"
    }
   ]
  }

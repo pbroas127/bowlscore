@@ -13360,7 +13360,8 @@
       {
         "label": "5 lb",
         "lb": 5,
-        "asin": "B0084FNPDC"
+        "asin": "B0084FNPDC",
+        "upc": "859610006069"
       }
     ],
     "asin": "B008EXEXW6"
@@ -14565,7 +14566,8 @@
     "sizes": [
       {
         "label": "2.5 lb",
-        "lb": 2.5
+        "lb": 2.5,
+        "upc": "030111452252"
       }
     ]
   },
@@ -14790,16 +14792,19 @@
       {
         "label": "3 lb",
         "lb": 3,
-        "asin": "B000HALT7Q"
+        "asin": "B000HALT7Q",
+        "upc": "030111630216"
       },
       {
         "label": "6 lb",
         "lb": 6,
-        "asin": "B000HAJZHM"
+        "asin": "B000HAJZHM",
+        "upc": "030111630223"
       },
       {
         "label": "14 lb",
-        "lb": 14
+        "lb": 14,
+        "upc": "030111443342"
       }
     ],
     "asin": "B000HAJZHM"
@@ -16069,7 +16074,8 @@
       {
         "label": "25 lb",
         "lb": 25,
-        "asin": "B01C8ZJQ6S"
+        "asin": "B01C8ZJQ6S",
+        "upc": "310425680757"
       },
       {
         "label": "32 lb",
@@ -16354,17 +16360,20 @@
       {
         "label": "4 lb",
         "lb": 4,
-        "asin": "B0CTD7P3K9"
+        "asin": "B0CTD7P3K9",
+        "upc": "064992724863"
       },
       {
         "label": "22.5 lb",
         "lb": 22.5,
-        "asin": "B0CTD84ZDM"
+        "asin": "B0CTD84ZDM",
+        "upc": "064992724870"
       },
       {
         "label": "32 lb",
         "lb": 32,
-        "asin": "B0FB71XZ52"
+        "asin": "B0FB71XZ52",
+        "upc": "064992728489"
       }
     ],
     "asin": "B0CTD7P3K9"
@@ -16453,12 +16462,14 @@
       {
         "label": "4 lb",
         "lb": 4,
-        "asin": "B0CTD92RL9"
+        "asin": "B0CTD92RL9",
+        "upc": "064992724887"
       },
       {
         "label": "22.5 lb",
         "lb": 22.5,
-        "asin": "B0CTD8HKLP"
+        "asin": "B0CTD8HKLP",
+        "upc": "064992724894"
       }
     ],
     "asin": "B0CTD8HKLP"
@@ -16655,7 +16666,8 @@
       },
       {
         "label": "22.5 lb",
-        "lb": 22.5
+        "lb": 22.5,
+        "upc": "376128697782"
       }
     ]
   },
@@ -16746,17 +16758,20 @@
       {
         "label": "4 lb",
         "lb": 4,
-        "asin": "B08VVZT7YD"
+        "asin": "B08VVZT7YD",
+        "upc": "064992724450"
       },
       {
         "label": "11.5 lb",
         "lb": 11.5,
-        "asin": "B08VW1SW1F"
+        "asin": "B08VW1SW1F",
+        "upc": "064992715717"
       },
       {
         "label": "22.5 lb",
         "lb": 22.5,
-        "asin": "B0BYQJM383"
+        "asin": "B0BYQJM383",
+        "upc": "064992724467"
       }
     ],
     "asin": "B08VW1SW1F"

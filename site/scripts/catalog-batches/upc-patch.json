@@ -1771,6 +1771,17 @@
   ]
  },
  {
+  "id": "blue-buffalo-wilderness-kitten-chicken-recipe-cat",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B0084FNPDC",
+    "upc": "859610006069"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-dachshund-puppy-dog",
   "sizes": [
    {
@@ -1827,12 +1838,44 @@
   ]
  },
  {
+  "id": "royal-canin-shih-tzu-puppy-dog",
+  "sizes": [
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "upc": "030111452252"
+   }
+  ]
+ },
+ {
   "id": "royal-canin-x-small-adult-8-dog",
   "sizes": [
    {
     "label": "2.5 lb",
     "lb": 2.5,
     "upc": "818225578071"
+   }
+  ]
+ },
+ {
+  "id": "royal-canin-hairball-care-cat",
+  "sizes": [
+   {
+    "label": "3 lb",
+    "lb": 3,
+    "asin": "B000HALT7Q",
+    "upc": "030111630216"
+   },
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B000HAJZHM",
+    "upc": "030111630223"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "upc": "030111443342"
    }
   ]
  },
@@ -1872,6 +1915,109 @@
     "lb": 30,
     "asin": "B0FB6KVM7P",
     "upc": "064992728458"
+   }
+  ]
+ },
+ {
+  "id": "acana-red-meat-recipe-dog",
+  "sizes": [
+   {
+    "label": "4.5 lb",
+    "lb": 4.5,
+    "asin": "B01C90CUQ0"
+   },
+   {
+    "label": "13 lb",
+    "lb": 13,
+    "asin": "B01C8XTLF6"
+   },
+   {
+    "label": "25 lb",
+    "lb": 25,
+    "asin": "B01C8ZJQ6S",
+    "upc": "310425680757"
+   },
+   {
+    "label": "32 lb",
+    "lb": 32,
+    "asin": "B0FB6KHB26"
+   }
+  ]
+ },
+ {
+  "id": "acana-classics-beef-and-barley-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0CTD7P3K9",
+    "upc": "064992724863"
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "asin": "B0CTD84ZDM",
+    "upc": "064992724870"
+   },
+   {
+    "label": "32 lb",
+    "lb": 32,
+    "asin": "B0FB71XZ52",
+    "upc": "064992728489"
+   }
+  ]
+ },
+ {
+  "id": "acana-classics-salmon-and-barley-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0CTD92RL9",
+    "upc": "064992724887"
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "asin": "B0CTD8HKLP",
+    "upc": "064992724894"
+   }
+  ]
+ },
+ {
+  "id": "acana-wholesome-grains-red-meat-and-grains-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "upc": "376128697782"
+   }
+  ]
+ },
+ {
+  "id": "acana-wholesome-grains-puppy-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B08VVZT7YD",
+    "upc": "064992724450"
+   },
+   {
+    "label": "11.5 lb",
+    "lb": 11.5,
+    "asin": "B08VW1SW1F",
+    "upc": "064992715717"
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "asin": "B0BYQJM383",
+    "upc": "064992724467"
    }
   ]
  }
