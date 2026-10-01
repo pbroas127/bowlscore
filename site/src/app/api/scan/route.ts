@@ -161,15 +161,15 @@ async function identify(barcode: string): Promise<Product | null> {
 // returns null and the app asks for a label photo instead. One attempt only, a photo is always available as plan B.
 async function webLabel(product: Product | null, barcode: string, apiKey: string): Promise<{ label: LabelData; species: 'dog' | 'cat' | 'unknown'; sourceUrl?: string } | null> {
   const what = product ? `"${product.name}"${product.brand ? ` by ${product.brand}` : ''} (UPC ${barcode})` : `the dog or cat food or treat with UPC barcode ${barcode}`
-  const prompt = `Find the official ingredient list and guaranteed analysis for this exact pet food product: ${what}. Search the web first. Use the manufacturer's website or a major retailer such as Chewy or Petco. Reply with ONLY a JSON object and no markdown: {"found": boolean, "productName": string, "brand": string, "ingredients": string[] (label order, keep parentheses inside each ingredient), "proteinMin": number, "fatMin": number, "fiberMax": number, "moistureMax": number, "species": "dog" or "cat", "foodForm": "dry" or "wet", "completeAndBalanced": boolean, "isTreat": boolean, "sourceUrl": string}. If you cannot find this exact product and recipe, reply {"found": false}. Never guess or fill in ingredients from memory.`
+  const prompt = `Use Google Search now to look up this product, then answer only from the pages you found. Find the official ingredient list and guaranteed analysis for this exact pet food product: ${what}. Search the web first. Use the manufacturer's website or a major retailer such as Chewy or Petco. Reply with ONLY a JSON object and no markdown: {"found": boolean, "productName": string, "brand": string, "ingredients": string[] (label order, keep parentheses inside each ingredient), "proteinMin": number, "fatMin": number, "fiberMax": number, "moistureMax": number, "species": "dog" or "cat", "foodForm": "dry" or "wet", "completeAndBalanced": boolean, "isTreat": boolean, "sourceUrl": string}. If you cannot find this exact product and recipe, reply {"found": false}. Never guess or fill in ingredients from memory.`
   try {
     // Measured on Purina ONE: 3.1 flash lite returned 23 of 39 ingredients, 3.5 returned all 39. The lite model also
     // skipped the search often enough that most store bags came back empty (2026-09-30), so this uses 3.5 flash.
     const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-      signal: AbortSignal.timeout(25_000),
-      body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt }] }], tools: [{ google_search: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'low' } } }),
+      signal: AbortSignal.timeout(14_000), // a miss must not keep someone waiting in the aisle; the label photo is plan B
+      body: JSON.stringify({ systemInstruction: { parts: [{ text: 'Always call Google Search before answering. Never answer from memory.' }] }, contents: [{ role: 'user', parts: [{ text: prompt }] }], tools: [{ google_search: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'minimal' } } }),
     })
     if (!res.ok) { console.warn('web label lookup failed', res.status, (await res.text()).slice(0, 200)); return null }
     const candidate = (await res.json()).candidates?.[0]
