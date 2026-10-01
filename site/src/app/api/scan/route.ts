@@ -267,9 +267,13 @@ export async function POST(req: Request) {
     // UPC, then try the published ingredient list. Whatever happens, the app learns WHAT was scanned.
     const found = await identify(barcode)
     const key = process.env.GEMINI_API_KEY
-    // The camera reads every barcode it sees, shelf tags included, so only this paid lookup counts toward the cap.
-    if (key && overLimit(who)) return limited()
-    const web = key ? await cachedWebLabel(barcode, found, key) : null
+    // ponytail: the grounded web lookup is off. On 2026-09-30 Gemini answered without ever searching (no grounding
+    // metadata, and a different ingredient list on each try), so every call was a 10 to 25 s wait and a cost for no
+    // result. A barcode we do not know gets a fast "snap the label" instead. Turn it back on with WEB_LOOKUP=1 once a
+    // test call shows groundingChunks again. The camera reads shelf tags too, so only this paid lookup counts toward the cap.
+    const lookup = key && process.env.WEB_LOOKUP === '1'
+    if (lookup && overLimit(who)) return limited()
+    const web = lookup ? await cachedWebLabel(barcode, found, key) : null
     if (web) return json({ id: crypto.randomUUID(), source: 'web', sourceUrl: web.sourceUrl, label: web.label, result: scoreFood(web.label, species, lifeStage), speciesOnLabel: web.species, ...known(web.label, web.species, species) })
     // The app can send the label photos along with the barcode, so a miss is never a dead end.
     if (images == null) return json({ error: 'barcode_not_found', product: found }, 404)
