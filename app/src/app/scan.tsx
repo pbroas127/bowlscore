@@ -224,7 +224,8 @@ export default function ScanScreen() {
           <Text style={[type.h1, { textAlign: 'center' }]}>Let BowlScore see the label</Text>
           <Text style={[type.body, { color: color.ink2, textAlign: 'center' }]}>The camera reads the ingredients list so we can score the food. Photos are never saved on our servers.</Text>
           <View style={{ alignSelf: 'stretch', gap: 12, marginTop: 8 }}>
-            <PillButton label="Allow camera" onPress={() => (permission.canAskAgain ? requestPermission() : Linking.openSettings())} />
+            {/* App Review 5.1.1(iv): the button before the system prompt says Continue. Once declined, it can only open Settings. */}
+            <PillButton label={permission.canAskAgain ? 'Continue' : 'Open Settings'} onPress={() => (permission.canAskAgain ? requestPermission() : Linking.openSettings())} />
             <PillButton label="Choose a photo instead" variant="quiet" onPress={pick} />
           </View>
         </View>

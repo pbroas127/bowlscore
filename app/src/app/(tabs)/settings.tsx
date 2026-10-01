@@ -42,9 +42,9 @@ export default function Settings() {
     Alert.alert(ok ? 'Subscription restored' : 'Nothing to restore', ok ? 'You are all set.' : 'We could not find an active subscription for this Apple ID.')
   }
   const onRecalls = () =>
-    Alert.alert('Recall alerts', 'BowlScore checks the brands of every main food and treat you have saved against new recall notices, about twice a day. A match shows at the top of Home. Turn on notifications to also hear about it right away.', [
+    Alert.alert('Recall alerts', 'BowlScore checks the brands of every main food and treat you have saved against new recall notices, about twice a day. A match shows at the top of Home. Notifications let you hear about it right away.', [
       { text: 'Close', style: 'cancel' },
-      { text: 'Turn on notifications', onPress: async () => { if (!(await askToNotify())) Linking.openSettings() } },
+      { text: 'Continue', onPress: async () => { if (!(await askToNotify())) Linking.openSettings() } },
     ])
   const onDelete = () =>
     Alert.alert('Delete all my data?', 'This removes your pets, your scan history and your account from this device and our servers. Your subscription is managed by Apple and must be cancelled separately.', [

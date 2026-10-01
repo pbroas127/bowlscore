@@ -4,10 +4,11 @@ import { idToken } from './auth'
 import type { LabelData, LifeStage, ScoreResult, Species } from './types'
 
 import { API_URL, PREVIEW } from './config'
+import { productByBarcode } from './catalog'
 import { knownBarcode } from './suggest'
 
 export class ScanError extends Error {
-  constructor(public code: 'unreadable' | 'barcode_not_found' | 'rate_limited' | 'offline' | 'timeout' | 'server', message: string, public product?: Product) { super(message) }
+  constructor(public code: 'unreadable' | 'barcode_not_found' | 'rate_limited' | 'offline' | 'timeout' | 'busy' | 'server', message: string, public product?: Product) { super(message) }
 }
 
 export interface Product { name: string; brand?: string }
@@ -19,6 +20,7 @@ const MESSAGES = {
   rate_limited: 'That is a lot of scans for one day. Try again tomorrow.',
   offline: 'No connection. Check your internet and try again.',
   timeout: 'That took too long. Your photo is still here, so just try again.',
+  busy: 'Our label reader is busy right now. Your photo is still here, so try again in a moment.',
   server: 'Something went wrong on our side. Please try again in a moment.',
 } as const
 
@@ -28,6 +30,17 @@ export async function scanFood(input: { species: Species; lifeStage: LifeStage; 
     await new Promise((r) => setTimeout(r, 2600))
     const pick = Math.random() < 0.5 ? SAMPLE_POOR : SAMPLE_GOOD
     return { id: newId(), source: input.barcode ? 'barcode' : 'label', ...pick }
+  }
+  // One of our catalog bags: matched on the phone from the saved catalog, so it works on a weak signal or none.
+  // Online it is scored again for this pet's life stage; offline the catalog score stands.
+  const own = input.barcode && !input.images ? productByBarcode(input.barcode) : undefined
+  if (own) {
+    const ours = { source: 'barcode' as const, productId: own.id, ...(own.image ? { image: own.image } : {}) }
+    try {
+      return { ...(await post({ species: input.species, lifeStage: input.lifeStage, label: own.label }, 8_000)), ...ours, label: own.label }
+    } catch {
+      return { id: newId(), label: own.label, result: own.result, speciesOnLabel: own.species, ...ours }
+    }
   }
   // A barcode someone already photographed the label for: score that reading, which is free and instant.
   if (input.barcode && !input.images) {
@@ -62,8 +75,9 @@ async function post(body: object, ms: number): Promise<ScanResponse> {
     clearTimeout(timer)
   }
   if (res.ok) return res.json()
-  const code = res.status === 502 || res.status === 504 ? 'timeout' : res.status === 422 ? 'unreadable' : res.status === 404 ? 'barcode_not_found' : res.status === 429 ? 'rate_limited' : 'server'
+  const err = await res.json().catch(() => null)
+  const code = err?.error === 'vision_failed' ? 'busy' : res.status === 502 || res.status === 504 ? 'timeout' : res.status === 422 ? 'unreadable' : res.status === 404 ? 'barcode_not_found' : res.status === 429 ? 'rate_limited' : 'server'
   // A barcode the databases do not know still tells us WHICH product it is, so say so and carry the name forward.
-  const product: Product | undefined = code === 'barcode_not_found' ? (await res.json().catch(() => null))?.product ?? undefined : undefined
+  const product: Product | undefined = code === 'barcode_not_found' ? err?.product ?? undefined : undefined
   throw new ScanError(code, product ? `Found ${product.name}. Snap the ingredients list on the bag and we will score it.` : MESSAGES[code], product)
 }

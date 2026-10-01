@@ -94,7 +94,7 @@ export interface CatalogProduct {
   flavor?: string // within a line: Chicken, Lamb and Rice
 }
 
-export interface BagSize { label: string; lb: number; url: string }
+export interface BagSize { label: string; lb: number; url: string; upc?: string }
 
 export interface Catalog { version: string; products: CatalogProduct[] }
 export interface Recall { id: string; date: string; brand: string; product: string; reason: string; url: string }

@@ -55,7 +55,7 @@ function AlertsCard() {
         <Text style={type.title}>Recall and bag alerts</Text>
         <Text style={type.caption}>Only when it matters.</Text>
       </View>
-      <Pressable onPress={() => { tap('select'); askToNotify().finally(done) }} style={({ pressed }) => [s.reorderPill, pressed && { opacity: 0.8 }]} accessibilityRole="button"><Text style={s.reorderText}>Turn on</Text></Pressable>
+      <Pressable onPress={() => { tap('select'); askToNotify().finally(done) }} style={({ pressed }) => [s.reorderPill, pressed && { opacity: 0.8 }]} accessibilityRole="button"><Text style={s.reorderText}>Continue</Text></Pressable>
       <Pressable hitSlop={12} onPress={done} accessibilityLabel="Not now"><X size={18} weight="bold" color={color.ink3} /></Pressable>
     </View>
   )

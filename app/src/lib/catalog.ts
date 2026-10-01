@@ -53,6 +53,10 @@ export function refreshCatalog(force = false) {
   return loading
 }
 
+// The barcodes printed on our catalog bags, so scanning one of them scores at once, even with no signal at all.
+const upc = (s: string) => s.replace(/\D/g, '').replace(/^0+/, '')
+export const productByBarcode = (code: string) => catalog?.products.find((p) => p.sizes?.some((s) => s.upc && upc(s.upc) === upc(code)))
+
 export function useCatalog(): Catalog | undefined {
   return useSyncExternalStore((l) => { listeners.add(l); return () => listeners.delete(l) }, () => catalog, () => catalog)
 }
