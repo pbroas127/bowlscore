@@ -1880,6 +1880,23 @@
   ]
  },
  {
+  "id": "blue-buffalo-true-chews-premium-jerky-cuts-with-real-chicken-dog",
+  "sizes": [
+   {
+    "label": "12 oz",
+    "lb": 0.75,
+    "asin": "B0BJGPYRDP",
+    "upc": "695990825001"
+   },
+   {
+    "label": "22 oz",
+    "lb": 1.375,
+    "asin": "B0BJFNDG7M",
+    "upc": "840243149315"
+   }
+  ]
+ },
+ {
   "id": "blue-buffalo-true-chews-premium-jerky-cuts-with-real-steak-dog",
   "sizes": [
    {
@@ -1945,6 +1962,23 @@
   ]
  },
  {
+  "id": "acana-classics-chicken-and-barley-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0CTDB3GYX",
+    "upc": "064992724849"
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "asin": "B0CTD9K91L",
+    "upc": "064992724856"
+   }
+  ]
+ },
+ {
   "id": "acana-classics-beef-and-barley-recipe-dog",
   "sizes": [
    {
@@ -1985,6 +2019,27 @@
   ]
  },
  {
+  "id": "acana-wholesome-grains-free-run-poultry-and-grains-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0C4M3QKXW"
+   },
+   {
+    "label": "22.5 lb",
+    "lb": 22.5,
+    "asin": "B083597DYV",
+    "upc": "064992509224"
+   },
+   {
+    "label": "32 lb",
+    "lb": 32,
+    "upc": "064992728472"
+   }
+  ]
+ },
+ {
   "id": "acana-wholesome-grains-red-meat-and-grains-recipe-dog",
   "sizes": [
    {
@@ -2018,6 +2073,126 @@
     "lb": 22.5,
     "asin": "B0BYQJM383",
     "upc": "064992724467"
+   }
+  ]
+ },
+ {
+  "id": "open-farm-wild-caught-salmon-grain-free-dog-kibble-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0BHFB4L8J",
+    "upc": "683547128606"
+   },
+   {
+    "label": "11 lb",
+    "lb": 11,
+    "asin": "B07YMYGMFT"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22,
+    "upc": "683547128620"
+   }
+  ]
+ },
+ {
+  "id": "fromm-gold-large-breed-puppy-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5,
+    "asin": "B07VF6CZP2"
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "upc": "072705105533"
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "asin": "B09JFLGW4P"
+   }
+  ]
+ },
+ {
+  "id": "fromm-gold-weight-management-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "upc": "072705105717"
+   }
+  ]
+ },
+ {
+  "id": "fromm-gold-reduced-activity-and-senior-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15
+   },
+   {
+    "label": "30 lb",
+    "lb": 30,
+    "upc": "072705115419"
+   }
+  ]
+ },
+ {
+  "id": "fromm-four-star-beef-frittata-veg-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B0084GMBPO"
+   },
+   {
+    "label": "12 lb",
+    "lb": 12,
+    "asin": "B004MULTZO",
+    "upc": "310425692750"
+   },
+   {
+    "label": "26 lb",
+    "lb": 26,
+    "asin": "B004MULU0S",
+    "upc": "310425692767"
+   }
+  ]
+ },
+ {
+  "id": "fromm-four-star-salmon-tunalini-recipe-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B007D6W8IG"
+   },
+   {
+    "label": "12 lb",
+    "lb": 12,
+    "asin": "B006ZKPGWQ"
+   },
+   {
+    "label": "26 lb",
+    "lb": 26,
+    "asin": "B09SKYX7BC",
+    "upc": "972658171756"
    }
   ]
  }

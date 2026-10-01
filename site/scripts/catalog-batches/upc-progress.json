@@ -198,7 +198,27 @@
   "instinct-limited-ingredient-diet-kibble-real-lamb-recipe-dog": true,
   "instinct-limited-ingredient-diet-kibble-real-salmon-recipe-dog": true,
   "instinct-original-kibble-for-kittens-chicken-recipe-cat": true,
-  "instinct-limited-ingredient-diet-kibble-real-rabbit-recipe-cat": true
+  "instinct-limited-ingredient-diet-kibble-real-rabbit-recipe-cat": true,
+  "blue-buffalo-wilderness-turkey-and-chicken-grill-dog": true,
+  "blue-buffalo-true-chews-premium-jerky-cuts-with-real-chicken-dog": true,
+  "acana-classics-chicken-and-barley-recipe-dog": true,
+  "acana-wholesome-grains-free-run-poultry-and-grains-recipe-dog": true,
+  "instinct-original-kibble-real-salmon-recipe-dog": true,
+  "instinct-raw-boost-whole-grain-kibble-for-puppies-chicken-recipe-dog": true,
+  "instinct-raw-boost-kibble-indoor-health-recipe-with-real-chicken-cat": true,
+  "open-farm-wild-caught-salmon-grain-free-dog-kibble-dog": true,
+  "canidae-pure-farm-to-bowl-wild-caught-salmon-and-sweet-potato-grain-free-recipe-dog": true,
+  "canidae-pure-farm-to-bowl-free-range-bison-lentil-and-carrot-grain-free-recipe-dog": true,
+  "canidae-pure-farm-to-bowl-pasture-raised-lamb-and-goat-and-venison-meals-grain-free-recipe-dog": true,
+  "fromm-gold-adult-dog": true,
+  "fromm-gold-large-breed-puppy-dog": true,
+  "fromm-gold-large-breed-adult-dog": true,
+  "fromm-gold-weight-management-dog": true,
+  "fromm-gold-reduced-activity-and-senior-dog": true,
+  "fromm-four-star-beef-frittata-veg-recipe-dog": true,
+  "fromm-four-star-salmon-tunalini-recipe-dog": true,
+  "earthborn-holistic-great-plains-feast-dog": true,
+  "earthborn-holistic-coastal-catch-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1119,6 +1139,100 @@
    {
     "lb": 22.5,
     "upc": "064992724467"
+   }
+  ],
+  "blue-buffalo-true-chews-premium-jerky-cuts-with-real-chicken-dog": [
+   {
+    "lb": 0.75,
+    "upc": "695990825001"
+   },
+   {
+    "lb": 1.375,
+    "upc": "840243149315"
+   }
+  ],
+  "acana-classics-chicken-and-barley-recipe-dog": [
+   {
+    "lb": 4,
+    "upc": "064992724849"
+   },
+   {
+    "lb": 22.5,
+    "upc": "064992724856"
+   },
+   {
+    "lb": 4,
+    "upc": "064992724900"
+   }
+  ],
+  "acana-wholesome-grains-free-run-poultry-and-grains-recipe-dog": [
+   {
+    "lb": 22.5,
+    "upc": "064992509224"
+   },
+   {
+    "lb": 32,
+    "upc": "064992728472"
+   }
+  ],
+  "open-farm-wild-caught-salmon-grain-free-dog-kibble-dog": [
+   {
+    "lb": 4,
+    "upc": "683547128606"
+   },
+   {
+    "lb": 22,
+    "upc": "683547128620"
+   }
+  ],
+  "fromm-gold-large-breed-puppy-dog": [
+   {
+    "lb": 15,
+    "upc": "072705105533"
+   }
+  ],
+  "fromm-gold-weight-management-dog": [
+   {
+    "lb": 30,
+    "upc": "072705105717"
+   }
+  ],
+  "fromm-gold-reduced-activity-and-senior-dog": [
+   {
+    "lb": 30,
+    "upc": "072705115419"
+   },
+   {
+    "lb": 30,
+    "upc": "376128697010"
+   }
+  ],
+  "fromm-four-star-beef-frittata-veg-recipe-dog": [
+   {
+    "lb": 12,
+    "upc": "310425692750"
+   },
+   {
+    "lb": 26,
+    "upc": "310425692767"
+   },
+   {
+    "lb": 26,
+    "upc": "376128698239"
+   },
+   {
+    "lb": 12,
+    "upc": "376128698642"
+   },
+   {
+    "lb": 26,
+    "upc": "972658391970"
+   }
+  ],
+  "fromm-four-star-salmon-tunalini-recipe-dog": [
+   {
+    "lb": 26,
+    "upc": "972658171756"
    }
   ]
  }
