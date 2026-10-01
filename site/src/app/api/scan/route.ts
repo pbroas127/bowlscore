@@ -175,13 +175,14 @@ async function webLabel(product: Product | null, barcode: string, apiKey: string
     const candidate = (await res.json()).candidates?.[0]
     // Measured while building the catalog (2026-09-21): this model sometimes skips the search and answers from memory,
     // and then the list changes from run to run. No retrieved page means no answer; the app asks for a label photo.
-    if (!candidate?.groundingMetadata?.groundingChunks?.length) { console.warn('web label lookup: no search results used', barcode); return null }
+    if (!candidate?.groundingMetadata?.groundingChunks?.length) { console.warn('web label lookup: no search results used', barcode, JSON.stringify({ finish: candidate?.finishReason, meta: Object.keys(candidate?.groundingMetadata ?? {}), queries: candidate?.groundingMetadata?.webSearchQueries, text: candidate?.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('').slice(0, 300) })); return null }
     const text: string = candidate.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('') ?? ''
     const x = JSON.parse(text.replace(/^[^{]*/, '').replace(/[^}]*$/, ''))
     if (!x?.found || !Array.isArray(x.ingredients) || x.ingredients.length < 5) return null
     const label = toLabel({ ...x, productName: product?.name ?? (typeof x.productName === 'string' ? x.productName : undefined), brand: product?.brand ?? (typeof x.brand === 'string' ? x.brand : undefined), analysis: x, aafco: x.completeAndBalanced ? 'complete' : 'not_found', readable: true, speciesOnLabel: x.species })
     return { label, species: x.species === 'dog' || x.species === 'cat' ? x.species : 'unknown', sourceUrl: typeof x.sourceUrl === 'string' ? x.sourceUrl.slice(0, 300) : undefined }
-  } catch {
+  } catch (e) {
+    console.warn('web label lookup threw', barcode, (e as Error)?.message)
     return null
   }
 }
