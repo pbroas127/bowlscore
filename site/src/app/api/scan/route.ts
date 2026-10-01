@@ -21,7 +21,7 @@ export const OPTIONS = () => new Response(null, { status: 204, headers: CORS })
 
 const MAX_IMAGES = 3
 const MAX_IMAGE_CHARS = 4 * 1024 * 1024 // 4 MB of base64 text per image
-const DAILY_LIMIT = 30
+const DAILY_LIMIT = 60 // paid calls only (label reads and web lookups); catalog and Open Pet Food Facts hits are free and never counted
 
 // ponytail: in memory counter, per server instance. Ceiling: it resets on every cold start and each
 // serverless instance counts separately, so the real cap is 30 times the number of warm instances.
@@ -98,7 +98,8 @@ type Extracted = Omit<LabelData, 'calories'> & { readable: boolean; speciesOnLab
 // when the service is healthy. The free tier also stalls or returns 503 on roughly one call in three, so a single
 // long wait is the wrong shape: make short attempts and move to the next model instead of hanging.
 // ponytail: alternate two models inside a fixed time budget. On a paid tier (priority serving) the first attempt is usually enough.
-const MODELS = [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 'gemini-3.5-flash-lite']
+// A third, larger model is the last resort when both lite models are overloaded.
+const MODELS = [process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite', 'gemini-3.5-flash-lite', 'gemini-3.5-flash']
 const BUDGET_MS = 50_000 // the route is capped at 60 s
 const ATTEMPT_MS = 13_000
 
@@ -121,8 +122,9 @@ async function readLabel(images: string[], apiKey: string): Promise<Extracted> {
       if (!res.ok) {
         last = new Error(`gemini ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`)
         // Our request, key or billing is wrong (402 is "prepaid credits depleted"): retrying cannot help, and on
-        // 2026-09-21 retrying a 402 for the whole budget made the app look frozen for 50 s. Only 429 is worth a retry.
-        if (res.status >= 400 && res.status < 500 && res.status !== 429) break
+        // 2026-09-21 retrying a 402 for the whole budget made the app look frozen for 50 s. Anything else (a 403 or 404
+        // for one model, 429, 5xx) is about that model, so the next model gets a turn.
+        if (res.status === 400 || res.status === 401 || res.status === 402) break
         throw last
       }
       const data = await res.json()
@@ -157,26 +159,27 @@ async function identify(barcode: string): Promise<Product | null> {
 // Looks up the ingredient list the manufacturer or a major retailer publishes for a named product, using Gemini with
 // Google Search grounding. Needs a paid Gemini tier: the free tier answers 429 to grounded calls, and then this simply
 // returns null and the app asks for a label photo instead. One attempt only, a photo is always available as plan B.
-async function webLabel(product: Product, apiKey: string): Promise<{ label: LabelData; species: 'dog' | 'cat' | 'unknown'; sourceUrl?: string } | null> {
-  const prompt = `Find the official ingredient list and guaranteed analysis for this exact pet food product: "${product.name}"${product.brand ? ` by ${product.brand}` : ''}. Use the manufacturer's website or a major retailer such as Chewy or Petco. Reply with ONLY a JSON object and no markdown: {"found": boolean, "ingredients": string[] (label order, keep parentheses inside each ingredient), "proteinMin": number, "fatMin": number, "fiberMax": number, "moistureMax": number, "species": "dog" or "cat", "foodForm": "dry" or "wet", "completeAndBalanced": boolean, "isTreat": boolean, "sourceUrl": string}. If you cannot find this exact product and recipe, reply {"found": false}. Never guess or fill in ingredients from memory.`
+async function webLabel(product: Product | null, barcode: string, apiKey: string): Promise<{ label: LabelData; species: 'dog' | 'cat' | 'unknown'; sourceUrl?: string } | null> {
+  const what = product ? `"${product.name}"${product.brand ? ` by ${product.brand}` : ''} (UPC ${barcode})` : `the dog or cat food or treat with UPC barcode ${barcode}`
+  const prompt = `Find the official ingredient list and guaranteed analysis for this exact pet food product: ${what}. Search the web first. Use the manufacturer's website or a major retailer such as Chewy or Petco. Reply with ONLY a JSON object and no markdown: {"found": boolean, "productName": string, "brand": string, "ingredients": string[] (label order, keep parentheses inside each ingredient), "proteinMin": number, "fatMin": number, "fiberMax": number, "moistureMax": number, "species": "dog" or "cat", "foodForm": "dry" or "wet", "completeAndBalanced": boolean, "isTreat": boolean, "sourceUrl": string}. If you cannot find this exact product and recipe, reply {"found": false}. Never guess or fill in ingredients from memory.`
   try {
-    // Measured on Purina ONE: 3.1 flash lite returned 23 of 39 ingredients, 3.5 returned all 39. The tail of the list
-    // is where colors, preservatives and menadione live, so completeness beats the two seconds saved.
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent`, {
+    // Measured on Purina ONE: 3.1 flash lite returned 23 of 39 ingredients, 3.5 returned all 39. The lite model also
+    // skipped the search often enough that most store bags came back empty (2026-09-30), so this uses 3.5 flash.
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
       signal: AbortSignal.timeout(25_000),
-      body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt }] }], tools: [{ google_search: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'minimal' } } }),
+      body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt }] }], tools: [{ google_search: {} }], generationConfig: { temperature: 0, thinkingConfig: { thinkingLevel: 'low' } } }),
     })
-    if (!res.ok) return null
+    if (!res.ok) { console.warn('web label lookup failed', res.status, (await res.text()).slice(0, 200)); return null }
     const candidate = (await res.json()).candidates?.[0]
     // Measured while building the catalog (2026-09-21): this model sometimes skips the search and answers from memory,
     // and then the list changes from run to run. No retrieved page means no answer; the app asks for a label photo.
-    if (!candidate?.groundingMetadata?.groundingChunks?.length) return null
+    if (!candidate?.groundingMetadata?.groundingChunks?.length) { console.warn('web label lookup: no search results used', barcode); return null }
     const text: string = candidate.content?.parts?.map((p: { text?: string }) => p.text ?? '').join('') ?? ''
     const x = JSON.parse(text.replace(/^[^{]*/, '').replace(/[^}]*$/, ''))
     if (!x?.found || !Array.isArray(x.ingredients) || x.ingredients.length < 5) return null
-    const label = toLabel({ ...x, productName: product.name, brand: product.brand, analysis: x, aafco: x.completeAndBalanced ? 'complete' : 'not_found', readable: true, speciesOnLabel: x.species })
+    const label = toLabel({ ...x, productName: product?.name ?? (typeof x.productName === 'string' ? x.productName : undefined), brand: product?.brand ?? (typeof x.brand === 'string' ? x.brand : undefined), analysis: x, aafco: x.completeAndBalanced ? 'complete' : 'not_found', readable: true, speciesOnLabel: x.species })
     return { label, species: x.species === 'dog' || x.species === 'cat' ? x.species : 'unknown', sourceUrl: typeof x.sourceUrl === 'string' ? x.sourceUrl.slice(0, 300) : undefined }
   } catch {
     return null
@@ -186,8 +189,8 @@ async function webLabel(product: Product, apiKey: string): Promise<{ label: Labe
 // The grounded lookup is the one expensive call in this route (a search fee of a few cents), and popular foods get
 // scanned again and again. Remember each barcode's answer for 90 days in the Vercel data cache, so a product is paid
 // for once. A miss throws so that only real answers are remembered.
-const cachedWebLabel = (barcode: string, product: Product, apiKey: string) =>
-  unstable_cache(async () => { const hit = await webLabel(product, apiKey); if (!hit) throw new Error('miss'); return hit }, ['web-label-v1', barcode], { revalidate: 90 * 86_400 })().catch(() => null)
+const cachedWebLabel = (barcode: string, product: Product | null, apiKey: string) =>
+  unstable_cache(async () => { const hit = await webLabel(product, barcode, apiKey); if (!hit) throw new Error('miss'); return hit }, ['web-label-v2', barcode], { revalidate: 90 * 86_400 })().catch(() => null)
 
 // The schema allows nulls, the rubric wants undefined, and nothing from the model is trusted blindly.
 function toLabel(x: Extracted): LabelData {
@@ -244,7 +247,7 @@ export async function POST(req: Request) {
   if (barcode == null && images == null) return json({ error: 'missing_input', message: 'Send images or a barcode.' }, 400)
 
   const who = uid ?? req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown'
-  if (overLimit(who)) return json({ error: 'rate_limited', message: 'Daily scan limit reached. Try again tomorrow.' }, 429)
+  const limited = () => json({ error: 'rate_limited', message: 'Daily scan limit reached. Try again tomorrow.' }, 429)
 
   if (typeof barcode === 'string') {
     // Our own catalog first: every bag size carries its printed UPC, so a match returns the full label with no lookup.
@@ -263,7 +266,9 @@ export async function POST(req: Request) {
     // UPC, then try the published ingredient list. Whatever happens, the app learns WHAT was scanned.
     const found = await identify(barcode)
     const key = process.env.GEMINI_API_KEY
-    const web = found && key ? await cachedWebLabel(barcode, found, key) : null
+    // The camera reads every barcode it sees, shelf tags included, so only this paid lookup counts toward the cap.
+    if (key && overLimit(who)) return limited()
+    const web = key ? await cachedWebLabel(barcode, found, key) : null
     if (web) return json({ id: crypto.randomUUID(), source: 'web', sourceUrl: web.sourceUrl, label: web.label, result: scoreFood(web.label, species, lifeStage), speciesOnLabel: web.species, ...known(web.label, web.species, species) })
     // The app can send the label photos along with the barcode, so a miss is never a dead end.
     if (images == null) return json({ error: 'barcode_not_found', product: found }, 404)
@@ -272,13 +277,15 @@ export async function POST(req: Request) {
 
   const apiKey = process.env.GEMINI_API_KEY
   if (!apiKey) return json({ error: 'not_configured' }, 503)
+  if (barcode == null && overLimit(who)) return limited()
 
   let extracted: Extracted
   try {
     extracted = await readLabel(images as string[], apiKey)
   } catch (err) {
     console.error('scan: label read failed', err)
-    return json({ error: 'vision_failed', message: 'We could not read that label right now. Try again in a moment.' }, 502)
+    // 503, not 502: the app shows a gateway 502 or 504 as "took too long", which is not what happened here.
+    return json({ error: 'vision_failed', reason: String((err as Error)?.message ?? err).slice(0, 120), message: 'We could not read that label right now. Try again in a moment.' }, 503)
   }
   const label = toLabel(extracted)
   // A close up of the ingredients panel rarely shows the product name. A barcode scanned just before does.
