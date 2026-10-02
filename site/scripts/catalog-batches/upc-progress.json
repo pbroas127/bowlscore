@@ -218,7 +218,27 @@
   "fromm-four-star-beef-frittata-veg-recipe-dog": true,
   "fromm-four-star-salmon-tunalini-recipe-dog": true,
   "earthborn-holistic-great-plains-feast-dog": true,
-  "earthborn-holistic-coastal-catch-dog": true
+  "earthborn-holistic-coastal-catch-dog": true,
+  "orijen-kitten-formula-cat": true,
+  "acana-market-medley-duck-chicken-and-turkey-recipe-cat": true,
+  "open-farm-pollock-and-oatmeal-digestive-health-dog-kibble-dog": true,
+  "canidae-pure-farm-to-bowl-grass-fed-beef-and-barley-recipe-dog": true,
+  "fromm-gold-small-breed-adult-dog": true,
+  "fromm-four-star-chicken-au-frommage-recipe-dog": true,
+  "earthborn-holistic-primitive-natural-dog": true,
+  "earthborn-holistic-weight-control-dog": true,
+  "zukes-mini-naturals-duck-recipe-dog": true,
+  "stewart-freeze-dried-chicken-breast-dog": true,
+  "purina-pro-plan-complete-essentials-shredded-blend-beef-and-rice-formula-dog": true,
+  "purina-pro-plan-complete-essentials-shredded-blend-lamb-and-rice-formula-dog": true,
+  "purina-pro-plan-complete-essentials-shredded-blend-turkey-and-rice-formula-dog": true,
+  "purina-pro-plan-large-breed-adult-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-puppy-lamb-and-rice-formula-dog": true,
+  "purina-pro-plan-puppy-shredded-blend-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-small-breed-adult-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-weight-management-shredded-blend-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-oat-meal-formula-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1233,6 +1253,118 @@
    {
     "lb": 26,
     "upc": "972658171756"
+   }
+  ],
+  "fromm-gold-small-breed-adult-dog": [
+   {
+    "lb": 5,
+    "upc": "072705105663"
+   },
+   {
+    "lb": 15,
+    "upc": "689549537262"
+   },
+   {
+    "lb": 15,
+    "upc": "740023933083"
+   }
+  ],
+  "fromm-four-star-chicken-au-frommage-recipe-dog": [
+   {
+    "lb": 26,
+    "upc": "702195577441"
+   },
+   {
+    "lb": 26,
+    "upc": "725715137895"
+   },
+   {
+    "lb": 26,
+    "upc": "779037140736"
+   },
+   {
+    "lb": 26,
+    "upc": "781017892405"
+   },
+   {
+    "lb": 26,
+    "upc": "792756147923"
+   }
+  ],
+  "earthborn-holistic-weight-control-dog": [
+   {
+    "lb": 12.5,
+    "upc": "034846719345"
+   }
+  ],
+  "purina-pro-plan-complete-essentials-shredded-blend-beef-and-rice-formula-dog": [
+   {
+    "lb": 35,
+    "upc": "038100130518"
+   }
+  ],
+  "purina-pro-plan-complete-essentials-shredded-blend-turkey-and-rice-formula-dog": [
+   {
+    "lb": 15,
+    "upc": "038100101303"
+   },
+   {
+    "lb": 33,
+    "upc": "038100190734"
+   }
+  ],
+  "purina-pro-plan-puppy-lamb-and-rice-formula-dog": [
+   {
+    "lb": 6,
+    "upc": "038100113641"
+   },
+   {
+    "lb": 6,
+    "upc": "038100113672"
+   },
+   {
+    "lb": 18,
+    "upc": "038100132765"
+   }
+  ],
+  "purina-pro-plan-puppy-shredded-blend-chicken-and-rice-formula-dog": [
+   {
+    "lb": 6,
+    "upc": "038100142900"
+   },
+   {
+    "lb": 18,
+    "upc": "038100142887"
+   },
+   {
+    "lb": 34,
+    "upc": "038100142894"
+   }
+  ],
+  "purina-pro-plan-weight-management-shredded-blend-chicken-and-rice-formula-dog": [
+   {
+    "lb": 18,
+    "upc": "038100140241"
+   },
+   {
+    "lb": 34,
+    "upc": "038100140265"
+   },
+   {
+    "lb": 6,
+    "upc": "038100140272"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-salmon-and-rice-formula-dog": [
+   {
+    "lb": 16,
+    "upc": "038100177032"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-oat-meal-formula-dog": [
+   {
+    "lb": 16,
+    "upc": "038100175663"
    }
   ]
  }
