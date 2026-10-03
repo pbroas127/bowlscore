@@ -2254,6 +2254,37 @@
   ]
  },
  {
+  "id": "stewart-freeze-dried-chicken-liver-dog",
+  "sizes": [
+   {
+    "label": "1 oz",
+    "lb": 0.09,
+    "asin": "B005TRIV1Y"
+   },
+   {
+    "label": "3 oz",
+    "lb": 0.16,
+    "asin": "B0DXHL63SW"
+   },
+   {
+    "label": "3 oz",
+    "lb": 0.19,
+    "asin": "B001B4X7L8"
+   },
+   {
+    "label": "12 oz",
+    "lb": 0.72,
+    "asin": "B001B4TTWO"
+   },
+   {
+    "label": "1 lb",
+    "lb": 1,
+    "asin": "B0BLQ6WSNX",
+    "upc": "073101002174"
+   }
+  ]
+ },
+ {
   "id": "purina-pro-plan-complete-essentials-shredded-blend-beef-and-rice-formula-dog",
   "sizes": [
    {
@@ -2293,6 +2324,28 @@
     "label": "33 lb",
     "lb": 33,
     "upc": "038100190734"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-large-breed-puppy-chicken-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "18 lb",
+    "lb": 18,
+    "asin": "B002UNAXSE"
+   },
+   {
+    "label": "34 lb",
+    "lb": 34,
+    "asin": "B002OY0Q9K",
+    "upc": "755474058285"
+   },
+   {
+    "label": "47 lb",
+    "lb": 47,
+    "asin": "B082XY8GC8",
+    "upc": "755474065122"
    }
   ]
  },
@@ -2398,6 +2451,182 @@
     "label": "24 lb",
     "lb": 24,
     "asin": "B01EY9KQ1U"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-sensitive-skin-and-stomach-turkey-and-oat-meal-formula-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B08VF8ZD6S"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "upc": "038100189745"
+   },
+   {
+    "label": "24 lb",
+    "lb": 24,
+    "asin": "B08VFC121J",
+    "upc": "038100189752"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-sensitive-skin-and-stomach-large-breed-salmon-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "24 lb",
+    "lb": 24,
+    "upc": "038100186881"
+   },
+   {
+    "label": "34 lb",
+    "lb": 34
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-sensitive-skin-and-stomach-puppy-salmon-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B083R2M2TB",
+    "upc": "038100187611"
+   },
+   {
+    "label": "24 lb",
+    "lb": 24,
+    "asin": "B0841H39X9",
+    "upc": "038100187659"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-sensitive-skin-and-stomach-large-breed-puppy-salmon-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B08VF8P275",
+    "upc": "038100190543"
+   },
+   {
+    "label": "24 lb",
+    "lb": 24,
+    "asin": "B08VF8WHRD",
+    "upc": "038100190550"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-sport-performance-30-20-chicken-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "6 lb",
+    "lb": 6,
+    "asin": "B00BQ5QHHS",
+    "upc": "038100150967"
+   },
+   {
+    "label": "18 lb",
+    "lb": 18,
+    "asin": "B00BEW8GKY"
+   },
+   {
+    "label": "37.5 lb",
+    "lb": 37.5,
+    "asin": "B000633ONQ"
+   },
+   {
+    "label": "50 lb",
+    "lb": 50,
+    "asin": "B071RHGVSJ"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B003R0LLZS",
+    "upc": "038100131249"
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "asin": "B0009JQRJA",
+    "upc": "038100131089"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B005HH6MPS",
+    "upc": "038100144829"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-indoor-hairball-turkey-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B004PGZBPE"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B001VIY9E8",
+    "upc": "038100131614"
+   }
+  ]
+ },
+ {
+  "id": "purina-one-smartblend-lamb-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8,
+    "asin": "B01K4K9M9A",
+    "upc": "017800573122"
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5,
+    "upc": "017800149402"
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1,
+    "upc": "017800149419"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "upc": "017800167468"
+   }
+  ]
+ },
+ {
+  "id": "purina-one-smartblend-small-bites-beef-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "8 lb",
+    "lb": 8,
+    "asin": "B000634CF0",
+    "upc": "017800175289"
+   },
+   {
+    "label": "16.5 lb",
+    "lb": 16.5,
+    "upc": "017800149297"
    }
   ]
  }

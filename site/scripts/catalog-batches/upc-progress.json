@@ -238,7 +238,26 @@
   "purina-pro-plan-small-breed-adult-chicken-and-rice-formula-dog": true,
   "purina-pro-plan-weight-management-shredded-blend-chicken-and-rice-formula-dog": true,
   "purina-pro-plan-sensitive-skin-and-stomach-salmon-and-rice-formula-dog": true,
-  "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-oat-meal-formula-dog": true
+  "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-oat-meal-formula-dog": true,
+  "instinct-original-kibble-real-salmon-recipe-cat": true,
+  "fromm-gold-puppy-dog": true,
+  "zukes-mini-naturals-peanut-butter-and-oats-recipe-dog": true,
+  "stewart-freeze-dried-chicken-liver-dog": true,
+  "purina-pro-plan-large-breed-puppy-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-senior-adult-7-shredded-blend-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-turkey-and-oat-meal-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-large-breed-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-puppy-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-large-breed-puppy-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-sport-performance-30-20-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-sport-active-27-17-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-complete-essentials-salmon-and-rice-formula-cat": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-rice-formula-cat": true,
+  "purina-pro-plan-indoor-salmon-and-rice-formula-cat": true,
+  "purina-pro-plan-indoor-hairball-turkey-and-rice-formula-cat": true,
+  "purina-one-smartblend-lamb-and-rice-formula-dog": true,
+  "purina-one-smartblend-small-bites-beef-and-rice-formula-dog": true,
+  "purina-one-plus-large-breed-puppy-chicken-formula-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1365,6 +1384,120 @@
    {
     "lb": 16,
     "upc": "038100175663"
+   }
+  ],
+  "stewart-freeze-dried-chicken-liver-dog": [
+   {
+    "lb": 1,
+    "upc": "073101002174"
+   }
+  ],
+  "purina-pro-plan-large-breed-puppy-chicken-and-rice-formula-dog": [
+   {
+    "lb": 34,
+    "upc": "755474058285"
+   },
+   {
+    "lb": 47,
+    "upc": "755474065122"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-turkey-and-oat-meal-formula-dog": [
+   {
+    "lb": 16,
+    "upc": "038100189745"
+   },
+   {
+    "lb": 24,
+    "upc": "038100189752"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-large-breed-salmon-and-rice-formula-dog": [
+   {
+    "lb": 24,
+    "upc": "038100186881"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-puppy-salmon-and-rice-formula-dog": [
+   {
+    "lb": 4,
+    "upc": "038100187611"
+   },
+   {
+    "lb": 24,
+    "upc": "038100187659"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-large-breed-puppy-salmon-and-rice-formula-dog": [
+   {
+    "lb": 16,
+    "upc": "038100190543"
+   },
+   {
+    "lb": 24,
+    "upc": "038100190550"
+   },
+   {
+    "lb": 24,
+    "upc": "609218163578"
+   }
+  ],
+  "purina-pro-plan-sport-performance-30-20-chicken-and-rice-formula-dog": [
+   {
+    "lb": 6,
+    "upc": "038100150967"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-lamb-and-rice-formula-cat": [
+   {
+    "lb": 7,
+    "upc": "038100131089"
+   },
+   {
+    "lb": 3.5,
+    "upc": "038100131249"
+   },
+   {
+    "lb": 16,
+    "upc": "038100144829"
+   }
+  ],
+  "purina-pro-plan-indoor-hairball-turkey-and-rice-formula-cat": [
+   {
+    "lb": 16,
+    "upc": "038100131614"
+   }
+  ],
+  "purina-one-smartblend-lamb-and-rice-formula-dog": [
+   {
+    "lb": 8,
+    "upc": "017800573122"
+   },
+   {
+    "lb": 16.5,
+    "upc": "017800149402"
+   },
+   {
+    "lb": 31.1,
+    "upc": "017800149419"
+   },
+   {
+    "lb": 40,
+    "upc": "017800167468"
+   }
+  ],
+  "purina-one-smartblend-small-bites-beef-and-rice-formula-dog": [
+   {
+    "lb": 16.5,
+    "upc": "017800149297"
+   },
+   {
+    "lb": 8,
+    "upc": "017800175289"
+   },
+   {
+    "lb": 8,
+    "upc": "017800464178"
    }
   ]
  }
