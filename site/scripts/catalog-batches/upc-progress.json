@@ -257,7 +257,27 @@
   "purina-pro-plan-indoor-hairball-turkey-and-rice-formula-cat": true,
   "purina-one-smartblend-lamb-and-rice-formula-dog": true,
   "purina-one-smartblend-small-bites-beef-and-rice-formula-dog": true,
-  "purina-one-plus-large-breed-puppy-chicken-formula-dog": true
+  "purina-one-plus-large-breed-puppy-chicken-formula-dog": true,
+  "fromm-four-star-hasen-duckenpfeffer-dog": true,
+  "purina-pro-plan-complete-essentials-shredded-blend-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-small-breed-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-sensitive-skin-and-stomach-senior-adult-7-salmon-and-rice-formula-dog": true,
+  "purina-pro-plan-weight-management-chicken-and-rice-formula-cat": true,
+  "purina-pro-plan-urinary-tract-health-chicken-and-rice-formula-cat": true,
+  "purina-one-plus-healthy-puppy-chicken-formula-dog": true,
+  "purina-one-plus-healthy-weight-turkey-formula-dog": true,
+  "purina-one-plus-small-breed-lamb-formula-dog": true,
+  "purina-one-tender-selects-blend-with-real-salmon-cat": true,
+  "purina-one-plus-indoor-advantage-senior-7-cat": true,
+  "purina-one-plus-hairball-formula-cat": true,
+  "purina-one-plus-ideal-weight-formula-cat": true,
+  "purina-one-plus-sensitive-skin-and-stomach-formula-cat": true,
+  "purina-dog-chow-complete-adult-with-real-beef-dog": true,
+  "purina-dog-chow-high-protein-with-real-beef-dog": true,
+  "beneful-originals-with-real-beef-dog": true,
+  "beneful-healthy-weight-with-real-chicken-dog": true,
+  "purina-cat-chow-indoor-hairball-and-healthy-weight-cat": true,
+  "purina-cat-chow-naturals-original-with-real-chicken-cat": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1498,6 +1518,106 @@
    {
     "lb": 8,
     "upc": "017800464178"
+   }
+  ],
+  "fromm-four-star-hasen-duckenpfeffer-dog": [
+   {
+    "lb": 4,
+    "upc": "310425692828"
+   },
+   {
+    "lb": 12,
+    "upc": "310425692835"
+   },
+   {
+    "lb": 12,
+    "upc": "376128697201"
+   }
+  ],
+  "purina-pro-plan-complete-essentials-shredded-blend-salmon-and-rice-formula-dog": [
+   {
+    "lb": 15,
+    "upc": "038100101297"
+   },
+   {
+    "lb": 33,
+    "upc": "038100160546"
+   }
+  ],
+  "purina-pro-plan-sensitive-skin-and-stomach-senior-adult-7-salmon-and-rice-formula-dog": [
+   {
+    "lb": 4,
+    "upc": "363767133757"
+   }
+  ],
+  "purina-pro-plan-weight-management-chicken-and-rice-formula-cat": [
+   {
+    "lb": 7,
+    "upc": "038100131324"
+   },
+   {
+    "lb": 16,
+    "upc": "038100131317"
+   }
+  ],
+  "purina-pro-plan-urinary-tract-health-chicken-and-rice-formula-cat": [
+   {
+    "lb": 7,
+    "upc": "038100131263"
+   },
+   {
+    "lb": 16,
+    "upc": "038100131584"
+   }
+  ],
+  "purina-one-tender-selects-blend-with-real-salmon-cat": [
+   {
+    "lb": 7,
+    "upc": "017800023573"
+   },
+   {
+    "lb": 22,
+    "upc": "017800147347"
+   }
+  ],
+  "purina-dog-chow-complete-adult-with-real-beef-dog": [
+   {
+    "lb": 46,
+    "upc": "017800178303"
+   },
+   {
+    "lb": 46,
+    "upc": "017800178396"
+   }
+  ],
+  "beneful-originals-with-real-beef-dog": [
+   {
+    "lb": 3.5,
+    "upc": "017800134835"
+   },
+   {
+    "lb": 31.1,
+    "upc": "017800134774"
+   },
+   {
+    "lb": 31.1,
+    "upc": "017800149914"
+   }
+  ],
+  "beneful-healthy-weight-with-real-chicken-dog": [
+   {
+    "lb": 3.5,
+    "upc": "017800134651"
+   }
+  ],
+  "purina-cat-chow-indoor-hairball-and-healthy-weight-cat": [
+   {
+    "lb": 20,
+    "upc": "017800184984"
+   },
+   {
+    "lb": 15,
+    "upc": "017800184991"
    }
   ]
  }

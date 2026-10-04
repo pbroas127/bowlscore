@@ -2233,6 +2233,28 @@
   ]
  },
  {
+  "id": "fromm-four-star-hasen-duckenpfeffer-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "asin": "B01KAOENK8",
+    "upc": "310425692828"
+   },
+   {
+    "label": "12 lb",
+    "lb": 12,
+    "asin": "B01KAOLYAU",
+    "upc": "310425692835"
+   },
+   {
+    "label": "26 lb",
+    "lb": 26,
+    "asin": "B01BFUQ95S"
+   }
+  ]
+ },
+ {
   "id": "earthborn-holistic-weight-control-dog",
   "sizes": [
    {
@@ -2304,6 +2326,26 @@
    {
     "label": "47 lb",
     "lb": 47
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-complete-essentials-shredded-blend-salmon-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "5 lb",
+    "lb": 5
+   },
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "asin": "B0DKY8X4RQ",
+    "upc": "038100101297"
+   },
+   {
+    "label": "33 lb",
+    "lb": 33,
+    "upc": "038100160546"
    }
   ]
  },
@@ -2524,6 +2566,20 @@
   ]
  },
  {
+  "id": "purina-pro-plan-sensitive-skin-and-stomach-senior-adult-7-salmon-and-rice-formula-dog",
+  "sizes": [
+   {
+    "label": "4 lb",
+    "lb": 4,
+    "upc": "363767133757"
+   },
+   {
+    "label": "24 lb",
+    "lb": 24
+   }
+  ]
+ },
+ {
   "id": "purina-pro-plan-sport-performance-30-20-chicken-and-rice-formula-dog",
   "sizes": [
    {
@@ -2573,6 +2629,27 @@
   ]
  },
  {
+  "id": "purina-pro-plan-weight-management-chicken-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "asin": "B000084F4T",
+    "upc": "038100131324"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B001VIY9CA",
+    "upc": "038100131317"
+   }
+  ]
+ },
+ {
   "id": "purina-pro-plan-indoor-hairball-turkey-and-rice-formula-cat",
   "sizes": [
    {
@@ -2585,6 +2662,28 @@
     "lb": 16,
     "asin": "B001VIY9E8",
     "upc": "038100131614"
+   }
+  ]
+ },
+ {
+  "id": "purina-pro-plan-urinary-tract-health-chicken-and-rice-formula-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B003R0LM48"
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "asin": "B003R0LM1Q",
+    "upc": "038100131263"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B001VJ3I1M",
+    "upc": "038100131584"
    }
   ]
  },
@@ -2627,6 +2726,117 @@
     "label": "16.5 lb",
     "lb": 16.5,
     "upc": "017800149297"
+   }
+  ]
+ },
+ {
+  "id": "purina-one-tender-selects-blend-with-real-salmon-cat",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B001VIWGFW"
+   },
+   {
+    "label": "7 lb",
+    "lb": 7,
+    "asin": "B000R4H2MI",
+    "upc": "017800023573"
+   },
+   {
+    "label": "16 lb",
+    "lb": 16,
+    "asin": "B0000AH3RR"
+   },
+   {
+    "label": "22 lb",
+    "lb": 22,
+    "asin": "B075JNLTZD",
+    "upc": "017800147347"
+   }
+  ]
+ },
+ {
+  "id": "purina-dog-chow-complete-adult-with-real-beef-dog",
+  "sizes": [
+   {
+    "label": "18.5 lb",
+    "lb": 18.5,
+    "asin": "B0BFC4X9MY"
+   },
+   {
+    "label": "40 lb",
+    "lb": 40,
+    "asin": "B0FQK2GHGC"
+   },
+   {
+    "label": "46 lb",
+    "lb": 46,
+    "asin": "B073PC3RK9",
+    "upc": "017800178303"
+   }
+  ]
+ },
+ {
+  "id": "beneful-originals-with-real-beef-dog",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B07D2J47YW",
+    "upc": "017800134835"
+   },
+   {
+    "label": "14 lb",
+    "lb": 14,
+    "asin": "B07XBBSVQB"
+   },
+   {
+    "label": "28 lb",
+    "lb": 28,
+    "asin": "B07X23D2DH"
+   },
+   {
+    "label": "31.1 lb",
+    "lb": 31.1,
+    "asin": "B001SFYW96",
+    "upc": "017800134774"
+   }
+  ]
+ },
+ {
+  "id": "beneful-healthy-weight-with-real-chicken-dog",
+  "sizes": [
+   {
+    "label": "3.5 lb",
+    "lb": 3.5,
+    "asin": "B07CVN5WG8",
+    "upc": "017800134651"
+   },
+   {
+    "label": "6.3 lb",
+    "lb": 6.3,
+    "asin": "B00YB0EXJ4"
+   },
+   {
+    "label": "28 lb",
+    "lb": 28,
+    "asin": "B082P83FLD"
+   }
+  ]
+ },
+ {
+  "id": "purina-cat-chow-indoor-hairball-and-healthy-weight-cat",
+  "sizes": [
+   {
+    "label": "15 lb",
+    "lb": 15,
+    "upc": "017800184991"
+   },
+   {
+    "label": "20 lb",
+    "lb": 20,
+    "upc": "017800184984"
    }
   ]
  }
