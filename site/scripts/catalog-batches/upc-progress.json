@@ -277,7 +277,25 @@
   "beneful-originals-with-real-beef-dog": true,
   "beneful-healthy-weight-with-real-chicken-dog": true,
   "purina-cat-chow-indoor-hairball-and-healthy-weight-cat": true,
-  "purina-cat-chow-naturals-original-with-real-chicken-cat": true
+  "purina-cat-chow-naturals-original-with-real-chicken-cat": true,
+  "purina-pro-plan-large-breed-weight-management-chicken-and-rice-formula-dog": true,
+  "purina-pro-plan-complete-essentials-beef-and-rice-entree-classic-dog": true,
+  "purina-one-plus-vibrant-maturity-adult-7-chicken-formula-dog": true,
+  "purina-one-plus-indoor-advantage-with-real-turkey-cat": true,
+  "purina-one-plus-urinary-tract-health-formula-cat": true,
+  "purina-puppy-chow-complete-with-real-chicken-dog": true,
+  "purina-cat-chow-complete-salmon-cat": true,
+  "purina-kitten-chow-healthy-development-with-real-chicken-cat": true,
+  "friskies-tender-and-crunchy-combo-cat": true,
+  "friskies-gravy-swirlers-cat": true,
+  "fancy-feast-classic-pate-chicken-feast-cat": true,
+  "fancy-feast-grilled-chicken-feast-in-gravy-cat": true,
+  "beggin-strips-fun-size-original-with-bacon-dog": true,
+  "beggin-flavor-stix-peanut-butter-and-bacon-dog": true,
+  "busy-bone-peanut-butter-flavor-large-dog": true,
+  "busy-bone-twistd-with-beggin-bacon-large-dog": true,
+  "friskies-party-mix-beachside-crunch-cat": true,
+  "pup-peroni-original-bacon-flavor-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1618,6 +1636,78 @@
    {
     "lb": 15,
     "upc": "017800184991"
+   }
+  ],
+  "purina-pro-plan-large-breed-weight-management-chicken-and-rice-formula-dog": [
+   {
+    "lb": 34,
+    "upc": "038100132505"
+   },
+   {
+    "lb": 34,
+    "upc": "310425683703"
+   },
+   {
+    "lb": 34,
+    "upc": "350633635958"
+   },
+   {
+    "lb": 34,
+    "upc": "882262444804"
+   },
+   {
+    "lb": 34,
+    "upc": "882262547925"
+   }
+  ],
+  "purina-cat-chow-complete-salmon-cat": [
+   {
+    "lb": 15,
+    "upc": "310425688401"
+   },
+   {
+    "lb": 15,
+    "upc": "682470430916"
+   }
+  ],
+  "friskies-tender-and-crunchy-combo-cat": [
+   {
+    "lb": 3.15,
+    "upc": "050000084500"
+   },
+   {
+    "lb": 3.15,
+    "upc": "050000171231"
+   },
+   {
+    "lb": 3.15,
+    "upc": "050000084517"
+   }
+  ],
+  "friskies-gravy-swirlers-cat": [
+   {
+    "lb": 6.3,
+    "upc": "050000168606"
+   },
+   {
+    "lb": 16,
+    "upc": "050000168620"
+   },
+   {
+    "lb": 3.15,
+    "upc": "050000171248"
+   }
+  ],
+  "beggin-strips-fun-size-original-with-bacon-dog": [
+   {
+    "lb": 1.56,
+    "upc": "038100173959"
+   }
+  ],
+  "beggin-flavor-stix-peanut-butter-and-bacon-dog": [
+   {
+    "lb": 1.56,
+    "upc": "038100101723"
    }
   ]
  }
