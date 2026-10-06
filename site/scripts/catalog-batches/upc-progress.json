@@ -295,7 +295,13 @@
   "busy-bone-peanut-butter-flavor-large-dog": true,
   "busy-bone-twistd-with-beggin-bacon-large-dog": true,
   "friskies-party-mix-beachside-crunch-cat": true,
-  "pup-peroni-original-bacon-flavor-dog": true
+  "pup-peroni-original-bacon-flavor-dog": true,
+  "purina-one-plus-large-breed-adult-chicken-formula-dog": true,
+  "purina-one-plus-healthy-kitten-formula-cat": true,
+  "friskies-surfin-and-turfin-favorites-cat": true,
+  "friskies-meaty-bits-chicken-dinner-in-gravy-cat": true,
+  "busy-bone-original-large-dog": true,
+  "friskies-party-mix-chicken-lovers-crunch-cat": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1708,6 +1714,22 @@
    {
     "lb": 1.56,
     "upc": "038100101723"
+   }
+  ],
+  "friskies-meaty-bits-chicken-dinner-in-gravy-cat": [
+   {
+    "lb": 0.84,
+    "upc": "050000582990"
+   }
+  ],
+  "friskies-party-mix-chicken-lovers-crunch-cat": [
+   {
+    "lb": 1.88,
+    "upc": "050000500451"
+   },
+   {
+    "lb": 1.25,
+    "upc": "050000963027"
    }
   ]
  }

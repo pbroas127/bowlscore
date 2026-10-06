@@ -24691,7 +24691,8 @@
       {
         "label": "13 oz",
         "lb": 0.84,
-        "asin": "B0FPNY9G6K"
+        "asin": "B0FPNY9G6K",
+        "upc": "050000582990"
       }
     ]
   },
@@ -25327,12 +25328,14 @@
       {
         "label": "1.25 lb",
         "lb": 1.25,
-        "asin": "B095CQ3ZL7"
+        "asin": "B095CQ3ZL7",
+        "upc": "050000963027"
       },
       {
         "label": "1.88 lb",
         "lb": 1.88,
-        "asin": "B0G8TYXHRM"
+        "asin": "B0G8TYXHRM",
+        "upc": "050000500451"
       }
     ]
   },
