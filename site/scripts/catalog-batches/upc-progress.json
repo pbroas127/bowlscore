@@ -301,7 +301,9 @@
   "friskies-surfin-and-turfin-favorites-cat": true,
   "friskies-meaty-bits-chicken-dinner-in-gravy-cat": true,
   "busy-bone-original-large-dog": true,
-  "friskies-party-mix-chicken-lovers-crunch-cat": true
+  "friskies-party-mix-chicken-lovers-crunch-cat": true,
+  "beneful-healthy-puppy-with-real-chicken-dog": true,
+  "beggin-strips-ribeye-flavor-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1730,6 +1732,24 @@
    {
     "lb": 1.25,
     "upc": "050000963027"
+   }
+  ],
+  "beneful-healthy-puppy-with-real-chicken-dog": [
+   {
+    "lb": 3.5,
+    "upc": "017800101639"
+   },
+   {
+    "lb": 3.5,
+    "upc": "017800180115"
+   },
+   {
+    "lb": 3.5,
+    "upc": "117800101636"
+   },
+   {
+    "lb": 3.5,
+    "upc": "640791616976"
    }
   ]
  }
