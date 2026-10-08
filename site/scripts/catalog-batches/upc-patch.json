@@ -2992,5 +2992,41 @@
     "upc": "050000500451"
    }
   ]
+ },
+ {
+  "id": "pup-peroni-lean-beef-flavor-dog",
+  "sizes": [
+   {
+    "label": "6 oz",
+    "lb": 0.35,
+    "asin": "B0055OZLFU",
+    "upc": "079100510221"
+   },
+   {
+    "label": "1.41 lb",
+    "lb": 1.41,
+    "asin": "B097S7N153"
+   },
+   {
+    "label": "1.56 lb",
+    "lb": 1.56,
+    "asin": "B001JJXBTS"
+   },
+   {
+    "label": "2 lb",
+    "lb": 2,
+    "asin": "B00638222C"
+   },
+   {
+    "label": "2.38 lb",
+    "lb": 2.38,
+    "asin": "B071P42VXH"
+   },
+   {
+    "label": "2.5 lb",
+    "lb": 2.5,
+    "asin": "B00AAV6MF6"
+   }
+  ]
  }
 ]

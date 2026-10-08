@@ -303,7 +303,8 @@
   "busy-bone-original-large-dog": true,
   "friskies-party-mix-chicken-lovers-crunch-cat": true,
   "beneful-healthy-puppy-with-real-chicken-dog": true,
-  "beggin-strips-ribeye-flavor-dog": true
+  "beggin-strips-ribeye-flavor-dog": true,
+  "pup-peroni-lean-beef-flavor-dog": true
  },
  "found": {
   "purina-one-chicken-and-rice-formula-dog": [
@@ -1750,6 +1751,12 @@
    {
     "lb": 3.5,
     "upc": "640791616976"
+   }
+  ],
+  "pup-peroni-lean-beef-flavor-dog": [
+   {
+    "lb": 0.35,
+    "upc": "079100510221"
    }
   ]
  }
