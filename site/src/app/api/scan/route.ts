@@ -257,7 +257,7 @@ export async function POST(req: Request) {
 
     const res = await fetch(`https://world.openpetfoodfacts.org/api/v2/product/${barcode}.json`, {
       headers: { 'User-Agent': 'BowlScore/1.0 (support@bowlscore.app)' },
-      signal: AbortSignal.timeout(10_000),
+      signal: AbortSignal.timeout(4_000), // usually 300 ms; when it is down nobody should wait 10 s to be told "snap the label"
     }).catch(() => null)
     const product = res?.ok ? (await res.json().catch(() => null))?.product : null
     const mapped = product ? labelFromOpff(product) : null

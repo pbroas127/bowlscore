@@ -1,0 +1,21 @@
+# Every 3 hours: run a real barcode scan and a real label scan against the live backend. A failed run means scans are
+# broken for users (most likely the Gemini credits ran out), and GitHub emails the repo owner about the failed workflow.
+name: canary
+on:
+  schedule:
+    - cron: '23 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node site/scripts/canary.mjs
+        env:
+          CANARY_REFRESH_TOKEN: ${{ secrets.CANARY_REFRESH_TOKEN }}
