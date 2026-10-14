@@ -297,7 +297,7 @@ export async function POST(req: Request) {
   if (hint) { label.productName ??= hint.name; label.brand ??= hint.brand }
   // One ingredient is a real food (a can of chicken breast and broth, a single ingredient treat). Requiring three
   // rejected sharp, complete labels as "too blurry" (found 2026-10-12), so only an empty read counts as unreadable.
-  if (!extracted.readable || label.ingredients.length < 1) return json({ error: 'unreadable', message: 'That photo was too blurry to read. Try again with more light.' }, 422)
+  if (!extracted.readable || label.ingredients.length < 1) return json({ error: 'unreadable', message: 'We could not find the ingredients list. Flip the bag and get the whole list in the photo.' }, 422)
 
   const speciesOnLabel = ['dog', 'cat'].includes(extracted.speciesOnLabel) ? extracted.speciesOnLabel : 'unknown'
   return json({ id: crypto.randomUUID(), source: 'label', label, result: scoreFood(label, species, lifeStage), speciesOnLabel, ...known(label, speciesOnLabel, species) })

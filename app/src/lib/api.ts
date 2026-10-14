@@ -15,7 +15,8 @@ export interface Product { name: string; brand?: string }
 export interface ScanResponse { id: string; source: 'label' | 'barcode' | 'web'; sourceUrl?: string; label: LabelData; result: ScoreResult; speciesOnLabel?: Species | 'unknown'; productId?: string; image?: string }
 
 const MESSAGES = {
-  unreadable: 'That photo was too blurry to read. Try again with more light.',
+  // Most unreadable photos show the front of the bag, not a blurry label, so the fix is where to point the camera.
+  unreadable: 'We could not find the ingredients list. Flip the bag and get the whole list in the photo.',
   barcode_not_found: 'New one for us. Snap the ingredients list and we will score it.',
   rate_limited: 'That is a lot of scans for one day. Try again tomorrow.',
   offline: 'No connection. Check your internet and try again.',
